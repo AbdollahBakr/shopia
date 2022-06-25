@@ -147,6 +147,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9113D48228674A340090A200 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9113D48528674AAE0090A200 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9113D48628674ABD0090A200 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		FA2B6E4F28650E2C00603B78 = {
 			isa = PBXGroup;
 			children = (
@@ -383,9 +404,9 @@
 		FAAB8010286510B500A3A86A /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				FAAB8014286510B500A3A86A /* Models */,
+				9113D48228674A340090A200 /* Models */,
 				FAAB8012286510B500A3A86A /* Views */,
-				FAAB8013286510B500A3A86A /* ViewModels */,
+				9113D48528674AAE0090A200 /* ViewModels */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -405,23 +426,9 @@
 			children = (
 				FAAB80272865121200A3A86A /* Storyboards */,
 				FAAB801B2865117400A3A86A /* Controllers */,
-				FAAB801C2865118500A3A86A /* Cells */,
+				9113D48628674ABD0090A200 /* Cells */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		FAAB8013286510B500A3A86A /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		FAAB8014286510B500A3A86A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		FAAB8015286510B500A3A86A /* Models */ = {
@@ -454,13 +461,6 @@
 				FA2B6E5F28650E2C00603B78 /* LoginVC.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		FAAB801C2865118500A3A86A /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		FAAB801D2865119E00A3A86A /* Controllers */ = {
