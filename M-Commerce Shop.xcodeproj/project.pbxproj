@@ -838,17 +838,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAAB80292865122B00A3A86A /* Auth.storyboard in Resources */,
-<<<<<<< HEAD
 				FA890EA32865E09B00063FD2 /* Home.storyboard in Resources */,
 				FAAB80BF28652AE700A3A86A /* NoConnectionVC.xib in Resources */,
 				FA2B6E6B28650E2E00603B78 /* LaunchScreen.storyboard in Resources */,
 				FA890EB52865EAB900063FD2 /* TabBar.storyboard in Resources */,
-=======
-				1421F16E2866BC5C00E0E1B0 /* CartItemCollectionViewCell.xib in Resources */,
-				FAAB80BF28652AE700A3A86A /* NoConnectionVC.xib in Resources */,
-				FA2B6E6B28650E2E00603B78 /* LaunchScreen.storyboard in Resources */,
-				1421F16A2866BBF100E0E1B0 /* Cart.storyboard in Resources */,
->>>>>>> 87775e0be17311831f7974dad9c8223468ae5115
+
 				FA2B6E6828650E2E00603B78 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
