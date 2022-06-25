@@ -54,10 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1421F1692866BBF100E0E1B0 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = SOURCE_ROOT; };
-		1421F16B2866BC5C00E0E1B0 /* CartItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		1421F16C2866BC5C00E0E1B0 /* CartItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartItemCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
-		1421F16F2866BE0000E0E1B0 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = SOURCE_ROOT; };
+		1421F1692866BBF100E0E1B0 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Cart.storyboard; path = "M-Commerce Shop/Set2/Cart/Views/Storyboards/Cart.storyboard"; sourceTree = SOURCE_ROOT; };
+		1421F16B2866BC5C00E0E1B0 /* CartItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartItemCollectionViewCell.swift; path = "M-Commerce Shop/Set2/Cart/Views/Cells/CartItemCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		1421F16C2866BC5C00E0E1B0 /* CartItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CartItemCollectionViewCell.xib; path = "M-Commerce Shop/Set2/Cart/Views/Cells/CartItemCollectionViewCell.xib"; sourceTree = SOURCE_ROOT; };
+		1421F16F2866BE0000E0E1B0 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartViewController.swift; path = "M-Commerce Shop/Set2/Cart/Views/Controllers/CartViewController.swift"; sourceTree = SOURCE_ROOT; };
 		1712698BB7CA36C117FB73C6 /* Pods-M-Commerce Shop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M-Commerce Shop.release.xcconfig"; path = "Target Support Files/Pods-M-Commerce Shop/Pods-M-Commerce Shop.release.xcconfig"; sourceTree = "<group>"; };
 		529726848BA781C7530847CF /* Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7630968E69C162B1FE325221 /* Pods-M-Commerce Shop-M-Commerce ShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M-Commerce Shop-M-Commerce ShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-M-Commerce Shop-M-Commerce ShopUITests/Pods-M-Commerce Shop-M-Commerce ShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
