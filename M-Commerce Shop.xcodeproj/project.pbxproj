@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1421F16A2866BBF100E0E1B0 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1421F1692866BBF100E0E1B0 /* Cart.storyboard */; };
+		1421F16D2866BC5C00E0E1B0 /* CartItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F16B2866BC5C00E0E1B0 /* CartItemCollectionViewCell.swift */; };
+		1421F16E2866BC5C00E0E1B0 /* CartItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1421F16C2866BC5C00E0E1B0 /* CartItemCollectionViewCell.xib */; };
+		1421F1702866BE0000E0E1B0 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F16F2866BE0000E0E1B0 /* CartViewController.swift */; };
 		265A94B5585EFCF2A5FB8ADF /* Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529726848BA781C7530847CF /* Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework */; };
 		53716B0B88646274148A6920 /* Pods_M_Commerce_Shop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C029B2DF6C368B53AC8834 /* Pods_M_Commerce_Shop.framework */; };
 		E69D21BD4E6C4A2556FAD8D0 /* Pods_M_Commerce_ShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC2F3FD955D80DEEE12124F /* Pods_M_Commerce_ShopTests.framework */; };
@@ -50,6 +54,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1421F1692866BBF100E0E1B0 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Cart.storyboard; sourceTree = SOURCE_ROOT; };
+		1421F16B2866BC5C00E0E1B0 /* CartItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		1421F16C2866BC5C00E0E1B0 /* CartItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartItemCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		1421F16F2866BE0000E0E1B0 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = SOURCE_ROOT; };
 		1712698BB7CA36C117FB73C6 /* Pods-M-Commerce Shop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M-Commerce Shop.release.xcconfig"; path = "Target Support Files/Pods-M-Commerce Shop/Pods-M-Commerce Shop.release.xcconfig"; sourceTree = "<group>"; };
 		529726848BA781C7530847CF /* Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7630968E69C162B1FE325221 /* Pods-M-Commerce Shop-M-Commerce ShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M-Commerce Shop-M-Commerce ShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-M-Commerce Shop-M-Commerce ShopUITests/Pods-M-Commerce Shop-M-Commerce ShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -472,6 +480,7 @@
 		FAAB801F286511BB00A3A86A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1421F16F2866BE0000E0E1B0 /* CartViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -479,6 +488,8 @@
 		FAAB8020286511C700A3A86A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				1421F16B2866BC5C00E0E1B0 /* CartItemCollectionViewCell.swift */,
+				1421F16C2866BC5C00E0E1B0 /* CartItemCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -544,6 +555,7 @@
 		FAAB8035286512BB00A3A86A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				1421F1692866BBF100E0E1B0 /* Cart.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -811,8 +823,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAAB80292865122B00A3A86A /* Auth.storyboard in Resources */,
+				1421F16E2866BC5C00E0E1B0 /* CartItemCollectionViewCell.xib in Resources */,
 				FAAB80BF28652AE700A3A86A /* NoConnectionVC.xib in Resources */,
 				FA2B6E6B28650E2E00603B78 /* LaunchScreen.storyboard in Resources */,
+				1421F16A2866BBF100E0E1B0 /* Cart.storyboard in Resources */,
 				FA2B6E6828650E2E00603B78 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -942,6 +956,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAAB805B28651C3700A3A86A /* CoreDataManager.swift in Sources */,
+				1421F16D2866BC5C00E0E1B0 /* CartItemCollectionViewCell.swift in Sources */,
 				FAAB808128651E4D00A3A86A /* Constants.swift in Sources */,
 				FAAB806028651C6E00A3A86A /* ArraysManager.swift in Sources */,
 				FAAB806828651CD300A3A86A /* CoreDataModel.swift in Sources */,
@@ -952,6 +967,7 @@
 				FAAB805628651AB400A3A86A /* NetworkManager.swift in Sources */,
 				FAAB80BB28652AD400A3A86A /* NoConnectionVC.swift in Sources */,
 				FAAB804E2865145A00A3A86A /* AnimationLottie.swift in Sources */,
+				1421F1702866BE0000E0E1B0 /* CartViewController.swift in Sources */,
 				FAAB807928651E4600A3A86A /* CustomColors.swift in Sources */,
 				FA2B6E5C28650E2C00603B78 /* AppDelegate.swift in Sources */,
 				FAAB808528651E5100A3A86A /* Helper.swift in Sources */,
