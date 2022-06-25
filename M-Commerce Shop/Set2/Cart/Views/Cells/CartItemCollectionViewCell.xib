@@ -77,7 +77,7 @@
             <constraints>
                 <constraint firstItem="hbT-1e-tcG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="1SF-Qt-Brn"/>
                 <constraint firstItem="7Pd-vo-mNU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="90Q-96-s7h"/>
-                <constraint firstAttribute="bottom" secondItem="hbT-1e-tcG" secondAttribute="bottom" id="MuZ-Ti-yaE"/>
+                <constraint firstAttribute="bottom" secondItem="hbT-1e-tcG" secondAttribute="bottom" constant="5" id="MuZ-Ti-yaE"/>
                 <constraint firstAttribute="trailing" secondItem="hbT-1e-tcG" secondAttribute="trailing" constant="20" id="ONc-cc-aqi"/>
                 <constraint firstItem="hbT-1e-tcG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="Ox3-Zp-9tH"/>
                 <constraint firstAttribute="trailing" secondItem="7Pd-vo-mNU" secondAttribute="trailing" constant="4" id="zvq-Jv-dQg"/>

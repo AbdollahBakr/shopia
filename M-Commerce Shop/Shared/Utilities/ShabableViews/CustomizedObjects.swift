@@ -99,9 +99,8 @@ class RoundedShadowView : UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.allCorners], cornerRadii: CGSize(width: 10, height: 10)).cgPath
-        self.layer.mask = shapeLayer
+        let radius: CGFloat = 10
+        self.layer.cornerRadius = radius
         
         layer.shadowOpacity = 0.4
         layer.shadowOffset = CGSize.zero
