@@ -60,8 +60,8 @@ class TextFieldPadding : UITextField {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-         layer.borderWidth = 1.0
-        layer.borderColor = UIColor(named:"MainColor")?.cgColor
+//         layer.borderWidth = 1.0
+//        layer.borderColor = UIColor(named:"MainColor")?.cgColor
     }
    
     let padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
@@ -79,7 +79,7 @@ class TextFieldPadding : UITextField {
 
 
 /************************     UIVisualEffectView  *****************************/
-class RoundedVisualEffectView : UIVisualEffectView{
+class RoundedVisualEffectView : UIVisualEffectView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -99,10 +99,8 @@ class RoundedShadowView : UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.allCorners], cornerRadii: CGSize(width: 10, height: 10)).cgPath
-        self.layer.mask = shapeLayer
-        
+        let radius: CGFloat = 10
+        self.layer.cornerRadius = radius
         layer.shadowOpacity = 0.4
         layer.shadowOffset = CGSize.zero
         layer.shadowRadius = 3
@@ -119,42 +117,40 @@ class RoundedSheetShape : UIView {
     
 }
 
- extension UIView {
-    
-   
-        // Called computed (Property / Var)
-        @IBInspectable var borderWidth :CGFloat {
-            get {
-                return 0
-            }
-            set(value){
-                self.layer.borderWidth = value
-                self.layer.masksToBounds = true
-            }
+extension UIView {
+    // Called computed (Property / Var)
+    @IBInspectable var borderWidth :CGFloat {
+        get {
+            return 0
         }
-        
-        @IBInspectable var cornerRadius :CGFloat {
-            get {
-                return 0
-            }
-            set(value){
-                self.layer.cornerRadius = value
-                self.layer.masksToBounds = true
-            }
-        }
-        
-        @IBInspectable var borderColor :UIColor? {
-            
-            get {
-                return UIColor(cgColor: UIColor.clear.cgColor)
-            }
-            set(value){
-                self.layer.borderColor = value?.cgColor ?? UIColor.clear.cgColor
-                self.layer.masksToBounds = true
-            }
-            
+        set(value){
+            self.layer.borderWidth = value
+            self.layer.masksToBounds = true
         }
     }
+    
+    @IBInspectable var cornerRadius :CGFloat {
+        get {
+            return 0
+        }
+        set(value){
+            self.layer.cornerRadius = value
+            self.layer.masksToBounds = true
+        }
+    }
+    
+    @IBInspectable var borderColor :UIColor? {
+        
+        get {
+            return UIColor(cgColor: UIColor.clear.cgColor)
+        }
+        set(value){
+            self.layer.borderColor = value?.cgColor ?? UIColor.clear.cgColor
+            self.layer.masksToBounds = true
+        }
+        
+    }
+}
 
 
 extension UIView {

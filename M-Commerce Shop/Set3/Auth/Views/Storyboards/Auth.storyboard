@@ -83,6 +83,11 @@
                             <constraint firstItem="XqW-Iy-er0" firstAttribute="trailing" secondItem="Oxh-iL-hcg" secondAttribute="trailing" constant="20" id="l6v-gH-cea"/>
                             <constraint firstItem="sgz-YH-GX0" firstAttribute="centerX" secondItem="Oxh-iL-hcg" secondAttribute="centerX" id="yWi-x8-jhb"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" name="MainColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mbt-jK-0pS" sceneMemberID="firstResponder"/>
@@ -98,6 +103,9 @@
         </namedColor>
         <namedColor name="GreyColor">
             <color red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainColor">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="RedColor">
             <color red="0.93333333333333335" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

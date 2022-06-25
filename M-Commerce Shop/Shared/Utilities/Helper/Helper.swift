@@ -47,35 +47,37 @@ class Helper {
         ProgressHUD.dismiss()
     }
     
-    static func dismissAnimation() {
-        AnimationLottie.splashScreen.stop()
-        AnimationLottie.splashScreen.alpha = 0
-    }
-    
     static func showAnimation() {
         AnimationLottie.splashScreen.play()
         AnimationLottie.splashScreen.loopMode = .loop
         AnimationLottie.splashScreen.animationSpeed = 1
     }
-}
     
-        extension UIViewController {
-            
-            func showVC(storyboardName:String,identifier:String) {
-                let newVC = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(identifier: identifier)
-                navigationController?.show(newVC, sender: self)
-            }
-            
-            func presentVC(vc:UIViewController,animated:Bool) {
-                vc.modalPresentationStyle = .fullScreen
-                    present(vc, animated: animated)
-            }
-            
-            func pushVC(storyboardName:String,identifier:String,animated:Bool) {
-                let newVC = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(identifier: identifier)
-                //presenting accessed viewController
-                navigationController?.pushViewController(newVC, animated: animated)
-                
-            }
+    static func dismissAnimation() {
+        AnimationLottie.splashScreen.stop()
+        AnimationLottie.splashScreen.alpha = 0
     }
-   
+    
+}
+
+
+extension UIViewController {
+    
+    func showVC(storyboardName:String,identifier:String) {
+        let newVC = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(identifier: identifier)
+        navigationController?.show(newVC, sender: self)
+    }
+    
+    func presentVC(vc:UIViewController,animated:Bool) {
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: animated)
+    }
+    
+    func pushVC(storyboardName:String,identifier:String,animated:Bool) {
+        let newVC = UIStoryboard(name: storyboardName, bundle: nil).instantiateViewController(identifier: identifier)
+        //presenting accessed viewController
+        navigationController?.pushViewController(newVC, animated: animated)
+        
+    }
+}
+
