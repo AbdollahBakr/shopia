@@ -13,6 +13,7 @@
 		1421F1702866BE0000E0E1B0 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F16F2866BE0000E0E1B0 /* CartViewController.swift */; };
 		265A94B5585EFCF2A5FB8ADF /* Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529726848BA781C7530847CF /* Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework */; };
 		53716B0B88646274148A6920 /* Pods_M_Commerce_Shop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C029B2DF6C368B53AC8834 /* Pods_M_Commerce_Shop.framework */; };
+		91135CF82867964E0079F360 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91135CF72867964E0079F360 /* SignUpVC.swift */; };
 		E69D21BD4E6C4A2556FAD8D0 /* Pods_M_Commerce_ShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC2F3FD955D80DEEE12124F /* Pods_M_Commerce_ShopTests.framework */; };
 		FA2B6E5C28650E2C00603B78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E5B28650E2C00603B78 /* AppDelegate.swift */; };
 		FA2B6E6028650E2C00603B78 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E5F28650E2C00603B78 /* LoginVC.swift */; };
@@ -61,6 +62,7 @@
 		1712698BB7CA36C117FB73C6 /* Pods-M-Commerce Shop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M-Commerce Shop.release.xcconfig"; path = "Target Support Files/Pods-M-Commerce Shop/Pods-M-Commerce Shop.release.xcconfig"; sourceTree = "<group>"; };
 		529726848BA781C7530847CF /* Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7630968E69C162B1FE325221 /* Pods-M-Commerce Shop-M-Commerce ShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M-Commerce Shop-M-Commerce ShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-M-Commerce Shop-M-Commerce ShopUITests/Pods-M-Commerce Shop-M-Commerce ShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		91135CF72867964E0079F360 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		B7C029B2DF6C368B53AC8834 /* Pods_M_Commerce_Shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_Commerce_Shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFC2F3FD955D80DEEE12124F /* Pods_M_Commerce_ShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_Commerce_ShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FC09C885995F68913F3645 /* Pods-M-Commerce ShopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M-Commerce ShopTests.debug.xcconfig"; path = "Target Support Files/Pods-M-Commerce ShopTests/Pods-M-Commerce ShopTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -459,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				FA2B6E5F28650E2C00603B78 /* LoginVC.swift */,
+				91135CF72867964E0079F360 /* SignUpVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -971,6 +974,7 @@
 				FAAB807928651E4600A3A86A /* CustomColors.swift in Sources */,
 				FA2B6E5C28650E2C00603B78 /* AppDelegate.swift in Sources */,
 				FAAB808528651E5100A3A86A /* Helper.swift in Sources */,
+				91135CF82867964E0079F360 /* SignUpVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
