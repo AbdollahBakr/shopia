@@ -25,7 +25,11 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
+<<<<<<< HEAD
 	<string>Home</string>
+=======
+	<string>Cart</string>
+>>>>>>> 87775e0be17311831f7974dad9c8223468ae5115
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
