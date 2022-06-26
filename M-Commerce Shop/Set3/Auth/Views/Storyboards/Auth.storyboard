@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fmB-b8-ndy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="byz-ha-FP0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -148,10 +148,6 @@
                                                         <color key="value" name="BlueColor"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="firstNameTextField:" destination="wCt-i7-nKC" eventType="editingDidEnd" id="FH4-zt-TRZ"/>
-                                                    <action selector="firstNameTextField:" destination="byz-ha-FP0" eventType="editingDidEnd" id="mZQ-xl-Jya"/>
-                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsk-sv-IcQ">
                                                 <rect key="frame" x="20" y="20" width="126" height="21"/>
@@ -185,10 +181,6 @@
                                                         <color key="value" name="BlueColor"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="lastNameTextField:" destination="byz-ha-FP0" eventType="editingDidEnd" id="JhO-cT-B84"/>
-                                                    <action selector="lastNameTextField:" destination="wCt-i7-nKC" eventType="editingDidEnd" id="sqZ-HL-1c8"/>
-                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCP-q5-owO">
                                                 <rect key="frame" x="20" y="20" width="126" height="21"/>
@@ -222,10 +214,6 @@
                                                         <color key="value" name="BlueColor"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="emailTextField:" destination="byz-ha-FP0" eventType="editingDidEnd" id="qUu-Qv-mDY"/>
-                                                    <action selector="emailTextField:" destination="wCt-i7-nKC" eventType="editingDidEnd" id="ynU-Uk-0wn"/>
-                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtM-jg-c0p">
                                                 <rect key="frame" x="20" y="20" width="126" height="21"/>
@@ -259,9 +247,6 @@
                                                         <color key="value" name="BlueColor"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="passwordTextField:" destination="byz-ha-FP0" eventType="editingDidEnd" id="DZS-Qa-NEE"/>
-                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iz0-hO-et7">
                                                 <rect key="frame" x="20" y="20" width="126" height="21"/>
@@ -350,6 +335,12 @@
                             <constraint firstItem="I0j-ns-UsK" firstAttribute="top" secondItem="kzO-R8-vJS" secondAttribute="top" constant="5" id="lSy-Ez-C4o"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="a4u-Fc-E5A" id="5cU-eK-JbP"/>
+                        <outlet property="firstNameTextField" destination="eoE-mM-vZ0" id="KZI-i1-BKm"/>
+                        <outlet property="lastNameTextField" destination="vey-sw-xbg" id="cIb-tQ-YZ9"/>
+                        <outlet property="passwordTextField" destination="7t0-1B-DGm" id="Ams-Hk-klv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afe-p9-Bbu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="wCt-i7-nKC" userLabel="Exit" sceneMemberID="exit"/>
@@ -438,9 +429,6 @@
                                                         <color key="value" name="BlueColor"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="passwordTextField:" destination="byz-ha-FP0" eventType="editingDidEnd" id="MaV-Ha-yut"/>
-                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAs-uo-BvD">
                                                 <rect key="frame" x="20" y="6" width="73.5" height="20.5"/>

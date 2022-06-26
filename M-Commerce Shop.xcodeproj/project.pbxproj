@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1421F16A2866BBF100E0E1B0 /* Cart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1421F1692866BBF100E0E1B0 /* Cart.storyboard */; };
 		1421F16D2866BC5C00E0E1B0 /* CartItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F16B2866BC5C00E0E1B0 /* CartItemCollectionViewCell.swift */; };
-		1421F16E2866BC5C00E0E1B0 /* CartItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1421F16C2866BC5C00E0E1B0 /* CartItemCollectionViewCell.xib */; };
 		1421F1702866BE0000E0E1B0 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F16F2866BE0000E0E1B0 /* CartViewController.swift */; };
 		265A94B5585EFCF2A5FB8ADF /* Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529726848BA781C7530847CF /* Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework */; };
 		53716B0B88646274148A6920 /* Pods_M_Commerce_Shop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C029B2DF6C368B53AC8834 /* Pods_M_Commerce_Shop.framework */; };
 		91135CF82867964E0079F360 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91135CF72867964E0079F360 /* SignUpVC.swift */; };
+		9192FAF72868EC3E0082FBB8 /* CurrentAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9192FAF62868EC3E0082FBB8 /* CurrentAccount.swift */; };
+		91E4329728686275007E0353 /* SignupUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4329628686275007E0353 /* SignupUserData.swift */; };
+		91E4329928686E02007E0353 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4329828686E02007E0353 /* AuthViewModel.swift */; };
 		E69D21BD4E6C4A2556FAD8D0 /* Pods_M_Commerce_ShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC2F3FD955D80DEEE12124F /* Pods_M_Commerce_ShopTests.framework */; };
 		FA2B6E5C28650E2C00603B78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E5B28650E2C00603B78 /* AppDelegate.swift */; };
 		FA2B6E6028650E2C00603B78 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E5F28650E2C00603B78 /* LoginVC.swift */; };
@@ -67,6 +68,9 @@
 		529726848BA781C7530847CF /* Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7630968E69C162B1FE325221 /* Pods-M-Commerce Shop-M-Commerce ShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M-Commerce Shop-M-Commerce ShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-M-Commerce Shop-M-Commerce ShopUITests/Pods-M-Commerce Shop-M-Commerce ShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		91135CF72867964E0079F360 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		9192FAF62868EC3E0082FBB8 /* CurrentAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAccount.swift; sourceTree = "<group>"; };
+		91E4329628686275007E0353 /* SignupUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserData.swift; sourceTree = "<group>"; };
+		91E4329828686E02007E0353 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		B7C029B2DF6C368B53AC8834 /* Pods_M_Commerce_Shop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_Commerce_Shop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFC2F3FD955D80DEEE12124F /* Pods_M_Commerce_ShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_Commerce_ShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FC09C885995F68913F3645 /* Pods-M-Commerce ShopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M-Commerce ShopTests.debug.xcconfig"; path = "Target Support Files/Pods-M-Commerce ShopTests/Pods-M-Commerce ShopTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 		9113D48228674A340090A200 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				91E4329628686275007E0353 /* SignupUserData.swift */,
+				9192FAF62868EC3E0082FBB8 /* CurrentAccount.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,6 +173,7 @@
 		9113D48528674AAE0090A200 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				91E4329828686E02007E0353 /* AuthViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -842,7 +849,6 @@
 				FAAB80BF28652AE700A3A86A /* NoConnectionVC.xib in Resources */,
 				FA2B6E6B28650E2E00603B78 /* LaunchScreen.storyboard in Resources */,
 				FA890EB52865EAB900063FD2 /* TabBar.storyboard in Resources */,
-
 				FA2B6E6828650E2E00603B78 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -976,6 +982,7 @@
 				FAAB808128651E4D00A3A86A /* Constants.swift in Sources */,
 				FAAB806028651C6E00A3A86A /* ArraysManager.swift in Sources */,
 				FA890EB02865E8D200063FD2 /* HomeViewModel.swift in Sources */,
+				9192FAF72868EC3E0082FBB8 /* CurrentAccount.swift in Sources */,
 				FAAB806828651CD300A3A86A /* CoreDataModel.swift in Sources */,
 				FA2B6E6628650E2C00603B78 /* M_Commerce_Shop.xcdatamodeld in Sources */,
 				FA2B6E6028650E2C00603B78 /* LoginVC.swift in Sources */,
@@ -985,6 +992,8 @@
 				FA890EA82865E57200063FD2 /* Leagues.swift in Sources */,
 				FAAB80BB28652AD400A3A86A /* NoConnectionVC.swift in Sources */,
 				FAAB804E2865145A00A3A86A /* AnimationLottie.swift in Sources */,
+				91E4329728686275007E0353 /* SignupUserData.swift in Sources */,
+				91E4329928686E02007E0353 /* AuthViewModel.swift in Sources */,
 				1421F1702866BE0000E0E1B0 /* CartViewController.swift in Sources */,
 				FAAB807928651E4600A3A86A /* CustomColors.swift in Sources */,
 				FA2B6E5C28650E2C00603B78 /* AppDelegate.swift in Sources */,

@@ -34,10 +34,10 @@ class NetworkManager {
         
         //Base URL
         static let base = "https://fde429753a207f610321a557c2e0ceb0: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@menofia-2022-q3.myshopify.com/admin/api/2022-04"
-        
+    
     
         // Paths Cases
-        case authLogin
+        case authSignup
         
         
         /******* Change These Pathes With Our Needs ******/
@@ -46,8 +46,8 @@ class NetworkManager {
             
             switch self {
             
-            case .authLogin:
-                return EndPoints.base + "/api/v1/json/2/all_sports.php"
+            case .authSignup:
+                return EndPoints.base + "/customers.json"
                 
           
             }
@@ -101,12 +101,14 @@ class NetworkManager {
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        
         // Header
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+       // request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
         request.httpBody = try! JSONEncoder().encode(body)
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+         let task = URLSession.shared.dataTask(with: request) {
+            data, response, error in
             if let _ = error {
                 completion(nil,error)
                 return
@@ -135,7 +137,7 @@ class NetworkManager {
                     completion(nil, error)
                 }
             }
-        }
+         }
         task.resume()
     }
 
@@ -163,14 +165,14 @@ class NetworkManager {
      func fbLogin(completion: @escaping(Bool, Error?)  -> Void) {
 
         let body = CoreDataModel(strLeague: "s", strBadge: "ss", strYoutube: "ss", idLeague: "ss")
-        
-        taskForPOSTRequest(url: EndPoints.authLogin.url, responseType: Leagues.self, body: body) { (response, error) in
-            
+
+        taskForPOSTRequest(url: EndPoints.authSignup.url, responseType: Leagues.self, body: body) { (response, error) in
+
             if let response = response {
-                
+
                 Auth.accessToken = response.id
                 Auth.refreshToken = response.id
-            
+
                 completion(true, nil)
                 print(response)
             } else {
