@@ -84,6 +84,11 @@
                             <constraint firstItem="XqW-Iy-er0" firstAttribute="trailing" secondItem="Oxh-iL-hcg" secondAttribute="trailing" constant="20" id="l6v-gH-cea"/>
                             <constraint firstItem="sgz-YH-GX0" firstAttribute="centerX" secondItem="Oxh-iL-hcg" secondAttribute="centerX" id="yWi-x8-jhb"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" name="MainColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mbt-jK-0pS" sceneMemberID="firstResponder"/>
