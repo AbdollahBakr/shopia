@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Me View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="MeViewController" customModule="M_Commerce_Shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21q-LM-sqw">
+                                <rect key="frame" x="20" y="144" width="374" height="32"/>
+                                <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRr-HS-bhq" customClass="CircleButtonShadowView" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                <rect key="frame" x="278" y="84" width="48" height="48"/>
+                                <color key="backgroundColor" name="MainColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="bcX-Cg-01o"/>
+                                    <constraint firstAttribute="width" secondItem="gRr-HS-bhq" secondAttribute="height" id="wuV-7u-4YI"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="cart.fill" catalog="system"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cF5-yD-oq6" customClass="CircleButtonShadowView" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                <rect key="frame" x="338" y="84" width="48" height="48"/>
+                                <color key="backgroundColor" name="MainColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="ONn-Yx-Pns"/>
+                                    <constraint firstAttribute="width" secondItem="cF5-yD-oq6" secondAttribute="height" id="fzn-tC-uiL"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="gearshape.fill" catalog="system"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huU-gi-VZE">
+                                <rect key="frame" x="20" y="188" width="374" height="25"/>
+                                <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oKQ-Fe-bBn">
+                                <rect key="frame" x="0.0" y="213" width="414" height="224"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAr-hK-5GD" customClass="RoundedShadowView" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="394" height="97"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nPG-wt-QlV">
+                                                <rect key="frame" x="20" y="0.0" width="354" height="97"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eja-zl-egF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="48.5"/>
+                                                        <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6a-rZ-rlR">
+                                                        <rect key="frame" x="0.0" y="48.5" width="354" height="48.5"/>
+                                                        <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="nPG-wt-QlV" secondAttribute="trailing" constant="20" id="XZA-o2-Yg0"/>
+                                            <constraint firstItem="nPG-wt-QlV" firstAttribute="top" secondItem="EAr-hK-5GD" secondAttribute="top" id="aex-Cq-yMh"/>
+                                            <constraint firstAttribute="bottom" secondItem="nPG-wt-QlV" secondAttribute="bottom" id="fyM-ay-g65"/>
+                                            <constraint firstItem="nPG-wt-QlV" firstAttribute="leading" secondItem="EAr-hK-5GD" secondAttribute="leading" constant="20" id="ulp-Kq-eNG"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fLE-Ma-ZHF" customClass="RoundedShadowView" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="117" width="394" height="97"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WgA-Xj-azT">
+                                                <rect key="frame" x="20" y="0.0" width="354" height="97"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="k6j-9d-iQp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="354" height="48.5"/>
+                                                        <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vly-kF-VG9">
+                                                        <rect key="frame" x="0.0" y="48.5" width="354" height="48.5"/>
+                                                        <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="WgA-Xj-azT" secondAttribute="trailing" constant="20" id="QLr-5c-tG2"/>
+                                            <constraint firstItem="WgA-Xj-azT" firstAttribute="leading" secondItem="fLE-Ma-ZHF" secondAttribute="leading" constant="20" id="b84-hJ-8Wl"/>
+                                            <constraint firstItem="WgA-Xj-azT" firstAttribute="top" secondItem="fLE-Ma-ZHF" secondAttribute="top" id="eGB-4K-7I4"/>
+                                            <constraint firstAttribute="bottom" secondItem="WgA-Xj-azT" secondAttribute="bottom" id="w8W-xj-0nB"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="10" leading="10" bottom="10" trailing="10"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wishlist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFB-od-7Hk">
+                                <rect key="frame" x="20" y="567.5" width="414" height="25"/>
+                                <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ivX-Js-J1r">
+                                <rect key="frame" x="0.0" y="592.5" width="414" height="149.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hFU-HV-IKQ">
+                                        <rect key="frame" x="10" y="11" width="98.5" height="127"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MxN-ax-8tR">
+                                        <rect key="frame" x="108.5" y="11" width="98.5" height="127"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="N9G-Ta-Eye">
+                                        <rect key="frame" x="207" y="11" width="98.5" height="127"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wKZ-PV-B1V">
+                                        <rect key="frame" x="305.5" y="11" width="98.5" height="127"/>
+                                    </imageView>
+                                </subviews>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="10" leading="10" bottom="10" trailing="10"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Up-4O-oPz" customClass="RoundedButton" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                <rect key="frame" x="274" y="742" width="120" height="32"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="aFq-vG-M1W"/>
+                                    <constraint firstAttribute="width" constant="120" id="qd4-zA-NEK"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="View More">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftc-gc-4HO" customClass="RoundedButton" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                <rect key="frame" x="274" y="449" width="120" height="32"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="XCz-VT-xpU"/>
+                                    <constraint firstAttribute="height" constant="32" id="wQW-eW-nj6"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="View More">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="huU-gi-VZE" firstAttribute="top" secondItem="21q-LM-sqw" secondAttribute="bottom" constant="12" id="0Yu-hW-lBE"/>
+                            <constraint firstItem="cF5-yD-oq6" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="0b6-Vc-Qal"/>
+                            <constraint firstItem="cF5-yD-oq6" firstAttribute="leading" secondItem="gRr-HS-bhq" secondAttribute="trailing" constant="12" id="1Kn-KN-lhf"/>
+                            <constraint firstItem="6Up-4O-oPz" firstAttribute="top" secondItem="ivX-Js-J1r" secondAttribute="bottom" id="2Yi-DV-1bA"/>
+                            <constraint firstItem="21q-LM-sqw" firstAttribute="top" secondItem="gRr-HS-bhq" secondAttribute="bottom" constant="12" id="8pN-pv-2wW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ivX-Js-J1r" secondAttribute="trailing" id="8sU-RU-mGX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ftc-gc-4HO" secondAttribute="trailing" constant="20" id="Arz-ES-DGC"/>
+                            <constraint firstItem="gRr-HS-bhq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="DlP-uR-cYt"/>
+                            <constraint firstItem="ivX-Js-J1r" firstAttribute="top" secondItem="gFB-od-7Hk" secondAttribute="bottom" id="GDi-vw-Ucy"/>
+                            <constraint firstItem="gFB-od-7Hk" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="20" id="JKR-F6-Pay"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6Up-4O-oPz" secondAttribute="trailing" constant="20" id="M9s-js-om4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oKQ-Fe-bBn" secondAttribute="trailing" id="RIq-49-f0y"/>
+                            <constraint firstItem="oKQ-Fe-bBn" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="1:4" id="ZJ1-dV-UIX"/>
+                            <constraint firstItem="ivX-Js-J1r" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="1:6" id="avh-Og-uyq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="21q-LM-sqw" secondAttribute="trailing" constant="20" id="elV-em-OtE"/>
+                            <constraint firstItem="ivX-Js-J1r" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fHK-8G-PaM"/>
+                            <constraint firstItem="21q-LM-sqw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="gQz-4A-B8q"/>
+                            <constraint firstItem="gFB-od-7Hk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="hpy-0Y-TQ1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cF5-yD-oq6" secondAttribute="trailing" constant="28" id="kb3-um-GjF"/>
+                            <constraint firstItem="oKQ-Fe-bBn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="rYR-Cj-oHo"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ivX-Js-J1r" secondAttribute="bottom" constant="120" id="sjZ-4c-it0"/>
+                            <constraint firstItem="huU-gi-VZE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="wql-ni-rzT"/>
+                            <constraint firstItem="Ftc-gc-4HO" firstAttribute="top" secondItem="oKQ-Fe-bBn" secondAttribute="bottom" constant="12" id="wuo-zu-aHf"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="huU-gi-VZE" secondAttribute="trailing" constant="20" id="xT5-1X-9x6"/>
+                            <constraint firstItem="oKQ-Fe-bBn" firstAttribute="top" secondItem="huU-gi-VZE" secondAttribute="bottom" id="xZU-NK-5dP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cartButton" destination="gRr-HS-bhq" id="WD6-og-KFZ"/>
+                        <outlet property="settingsButton" destination="cF5-yD-oq6" id="cN1-Zg-jX6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-94.20289855072464" y="60.9375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="heart.square.fill" catalog="system" width="128" height="114"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainColor">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
