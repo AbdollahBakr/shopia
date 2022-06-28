@@ -10,9 +10,11 @@ import Foundation
 class SettingsViewModel {
     
     static var settingsCells: [SettingsCell] = [
-        SettingsCell(settingOption: "Address", settingValue: "Cairo"),
-        SettingsCell(settingOption: "Currency", settingValue: "EGP"),
-        SettingsCell(settingOption: "Contact us", settingValue: nil),
-        SettingsCell(settingOption: "About us", settingValue: nil)
+        SettingsCell(settingOption: .address, settingValue: "Cairo"),
+        SettingsCell(settingOption: .currency, settingValue: "EGP"),
+        SettingsCell(settingOption: .contactUs, settingValue: nil),
+        SettingsCell(settingOption: .aboutUs, settingValue: nil)
     ]
+    
 }
+

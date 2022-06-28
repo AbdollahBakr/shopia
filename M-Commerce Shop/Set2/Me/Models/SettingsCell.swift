@@ -8,6 +8,14 @@
 import Foundation
 
 struct SettingsCell {
-    var settingOption: String
+    var settingOption: Setting
     var settingValue: String?
+}
+
+
+enum Setting: String {
+    case address = "Address"
+    case currency = "Currency"
+    case contactUs = "Contact us"
+    case aboutUs = "About us"
 }
