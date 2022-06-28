@@ -163,7 +163,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="REw-bh-M1d">
-                                <rect key="frame" x="0.0" y="204" width="414" height="470"/>
+                                <rect key="frame" x="0.0" y="204" width="406" height="470"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fPz-dq-aOu">
                                     <size key="itemSize" width="128" height="128"/>
@@ -188,7 +188,7 @@
                         <constraints>
                             <constraint firstItem="REw-bh-M1d" firstAttribute="top" secondItem="N2S-De-MZw" secondAttribute="bottom" id="0uV-3c-FG0"/>
                             <constraint firstItem="N2S-De-MZw" firstAttribute="top" secondItem="kST-a6-wFO" secondAttribute="bottom" constant="40" id="260-Ff-yP4"/>
-                            <constraint firstItem="U0e-8F-U4q" firstAttribute="trailing" secondItem="REw-bh-M1d" secondAttribute="trailing" id="4Yh-Bv-1jQ"/>
+                            <constraint firstItem="U0e-8F-U4q" firstAttribute="trailing" secondItem="REw-bh-M1d" secondAttribute="trailing" constant="8" id="4Yh-Bv-1jQ"/>
                             <constraint firstItem="REw-bh-M1d" firstAttribute="leading" secondItem="U0e-8F-U4q" secondAttribute="leading" id="5MZ-Hf-QD1"/>
                             <constraint firstItem="U0e-8F-U4q" firstAttribute="bottom" secondItem="FMQ-ny-fw2" secondAttribute="bottom" constant="120" id="7OS-E6-dEZ"/>
                             <constraint firstItem="U0e-8F-U4q" firstAttribute="trailing" secondItem="N2S-De-MZw" secondAttribute="trailing" constant="20" id="HdX-1J-pQq"/>
@@ -200,6 +200,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressesCollectionView" destination="REw-bh-M1d" id="cYq-e0-jVB"/>
                         <outlet property="backButton" destination="kST-a6-wFO" id="bzs-Ig-alZ"/>
                     </connections>
                 </viewController>
