@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsTableView: UITableView!
     @IBOutlet weak var backButton: CircleButtonShadowView!
     
-    var settingsRows = [String:String]()
+    var viewModel: SettingsViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class SettingsViewController: UIViewController {
 //        settingsTableView.cornerRadius = 10
         backButton.setTitle("", for: .normal)
         
-        settingsRows = ["Address":"Cairo", "Currency": "EGP", "Contact us": "", "About us": ""]
+        viewModel = SettingsViewModel()
     }
     
 
@@ -42,7 +42,7 @@ class SettingsViewController: UIViewController {
 // TableView Delegate & DataSource
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return settingsRows.count
+        return SettingsViewModel.settingsCells.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,7 +50,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "SettingsTableViewCell")
  
         // Configure settings cells
-        cell.textLabel?.text = SettingsViewModel.settingsCells[indexPath.row].settingOption
+        cell.textLabel?.text = SettingsViewModel.settingsCells[indexPath.row].settingOption.rawValue
         cell.detailTextLabel?.text = SettingsViewModel.settingsCells[indexPath.row].settingValue
         cell.accessoryType = .disclosureIndicator
         
@@ -58,17 +58,25 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
+
+        
         switch SettingsViewModel.settingsCells[indexPath.row].settingOption {
-        case "Address":
+        case .address:
             guard let addressesVC = storyboard?.instantiateViewController(withIdentifier: "AddressesViewController") else { return }
             presentVC(vc: addressesVC, animated: true)
             
-        case "Currency":
+        case .currency:
             // Change currency
             changeCurrency(settingsCellLocation: indexPath.row)
-        default:
-            print("No View controllers to present")
+        
+        case .contactUs:
+            guard let contactUsVC = storyboard?.instantiateViewController(withIdentifier: "ContactUs") else { return }
+            present(contactUsVC, animated: true)
+        
+        case .aboutUs:
+            guard let aboutUsVC = storyboard?.instantiateViewController(withIdentifier: "AboutUs") else { return }
+            present(aboutUsVC, animated: true)
+
         }
     }
     
