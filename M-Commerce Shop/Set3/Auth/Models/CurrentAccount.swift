@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct CurrentAccount : Codable{
+struct Customers : Codable{
     
-    var customer : CustomerResponse
+    var customers : [Customer]
 
 }
 
-struct CustomerResponse : Codable{
+struct Customer : Codable{
     var id                      : Int?
     var email                   : String?
     var first_name              : String?

@@ -8,12 +8,12 @@
 import Foundation
 
 struct SignupUserData : Codable {
-    var customer : Customer
-  
+    var customer : CustomerModel
+    
 }
 
 
-struct Customer : Codable{
+struct CustomerModel : Codable{
     var email                   : String
     var first_name              : String
     var last_name               : String

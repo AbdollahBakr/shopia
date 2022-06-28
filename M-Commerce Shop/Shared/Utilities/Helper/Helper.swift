@@ -26,6 +26,8 @@ class Helper {
            view.iconLabel?.isHidden = true
            view.titleLabel?.isHidden = true
            view.bodyLabel?.text = message
+           view.bodyLabel?.textAlignment = .center
+           view.bodyLabel?.font = UIFont.systemFont(ofSize: 22.0)
            view.titleLabel?.textColor = UIColor.white
            view.bodyLabel?.textColor = UIColor.white
            view.button?.isHidden = true

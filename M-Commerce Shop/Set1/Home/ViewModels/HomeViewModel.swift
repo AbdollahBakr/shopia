@@ -9,21 +9,21 @@ import Foundation
 
 class HomeViewModel {
     
-    func potAllData() {
-        
-        NetworkManager.shared.fbLogin { (success, error) in
-            if error == nil {
-                //success
-                print(success)
-            }else {
-                
-                //err
-                guard let err = error else {
-                    return
-                }
-                
-                print(err)
-            }
-        }
-    }
+//    func potAllData() {
+//
+//        NetworkManager.shared.fbLogin { (success, error) in
+//            if error == nil {
+//                //success
+//                print(success)
+//            }else {
+//
+//                //err
+//                guard let err = error else {
+//                    return
+//                }
+//
+//                print(err)
+//            }
+//        }
+//    }
 }

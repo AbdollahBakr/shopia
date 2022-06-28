@@ -12,6 +12,7 @@
 		265A94B5585EFCF2A5FB8ADF /* Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529726848BA781C7530847CF /* Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework */; };
 		53716B0B88646274148A6920 /* Pods_M_Commerce_Shop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C029B2DF6C368B53AC8834 /* Pods_M_Commerce_Shop.framework */; };
 		91135CF82867964E0079F360 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91135CF72867964E0079F360 /* SignUpVC.swift */; };
+		917B410A2869B0DB00CF3F99 /* SignupError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917B41092869B0DA00CF3F99 /* SignupError.swift */; };
 		9192FAF72868EC3E0082FBB8 /* CurrentAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9192FAF62868EC3E0082FBB8 /* CurrentAccount.swift */; };
 		91E4329728686275007E0353 /* SignupUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4329628686275007E0353 /* SignupUserData.swift */; };
 		91E4329928686E02007E0353 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4329828686E02007E0353 /* AuthViewModel.swift */; };
@@ -68,6 +69,7 @@
 		529726848BA781C7530847CF /* Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7630968E69C162B1FE325221 /* Pods-M-Commerce Shop-M-Commerce ShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M-Commerce Shop-M-Commerce ShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-M-Commerce Shop-M-Commerce ShopUITests/Pods-M-Commerce Shop-M-Commerce ShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		91135CF72867964E0079F360 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		917B41092869B0DA00CF3F99 /* SignupError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupError.swift; sourceTree = "<group>"; };
 		9192FAF62868EC3E0082FBB8 /* CurrentAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAccount.swift; sourceTree = "<group>"; };
 		91E4329628686275007E0353 /* SignupUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserData.swift; sourceTree = "<group>"; };
 		91E4329828686E02007E0353 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				91E4329628686275007E0353 /* SignupUserData.swift */,
 				9192FAF62868EC3E0082FBB8 /* CurrentAccount.swift */,
+				917B41092869B0DA00CF3F99 /* SignupError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -994,6 +997,7 @@
 				FAAB804E2865145A00A3A86A /* AnimationLottie.swift in Sources */,
 				91E4329728686275007E0353 /* SignupUserData.swift in Sources */,
 				91E4329928686E02007E0353 /* AuthViewModel.swift in Sources */,
+				917B410A2869B0DB00CF3F99 /* SignupError.swift in Sources */,
 				1421F1702866BE0000E0E1B0 /* CartViewController.swift in Sources */,
 				FAAB807928651E4600A3A86A /* CustomColors.swift in Sources */,
 				FA2B6E5C28650E2C00603B78 /* AppDelegate.swift in Sources */,

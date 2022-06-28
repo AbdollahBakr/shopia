@@ -16,17 +16,31 @@ class AuthViewModel {
         self.networkservice = networkservice
     }
     
-    func createUser (signupUserData: SignupUserData) {
-      let url = NetworkManager.EndPoints.authSignup.url
-        
-        let cutomer = Customer(email: "Mempbob.example.com", first_name: "Memp", last_name: "Memp", multipass_identifier: "Memp", send_email_invite: true)
-        let signupAccount = SignupUserData(customer: cutomer)
-        networkservice.taskForPOSTRequest(url: url, responseType: CurrentAccount.self, body: signupAccount) { currentAccount, error in
-            print(currentAccount)
-            if currentAccount != nil {
-                print(currentAccount!)
-            }
+    func createUser (customer: CustomerModel, completionHnadler: @escaping ([String:Any]? , SignupError?) -> Void) {
+        networkservice.signupUser(first_name: customer.first_name, last_name: customer.last_name, email: customer.email, password: customer.multipass_identifier) { (json, signupError)  in
+            print(json as Any)
+            completionHnadler(json, signupError)
         }
-        
+    }
+    
+    
+    func loginUser(currentCustomer: Customer, completionHandler: @escaping (Customer?) -> Void){
+        networkservice.getUser { customers, error in
+            guard let customers = customers else {
+                return
+            }
+            var customerExisted : Customer?
+            customers.forEach({ customer in
+                if currentCustomer.email == customer.email && currentCustomer.multipass_identifier == customer.multipass_identifier{
+                    customerExisted = customer
+                    return
+                }
+            })
+            guard let customerExisted = customerExisted else {
+                completionHandler(nil)
+                return 
+            }
+            completionHandler(customerExisted)
+        }
     }
 }
