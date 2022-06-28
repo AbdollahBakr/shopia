@@ -17,6 +17,7 @@
 		142C2BA8286AE549001CEFBB /* AddressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2BA6286AE549001CEFBB /* AddressCollectionViewCell.swift */; };
 		142C2BA9286AE549001CEFBB /* AddressCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142C2BA7286AE549001CEFBB /* AddressCollectionViewCell.xib */; };
 		142C2BAB286AFA04001CEFBB /* AddNewAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2BAA286AFA04001CEFBB /* AddNewAddressViewController.swift */; };
+		1437833B286B752E000D3BFF /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437833A286B752E000D3BFF /* EditAddressViewController.swift */; };
 		14707610286A50EB00969B81 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1470760F286A50EB00969B81 /* Me.storyboard */; };
 		14707613286A5A7900969B81 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14707612286A5A7900969B81 /* MeViewController.swift */; };
 		14707615286A6F1C00969B81 /* GuestMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14707614286A6F1C00969B81 /* GuestMeViewController.swift */; };
@@ -80,6 +81,7 @@
 		142C2BA6286AE549001CEFBB /* AddressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCollectionViewCell.swift; sourceTree = "<group>"; };
 		142C2BA7286AE549001CEFBB /* AddressCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressCollectionViewCell.xib; sourceTree = "<group>"; };
 		142C2BAA286AFA04001CEFBB /* AddNewAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAddressViewController.swift; sourceTree = "<group>"; };
+		1437833A286B752E000D3BFF /* EditAddressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressViewController.swift; sourceTree = "<group>"; };
 		1470760F286A50EB00969B81 /* Me.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		14707612286A5A7900969B81 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		14707614286A6F1C00969B81 /* GuestMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestMeViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				142C2B96286A9AAD001CEFBB /* SettingsViewController.swift */,
 				142C2BA3286AD212001CEFBB /* AddressesViewController.swift */,
 				142C2BAA286AFA04001CEFBB /* AddNewAddressViewController.swift */,
+				1437833A286B752E000D3BFF /* EditAddressViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1077,6 +1080,7 @@
 				14707613286A5A7900969B81 /* MeViewController.swift in Sources */,
 				FAAB805628651AB400A3A86A /* NetworkManager.swift in Sources */,
 				FA890EA82865E57200063FD2 /* Leagues.swift in Sources */,
+				1437833B286B752E000D3BFF /* EditAddressViewController.swift in Sources */,
 				142C2B97286A9AAD001CEFBB /* SettingsViewController.swift in Sources */,
 				FAAB80BB28652AD400A3A86A /* NoConnectionVC.swift in Sources */,
 				FAAB804E2865145A00A3A86A /* AnimationLottie.swift in Sources */,

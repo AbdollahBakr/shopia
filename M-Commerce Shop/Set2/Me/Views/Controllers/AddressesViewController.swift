@@ -68,5 +68,8 @@ extension AddressesViewController: UICollectionViewDelegate, UICollectionViewDat
         return CGSize(width: width, height: height)
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let editAddressesVC = storyboard?.instantiateViewController(withIdentifier: "EditAddressViewController") else { return }
+        presentVC(vc: editAddressesVC, animated: true)
+    }
 }
