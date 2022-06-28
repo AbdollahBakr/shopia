@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1421F16D2866BC5C00E0E1B0 /* CartItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F16B2866BC5C00E0E1B0 /* CartItemCollectionViewCell.swift */; };
 		1421F1702866BE0000E0E1B0 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F16F2866BE0000E0E1B0 /* CartViewController.swift */; };
+		142C2B95286A98E0001CEFBB /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142C2B94286A98E0001CEFBB /* Settings.storyboard */; };
+		142C2B97286A9AAD001CEFBB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2B96286A9AAD001CEFBB /* SettingsViewController.swift */; };
 		14707610286A50EB00969B81 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1470760F286A50EB00969B81 /* Me.storyboard */; };
 		14707613286A5A7900969B81 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14707612286A5A7900969B81 /* MeViewController.swift */; };
 		14707615286A6F1C00969B81 /* GuestMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14707614286A6F1C00969B81 /* GuestMeViewController.swift */; };
@@ -64,6 +66,8 @@
 		1421F16B2866BC5C00E0E1B0 /* CartItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartItemCollectionViewCell.swift; path = "M-Commerce Shop/Set2/Cart/Views/Cells/CartItemCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
 		1421F16C2866BC5C00E0E1B0 /* CartItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CartItemCollectionViewCell.xib; path = "M-Commerce Shop/Set2/Cart/Views/Cells/CartItemCollectionViewCell.xib"; sourceTree = SOURCE_ROOT; };
 		1421F16F2866BE0000E0E1B0 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartViewController.swift; path = "M-Commerce Shop/Set2/Cart/Views/Controllers/CartViewController.swift"; sourceTree = SOURCE_ROOT; };
+		142C2B94286A98E0001CEFBB /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		142C2B96286A9AAD001CEFBB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1470760F286A50EB00969B81 /* Me.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		14707612286A5A7900969B81 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		14707614286A6F1C00969B81 /* GuestMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestMeViewController.swift; sourceTree = "<group>"; };
@@ -138,9 +142,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		142C2B98286AB945001CEFBB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		1470760C286A50C300969B81 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				142C2B98286AB945001CEFBB /* Models */,
 				1470760D286A50CF00969B81 /* Views */,
 			);
 			path = Me;
@@ -159,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				1470760F286A50EB00969B81 /* Me.storyboard */,
+				142C2B94286A98E0001CEFBB /* Settings.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -168,6 +181,7 @@
 			children = (
 				14707612286A5A7900969B81 /* MeViewController.swift */,
 				14707614286A6F1C00969B81 /* GuestMeViewController.swift */,
+				142C2B96286A9AAD001CEFBB /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -879,6 +893,7 @@
 				FAAB80292865122B00A3A86A /* Auth.storyboard in Resources */,
 				FA890EA32865E09B00063FD2 /* Home.storyboard in Resources */,
 				FAAB80BF28652AE700A3A86A /* NoConnectionVC.xib in Resources */,
+				142C2B95286A98E0001CEFBB /* Settings.storyboard in Resources */,
 				FA2B6E6B28650E2E00603B78 /* LaunchScreen.storyboard in Resources */,
 				FA890EB52865EAB900063FD2 /* TabBar.storyboard in Resources */,
 				14707610286A50EB00969B81 /* Me.storyboard in Resources */,
@@ -1023,6 +1038,7 @@
 				14707613286A5A7900969B81 /* MeViewController.swift in Sources */,
 				FAAB805628651AB400A3A86A /* NetworkManager.swift in Sources */,
 				FA890EA82865E57200063FD2 /* Leagues.swift in Sources */,
+				142C2B97286A9AAD001CEFBB /* SettingsViewController.swift in Sources */,
 				FAAB80BB28652AD400A3A86A /* NoConnectionVC.swift in Sources */,
 				FAAB804E2865145A00A3A86A /* AnimationLottie.swift in Sources */,
 				1421F1702866BE0000E0E1B0 /* CartViewController.swift in Sources */,
