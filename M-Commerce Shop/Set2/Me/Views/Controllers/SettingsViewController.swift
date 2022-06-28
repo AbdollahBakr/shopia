@@ -39,6 +39,7 @@ class SettingsViewController: UIViewController {
 
 }
 
+// TableView Delegate & DataSource
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settingsRows.count
@@ -57,15 +58,58 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(SettingsViewModel.settingsCells[indexPath.row].settingOption)
-        
+    
         switch SettingsViewModel.settingsCells[indexPath.row].settingOption {
         case "Address":
             guard let addressesVC = storyboard?.instantiateViewController(withIdentifier: "AddressesViewController") else { return }
             presentVC(vc: addressesVC, animated: true)
+            
+        case "Currency":
+            // Change currency
+            changeCurrency(settingsCellLocation: indexPath.row)
         default:
             print("No View controllers to present")
         }
     }
     
+    
+    // ActionSheet for changing currency
+    func changeCurrency(settingsCellLocation: Int) {
+        let alert: UIAlertController = UIAlertController(title: "Currency",
+                                                         message: "Please select a currency",
+                                                         preferredStyle: .actionSheet)
+        // Set currency to EGP
+        alert.addAction(UIAlertAction(title: "EGP", style: .default,
+                                      handler: { action in
+            Helper.hudProgress()
+            SettingsViewModel.settingsCells[settingsCellLocation].settingValue = "EGP"
+            self.settingsTableView.reloadData()
+            Helper.dismissHud()
+        }))
+        
+        // Set currency to USD
+        alert.addAction(UIAlertAction(title: "USD", style: .default,
+                                      handler: { action in
+            Helper.hudProgress()
+            SettingsViewModel.settingsCells[settingsCellLocation].settingValue = "USD"
+            self.settingsTableView.reloadData()
+            Helper.dismissHud()
+        }))
+        
+        // Cancel
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel,
+                                      handler: { action in
+            // No need. Added, for now, to deselect the currency cell
+            self.settingsTableView.reloadData()
+        }))
+        
+        self.present(alert, animated: true)
+    }
+    
 }
+
+
+
+    
+
+

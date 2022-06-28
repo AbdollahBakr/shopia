@@ -13,7 +13,7 @@
         <!--Me View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="MeViewController" customModule="M_Commerce_Shop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MeViewController" id="Y6W-OH-hqX" customClass="MeViewController" customModule="M_Commerce_Shop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,16 +123,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ivX-Js-J1r">
                                 <rect key="frame" x="0.0" y="592.5" width="414" height="149.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hFU-HV-IKQ">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.text.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hFU-HV-IKQ">
                                         <rect key="frame" x="10" y="11" width="98.5" height="127"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MxN-ax-8tR">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.text.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MxN-ax-8tR">
                                         <rect key="frame" x="108.5" y="11" width="98.5" height="127"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="N9G-Ta-Eye">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.text.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="N9G-Ta-Eye">
                                         <rect key="frame" x="207" y="11" width="98.5" height="127"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wKZ-PV-B1V">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.text.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wKZ-PV-B1V">
                                         <rect key="frame" x="305.5" y="11" width="98.5" height="127"/>
                                     </imageView>
                                 </subviews>
@@ -329,7 +329,7 @@
     <resources>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
-        <image name="heart.square.fill" catalog="system" width="128" height="114"/>
+        <image name="heart.text.square.fill" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
