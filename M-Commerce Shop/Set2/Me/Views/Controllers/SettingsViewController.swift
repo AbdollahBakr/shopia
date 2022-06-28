@@ -57,7 +57,15 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(SettingsViewModel.settingsCells[indexPath.row].settingOption)
         
+        switch SettingsViewModel.settingsCells[indexPath.row].settingOption {
+        case "Address":
+            guard let addressesVC = storyboard?.instantiateViewController(withIdentifier: "AddressesViewController") else { return }
+            presentVC(vc: addressesVC, animated: true)
+        default:
+            print("No View controllers to present")
+        }
     }
     
 }

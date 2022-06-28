@@ -13,6 +13,9 @@
 		142C2B97286A9AAD001CEFBB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2B96286A9AAD001CEFBB /* SettingsViewController.swift */; };
 		142C2B9C286ABA94001CEFBB /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2B9B286ABA94001CEFBB /* SettingsCell.swift */; };
 		142C2B9F286ABB30001CEFBB /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2B9E286ABB30001CEFBB /* SettingsViewModel.swift */; };
+		142C2BA4286AD212001CEFBB /* AddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2BA3286AD212001CEFBB /* AddressesViewController.swift */; };
+		142C2BA8286AE549001CEFBB /* AddressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2BA6286AE549001CEFBB /* AddressCollectionViewCell.swift */; };
+		142C2BA9286AE549001CEFBB /* AddressCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142C2BA7286AE549001CEFBB /* AddressCollectionViewCell.xib */; };
 		14707610286A50EB00969B81 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1470760F286A50EB00969B81 /* Me.storyboard */; };
 		14707613286A5A7900969B81 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14707612286A5A7900969B81 /* MeViewController.swift */; };
 		14707615286A6F1C00969B81 /* GuestMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14707614286A6F1C00969B81 /* GuestMeViewController.swift */; };
@@ -72,6 +75,9 @@
 		142C2B96286A9AAD001CEFBB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		142C2B9B286ABA94001CEFBB /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		142C2B9E286ABB30001CEFBB /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		142C2BA3286AD212001CEFBB /* AddressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesViewController.swift; sourceTree = "<group>"; };
+		142C2BA6286AE549001CEFBB /* AddressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCollectionViewCell.swift; sourceTree = "<group>"; };
+		142C2BA7286AE549001CEFBB /* AddressCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressCollectionViewCell.xib; sourceTree = "<group>"; };
 		1470760F286A50EB00969B81 /* Me.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		14707612286A5A7900969B81 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		14707614286A6F1C00969B81 /* GuestMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestMeViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +168,15 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		142C2BA5286AE514001CEFBB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				142C2BA6286AE549001CEFBB /* AddressCollectionViewCell.swift */,
+				142C2BA7286AE549001CEFBB /* AddressCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		1470760C286A50C300969B81 /* Me */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +190,7 @@
 		1470760D286A50CF00969B81 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				142C2BA5286AE514001CEFBB /* Cells */,
 				1470760E286A50D500969B81 /* Storyboards */,
 				14707611286A5A5800969B81 /* Controllers */,
 			);
@@ -196,6 +212,7 @@
 				14707612286A5A7900969B81 /* MeViewController.swift */,
 				14707614286A6F1C00969B81 /* GuestMeViewController.swift */,
 				142C2B96286A9AAD001CEFBB /* SettingsViewController.swift */,
+				142C2BA3286AD212001CEFBB /* AddressesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -907,6 +924,7 @@
 				FAAB80292865122B00A3A86A /* Auth.storyboard in Resources */,
 				FA890EA32865E09B00063FD2 /* Home.storyboard in Resources */,
 				FAAB80BF28652AE700A3A86A /* NoConnectionVC.xib in Resources */,
+				142C2BA9286AE549001CEFBB /* AddressCollectionViewCell.xib in Resources */,
 				142C2B95286A98E0001CEFBB /* Settings.storyboard in Resources */,
 				FA2B6E6B28650E2E00603B78 /* LaunchScreen.storyboard in Resources */,
 				FA890EB52865EAB900063FD2 /* TabBar.storyboard in Resources */,
@@ -1040,12 +1058,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				142C2B9C286ABA94001CEFBB /* SettingsCell.swift in Sources */,
+				142C2BA8286AE549001CEFBB /* AddressCollectionViewCell.swift in Sources */,
 				FAAB805B28651C3700A3A86A /* CoreDataManager.swift in Sources */,
 				1421F16D2866BC5C00E0E1B0 /* CartItemCollectionViewCell.swift in Sources */,
 				FAAB808128651E4D00A3A86A /* Constants.swift in Sources */,
 				FAAB806028651C6E00A3A86A /* ArraysManager.swift in Sources */,
 				FA890EB02865E8D200063FD2 /* HomeViewModel.swift in Sources */,
 				FAAB806828651CD300A3A86A /* CoreDataModel.swift in Sources */,
+				142C2BA4286AD212001CEFBB /* AddressesViewController.swift in Sources */,
 				FA2B6E6628650E2C00603B78 /* M_Commerce_Shop.xcdatamodeld in Sources */,
 				FA2B6E6028650E2C00603B78 /* LoginVC.swift in Sources */,
 				FAAB808928651E5600A3A86A /* CustomizedObjects.swift in Sources */,
