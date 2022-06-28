@@ -85,6 +85,12 @@
                 <constraint firstItem="WqT-Uo-ZQu" firstAttribute="width" secondItem="WqT-Uo-ZQu" secondAttribute="height" multiplier="1:1" id="Z2Y-2W-dck"/>
                 <constraint firstItem="WqT-Uo-ZQu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="qNt-je-t5a"/>
             </constraints>
+            <connections>
+                <outlet property="address1Label" destination="3Vj-uL-TFG" id="0ks-xh-Q2o"/>
+                <outlet property="address2Label" destination="f7g-6h-xZC" id="WNq-Tr-89W"/>
+                <outlet property="cityLabel" destination="v6A-xw-7dZ" id="vV8-JW-Gky"/>
+                <outlet property="countryLabel" destination="ZXx-9p-a8V" id="9LD-As-34Z"/>
+            </connections>
             <point key="canvasLocation" x="132" y="111"/>
         </collectionViewCell>
     </objects>

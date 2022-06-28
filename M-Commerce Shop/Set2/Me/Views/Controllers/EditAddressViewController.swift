@@ -10,12 +10,23 @@ import UIKit
 class EditAddressViewController: UIViewController {
     
     @IBOutlet weak var backButton: CircleButtonShadowView!
+    @IBOutlet weak var countryTextField: UITextField!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var address1TextField: UITextField!
+    @IBOutlet weak var address2TextField: UITextField!
+    
+    var selectedAddress = Address()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         backButton.setTitle("", for: .normal)
+        
+        countryTextField.text = selectedAddress.country
+        cityTextField.text = selectedAddress.city
+        address1TextField.text = selectedAddress.address1
+        address2TextField.text = selectedAddress.address2
     }
     
 

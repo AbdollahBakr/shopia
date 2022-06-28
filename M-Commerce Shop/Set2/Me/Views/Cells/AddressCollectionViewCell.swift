@@ -9,7 +9,14 @@ import UIKit
 
 class AddressCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var countryLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var address1Label: UILabel!
+    @IBOutlet weak var address2Label: UILabel!
+    
     static let identifier = "AddressCollectionViewCell"
+    
+    var address = Address()
     
     override func awakeFromNib() {
         super.awakeFromNib()

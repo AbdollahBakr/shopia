@@ -498,7 +498,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="address1TextField" destination="mYp-sZ-rN8" id="GdB-UI-s8m"/>
+                        <outlet property="address2TextField" destination="GN5-oX-vf9" id="kTZ-w7-Uk7"/>
                         <outlet property="backButton" destination="CKY-1r-lm7" id="qeM-EX-7qV"/>
+                        <outlet property="cityTextField" destination="oO1-5U-ETa" id="yW1-nm-OpI"/>
+                        <outlet property="countryTextField" destination="0SL-3q-q12" id="TOg-Qb-whA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Kw-ng-AR1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
