@@ -47,14 +47,11 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "SettingsTableViewCell")
-        
-        let index = settingsRows.index(settingsRows.startIndex, offsetBy: indexPath.row)
-        
-        cell.textLabel?.text = settingsRows[index].key
-        cell.detailTextLabel?.text = settingsRows[index].value
+ 
+        // Configure settings cells
+        cell.textLabel?.text = SettingsViewModel.settingsCells[indexPath.row].settingOption
+        cell.detailTextLabel?.text = SettingsViewModel.settingsCells[indexPath.row].settingValue
         cell.accessoryType = .disclosureIndicator
-        
-
         
         return cell
     }
