@@ -148,6 +148,9 @@
                                         <real key="value" value="24"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addNewAddressForm:" destination="AMu-cy-tXy" eventType="touchUpInside" id="quI-tj-VOo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kST-a6-wFO" customClass="CircleButtonShadowView" customModule="M_Commerce_Shop" customModuleProvider="target">
                                 <rect key="frame" x="20" y="84" width="48" height="48"/>
@@ -208,9 +211,157 @@
             </objects>
             <point key="canvasLocation" x="588" y="59"/>
         </scene>
+        <!--Add New Address View Controller-->
+        <scene sceneID="lNE-vd-aqz">
+            <objects>
+                <viewController storyboardIdentifier="AddNewAddressViewController" id="bkM-aT-t3b" customClass="AddNewAddressViewController" customModule="M_Commerce_Shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k9B-V1-NAi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBN-QJ-znD">
+                                <rect key="frame" x="20" y="172" width="374" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="aVZ-LU-mmk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3a-nJ-hDi" customClass="RoundedButton" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                <rect key="frame" x="87" y="694" width="240" height="48"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="SU7-2g-m2n"/>
+                                    <constraint firstAttribute="height" constant="48" id="dE6-v8-Mcv"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Save New Address">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <font key="NSFont" size="22" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="saveNewAddress:" destination="bkM-aT-t3b" eventType="touchUpInside" id="wbo-vF-wHs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEy-UT-ay5" customClass="CircleButtonShadowView" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                <rect key="frame" x="20" y="84" width="48" height="48"/>
+                                <color key="backgroundColor" name="MainColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="34J-Ky-hwn"/>
+                                    <constraint firstAttribute="width" secondItem="gEy-UT-ay5" secondAttribute="height" id="kXn-FQ-D2d"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.left" catalog="system"/>
+                                <connections>
+                                    <action selector="backToAddresses:" destination="bkM-aT-t3b" eventType="touchUpInside" id="dEK-Q9-wsD"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TS4-5p-C2h">
+                                <rect key="frame" x="0.0" y="224" width="414" height="430"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jn0-Ow-ZgD">
+                                        <rect key="frame" x="20" y="8" width="374" height="52"/>
+                                        <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kvl-9S-6P2">
+                                        <rect key="frame" x="20" y="60" width="374" height="51.5"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wX-nf-Xul">
+                                        <rect key="frame" x="20" y="111.5" width="374" height="52"/>
+                                        <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LuJ-fQ-xeh">
+                                        <rect key="frame" x="20" y="163.5" width="374" height="51.5"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sB-hi-iiJ">
+                                        <rect key="frame" x="20" y="215" width="374" height="52"/>
+                                        <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KTf-pa-1St">
+                                        <rect key="frame" x="20" y="267" width="374" height="51.5"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iez-DR-iMF">
+                                        <rect key="frame" x="20" y="318.5" width="374" height="52"/>
+                                        <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DfO-S6-2LS">
+                                        <rect key="frame" x="20" y="370.5" width="374" height="51.5"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="20" bottom="8" trailing="20"/>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Foe-3h-E7l">
+                                <rect key="frame" x="291" y="146.5" width="83" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Foe-3h-E7l" secondAttribute="height" id="EjQ-Mc-TqD"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="czh-MD-29x"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="czh-MD-29x" firstAttribute="bottom" secondItem="C3a-nJ-hDi" secondAttribute="bottom" constant="120" id="2ev-n5-QTO"/>
+                            <constraint firstItem="czh-MD-29x" firstAttribute="trailing" secondItem="EBN-QJ-znD" secondAttribute="trailing" constant="20" id="8Pt-di-i85"/>
+                            <constraint firstItem="C3a-nJ-hDi" firstAttribute="centerX" secondItem="k9B-V1-NAi" secondAttribute="centerX" id="FSJ-9F-Xdr"/>
+                            <constraint firstItem="czh-MD-29x" firstAttribute="trailing" secondItem="Foe-3h-E7l" secondAttribute="trailing" constant="40" id="GA3-4s-BI8"/>
+                            <constraint firstItem="gEy-UT-ay5" firstAttribute="top" secondItem="czh-MD-29x" secondAttribute="top" constant="40" id="GK1-GE-vAE"/>
+                            <constraint firstItem="gEy-UT-ay5" firstAttribute="leading" secondItem="czh-MD-29x" secondAttribute="leading" constant="20" id="Gea-Cf-IBi"/>
+                            <constraint firstItem="TS4-5p-C2h" firstAttribute="leading" secondItem="czh-MD-29x" secondAttribute="leading" id="JCg-T7-psS"/>
+                            <constraint firstItem="EBN-QJ-znD" firstAttribute="leading" secondItem="czh-MD-29x" secondAttribute="leading" constant="20" id="MKh-cI-NDQ"/>
+                            <constraint firstItem="Foe-3h-E7l" firstAttribute="centerY" secondItem="EBN-QJ-znD" secondAttribute="centerY" id="ZkZ-Ju-kxP"/>
+                            <constraint firstItem="TS4-5p-C2h" firstAttribute="top" secondItem="EBN-QJ-znD" secondAttribute="bottom" constant="20" id="baB-rw-Sge"/>
+                            <constraint firstItem="czh-MD-29x" firstAttribute="trailing" secondItem="TS4-5p-C2h" secondAttribute="trailing" id="gyO-AY-Unh"/>
+                            <constraint firstItem="Foe-3h-E7l" firstAttribute="width" secondItem="k9B-V1-NAi" secondAttribute="width" multiplier="1:5" id="nMa-Tu-u4U"/>
+                            <constraint firstItem="EBN-QJ-znD" firstAttribute="top" secondItem="gEy-UT-ay5" secondAttribute="bottom" constant="40" id="ocl-TF-R1g"/>
+                            <constraint firstItem="C3a-nJ-hDi" firstAttribute="top" secondItem="TS4-5p-C2h" secondAttribute="bottom" constant="40" id="pPC-H3-xOc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="gEy-UT-ay5" id="snM-Pa-i1q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hf4-MT-lrf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1375" y="59"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="locationIcon" width="65" height="65"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

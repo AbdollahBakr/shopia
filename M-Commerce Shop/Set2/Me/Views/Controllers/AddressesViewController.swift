@@ -26,6 +26,14 @@ class AddressesViewController: UIViewController {
         backButton.setTitle("", for: .normal)
     }
     
+    @IBAction func addNewAddressForm(_ sender: UIButton) {
+        guard let addNewAddressesVC = storyboard?.instantiateViewController(withIdentifier: "AddNewAddressViewController") else { return }
+        presentVC(vc: addNewAddressesVC, animated: true)
+    }
+    
+    @IBAction func backToSettings(_ sender: UIButton) {
+        self.dismiss(animated: true)
+    }
 
     /*
     // MARK: - Navigation
@@ -37,9 +45,7 @@ class AddressesViewController: UIViewController {
     }
     */
 
-    @IBAction func backToSettings(_ sender: UIButton) {
-        self.dismiss(animated: true)
-    }
+
 }
 
 
