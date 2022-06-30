@@ -27,10 +27,11 @@ class AddressesViewController: UIViewController {
         
         backButton.setTitle("", for: .normal)
         
+
         // Populate addresses
-        addresses = [Address(country: "Egypt", city: "Cairo", address1: "Nasr City, 6th district", address2: "Mostafa Elnahhas St."),
-                     Address(country: "Egypt", city: "Cairo", address1: "Nasr City, 6th district", address2: "Mostafa Elnahhas St.")
-        ]
+//        addresses = [Address(country: "Egypt", city: "Cairo", address1: "Nasr City, 6th district", address2: "Mostafa Elnahhas St."),
+//                     Address(country: "Egypt", city: "Cairo", address1: "Nasr City, 6th district", address2: "Mostafa Elnahhas St.")
+//        ]
     }
     
     @IBAction func addNewAddressForm(_ sender: UIButton) {
