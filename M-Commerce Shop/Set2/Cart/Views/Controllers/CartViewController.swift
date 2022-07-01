@@ -58,6 +58,7 @@ extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSour
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CartCollectionViewCell.identifier, for: indexPath) as? CartCollectionViewCell else { return CartCollectionViewCell()}
         
         // Configure Cell with line item
+        cell.delegate = self
         cell.cartItem = cartItems?[indexPath.item]
         cell.itemNameLabel.text = cell.cartItem?.node?.name
         cell.itemPriceLabel.text = cell.cartItem?.node?.originalUnitPrice
@@ -75,5 +76,18 @@ extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let height = width/2
         
         return CGSize(width: width, height: height)
+    }
+}
+
+
+extension CartViewController: CartCellDelegate {
+    func didTapDeleteButton(item: Edge) {
+        print("Delete pressed")
+        if let index = cartItems?.firstIndex(where: {$0 == item}) {
+            cartItems?.remove(at: index)
+        }
+        print("Deleted")
+        cartItemsCollectionView.reloadData()
+        
     }
 }

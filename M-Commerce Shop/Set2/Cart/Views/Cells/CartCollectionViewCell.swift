@@ -16,7 +16,7 @@ class CartCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var itemCountStepper: UIStepper!
     
     static let identifier = "CartCollectionViewCell"
-    
+    var delegate: CartCellDelegate!
     var cartItem: Edge?
     
     override func awakeFromNib() {
@@ -27,6 +27,9 @@ class CartCollectionViewCell: UICollectionViewCell {
     @IBAction func stepItemCounter(_ sender: UIStepper) {
         print(sender.value.description)
         itemCountLabel.text = Int(sender.value).description
+    }
+    @IBAction func deleteCartItem(_ sender: Any) {
+        delegate.didTapDeleteButton(item: cartItem!)
     }
     
 }

@@ -81,6 +81,9 @@
                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="23"/>
                             <color key="baseForegroundColor" name="MainColor"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="deleteCartItem:" destination="gTV-IL-0wX" eventType="touchUpInside" id="TXT-gf-1dR"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
