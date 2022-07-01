@@ -42,6 +42,8 @@ class AddressesViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         viewModel.getAddresses()
+        addressesCollectionView.reloadData()
+        print("will appear")
     }
     @IBAction func addNewAddressForm(_ sender: UIButton) {
         guard let addNewAddressesVC = storyboard?.instantiateViewController(withIdentifier: "AddNewAddressViewController") else { return }
