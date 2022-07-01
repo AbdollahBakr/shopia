@@ -13,6 +13,7 @@ target 'M-Commerce Shop' do
   pod 'ReachabilitySwift'
   pod 'SwiftMessages'
   pod 'ProgressHUD'
+  pod 'GraphQLite'
 
   target 'M-Commerce ShopTests' do
     inherit! :search_paths
