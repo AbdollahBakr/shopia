@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		14181683286F19FF00B85CCC /* CartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14181681286F19FF00B85CCC /* CartCollectionViewCell.swift */; };
 		14181684286F19FF00B85CCC /* CartCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14181682286F19FF00B85CCC /* CartCollectionViewCell.xib */; };
+		14181686286F27DA00B85CCC /* CartItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14181685286F27DA00B85CCC /* CartItems.swift */; };
 		1421F1702866BE0000E0E1B0 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1421F16F2866BE0000E0E1B0 /* CartViewController.swift */; };
 		142BB730286E9B0D008A7D00 /* CodableModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BB72F286E9B0D008A7D00 /* CodableModels.swift */; };
 		142BB732286E9FE4008A7D00 /* AddressesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BB731286E9FE4008A7D00 /* AddressesViewModel.swift */; };
@@ -82,6 +83,7 @@
 /* Begin PBXFileReference section */
 		14181681286F19FF00B85CCC /* CartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewCell.swift; sourceTree = "<group>"; };
 		14181682286F19FF00B85CCC /* CartCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCollectionViewCell.xib; sourceTree = "<group>"; };
+		14181685286F27DA00B85CCC /* CartItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItems.swift; sourceTree = "<group>"; };
 		1421F1692866BBF100E0E1B0 /* Cart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Cart.storyboard; path = "M-Commerce Shop/Set2/Cart/Views/Storyboards/Cart.storyboard"; sourceTree = SOURCE_ROOT; };
 		1421F16F2866BE0000E0E1B0 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CartViewController.swift; path = "M-Commerce Shop/Set2/Cart/Views/Controllers/CartViewController.swift"; sourceTree = SOURCE_ROOT; };
 		142BB72F286E9B0D008A7D00 /* CodableModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableModels.swift; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				1432C2B5286F111F004923DB /* Cart.swift */,
+				14181685286F27DA00B85CCC /* CartItems.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1116,6 +1119,7 @@
 				FA2B6E6628650E2C00603B78 /* M_Commerce_Shop.xcdatamodeld in Sources */,
 				FA2B6E6028650E2C00603B78 /* LoginVC.swift in Sources */,
 				142C2BAB286AFA04001CEFBB /* AddNewAddressViewController.swift in Sources */,
+				14181686286F27DA00B85CCC /* CartItems.swift in Sources */,
 				FAAB808928651E5600A3A86A /* CustomizedObjects.swift in Sources */,
 				FAAB807D28651E4A00A3A86A /* ConnectionManager.swift in Sources */,
 				14707613286A5A7900969B81 /* MeViewController.swift in Sources */,

@@ -34,11 +34,13 @@ class GraphQLManager {
                     let decodedResult = try JSONDecoder().decode(T.self, from: jsonData)
                     // Callback with the decoded result
                     callBack(decodedResult)
-                } catch let error {
+                } catch {
                     // Print Error and return nil in case of an exception
                     print(error)
                     callBack(nil)
                 }
+            } else {
+                print(error!)
             }
         }
     }
