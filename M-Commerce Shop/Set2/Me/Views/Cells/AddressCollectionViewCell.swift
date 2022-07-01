@@ -15,7 +15,10 @@ class AddressCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var address2Label: UILabel!
     
     static let identifier = "AddressCollectionViewCell"
+    
+    var delegate: AddressesCellDelegate!
 
+    var address: Address?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,4 +26,7 @@ class AddressCollectionViewCell: UICollectionViewCell {
         
     }
 
+    @IBAction func deleteAddress(_ sender: Any) {
+        delegate.didTapDeleteButton()
+    }
 }

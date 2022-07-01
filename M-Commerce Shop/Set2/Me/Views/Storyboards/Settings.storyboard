@@ -341,7 +341,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="address1Field" destination="KTf-pa-1St" id="IOx-yh-K1D"/>
+                        <outlet property="address2Field" destination="DfO-S6-2LS" id="3CY-YH-0y5"/>
                         <outlet property="backButton" destination="gEy-UT-ay5" id="snM-Pa-i1q"/>
+                        <outlet property="cityField" destination="LuJ-fQ-xeh" id="UsG-FY-FcE"/>
+                        <outlet property="countryField" destination="Kvl-9S-6P2" id="jbs-Eb-nAu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hf4-MT-lrf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

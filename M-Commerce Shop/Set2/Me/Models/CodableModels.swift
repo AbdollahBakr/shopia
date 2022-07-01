@@ -22,3 +22,13 @@ struct Address: Codable {
     let country, city, address1, address2: String?
 }
 
+// MARK: - CustomerUpdate
+struct CustomerUpdate: Codable {
+    let userErrors: [UserError]?
+}
+
+// MARK: - UserError
+struct UserError: Codable {
+    let field: [String]?
+    let message: String?
+}

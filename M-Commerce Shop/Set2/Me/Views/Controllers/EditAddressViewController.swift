@@ -15,18 +15,21 @@ class EditAddressViewController: UIViewController {
     @IBOutlet weak var address1TextField: UITextField!
     @IBOutlet weak var address2TextField: UITextField!
     
-//    var selectedAddress = Address()
+    var viewModel: AddAddresseViewModel!
+    var selectedAddress: Address?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-//        backButton.setTitle("", for: .normal)
-//
-//        countryTextField.text = selectedAddress.country
-//        cityTextField.text = selectedAddress.city
-//        address1TextField.text = selectedAddress.address1
-//        address2TextField.text = selectedAddress.address2
+        backButton.setTitle("", for: .normal)
+
+        countryTextField.text = selectedAddress?.country
+        cityTextField.text = selectedAddress?.city
+        address1TextField.text = selectedAddress?.address1
+        address2TextField.text = selectedAddress?.address2
+        
+        viewModel = AddAddresseViewModel()
     }
     
 
@@ -44,6 +47,11 @@ class EditAddressViewController: UIViewController {
         self.dismiss(animated: true)
     }
     @IBAction func saveChangesToAddress(_ sender: UIButton) {
-        Helper.displayMessage(message: "Can't Save changes", messageError: true)
+        let address = Address(country: countryTextField.text, city: cityTextField.text, address1: address1TextField.text, address2: address2TextField.text)
+        
+        viewModel.addAddress(address: address)
+        
+        Helper.displayMessage(message: "Suuccessfully Edited the New Address", messageError: false)
+        self.dismiss(animated: true)
     }
 }

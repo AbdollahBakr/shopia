@@ -12,7 +12,8 @@ class AddressesViewController: UIViewController {
     @IBOutlet weak var addressesCollectionView: UICollectionView!
     @IBOutlet weak var backButton: CircleButtonShadowView!
     
-    var addresses = [Address]()
+    var viewModel: AddressesViewModel!
+    var addresses: [Address]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +29,22 @@ class AddressesViewController: UIViewController {
         backButton.setTitle("", for: .normal)
         
 
-        // Populate addresses
-//        addresses = [Address(country: "Egypt", city: "Cairo", address1: "Nasr City, 6th district", address2: "Mostafa Elnahhas St."),
-//                     Address(country: "Egypt", city: "Cairo", address1: "Nasr City, 6th district", address2: "Mostafa Elnahhas St.")
-//        ]
+        // Get Addresses From API
+        viewModel = AddressesViewModel()
+        viewModel.bindAddressestoVC = { [weak self] in
+            DispatchQueue.main.async {
+                self?.addresses = self?.viewModel.addresses
+                self?.addressesCollectionView.reloadData()
+            }
+        }
+        
+        viewModel.getAddresses()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.getAddresses()
+        addressesCollectionView.reloadData()
+        print("will appear")
+    }
     @IBAction func addNewAddressForm(_ sender: UIButton) {
         guard let addNewAddressesVC = storyboard?.instantiateViewController(withIdentifier: "AddNewAddressViewController") else { return }
         presentVC(vc: addNewAddressesVC, animated: true)
@@ -59,18 +70,21 @@ class AddressesViewController: UIViewController {
 
 extension AddressesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return addresses.count
+        return addresses?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:  AddressCollectionViewCell.identifier, for: indexPath) as? AddressCollectionViewCell else { return AddressCollectionViewCell()}
         
-//        cell.address = addresses[indexPath.item]
-//
-//        cell.countryLabel.text = cell.address.country
-//        cell.cityLabel.text = cell.address.city
-//        cell.address1Label.text = cell.address.address1
-//        cell.address2Label.text = cell.address.address2
+        // Set cell delegate for delete button
+        cell.delegate = self
+        
+        cell.address = addresses?[indexPath.item]
+
+        cell.countryLabel.text = cell.address?.country
+        cell.cityLabel.text = cell.address?.city
+        cell.address1Label.text = cell.address?.address1
+        cell.address2Label.text = cell.address?.address2
         
         return cell
     }
@@ -87,8 +101,21 @@ extension AddressesViewController: UICollectionViewDelegate, UICollectionViewDat
         
         guard let editAddressesVC = storyboard?.instantiateViewController(withIdentifier: "EditAddressViewController") as? EditAddressViewController else { return }
         
-//        editAddressesVC.selectedAddress = addresses[indexPath.item]
+        editAddressesVC.selectedAddress = addresses?[indexPath.item]
         
         presentVC(vc: editAddressesVC, animated: true)
+    }
+}
+
+
+extension AddressesViewController: AddressesCellDelegate {
+    func didTapDeleteButton() {
+        
+        // Delete associated address
+        viewModel.deleteAddress()
+        
+        // Get Addresses and refresh view
+        addresses = [Address]()
+        addressesCollectionView.reloadData()
     }
 }
