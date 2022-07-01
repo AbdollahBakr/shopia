@@ -19,8 +19,8 @@ class CartViewController: UIViewController {
         cartItemsCollectionView.dataSource = self
         
         // Register CartItemCollectionViewCell from XIB
-        let cartItemsNipCell = UINib(nibName: "CartItemCollectionViewCell", bundle: nil)
-        cartItemsCollectionView.register(cartItemsNipCell, forCellWithReuseIdentifier: CartItemCollectionViewCell.identifier)
+        let cartItemsNipCell = UINib(nibName: "CartCollectionViewCell", bundle: nil)
+        cartItemsCollectionView.register(cartItemsNipCell, forCellWithReuseIdentifier: CartCollectionViewCell.identifier)
     }
     
 
@@ -45,7 +45,7 @@ extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CartItemCollectionViewCell.identifier, for: indexPath) as? CartItemCollectionViewCell else { return CartItemCollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CartCollectionViewCell.identifier, for: indexPath) as? CartCollectionViewCell else { return CartCollectionViewCell()}
         
         return cell
     }
