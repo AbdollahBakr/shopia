@@ -38,6 +38,7 @@ class AddNewAddressViewController: UIViewController {
         viewModel.addAddress(address: address)
         
         Helper.displayMessage(message: "Suuccessfully Saved the New Address", messageError: false)
+        self.dismiss(animated: true)
     }
     /*
     // MARK: - Navigation

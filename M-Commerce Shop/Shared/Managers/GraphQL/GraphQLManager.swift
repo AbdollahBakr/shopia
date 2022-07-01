@@ -47,7 +47,7 @@ class GraphQLManager {
         let server = GQLServer(HTTP: shopifyLink, headers: headers)
         server.mutation(query.body, query.variables ?? [:]) { result, error in
           if (error == nil) {
-            print("Addresses successfully added to API")
+            print("API Mutated Successfully")
           }
         }
     }

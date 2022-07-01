@@ -72,6 +72,9 @@
                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="23"/>
                             <color key="baseForegroundColor" name="MainColor"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="deleteAddress:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ztZ-F2-NpH"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>

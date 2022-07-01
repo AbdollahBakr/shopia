@@ -40,4 +40,33 @@ addresses {
         })
     }
     
+    func deleteAddress() {
+        let body = """
+            mutation customerUpdate($input: CustomerInput!) {
+            customerUpdate(input: $input) {
+            userErrors {
+                  field
+                  message
+                }
+            }
+            }
+        """
+        
+        let variables = ["input": [
+            "id": "gid://shopify/Customer/6059105484971",
+            "addresses":[
+                [
+                    "address1": "",
+                    "address2": "",
+                    "city": "",
+                    "country": ""
+                ]
+            ]
+          ]]
+        let query = Query(body: body
+                          , variables: variables)
+        
+        GraphQLManager.mutateWithQuery(query: query)
+    }
+    
 }

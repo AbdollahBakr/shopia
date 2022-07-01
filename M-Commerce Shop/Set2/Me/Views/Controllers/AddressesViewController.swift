@@ -74,6 +74,9 @@ extension AddressesViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:  AddressCollectionViewCell.identifier, for: indexPath) as? AddressCollectionViewCell else { return AddressCollectionViewCell()}
         
+        // Set cell delegate for delete button
+        cell.delegate = self
+        
         cell.address = addresses?[indexPath.item]
 
         cell.countryLabel.text = cell.address?.country
@@ -99,5 +102,18 @@ extension AddressesViewController: UICollectionViewDelegate, UICollectionViewDat
         editAddressesVC.selectedAddress = addresses?[indexPath.item]
         
         presentVC(vc: editAddressesVC, animated: true)
+    }
+}
+
+
+extension AddressesViewController: AddressesCellDelegate {
+    func didTapDeleteButton() {
+        
+        // Delete associated address
+        viewModel.deleteAddress()
+        
+        // Get Addresses and refresh view
+        addresses = [Address]()
+        addressesCollectionView.reloadData()
     }
 }
