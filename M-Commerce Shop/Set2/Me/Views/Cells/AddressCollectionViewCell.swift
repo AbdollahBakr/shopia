@@ -15,8 +15,7 @@ class AddressCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var address2Label: UILabel!
     
     static let identifier = "AddressCollectionViewCell"
-    
-    var address = Address()
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
