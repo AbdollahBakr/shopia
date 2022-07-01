@@ -10,36 +10,38 @@ import GraphQLite
 
 class GraphQLManager {
     
+    // To store data in local sqlite if needed
     let db = GQLDatabase()
     
-    static func initManager() -> [String: Any] {
-        let shopifyLink = "https://menofia-2022-q3.myshopify.com/admin/api/2022-04/graphql.json"
-        let headers = ["X-Shopify-Access-Token": "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"]
-        let server = GQLServer(HTTP: shopifyLink, headers: headers)
+    // Shopify API data
+    static let shopifyLink = "https://menofia-2022-q3.myshopify.com/admin/api/2022-04/graphql.json"
+    static let headers = ["X-Shopify-Access-Token": "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"]
+    
+    // Fetch codable generic entity from the API
+    static func fetchCodableFromQuery<T: Codable>(genericType: T.Type,
+                                 query: Query,
+                                 callBack: @escaping (T?) -> Void) {
         
-        let query1 = Query(body: """
-{
-  customers(first: 50) {
-      edges {
-      node {
-        id
-        firstName
-        lastName
-      }
-    }
-  }
-}
-""")
-        _ = Query(body: "", variables: ["":""])
+        let server = GQLServer(HTTP: shopifyLink, headers: headers)
 
-        var queryResponse = [String: Any]()
-        server.query(query1.body, query1.variables ?? [:]) { result, error in
+        server.query(query.body, query.variables ?? [:]) { result, error in
             if (error == nil) {
-                queryResponse = result
-                print(queryResponse)
+                var jsonData = Data()
+                do {
+                    // Serialize the result
+                    jsonData = try JSONSerialization.data(withJSONObject: result, options: .fragmentsAllowed)
+                    // Decode jsonData
+                    let decodedResult = try JSONDecoder().decode(T.self, from: jsonData)
+                    // Callback with the decoded result
+                    callBack(decodedResult)
+                } catch let error {
+                    // Print Error and return nil in case of an exception
+                    print(error.localizedDescription)
+                    callBack(nil)
+                }
             }
         }
-        
-        return queryResponse
     }
+    
+    
 }

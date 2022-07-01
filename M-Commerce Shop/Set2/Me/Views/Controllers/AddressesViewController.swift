@@ -65,12 +65,12 @@ extension AddressesViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier:  AddressCollectionViewCell.identifier, for: indexPath) as? AddressCollectionViewCell else { return AddressCollectionViewCell()}
         
-        cell.address = addresses[indexPath.item]
-        
-        cell.countryLabel.text = cell.address.country
-        cell.cityLabel.text = cell.address.city
-        cell.address1Label.text = cell.address.address1
-        cell.address2Label.text = cell.address.address2
+//        cell.address = addresses[indexPath.item]
+//
+//        cell.countryLabel.text = cell.address.country
+//        cell.cityLabel.text = cell.address.city
+//        cell.address1Label.text = cell.address.address1
+//        cell.address2Label.text = cell.address.address2
         
         return cell
     }
@@ -87,7 +87,7 @@ extension AddressesViewController: UICollectionViewDelegate, UICollectionViewDat
         
         guard let editAddressesVC = storyboard?.instantiateViewController(withIdentifier: "EditAddressViewController") as? EditAddressViewController else { return }
         
-        editAddressesVC.selectedAddress = addresses[indexPath.item]
+//        editAddressesVC.selectedAddress = addresses[indexPath.item]
         
         presentVC(vc: editAddressesVC, animated: true)
     }
