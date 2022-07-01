@@ -40,7 +40,9 @@ class AddressesViewController: UIViewController {
         
         viewModel.getAddresses()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        viewModel.getAddresses()
+    }
     @IBAction func addNewAddressForm(_ sender: UIButton) {
         guard let addNewAddressesVC = storyboard?.instantiateViewController(withIdentifier: "AddNewAddressViewController") else { return }
         presentVC(vc: addNewAddressesVC, animated: true)
@@ -94,7 +96,7 @@ extension AddressesViewController: UICollectionViewDelegate, UICollectionViewDat
         
         guard let editAddressesVC = storyboard?.instantiateViewController(withIdentifier: "EditAddressViewController") as? EditAddressViewController else { return }
         
-//        editAddressesVC.selectedAddress = addresses[indexPath.item]
+        editAddressesVC.selectedAddress = addresses?[indexPath.item]
         
         presentVC(vc: editAddressesVC, animated: true)
     }

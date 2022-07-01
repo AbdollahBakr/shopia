@@ -36,12 +36,20 @@ class GraphQLManager {
                     callBack(decodedResult)
                 } catch let error {
                     // Print Error and return nil in case of an exception
-                    print(error.localizedDescription)
+                    print(error)
                     callBack(nil)
                 }
             }
         }
     }
     
+    static func mutateWithQuery(query: Query) {
+        let server = GQLServer(HTTP: shopifyLink, headers: headers)
+        server.mutation(query.body, query.variables ?? [:]) { result, error in
+          if (error == nil) {
+            print("Addresses successfully added to API")
+          }
+        }
+    }
     
 }

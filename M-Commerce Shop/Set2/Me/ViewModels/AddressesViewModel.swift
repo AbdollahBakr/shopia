@@ -20,12 +20,13 @@ class AddressesViewModel {
     
     // TODO: Replace id with logged-in user id
     let query = Query(body: """
-query getMeAsACustomer($id: ID!) {
+query getCustomerAddresses($id: ID!) {
 customer(id: $id) {
 addresses {
     country
     city
     address1
+    address2
 }
 }
 }
