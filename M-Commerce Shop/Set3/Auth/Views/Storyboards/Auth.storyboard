@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--LoginVC-->
+        <!--View Controller-->
         <scene sceneID="X4W-g5-ljM">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="Dqa-RF-ICX" customClass="LoginVC" customModule="M_Commerce_Shop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Dqa-RF-ICX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dsx-es-gL9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,7 +98,7 @@
         <!--Sign UpVC-->
         <scene sceneID="6fn-V5-Ksf">
             <objects>
-                <viewController id="byz-ha-FP0" customClass="SignUpVC" customModule="M_Commerce_Shop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpVC" id="byz-ha-FP0" customClass="SignUpVC" customModule="M_Commerce_Shop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z2s-zX-NcZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,6 +115,9 @@
                                                 <color key="backgroundColor" name="GreyColor"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="arrow.left" catalog="system"/>
+                                                <connections>
+                                                    <action selector="backBtn:" destination="byz-ha-FP0" eventType="touchUpInside" id="OQn-jF-MWK"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMK-nL-fFc">
                                                 <rect key="frame" x="157" y="20" width="102" height="35"/>
@@ -148,10 +151,6 @@
                                                         <color key="value" name="BlueColor"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="firstNameTextField:" destination="wCt-i7-nKC" eventType="editingDidEnd" id="FH4-zt-TRZ"/>
-                                                    <action selector="firstNameTextField:" destination="byz-ha-FP0" eventType="editingDidEnd" id="mZQ-xl-Jya"/>
-                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsk-sv-IcQ">
                                                 <rect key="frame" x="20" y="20" width="126" height="21"/>
@@ -185,10 +184,6 @@
                                                         <color key="value" name="BlueColor"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="lastNameTextField:" destination="byz-ha-FP0" eventType="editingDidEnd" id="JhO-cT-B84"/>
-                                                    <action selector="lastNameTextField:" destination="wCt-i7-nKC" eventType="editingDidEnd" id="sqZ-HL-1c8"/>
-                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCP-q5-owO">
                                                 <rect key="frame" x="20" y="20" width="126" height="21"/>
@@ -210,7 +205,7 @@
                                                 <rect key="frame" x="20" y="49" width="329" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                         <real key="value" value="1"/>
@@ -222,10 +217,6 @@
                                                         <color key="value" name="BlueColor"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="emailTextField:" destination="byz-ha-FP0" eventType="editingDidEnd" id="qUu-Qv-mDY"/>
-                                                    <action selector="emailTextField:" destination="wCt-i7-nKC" eventType="editingDidEnd" id="ynU-Uk-0wn"/>
-                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtM-jg-c0p">
                                                 <rect key="frame" x="20" y="20" width="126" height="21"/>
@@ -247,7 +238,7 @@
                                                 <rect key="frame" x="20" y="49" width="329" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                         <real key="value" value="1"/>
@@ -259,9 +250,6 @@
                                                         <color key="value" name="BlueColor"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="passwordTextField:" destination="byz-ha-FP0" eventType="editingDidEnd" id="DZS-Qa-NEE"/>
-                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iz0-hO-et7">
                                                 <rect key="frame" x="20" y="20" width="126" height="21"/>
@@ -350,11 +338,197 @@
                             <constraint firstItem="I0j-ns-UsK" firstAttribute="top" secondItem="kzO-R8-vJS" secondAttribute="top" constant="5" id="lSy-Ez-C4o"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="a4u-Fc-E5A" id="5cU-eK-JbP"/>
+                        <outlet property="firstNameTextField" destination="eoE-mM-vZ0" id="KZI-i1-BKm"/>
+                        <outlet property="lastNameTextField" destination="vey-sw-xbg" id="cIb-tQ-YZ9"/>
+                        <outlet property="passwordTextField" destination="7t0-1B-DGm" id="Ams-Hk-klv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afe-p9-Bbu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="wCt-i7-nKC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1134.7826086956522" y="87.723214285714278"/>
+            <point key="canvasLocation" x="988" y="88"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="Pl3-MX-jhS">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" id="fmB-b8-ndy" customClass="LoginVC" customModule="M_Commerce_Shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pnc-u2-Tll">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="g1V-PI-7K0">
+                                <rect key="frame" x="17" y="44" width="380" height="610"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDn-PP-J1b" userLabel="LoginHeaderView">
+                                        <rect key="frame" x="0.0" y="0.0" width="380" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FjI-1K-bCX" userLabel="BackBtn" customClass="CircleButtonShadowView" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" name="GreyColor"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="arrow.left" catalog="system"/>
+                                                <connections>
+                                                    <action selector="backBtnToSignup:" destination="fmB-b8-ndy" eventType="touchUpInside" id="mF3-T9-Yca"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KY8-KO-bfw">
+                                                <rect key="frame" x="157" y="20" width="102" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZC-W9-nsr" userLabel="E-mailLoginView">
+                                        <rect key="frame" x="0.0" y="132" width="380" height="103"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BCb-FP-mmT" userLabel="E-mailTextFieldLogIn">
+                                                <rect key="frame" x="20" y="35" width="325" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="BlueColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="emailTextField:" destination="wCt-i7-nKC" eventType="editingDidEnd" id="tO9-7H-FRN"/>
+                                                    <action selector="emailTextField:" destination="byz-ha-FP0" eventType="editingDidEnd" id="vDB-94-mwV"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rp0-h6-AtQ">
+                                                <rect key="frame" x="20" y="6" width="48.5" height="20.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="DarkGreyTabBar"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2XQ-Ov-OW3" userLabel="PasswordLoginView">
+                                        <rect key="frame" x="0.0" y="287" width="380" height="103"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D7S-3D-thV" userLabel="PasswordTextFieldLogIn">
+                                                <rect key="frame" x="20" y="35" width="325" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="BlueColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gAs-uo-BvD">
+                                                <rect key="frame" x="20" y="6" width="73.5" height="20.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="DarkGreyTabBar"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5NT-PE-hx0" userLabel="LoginView">
+                                        <rect key="frame" x="0.0" y="442" width="380" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Rd-41-dmu" userLabel="LogInBtn" customClass="RoundedShodowButton" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                                <rect key="frame" x="139.5" y="6" width="101" height="38"/>
+                                                <color key="backgroundColor" name="BlueColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="101" id="pkk-AW-qaC"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Log In"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="loginBtn:" destination="fmB-b8-ndy" eventType="touchUpInside" id="CA1-Rr-5PC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="1Rd-41-dmu" firstAttribute="top" secondItem="5NT-PE-hx0" secondAttribute="top" constant="6" id="BUZ-3a-Mqg"/>
+                                            <constraint firstItem="1Rd-41-dmu" firstAttribute="centerX" secondItem="5NT-PE-hx0" secondAttribute="centerX" id="Ogc-CD-IFv"/>
+                                            <constraint firstItem="1Rd-41-dmu" firstAttribute="centerY" secondItem="5NT-PE-hx0" secondAttribute="centerY" id="dG6-7d-wCR"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHW-Gp-AML" userLabel="SignupView">
+                                        <rect key="frame" x="0.0" y="544" width="365" height="66"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Don't have an account ? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ien-5D-Uqa">
+                                                <rect key="frame" x="57" y="23" width="188" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zmz-Yw-obJ">
+                                                <rect key="frame" x="248" y="17" width="60" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Sign Up">
+                                                    <color key="titleColor" name="BlueColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="signupBtn:" destination="fmB-b8-ndy" eventType="touchUpInside" id="vdO-pf-Mx6"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5NT-PE-hx0" firstAttribute="top" secondItem="g1V-PI-7K0" secondAttribute="top" constant="442" id="8IZ-Vf-uQn"/>
+                                    <constraint firstItem="NHW-Gp-AML" firstAttribute="top" secondItem="g1V-PI-7K0" secondAttribute="top" constant="544" id="9We-Rs-JGW"/>
+                                    <constraint firstItem="EZC-W9-nsr" firstAttribute="top" secondItem="g1V-PI-7K0" secondAttribute="top" constant="132" id="GZ6-gW-lcI"/>
+                                    <constraint firstItem="NHW-Gp-AML" firstAttribute="leading" secondItem="g1V-PI-7K0" secondAttribute="leading" id="H2x-gq-wbI"/>
+                                    <constraint firstAttribute="trailing" secondItem="RDn-PP-J1b" secondAttribute="trailing" id="WWE-mf-pZ7"/>
+                                    <constraint firstItem="5NT-PE-hx0" firstAttribute="trailing" secondItem="NHW-Gp-AML" secondAttribute="trailing" constant="15" id="ZOQ-OE-vul"/>
+                                    <constraint firstItem="2XQ-Ov-OW3" firstAttribute="top" secondItem="g1V-PI-7K0" secondAttribute="top" constant="287" id="gaK-na-WPc"/>
+                                    <constraint firstItem="2XQ-Ov-OW3" firstAttribute="trailing" secondItem="5NT-PE-hx0" secondAttribute="trailing" id="l12-6r-cBi"/>
+                                    <constraint firstItem="EZC-W9-nsr" firstAttribute="trailing" secondItem="2XQ-Ov-OW3" secondAttribute="trailing" id="o8R-CT-yd2"/>
+                                    <constraint firstItem="RDn-PP-J1b" firstAttribute="trailing" secondItem="EZC-W9-nsr" secondAttribute="trailing" id="ubN-cW-Aq8"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VE3-dW-JfG"/>
+                        <color key="backgroundColor" name="MainColor"/>
+                        <constraints>
+                            <constraint firstItem="g1V-PI-7K0" firstAttribute="top" secondItem="VE3-dW-JfG" secondAttribute="top" id="BKx-9m-qg3"/>
+                            <constraint firstItem="VE3-dW-JfG" firstAttribute="bottom" secondItem="g1V-PI-7K0" secondAttribute="bottom" constant="208" id="DUx-aE-aA6"/>
+                            <constraint firstItem="g1V-PI-7K0" firstAttribute="centerX" secondItem="pnc-u2-Tll" secondAttribute="centerX" id="p7k-1c-XIo"/>
+                            <constraint firstItem="g1V-PI-7K0" firstAttribute="leading" secondItem="VE3-dW-JfG" secondAttribute="leading" constant="17" id="tcP-5R-FF0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="BCb-FP-mmT" id="isn-9c-fek"/>
+                        <outlet property="passwordTextField" destination="D7S-3D-thV" id="EPP-JB-bc3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WWB-Ar-3dx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1857.9710144927537" y="87.723214285714278"/>
         </scene>
     </scenes>
     <resources>
