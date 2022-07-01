@@ -24,8 +24,8 @@ class NetworkManager {
     
     struct Auth {
         
-        static var accessToken       = ""
-        static var refreshToken      = ""
+        static var accessToken       = Int()
+        static var refreshToken      = Int()
         
     }
     

@@ -13,10 +13,11 @@ class LoginVC: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     var currentCustomer: Customer?
     var authViewModel: AuthViewModel?
+    let network = NetworkManager.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         currentCustomer = Customer()
-        let network = NetworkManager.shared
         authViewModel = AuthViewModel(networkservice: network)
     }
 
@@ -29,6 +30,10 @@ class LoginVC: UIViewController {
         authViewModel?.loginUser(currentCustomer: currentCustomer, completionHandler: { customer in
             if customer != nil {
                 Helper.displayMessage(message: "Login Success", messageError: false)
+                guard let customer = customer else {
+                    return
+                }
+                NetworkManager.Auth.accessToken =  (customer.id)!
             }else{
                 Helper.displayMessage(message: "Wrong Username or Password", messageError: true)
             }

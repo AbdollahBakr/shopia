@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vsn-Mn-bXf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wishlist View Controller-->
+        <scene sceneID="kfy-oA-DAb">
+            <objects>
+                <viewController id="vsn-Mn-bXf" customClass="WishlistViewController" customModule="M_Commerce_Shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Ks-Mv-11c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ooc-or-21Q" userLabel="HeaderView">
+                                <rect key="frame" x="20" y="44" width="280" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cj2-5x-862" userLabel="BackBtnWishlist" customClass="CircleButtonShadowView" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" name="GreyColor"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="arrow.left" catalog="system"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wishlist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="go3-3r-HEY">
+                                        <rect key="frame" x="157" y="20" width="102" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ATD-wx-FXS">
+                                <rect key="frame" x="20" y="132" width="374" height="641"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="nGP-6u-4mW">
+                                    <size key="itemSize" width="71" height="66"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="08j-FT-8lV">
+                                        <rect key="frame" x="0.0" y="0.0" width="71" height="66"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1QC-z1-IOo">
+                                            <rect key="frame" x="0.0" y="0.0" width="71" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="71" height="66"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="vsn-Mn-bXf" id="ifh-Bv-j6R"/>
+                                    <outlet property="delegate" destination="vsn-Mn-bXf" id="XqK-ln-Vn9"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qNh-if-mxP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ooc-or-21Q" firstAttribute="leading" secondItem="ATD-wx-FXS" secondAttribute="leading" id="9GN-UH-dWT"/>
+                            <constraint firstItem="qNh-if-mxP" firstAttribute="bottom" secondItem="ATD-wx-FXS" secondAttribute="bottom" constant="89" id="Gj7-Ff-fsK"/>
+                            <constraint firstItem="Ooc-or-21Q" firstAttribute="leading" secondItem="4Ks-Mv-11c" secondAttribute="leadingMargin" id="I6d-Kb-mnR"/>
+                            <constraint firstAttribute="bottom" secondItem="Ooc-or-21Q" secondAttribute="bottom" constant="772" id="OKg-pr-cFW"/>
+                            <constraint firstItem="ATD-wx-FXS" firstAttribute="trailing" secondItem="4Ks-Mv-11c" secondAttribute="trailingMargin" id="UIt-V3-fYO"/>
+                            <constraint firstItem="ATD-wx-FXS" firstAttribute="top" secondItem="Ooc-or-21Q" secondAttribute="bottom" constant="8" symbolic="YES" id="Xgk-sJ-IeT"/>
+                            <constraint firstItem="Ooc-or-21Q" firstAttribute="top" secondItem="qNh-if-mxP" secondAttribute="top" id="Xh0-nn-vHf"/>
+                            <constraint firstItem="qNh-if-mxP" firstAttribute="trailing" secondItem="Ooc-or-21Q" secondAttribute="trailing" constant="114" id="ecB-eT-JZ2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="wishlistCollectionView" destination="ATD-wx-FXS" id="0Is-SA-gMg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SL4-Ij-MTL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100.00000000000001" y="42.857142857142854"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uri-xO-mjX">
+            <objects>
+                <viewController id="fA6-fa-Cn1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4md-c9-gYi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMU-eq-yfD" userLabel="HeaderView">
+                                <rect key="frame" x="20" y="44" width="280" height="80"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFp-gy-PYv" userLabel="BackBtnNoWishlist" customClass="CircleButtonShadowView" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" name="GreyColor"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="arrow.left" catalog="system"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wishlist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHu-sr-jm1" userLabel="noWishlist">
+                                        <rect key="frame" x="157" y="20" width="102" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noWishlist" translatesAutoresizingMaskIntoConstraints="NO" id="jth-vl-O12">
+                                <rect key="frame" x="44" y="285" width="326" height="326"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Wishllist yet !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXQ-oL-O6E">
+                                <rect key="frame" x="144" y="616" width="127" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="dsh-iY-3E8"/>
+                                    <constraint firstAttribute="height" constant="21" id="iIe-63-eaR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oyE-kc-uY0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cMU-eq-yfD" firstAttribute="top" secondItem="oyE-kc-uY0" secondAttribute="top" id="2Pd-RG-y4c"/>
+                            <constraint firstItem="jth-vl-O12" firstAttribute="centerY" secondItem="4md-c9-gYi" secondAttribute="centerY" id="8GA-Qy-Mje"/>
+                            <constraint firstItem="cMU-eq-yfD" firstAttribute="leading" secondItem="4md-c9-gYi" secondAttribute="leadingMargin" id="CSc-OL-3ia"/>
+                            <constraint firstItem="oyE-kc-uY0" firstAttribute="trailing" secondItem="cMU-eq-yfD" secondAttribute="trailing" constant="114" id="TmG-b2-ugO"/>
+                            <constraint firstItem="iXQ-oL-O6E" firstAttribute="leading" secondItem="oyE-kc-uY0" secondAttribute="leading" constant="144" id="Wvn-Ge-wFx"/>
+                            <constraint firstItem="oyE-kc-uY0" firstAttribute="trailing" secondItem="iXQ-oL-O6E" secondAttribute="trailing" constant="143" id="XfQ-d6-OGI"/>
+                            <constraint firstItem="iXQ-oL-O6E" firstAttribute="top" secondItem="jth-vl-O12" secondAttribute="bottom" constant="5" id="fTP-Rw-y99"/>
+                            <constraint firstItem="jth-vl-O12" firstAttribute="centerX" secondItem="4md-c9-gYi" secondAttribute="centerX" id="iwm-I2-jtt"/>
+                            <constraint firstAttribute="bottom" secondItem="cMU-eq-yfD" secondAttribute="bottom" constant="772" id="sGh-2e-diS"/>
+                            <constraint firstItem="oyE-kc-uY0" firstAttribute="bottom" secondItem="iXQ-oL-O6E" secondAttribute="bottom" constant="225" id="weQ-yB-viF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iS1-VY-IjO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="627.536231884058" y="42.857142857142854"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="noWishlist" width="326" height="326"/>
+        <namedColor name="GreyColor">
+            <color red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
