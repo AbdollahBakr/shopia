@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.9.1)
+  - GraphQLite (1.2.2)
   - IQKeyboardManagerSwift (6.3.0)
   - Kingfisher (7.1.1)
   - lottie-ios (3.2.3)
@@ -11,6 +12,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.8)
+  - GraphQLite
   - IQKeyboardManagerSwift (= 6.3.0)
   - Kingfisher
   - lottie-ios
@@ -21,6 +23,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - GraphQLite
     - IQKeyboardManagerSwift
     - Kingfisher
     - lottie-ios
@@ -30,6 +33,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  GraphQLite: b84be3f2db1d09fc935c40deb17e7c9e77ce9ea8
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
   Kingfisher: f738f9c4a3415823b8e2985d10aa2d6a9f37bc4d
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
@@ -37,6 +41,6 @@ SPEC CHECKSUMS:
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SwiftMessages: f0c7ef4705a570ad6c5e208b611f4333e660ed92
 
-PODFILE CHECKSUM: caded1dc1299b957ebf759566d772296e2e5ce71
+PODFILE CHECKSUM: b918947a58d5f825357bdb5c524d668ce7e820d4
 
 COCOAPODS: 1.11.3
