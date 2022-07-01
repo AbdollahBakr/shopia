@@ -16,6 +16,7 @@ class AddressCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "AddressCollectionViewCell"
 
+    var address: Address?
     
     override func awakeFromNib() {
         super.awakeFromNib()
