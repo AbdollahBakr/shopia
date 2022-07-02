@@ -11,13 +11,13 @@ class LoginVC: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    var currentCustomer: Customer?
+    var currentCustomer: CustomerItem?
     var authViewModel: AuthViewModel?
     let network = NetworkManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentCustomer = Customer()
+        currentCustomer = CustomerItem()
         authViewModel = AuthViewModel(networkservice: network)
     }
 

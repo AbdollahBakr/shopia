@@ -7,10 +7,11 @@
 
 import UIKit
 
+
 class ImageSliderCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
-    
+//    let producDetail : ProductDetail()
     var image: UIImage! {
         didSet{
             imageView.image = image

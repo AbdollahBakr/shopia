@@ -28,7 +28,7 @@ class CoreDataManager {
     
     private init() {
        
-        entityName  = "M_Commerce_Shop"
+        entityName  = "Favorite_Product"
         
         appDelegate = UIApplication.shared.delegate as? AppDelegate
         viewContext = appDelegate?.persistentContainer.viewContext
@@ -79,14 +79,14 @@ class CoreDataManager {
         }
     
         // Get The Class Required For Performing behavior required of a Core Data model object.
-        let league = NSManagedObject(entity: entity,
+        let favoriteEntity = NSManagedObject(entity: entity,
                                insertInto: viewContext)
     
         // Set Properties Inserted Data From User To Movies Table (Entity)
-        league.setValue(theLeagueName, forKey: "strLeague")
-        league.setValue(theLeagueBadge, forKey: "strBadge")
-        league.setValue(theLeagueYoutube, forKey: "strYoutube")
-        league.setValue(theLeagueId, forKey: "idLeague")
+        favoriteEntity.setValue(theLeagueName, forKey: "strLeague")
+        favoriteEntity.setValue(theLeagueBadge, forKey: "strBadge")
+        favoriteEntity.setValue(theLeagueYoutube, forKey: "strYoutube")
+        favoriteEntity.setValue(theLeagueId, forKey: "idLeague")
         
         // Save Our Data (Properties) Into CoreData
         appDelegate?.saveContext()

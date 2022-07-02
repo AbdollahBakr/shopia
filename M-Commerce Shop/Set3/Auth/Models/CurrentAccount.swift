@@ -9,11 +9,11 @@ import Foundation
 
 struct Customers : Codable{
     
-    var customers : [Customer]
+    var customers : [CustomerItem]
 
 }
 
-struct Customer : Codable{
+struct CustomerItem : Codable{
     var id                      : Int?
     var email                   : String?
     var first_name              : String?
