@@ -8,22 +8,30 @@
 import Foundation
 
 class HomeViewModel {
+    // To Connect View With ViewModel Using Closures For Network Call
+    var bindCategoriesToHomeView    : (() -> ()) = {}
     
-//    func potAllData() {
-//
-//        NetworkManager.shared.fbLogin { (success, error) in
-//            if error == nil {
-//                //success
-//                print(success)
-//            }else {
-//
-//                //err
-//                guard let err = error else {
-//                    return
-//                }
-//
-//                print(err)
-//            }
-//        }
-//    }
+    //Any Changes/action Happends In sportsArray call The Closure
+    var categoriesArray : [SmartCollections]?
+    {
+        didSet{
+            // Call The Closure Once SportResults changed instead of putting it down inside the func to observe the change here
+            bindCategoriesToHomeView()
+        }
+    }
+    
+    
+    func listCategoriesData() {
+        
+        NetworkManager.shared.getCategories { [weak self] (categories, error) in
+            if error == nil {
+                
+                self?.categoriesArray = categories
+                
+            } else {
+                guard let err = error else {return}
+                print(err)
+            }
+        }
+    }
 }

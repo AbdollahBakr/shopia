@@ -3,36 +3,77 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Hello-->
+        <!--Hello  Welcome To M-Commerce-->
         <scene sceneID="gHc-3I-6Bf">
             <objects>
                 <viewController storyboardIdentifier="HomeVC" id="kV6-4V-ukm" customClass="HomeVC" customModule="M_Commerce_Shop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cM6-sX-P8g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To M-Commerce App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zw7-Dh-YHV">
+                                <rect key="frame" x="20" y="140" width="374" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="DarkGreyTabBar"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Brands Search.. " translatesAutoresizingMaskIntoConstraints="NO" id="PPi-S0-OxX">
+                                <rect key="frame" x="20" y="169" width="325.5" height="43.5"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aab-VN-svE" customClass="RoundedButton" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                <rect key="frame" x="350.5" y="169" width="43.5" height="43.5"/>
+                                <color key="backgroundColor" name="BlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Aab-VN-svE" secondAttribute="height" multiplier="1:1" id="gOP-VS-MCX"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="mic.fill" catalog="system"/>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zVZ-bi-7zh">
+                                <rect key="frame" x="20" y="228.5" width="374" height="667.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zl9-P0-Jk3">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="jxF-CY-24D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Aab-VN-svE" firstAttribute="width" secondItem="cM6-sX-P8g" secondAttribute="width" multiplier="0.105266" id="Daa-Ze-b2B"/>
+                            <constraint firstItem="PPi-S0-OxX" firstAttribute="leading" secondItem="zw7-Dh-YHV" secondAttribute="leading" id="EoM-Lo-AmA"/>
+                            <constraint firstItem="Aab-VN-svE" firstAttribute="top" secondItem="PPi-S0-OxX" secondAttribute="top" id="O6D-yh-Uss"/>
+                            <constraint firstItem="Aab-VN-svE" firstAttribute="leading" secondItem="PPi-S0-OxX" secondAttribute="trailing" constant="5" id="OZb-LM-ggw"/>
+                            <constraint firstItem="jxF-CY-24D" firstAttribute="trailing" secondItem="zw7-Dh-YHV" secondAttribute="trailing" constant="20" id="TdW-qr-TI9"/>
+                            <constraint firstItem="zVZ-bi-7zh" firstAttribute="trailing" secondItem="zw7-Dh-YHV" secondAttribute="trailing" id="Ulo-PW-Ke4"/>
+                            <constraint firstItem="zw7-Dh-YHV" firstAttribute="leading" secondItem="jxF-CY-24D" secondAttribute="leading" constant="20" id="bjf-FT-7Ov"/>
+                            <constraint firstItem="zVZ-bi-7zh" firstAttribute="leading" secondItem="zw7-Dh-YHV" secondAttribute="leading" id="c0z-sI-4dM"/>
+                            <constraint firstItem="Aab-VN-svE" firstAttribute="bottom" secondItem="PPi-S0-OxX" secondAttribute="bottom" id="dBa-rX-dAF"/>
+                            <constraint firstAttribute="bottom" secondItem="zVZ-bi-7zh" secondAttribute="bottom" id="eUP-9b-G33"/>
+                            <constraint firstItem="PPi-S0-OxX" firstAttribute="top" secondItem="zw7-Dh-YHV" secondAttribute="bottom" constant="8.5" id="euz-0e-WPD"/>
+                            <constraint firstItem="zVZ-bi-7zh" firstAttribute="top" secondItem="PPi-S0-OxX" secondAttribute="bottom" constant="16" id="hy0-X3-xNd"/>
+                            <constraint firstItem="zw7-Dh-YHV" firstAttribute="top" secondItem="jxF-CY-24D" secondAttribute="top" id="jMv-6N-gIg"/>
+                            <constraint firstItem="Aab-VN-svE" firstAttribute="trailing" secondItem="zw7-Dh-YHV" secondAttribute="trailing" id="wMF-Ss-XbN"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Hello" id="8Ps-ZA-ZwS">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="p1c-cP-StE"/>
-                        <rightBarButtonItems>
-                            <barButtonItem image="cart" catalog="system" id="Fbp-1j-su8">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                            <barButtonItem image="heart" catalog="system" id="AMR-yG-BQH">
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                    <navigationItem key="navigationItem" id="8Ps-ZA-ZwS">
+                        <string key="title">Hello 
+Welcome To M-Commerce</string>
                     </navigationItem>
                     <connections>
-                        <outletCollection property="navBarItems" destination="Fbp-1j-su8" collectionClass="NSMutableArray" id="ME0-nE-1Jk"/>
-                        <outletCollection property="navBarItems" destination="AMR-yG-BQH" collectionClass="NSMutableArray" id="otq-rm-U2A"/>
-                        <outletCollection property="navBarItems" destination="p1c-cP-StE" collectionClass="NSMutableArray" id="hzk-ZY-gnz"/>
+                        <outlet property="collectionView" destination="zVZ-bi-7zh" id="P7o-2o-vyH"/>
+                        <outlet property="searchBar" destination="PPi-S0-OxX" id="CpY-By-mEd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="URN-j5-yRz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -47,8 +88,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="w72-cL-n0a">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="8"/>
+                        </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                            <color key="textColor" name="TextColor"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -62,9 +107,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cart" catalog="system" width="128" height="102"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
-        <image name="menu" width="25" height="25"/>
+        <image name="mic.fill" catalog="system" width="108" height="128"/>
+        <namedColor name="BlueColor">
+            <color red="0.23921568627450981" green="0.57647058823529407" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkGreyTabBar">
+            <color red="0.54509803921568623" green="0.59607843137254901" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

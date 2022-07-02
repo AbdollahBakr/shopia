@@ -39,7 +39,7 @@ class NetworkManager {
         // Paths Cases
         case authSignup
         
-        
+        case getCategories
         /******* Change These Pathes With Our Needs ******/
         //ex:Auth,order....etc
         var stringValue: String {
@@ -48,6 +48,9 @@ class NetworkManager {
                 
             case .authSignup:
                 return EndPoints.base + "/customers.json"
+                
+            case .getCategories:
+                return EndPoints.base + "/smart_collections.json"
                 
                 
             }
@@ -208,81 +211,21 @@ class NetworkManager {
                     }
     }
     
-    //    func fetchData<T:Codable, E: Codable>(url:String,parameters:Parameters?,headers:HTTPHeaders?,method:HTTPMethod?,completion: @escaping (T?,E? ,Error?)-> Void) {
-    //
-    //            Alamofire.request(url, method: method ?? .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
-    //                .validate(statusCode: 200..<300)
-    //                .responseJSON { (response) in
-    //                switch response.result {
-    //
-    //                case .success(_):
-    //
-    //                    do {
-    //                        guard let data = response.data else {return}
-    //                        let responseData = try JSONDecoder().decode(T?.self, from: data)
-    //                        completion(responseData, nil,nil)
-    //                    } catch let jsonError {
-    //                        print(jsonError)
-    //                    }
-    //                case .failure(let error):
-    //                    let statusCode = response.response?.statusCode ?? 0
-    //                    if statusCode > 300 {
-    //
-    //                    do {
-    //                        guard let data = response.data else {return}
-    //                        let responseError = try JSONDecoder().decode(E?.self, from: data)
-    //                        completion(nil, responseError,nil)
-    //                    } catch let jsonError {
-    //                        print(jsonError)
-    //                    }
-    //                } else {
-    //                    completion(nil,nil,error)
-    //                }
-    //            }
-    //        }
-    //
-    //    }
-    
-    //Example USING GET Request....
-    //    func getAllSports(completion: @escaping ([Leagues]?, Error?) -> Void) {
-    //
-    //        let endPoints = EndPoints.authLogin.url
-    //
-    //        //responseType -> the main model
-    //        taskForGETRequest(url:endPoints , responseType: CoreDataModel.self) { (response, error) in
-    //            if let response = response  {
-    //                //result -> is the [meals]
-    //                completion(response.strLeague,nil)
-    //            } else {
-    //                completion([],error)
-    //            }
-    //        }
-    //    }
-   
+    func getCategories(completion: @escaping ([SmartCollections]?,Error?) -> ()) {
         
-
-
-    /***** Example USING POST Request.... ***/
-    //Note: It's Just An Example Don't Use This Post Request In Any View
-//    func fbLogin(completion: @escaping(Bool, Error?)  -> Void) {
-//
-//        let body = CoreDataModel(strLeague: "s", strBadge: "ss", strYoutube: "ss", idLeague: "ss")
-//
-//        taskForPOSTRequest(url: EndPoints.authSignup.url, responseType: Leagues.self, body: body) { (response, error) in
-//
-//            if let response = response {
-//
-//                Auth.accessToken = response.id
-//                Auth.refreshToken = response.id
-//
-//                completion(true, nil)
-//                print(response)
-//            } else {
-//                completion(false, error)
-//            }
-//        }
-//    }
+        let url = EndPoints.getCategories.url
+        
+        taskForGETRequest(url: url, responseType: SmartCollectionsData.self) { (response, error) in
+                        if let response = response  {
+                            //result -> is the [meals]
+                            completion(response.smart_collections, nil)
+                        } else {
+                            completion(nil,error)
+                        }
+                    }
+    }
     
+  
 }
     
 
