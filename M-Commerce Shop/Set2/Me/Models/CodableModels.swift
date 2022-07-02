@@ -13,11 +13,6 @@ struct DataClass: Codable {
     let draftOrder: DraftOrder?
 }
 
-// MARK: - Customer
-struct Customer: Codable {
-    let addresses: [Address]?
-}
-
 // MARK: - Address
 struct Address: Codable {
     let country, city, address1, address2: String?
