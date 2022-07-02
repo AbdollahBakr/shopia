@@ -64,3 +64,10 @@ struct ShippingLine: Codable {
     let title: String?
     let price: Double?
 }
+
+
+// MARK: - Cart Item
+struct CartItem: Codable {
+    let variantId: String
+    let quantity: Int
+}

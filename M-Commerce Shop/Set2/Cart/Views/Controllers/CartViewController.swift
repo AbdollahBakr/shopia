@@ -56,6 +56,9 @@ class CartViewController: UIViewController {
         shippingLabel.text = viewModel.formatPrice(value: draftOrder?.totalShippingPrice)
         taxLabel.text = viewModel.formatPrice(value: draftOrder?.totalTax)
     }
+    @IBAction func checkout(_ sender: Any) {
+        viewModel.updateCartItems()
+    }
 }
 
 
