@@ -24,7 +24,7 @@ class GraphQLManager {
         
         let server = GQLServer(HTTP: shopifyLink, headers: headers)
 
-        server.query(query.body, query.variables ?? [:]) { result, error in
+        server.query(query.body, query.variables ) { result, error in
             if (error == nil) {
                 var jsonData = Data()
                 do {
@@ -47,7 +47,7 @@ class GraphQLManager {
     
     static func mutateWithQuery(query: Query) {
         let server = GQLServer(HTTP: shopifyLink, headers: headers)
-        server.mutation(query.body, query.variables ?? [:]) { result, error in
+        server.mutation(query.body, query.variables ) { result, error in
           if (error == nil) {
             print("API Mutated Successfully")
           }
