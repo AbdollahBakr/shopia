@@ -31,6 +31,7 @@
 		14446BC5286D48380080848A /* GraphQLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14446BC4286D48380080848A /* GraphQLManager.swift */; };
 		14446BC7286D486C0080848A /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14446BC6286D486C0080848A /* Query.swift */; };
 		146FAA05286F9F8C00B897EC /* CartCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FAA04286F9F8C00B897EC /* CartCellDelegate.swift */; };
+		146FAA062870160C00B897EC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E5F28650E2C00603B78 /* LoginVC.swift */; };
 		14707610286A50EB00969B81 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1470760F286A50EB00969B81 /* Me.storyboard */; };
 		14707613286A5A7900969B81 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14707612286A5A7900969B81 /* MeViewController.swift */; };
 		14707615286A6F1C00969B81 /* GuestMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14707614286A6F1C00969B81 /* GuestMeViewController.swift */; };
@@ -43,7 +44,6 @@
 		91E4329928686E02007E0353 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4329828686E02007E0353 /* AuthViewModel.swift */; };
 		E69D21BD4E6C4A2556FAD8D0 /* Pods_M_Commerce_ShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC2F3FD955D80DEEE12124F /* Pods_M_Commerce_ShopTests.framework */; };
 		FA2B6E5C28650E2C00603B78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E5B28650E2C00603B78 /* AppDelegate.swift */; };
-		FA2B6E6028650E2C00603B78 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E5F28650E2C00603B78 /* LoginVC.swift */; };
 		FA2B6E6628650E2C00603B78 /* M_Commerce_Shop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E6428650E2C00603B78 /* M_Commerce_Shop.xcdatamodeld */; };
 		FA2B6E6828650E2E00603B78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA2B6E6728650E2E00603B78 /* Assets.xcassets */; };
 		FA2B6E6B28650E2E00603B78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2B6E6928650E2E00603B78 /* LaunchScreen.storyboard */; };
@@ -1134,7 +1134,6 @@
 				FAAB806828651CD300A3A86A /* CoreDataModel.swift in Sources */,
 				142C2BA4286AD212001CEFBB /* AddressesViewController.swift in Sources */,
 				FA2B6E6628650E2C00603B78 /* M_Commerce_Shop.xcdatamodeld in Sources */,
-				FA2B6E6028650E2C00603B78 /* LoginVC.swift in Sources */,
 				142C2BAB286AFA04001CEFBB /* AddNewAddressViewController.swift in Sources */,
 				14181686286F27DA00B85CCC /* CartItems.swift in Sources */,
 				FAAB808928651E5600A3A86A /* CustomizedObjects.swift in Sources */,
@@ -1163,6 +1162,7 @@
 				91135CF82867964E0079F360 /* SignUpVC.swift in Sources */,
 				142C2B9F286ABB30001CEFBB /* SettingsViewModel.swift in Sources */,
 				142BB734286EAD14008A7D00 /* AddAddressViewModel.swift in Sources */,
+				146FAA062870160C00B897EC /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
