@@ -31,7 +31,7 @@
 		14446BC5286D48380080848A /* GraphQLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14446BC4286D48380080848A /* GraphQLManager.swift */; };
 		14446BC7286D486C0080848A /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14446BC6286D486C0080848A /* Query.swift */; };
 		146FAA05286F9F8C00B897EC /* CartCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FAA04286F9F8C00B897EC /* CartCellDelegate.swift */; };
-		146FAA062870160C00B897EC /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E5F28650E2C00603B78 /* LoginVC.swift */; };
+		146FAA0B28701AB700B897EC /* MeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FAA0A28701AB700B897EC /* MeViewModel.swift */; };
 		14707610286A50EB00969B81 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1470760F286A50EB00969B81 /* Me.storyboard */; };
 		14707613286A5A7900969B81 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14707612286A5A7900969B81 /* MeViewController.swift */; };
 		14707615286A6F1C00969B81 /* GuestMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14707614286A6F1C00969B81 /* GuestMeViewController.swift */; };
@@ -110,6 +110,7 @@
 		14446BC4286D48380080848A /* GraphQLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLManager.swift; sourceTree = "<group>"; };
 		14446BC6286D486C0080848A /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		146FAA04286F9F8C00B897EC /* CartCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCellDelegate.swift; sourceTree = "<group>"; };
+		146FAA0A28701AB700B897EC /* MeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewModel.swift; sourceTree = "<group>"; };
 		1470760F286A50EB00969B81 /* Me.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		14707612286A5A7900969B81 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		14707614286A6F1C00969B81 /* GuestMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestMeViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +205,7 @@
 				142C2B9E286ABB30001CEFBB /* SettingsViewModel.swift */,
 				142BB731286E9FE4008A7D00 /* AddressesViewModel.swift */,
 				142BB733286EAD14008A7D00 /* AddAddressViewModel.swift */,
+				146FAA0A28701AB700B897EC /* MeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -227,14 +229,33 @@
 			path = GraphQL;
 			sourceTree = "<group>";
 		};
-		1470760C286A50C300969B81 /* Me */ = {
+		146FAA0728701A6F00B897EC /* Addresses */ = {
+			isa = PBXGroup;
+			children = (
+				142C2BA3286AD212001CEFBB /* AddressesViewController.swift */,
+				142C2BAA286AFA04001CEFBB /* AddNewAddressViewController.swift */,
+				1437833A286B752E000D3BFF /* EditAddressViewController.swift */,
+			);
+			path = Addresses;
+			sourceTree = "<group>";
+		};
+		146FAA0928701A8F00B897EC /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				14707612286A5A7900969B81 /* MeViewController.swift */,
+				14707614286A6F1C00969B81 /* GuestMeViewController.swift */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		1470760C286A50C300969B81 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				142C2B9D286ABB15001CEFBB /* ViewModels */,
 				142C2B98286AB945001CEFBB /* Models */,
 				1470760D286A50CF00969B81 /* Views */,
 			);
-			path = Me;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		1470760D286A50CF00969B81 /* Views */ = {
@@ -259,12 +280,9 @@
 		14707611286A5A5800969B81 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				14707612286A5A7900969B81 /* MeViewController.swift */,
-				14707614286A6F1C00969B81 /* GuestMeViewController.swift */,
 				142C2B96286A9AAD001CEFBB /* SettingsViewController.swift */,
-				142C2BA3286AD212001CEFBB /* AddressesViewController.swift */,
-				142C2BAA286AFA04001CEFBB /* AddNewAddressViewController.swift */,
-				1437833A286B752E000D3BFF /* EditAddressViewController.swift */,
+				146FAA0928701A8F00B897EC /* Me */,
+				146FAA0728701A6F00B897EC /* Addresses */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -459,7 +477,7 @@
 		FA2B6EA328650FE400603B78 /* Set2 */ = {
 			isa = PBXGroup;
 			children = (
-				1470760C286A50C300969B81 /* Me */,
+				1470760C286A50C300969B81 /* Settings */,
 				FAAB80062865101600A3A86A /* Cart */,
 				FAAB80072865101600A3A86A /* Payment */,
 			);
@@ -1142,6 +1160,7 @@
 				FAAB805628651AB400A3A86A /* NetworkManager.swift in Sources */,
 				FA890EA82865E57200063FD2 /* Leagues.swift in Sources */,
 				1437833B286B752E000D3BFF /* EditAddressViewController.swift in Sources */,
+				146FAA0B28701AB700B897EC /* MeViewModel.swift in Sources */,
 				1432C2B6286F111F004923DB /* Cart.swift in Sources */,
 				142C2B97286A9AAD001CEFBB /* SettingsViewController.swift in Sources */,
 				FAAB80BB28652AD400A3A86A /* NoConnectionVC.swift in Sources */,
@@ -1162,7 +1181,6 @@
 				91135CF82867964E0079F360 /* SignUpVC.swift in Sources */,
 				142C2B9F286ABB30001CEFBB /* SettingsViewModel.swift in Sources */,
 				142BB734286EAD14008A7D00 /* AddAddressViewModel.swift in Sources */,
-				146FAA062870160C00B897EC /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
