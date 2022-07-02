@@ -25,7 +25,10 @@ struct LineItems: Codable {
 // MARK: - Edge
 struct Edge: Codable, Equatable {
     static func == (lhs: Edge, rhs: Edge) -> Bool {
-        lhs.node?.variant?.id == rhs.node?.variant?.id
+        let leftId = lhs.node?.variant?.id
+        let rightId = rhs.node?.variant?.id
+        
+        return (leftId == rightId && leftId != nil && rightId != nil)
     }
     
     let node: Node?

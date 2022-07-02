@@ -34,6 +34,9 @@ query getLineItemsInDraftOrder($id: ID!){
           quantity
           originalUnitPrice
           discountedUnitPrice
+            variant {
+                id
+            }
           appliedDiscount {
               value
               valueType
@@ -85,8 +88,8 @@ query getLineItemsInDraftOrder($id: ID!){
         GraphQLManager.mutateWithQuery(query: query)
     }
     
-    func formatPrice(value: String?, currency: String?) -> String {
-        return [value, currency]
+    func formatPrice(value: String?) -> String {
+        return [value, SettingsViewModel.settingsCells[1].settingValue]
             .compactMap { $0 }
             .joined(separator: " ")
     }

@@ -18,7 +18,6 @@ class CartViewController: UIViewController {
     var viewModel: CartViewModel!
     var draftOrder: DraftOrder?
     var cartItems: [Edge]?
-    var currency: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +31,6 @@ class CartViewController: UIViewController {
         // Register CartItemCollectionViewCell from XIB
         let cartItemsNipCell = UINib(nibName: "CartCollectionViewCell", bundle: nil)
         cartItemsCollectionView.register(cartItemsNipCell, forCellWithReuseIdentifier: CartCollectionViewCell.identifier)
-        
-        // Set currency
-        currency = SettingsViewModel.settingsCells[1].settingValue
         
         // Get Cart Items From API
         viewModel = CartViewModel()
@@ -56,14 +52,11 @@ class CartViewController: UIViewController {
     }
     
     func populateTotalSection(){
-        totalLabel.text = viewModel.formatPrice(value: draftOrder?.totalPrice, currency: currency)
-        shippingLabel.text = viewModel.formatPrice(value: draftOrder?.totalShippingPrice, currency: currency)
-        taxLabel.text = viewModel.formatPrice(value: draftOrder?.totalTax, currency: currency)
+        totalLabel.text = viewModel.formatPrice(value: draftOrder?.totalPrice)
+        shippingLabel.text = viewModel.formatPrice(value: draftOrder?.totalShippingPrice)
+        taxLabel.text = viewModel.formatPrice(value: draftOrder?.totalTax)
     }
 }
-
-
-
 
 
 extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -80,8 +73,7 @@ extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.delegate = self
         cell.cartItem = cartItems?[indexPath.item]
         cell.itemNameLabel.text = cell.cartItem?.node?.name
-        cell.itemPriceLabel.text = cell.cartItem?.node?.originalUnitPrice
-        cell.itemPriceLabel.text! += " " + (SettingsViewModel.settingsCells[1].settingValue ?? "")
+        cell.itemPriceLabel.text = viewModel.formatPrice(value: cell.cartItem?.node?.originalUnitPrice)
         cell.itemCountLabel.text = cell.cartItem?.node?.quantity?.description
         let url = URL(string: cell.cartItem?.node?.image?.url ?? "")
         cell.cartItemImageView.kf.setImage(with: url)
@@ -103,7 +95,7 @@ extension CartViewController: CartCellDelegate {
     func didTapDeleteButton(item: Edge) {
         
         if let index = cartItems?.firstIndex(where: {$0 == item}) {
-            print("Item Deleted: \(item)")
+            print("Item Deleted: \(item) ad index \(index)")
             cartItems?.remove(at: index)
         }
         cartItemsCollectionView.reloadData()
