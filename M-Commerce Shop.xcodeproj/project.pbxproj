@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140A445928703E9B00FAD8CE /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140A445828703E9B00FAD8CE /* Ad.swift */; };
 		14181683286F19FF00B85CCC /* CartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14181681286F19FF00B85CCC /* CartCollectionViewCell.swift */; };
 		14181684286F19FF00B85CCC /* CartCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14181682286F19FF00B85CCC /* CartCollectionViewCell.xib */; };
 		14181686286F27DA00B85CCC /* CartItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14181685286F27DA00B85CCC /* CartItems.swift */; };
@@ -86,6 +87,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		140A445828703E9B00FAD8CE /* Ad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
 		14181681286F19FF00B85CCC /* CartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewCell.swift; sourceTree = "<group>"; };
 		14181682286F19FF00B85CCC /* CartCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartCollectionViewCell.xib; sourceTree = "<group>"; };
 		14181685286F27DA00B85CCC /* CartItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItems.swift; sourceTree = "<group>"; };
@@ -246,6 +248,38 @@
 				14707614286A6F1C00969B81 /* GuestMeViewController.swift */,
 			);
 			path = Me;
+			sourceTree = "<group>";
+		};
+		146FAA0C28703E2000B897EC /* Ads */ = {
+			isa = PBXGroup;
+			children = (
+				146FAA0F28703E3D00B897EC /* ViewModels */,
+				146FAA0E28703E3300B897EC /* Models */,
+				146FAA0D28703E2A00B897EC /* Views */,
+			);
+			path = Ads;
+			sourceTree = "<group>";
+		};
+		146FAA0D28703E2A00B897EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		146FAA0E28703E3300B897EC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				140A445828703E9B00FAD8CE /* Ad.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		146FAA0F28703E3D00B897EC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		1470760C286A50C300969B81 /* Settings */ = {
@@ -477,6 +511,7 @@
 		FA2B6EA328650FE400603B78 /* Set2 */ = {
 			isa = PBXGroup;
 			children = (
+				146FAA0C28703E2000B897EC /* Ads */,
 				1470760C286A50C300969B81 /* Settings */,
 				FAAB80062865101600A3A86A /* Cart */,
 				FAAB80072865101600A3A86A /* Payment */,
@@ -1139,6 +1174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				142C2B9C286ABA94001CEFBB /* SettingsCell.swift in Sources */,
+				140A445928703E9B00FAD8CE /* Ad.swift in Sources */,
 				146FAA05286F9F8C00B897EC /* CartCellDelegate.swift in Sources */,
 				1432C2B8286F14F5004923DB /* CartViewModel.swift in Sources */,
 				142C2BA8286AE549001CEFBB /* AddressCollectionViewCell.swift in Sources */,
