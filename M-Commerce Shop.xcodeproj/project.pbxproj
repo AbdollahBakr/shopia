@@ -36,6 +36,9 @@
 		911F22C0286F947A00E19FB9 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911F22BB286F947A00E19FB9 /* ProductDetail.swift */; };
 		911F22C2286F947A00E19FB9 /* Variants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911F22BD286F947A00E19FB9 /* Variants.swift */; };
 		911F22C4286FBA9900E19FB9 /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911F22C3286FBA9900E19FB9 /* ProductDetailsViewModel.swift */; };
+		913519342870C02F00FDE737 /* M_Commerce_Shop in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E6428650E2C00603B78 /* M_Commerce_Shop */; };
+		913519352870C02F00FDE737 /* M_Commerce_Shop in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E6428650E2C00603B78 /* M_Commerce_Shop */; };
+		913519372870C31F00FDE737 /* M_Commerce_Shop.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 913519362870C31F00FDE737 /* M_Commerce_Shop.xcdatamodel */; };
 		917B410A2869B0DB00CF3F99 /* SignupError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917B41092869B0DA00CF3F99 /* SignupError.swift */; };
 		9192FAF72868EC3E0082FBB8 /* CurrentAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9192FAF62868EC3E0082FBB8 /* CurrentAccount.swift */; };
 		91A9199F286EE6FA00652F56 /* ProductDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A9199E286EE6FA00652F56 /* ProductDetails.storyboard */; };
@@ -50,7 +53,6 @@
 		E69D21BD4E6C4A2556FAD8D0 /* Pods_M_Commerce_ShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC2F3FD955D80DEEE12124F /* Pods_M_Commerce_ShopTests.framework */; };
 		FA2B6E5C28650E2C00603B78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E5B28650E2C00603B78 /* AppDelegate.swift */; };
 		FA2B6E6028650E2C00603B78 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E5F28650E2C00603B78 /* LoginVC.swift */; };
-		FA2B6E6628650E2C00603B78 /* M_Commerce_Shop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E6428650E2C00603B78 /* M_Commerce_Shop.xcdatamodeld */; };
 		FA2B6E6828650E2E00603B78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA2B6E6728650E2E00603B78 /* Assets.xcassets */; };
 		FA2B6E6B28650E2E00603B78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2B6E6928650E2E00603B78 /* LaunchScreen.storyboard */; };
 		FA2B6E7628650E2E00603B78 /* M_Commerce_ShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E7528650E2E00603B78 /* M_Commerce_ShopTests.swift */; };
@@ -124,6 +126,7 @@
 		911F22BB286F947A00E19FB9 /* ProductDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
 		911F22BD286F947A00E19FB9 /* Variants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Variants.swift; sourceTree = "<group>"; };
 		911F22C3286FBA9900E19FB9 /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
+		913519362870C31F00FDE737 /* M_Commerce_Shop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = M_Commerce_Shop.xcdatamodel; path = "M-Commerce Shop/Shared/Managers/CoreData/M_Commerce_Shop/M_Commerce_Shop.xcdatamodel"; sourceTree = "<group>"; };
 		917B41092869B0DA00CF3F99 /* SignupError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupError.swift; sourceTree = "<group>"; };
 		9192FAF62868EC3E0082FBB8 /* CurrentAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAccount.swift; sourceTree = "<group>"; };
 		91A9199E286EE6FA00652F56 /* ProductDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetails.storyboard; sourceTree = "<group>"; };
@@ -464,6 +467,7 @@
 		FA2B6E4F28650E2C00603B78 = {
 			isa = PBXGroup;
 			children = (
+				913519362870C31F00FDE737 /* M_Commerce_Shop.xcdatamodel */,
 				FA2B6E5A28650E2C00603B78 /* M-Commerce Shop */,
 				FA2B6E7428650E2E00603B78 /* M-Commerce ShopTests */,
 				FA2B6E7F28650E2E00603B78 /* M-Commerce ShopUITests */,
@@ -944,7 +948,7 @@
 		FAAB807528651D8900A3A86A /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				FA2B6E6428650E2C00603B78 /* M_Commerce_Shop.xcdatamodeld */,
+				FA2B6E6428650E2C00603B78 /* M_Commerce_Shop */,
 				FAAB807128651D3F00A3A86A /* CoreDataManager */,
 				FAAB806C28651CF100A3A86A /* CoreDataModels */,
 			);
@@ -1207,6 +1211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				913519372870C31F00FDE737 /* M_Commerce_Shop.xcdatamodel in Sources */,
 				911F22C2286F947A00E19FB9 /* Variants.swift in Sources */,
 				142C2B9C286ABA94001CEFBB /* SettingsCell.swift in Sources */,
 				142C2BA8286AE549001CEFBB /* AddressCollectionViewCell.swift in Sources */,
@@ -1221,7 +1226,6 @@
 				911F22C4286FBA9900E19FB9 /* ProductDetailsViewModel.swift in Sources */,
 				FAAB806828651CD300A3A86A /* CoreDataModel.swift in Sources */,
 				142C2BA4286AD212001CEFBB /* AddressesViewController.swift in Sources */,
-				FA2B6E6628650E2C00603B78 /* M_Commerce_Shop.xcdatamodeld in Sources */,
 				91A919A1286EED5600652F56 /* ProductDetailsViewController.swift in Sources */,
 				FA2B6E6028650E2C00603B78 /* LoginVC.swift in Sources */,
 				142C2BAB286AFA04001CEFBB /* AddNewAddressViewController.swift in Sources */,
@@ -1263,6 +1267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2B6E7628650E2E00603B78 /* M_Commerce_ShopTests.swift in Sources */,
+				913519342870C02F00FDE737 /* M_Commerce_Shop in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1271,6 +1276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2B6E8128650E2E00603B78 /* M_Commerce_ShopUITests.swift in Sources */,
+				913519352870C02F00FDE737 /* M_Commerce_Shop in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1587,13 +1593,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		FA2B6E6428650E2C00603B78 /* M_Commerce_Shop.xcdatamodeld */ = {
+		FA2B6E6428650E2C00603B78 /* M_Commerce_Shop */ = {
 			isa = XCVersionGroup;
 			children = (
 				FA2B6E6528650E2C00603B78 /* M_Commerce_Shop.xcdatamodel */,
 			);
 			currentVersion = FA2B6E6528650E2C00603B78 /* M_Commerce_Shop.xcdatamodel */;
-			path = M_Commerce_Shop.xcdatamodeld;
+			path = M_Commerce_Shop;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

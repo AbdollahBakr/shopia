@@ -419,7 +419,7 @@ Innovatively crafted straps avoid causing any strain  on your shoulders
                                     <constraint firstAttribute="width" constant="40" id="3n5-cZ-zPp"/>
                                     <constraint firstAttribute="height" constant="40" id="Iic-Wz-LvM"/>
                                 </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="RedColor"/>
                                 <state key="normal" image="heart" catalog="system"/>
                                 <connections>
                                     <action selector="favActionBtn:" destination="0HA-4q-MI1" eventType="touchUpInside" id="g13-7X-wa6"/>
@@ -485,6 +485,9 @@ Innovatively crafted straps avoid causing any strain  on your shoulders
         </namedColor>
         <namedColor name="GreyColor">
             <color red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="RedColor">
+            <color red="0.93333333333333335" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -28,7 +28,7 @@ class CoreDataManager {
     
     private init() {
        
-        entityName  = "Favorite_Product"
+        entityName  = "Favourite_Product"
         
         appDelegate = UIApplication.shared.delegate as? AppDelegate
         viewContext = appDelegate?.persistentContainer.viewContext
@@ -57,16 +57,17 @@ class CoreDataManager {
         return ArraysManager.coreDataArray
     }
     
-    func save(strLeague :String? ,strBadge:String? ,strYoutube:String? ,idLeague:String?) -> Bool {
+    func save(viewContext:NSManagedObjectContext ,productDetail: ProductSavedModel) -> Bool {
         
-        guard let viewContext = viewContext,
-              let theLeagueName = strLeague,
-              !theLeagueName.isEmpty,
-              let theLeagueBadge = strBadge,
-              !theLeagueBadge.isEmpty,
-              let theLeagueYoutube = strYoutube,
-              let theLeagueId = idLeague,
-              !theLeagueId.isEmpty
+        guard 
+              let productName = productDetail.title,
+              !productName.isEmpty,
+              let productImage = productDetail.image,
+              !productImage.isEmpty,
+              let productPrice = productDetail.price,
+              !productPrice.isEmpty,
+              let productID = productDetail.id,
+              !productID.isEmpty
               else {
             print("Missing Data")
             return false
@@ -83,12 +84,13 @@ class CoreDataManager {
                                insertInto: viewContext)
     
         // Set Properties Inserted Data From User To Movies Table (Entity)
-        favoriteEntity.setValue(theLeagueName, forKey: "strLeague")
-        favoriteEntity.setValue(theLeagueBadge, forKey: "strBadge")
-        favoriteEntity.setValue(theLeagueYoutube, forKey: "strYoutube")
-        favoriteEntity.setValue(theLeagueId, forKey: "idLeague")
+        favoriteEntity.setValue(productName, forKey: "title")
+        favoriteEntity.setValue(productImage, forKey: "image")
+        favoriteEntity.setValue(productPrice, forKey: "price")
+        favoriteEntity.setValue(productID, forKey: "id")
         
         // Save Our Data (Properties) Into CoreData
+        print("Product saved successfully!")
         appDelegate?.saveContext()
         
         return true
@@ -114,6 +116,26 @@ class CoreDataManager {
         }
         
         
+    }
+    
+    func delete(productID: String) {
+        guard let viewContext = viewContext
+        else {return}
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: entityName ?? "Favourite_Product")
+        
+        let predicateProduct = NSPredicate(format: "id == %@", productID as! CVarArg)
+        fetchRequest.predicate = predicateProduct
+        
+        do{
+            let leagueNSManagedObjects = try viewContext.fetch(fetchRequest)
+            if (leagueNSManagedObjects.first ?? nil) != nil{
+                viewContext.delete(leagueNSManagedObjects.first!)
+                appDelegate?.saveContext()
+            }
+        }catch let error as NSError {
+            print(error)
+        }
+      
     }
     
 }

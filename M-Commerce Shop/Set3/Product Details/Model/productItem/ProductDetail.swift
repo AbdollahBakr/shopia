@@ -10,7 +10,7 @@
 import Foundation
 struct ProductDetail : Codable {
     
-    let product: ProductInfo
+    let product: ProductInfo?
     
 }
 struct ProductInfo: Codable{
@@ -19,7 +19,7 @@ struct ProductInfo: Codable{
     let body_html: String?
     let vendor : String?
     let product_type : String?
-    let variants : [Variant]?
+    let variants : [VariantProduct]?
     let options : [Option]?
     let images : [Image]?
     let image : Image?

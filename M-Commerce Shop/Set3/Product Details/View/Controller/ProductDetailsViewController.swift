@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import CoreData
 
 class ProductDetailsViewController: UIViewController {
 
@@ -28,6 +29,7 @@ class ProductDetailsViewController: UIViewController {
     var productDetail : ProductDetail?
     
     var selectedItem: Int?
+    var isFavoriteSelected: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,13 +44,13 @@ class ProductDetailsViewController: UIViewController {
         productDetailsViewModel = ProductDetailsViewModel(networkservice: network)
         productDetailsViewModel?.getProduct(productID: 7358110630059, completion: { productDetail in
             self.productDetail = productDetail
-            print(self.productDetail)
-            self.pageControl.numberOfPages = productDetail.product.images?.count ?? 1
+//            print(self.productDetail)
+            self.pageControl.numberOfPages = productDetail.product?.images?.count ?? 1
 
-            self.productTitle.text = productDetail.product.title
+            self.productTitle.text = productDetail.product?.title
 
-            self.productPrice.text = productDetail.product.variants?[Int()].price
-            self.productDescription.text = productDetail.product.body_html
+            self.productPrice.text = productDetail.product?.variants?[Int()].price
+            self.productDescription.text = productDetail.product?.body_html
             self.imageCollectionView.reloadData()
            
         })
@@ -63,6 +65,30 @@ class ProductDetailsViewController: UIViewController {
     }
     
     @IBAction func favActionBtn(_ sender: CircleButtonShadowView) {
+        
+        let image = UIImage(systemName: "heart")
+        let imageFilled =  UIImage(systemName: "heart.fill")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let viewContext = appDelegate.persistentContainer.viewContext
+        
+        guard let currentProduct = productDetail else {return}
+
+        if isFavoriteSelected {
+            favBtn.imageView?.image =  image
+            favBtn.setImage(image, for: .normal)
+            isFavoriteSelected = false
+        
+            productDetailsViewModel?.deleteProduct(favProduct: currentProduct)
+            
+        }
+        else{
+            favBtn.imageView?.image = imageFilled
+            favBtn.setImage(imageFilled, for: .normal)
+            isFavoriteSelected = true
+            
+            
+            productDetailsViewModel?.saveProduct(viewContext:viewContext,favProduct: currentProduct)
+        }
     }
     
     
@@ -71,7 +97,7 @@ class ProductDetailsViewController: UIViewController {
     }
     
     @objc func timerAction(){
-        let desiredScrollPosition = (currentIndex < (productDetail?.product.images?.count ?? 1) - 1) ? currentIndex + 1 : 0
+        let desiredScrollPosition = (currentIndex < (productDetail?.product?.images?.count ?? 1) - 1) ? currentIndex + 1 : 0
         imageCollectionView.scrollToItem(at: IndexPath(item: desiredScrollPosition, section: 0), at: .centeredHorizontally, animated: true)
     }
     
@@ -92,12 +118,12 @@ extension ProductDetailsViewController: UICollectionViewDelegate, UICollectionVi
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        productDetail?.product.images?.count ?? 1
+        productDetail?.product?.images?.count ?? 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageSliderCollectionViewCell", for: indexPath) as! ImageSliderCollectionViewCell
-        let url = URL(string: productDetail?.product.images?[indexPath.row].src ?? "")
+        let url = URL(string: productDetail?.product?.images?[indexPath.row].src ?? "")
         //(self.bounds.size)
 //        let size =   CGSize(width: 200, height: 80)
         let processor = DownsamplingImageProcessor(size:
