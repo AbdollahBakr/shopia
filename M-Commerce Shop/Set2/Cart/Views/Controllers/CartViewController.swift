@@ -11,13 +11,20 @@ import Kingfisher
 class CartViewController: UIViewController {
     
     @IBOutlet weak var cartItemsCollectionView: UICollectionView!
+    @IBOutlet weak var shippingLabel: UILabel!
+    @IBOutlet weak var taxLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
     
     var viewModel: CartViewModel!
+    var draftOrder: DraftOrder?
     var cartItems: [Edge]?
+    var currency: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Loading Indicator
+        Helper.hudProgress()
         // Set collection view delegate & data source
         cartItemsCollectionView.delegate = self
         cartItemsCollectionView.dataSource = self
@@ -26,12 +33,16 @@ class CartViewController: UIViewController {
         let cartItemsNipCell = UINib(nibName: "CartCollectionViewCell", bundle: nil)
         cartItemsCollectionView.register(cartItemsNipCell, forCellWithReuseIdentifier: CartCollectionViewCell.identifier)
         
+        // Set currency
+        currency = SettingsViewModel.settingsCells[1].settingValue
+        
         // Get Cart Items From API
         viewModel = CartViewModel()
         viewModel.bindCartItemstoVC = { [weak self] in
             DispatchQueue.main.async {
-                Helper.hudProgress()
                 self?.cartItems = self?.viewModel.draftOrder?.lineItems?.edges
+                self?.draftOrder = self?.viewModel.draftOrder
+                self?.populateTotalSection()
                 self?.cartItemsCollectionView.reloadData()
                 Helper.dismissHud()
             }
@@ -43,7 +54,15 @@ class CartViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         viewModel.getCartItems()
     }
+    
+    func populateTotalSection(){
+        totalLabel.text = viewModel.formatPrice(value: draftOrder?.totalPrice, currency: currency)
+        shippingLabel.text = viewModel.formatPrice(value: draftOrder?.totalShippingPrice, currency: currency)
+        taxLabel.text = viewModel.formatPrice(value: draftOrder?.totalTax, currency: currency)
+    }
 }
+
+
 
 
 
@@ -82,11 +101,11 @@ extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension CartViewController: CartCellDelegate {
     func didTapDeleteButton(item: Edge) {
-        print("Delete pressed")
+        
         if let index = cartItems?.firstIndex(where: {$0 == item}) {
+            print("Item Deleted: \(item)")
             cartItems?.remove(at: index)
         }
-        print("Deleted")
         cartItemsCollectionView.reloadData()
         
     }

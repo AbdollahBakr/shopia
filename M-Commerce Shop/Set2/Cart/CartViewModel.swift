@@ -25,6 +25,8 @@ query getLineItemsInDraftOrder($id: ID!){
   draftOrder(id: $id) {
     currencyCode
     totalPrice
+    totalTax
+    totalShippingPrice
     lineItems(first: 20){
       edges {
         node {
@@ -81,5 +83,11 @@ query getLineItemsInDraftOrder($id: ID!){
                           , variables: variables)
         
         GraphQLManager.mutateWithQuery(query: query)
+    }
+    
+    func formatPrice(value: String?, currency: String?) -> String {
+        return [value, currency]
+            .compactMap { $0 }
+            .joined(separator: " ")
     }
 }

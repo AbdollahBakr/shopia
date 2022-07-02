@@ -11,10 +11,6 @@
 
 import Foundation
 
-// MARK: - Welcome
-struct Welcome: Codable {
-    let input: Input?
-}
 
 // MARK: - Input
 struct Input: Codable {

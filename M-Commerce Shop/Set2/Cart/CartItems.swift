@@ -14,7 +14,7 @@ import Foundation
 // MARK: - DraftOrder
 struct DraftOrder: Codable {
     let lineItems: LineItems?
-    let currencyCode: String?
+    let currencyCode, totalPrice, totalTax, totalShippingPrice: String?
 }
 
 // MARK: - LineItems
