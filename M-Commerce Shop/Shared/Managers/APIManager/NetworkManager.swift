@@ -39,6 +39,8 @@ class NetworkManager {
         // Paths Cases
         case authSignup
         
+        case getBrands
+        
         
         /******* Change These Pathes With Our Needs ******/
         //ex:Auth,order....etc
@@ -49,7 +51,8 @@ class NetworkManager {
             case .authSignup:
                 return EndPoints.base + "/customers.json"
                 
-                
+            case .getBrands:
+                return EndPoints.base + "/smart_collections.json"
             }
         }
         
@@ -206,6 +209,20 @@ class NetworkManager {
                             completion(nil,error)
                         }
                     }
+    }
+    
+    /***********  Home   ********/
+    func getBrands(completion: @escaping ([SmartCollections]?, Error?) -> Void){
+        let url = EndPoints.getBrands.url
+        
+        taskForGETRequest(url: url, responseType: BrandsBase.self) { (response, error) in
+            if let response = response  {
+                //result -> is the [meals]
+                completion(response.smart_collections, nil)
+            } else {
+                completion(nil,error)
+            }
+        }
     }
     
     //    func fetchData<T:Codable, E: Codable>(url:String,parameters:Parameters?,headers:HTTPHeaders?,method:HTTPMethod?,completion: @escaping (T?,E? ,Error?)-> Void) {
