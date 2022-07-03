@@ -113,8 +113,30 @@ query getLineItemsInDraftOrder($id: ID!){
     }
     
     func formatPrice(value: String?) -> String {
-        return [value, SettingsViewModel.settingsCells[1].settingValue]
+        
+        
+        let selectedCurrency = SettingsViewModel.settingsCells[1].settingValue
+        var formattedPrice: String
+        var calculatedValue = String()
+        
+        guard let value = value else {
+            return ""
+        }
+
+        switch selectedCurrency {
+        case "USD":
+            if let floatValue = Float(value) {
+                calculatedValue = (round(100*(floatValue / 18.81))/100).description
+            }
+            
+        default:
+            calculatedValue = value
+        }
+        
+        formattedPrice = [calculatedValue, selectedCurrency]
             .compactMap { $0 }
             .joined(separator: " ")
+        
+        return formattedPrice
     }
 }
