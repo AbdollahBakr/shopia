@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,17 @@
 		142BB734286EAD14008A7D00 /* AddAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BB733286EAD14008A7D00 /* AddAddressViewModel.swift */; };
 		142BB736286EBA21008A7D00 /* GraphQLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BB735286EBA21008A7D00 /* GraphQLHelper.swift */; };
 		142BB738286ECFD1008A7D00 /* AddressesCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BB737286ECFD1008A7D00 /* AddressesCellDelegate.swift */; };
+
+		142BD77928718A7A0052275C /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BD77828718A7A0052275C /* Payment.swift */; };
+		142BD77B28718AB40052275C /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142BD77A28718AB40052275C /* Payment.storyboard */; };
+		142BD77D28718AF50052275C /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BD77C28718AF50052275C /* PaymentViewController.swift */; };
+		142BD77F28718B3D0052275C /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BD77E28718B3D0052275C /* PaymentViewModel.swift */; };
+		142BD78128718CB30052275C /* CouponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BD78028718CB30052275C /* CouponsViewController.swift */; };
+		142BD7842871BB180052275C /* CountryPickerView in Frameworks */ = {isa = PBXBuildFile; productRef = 142BD7832871BB180052275C /* CountryPickerView */; };
+		142BD7862871D1EA0052275C /* AddAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BD7852871D1EA0052275C /* AddAddressModel.swift */; };
+		142BD787287241080052275C /* AddAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BB733286EAD14008A7D00 /* AddAddressViewModel.swift */; };
+		142BD788287241810052275C /* CodableModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BB72F286E9B0D008A7D00 /* CodableModels.swift */; };
+		142BD789287241DC0052275C /* GraphQLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BB735286EBA21008A7D00 /* GraphQLHelper.swift */; };
 		142C2B95286A98E0001CEFBB /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142C2B94286A98E0001CEFBB /* Settings.storyboard */; };
 		142C2B97286A9AAD001CEFBB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2B96286A9AAD001CEFBB /* SettingsViewController.swift */; };
 		142C2B9C286ABA94001CEFBB /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2B9B286ABA94001CEFBB /* SettingsCell.swift */; };
@@ -25,6 +36,8 @@
 		1437833B286B752E000D3BFF /* EditAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1437833A286B752E000D3BFF /* EditAddressViewController.swift */; };
 		14446BC5286D48380080848A /* GraphQLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14446BC4286D48380080848A /* GraphQLManager.swift */; };
 		14446BC7286D486C0080848A /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14446BC6286D486C0080848A /* Query.swift */; };
+		146FAA05286F9F8C00B897EC /* CartCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FAA04286F9F8C00B897EC /* CartCellDelegate.swift */; };
+		146FAA0B28701AB700B897EC /* MeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FAA0A28701AB700B897EC /* MeViewModel.swift */; };
 		14707610286A50EB00969B81 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1470760F286A50EB00969B81 /* Me.storyboard */; };
 		14707613286A5A7900969B81 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14707612286A5A7900969B81 /* MeViewController.swift */; };
 		14707615286A6F1C00969B81 /* GuestMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14707614286A6F1C00969B81 /* GuestMeViewController.swift */; };
@@ -106,6 +119,12 @@
 		142BB733286EAD14008A7D00 /* AddAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressViewModel.swift; sourceTree = "<group>"; };
 		142BB735286EBA21008A7D00 /* GraphQLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLHelper.swift; sourceTree = "<group>"; };
 		142BB737286ECFD1008A7D00 /* AddressesCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesCellDelegate.swift; sourceTree = "<group>"; };
+		142BD77828718A7A0052275C /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		142BD77A28718AB40052275C /* Payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
+		142BD77C28718AF50052275C /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PaymentViewController.swift; path = "M-Commerce Shop/Set2/Payment/Views/Controllers/PaymentViewController.swift"; sourceTree = SOURCE_ROOT; };
+		142BD77E28718B3D0052275C /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
+		142BD78028718CB30052275C /* CouponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsViewController.swift; sourceTree = "<group>"; };
+		142BD7852871D1EA0052275C /* AddAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressModel.swift; sourceTree = "<group>"; };
 		142C2B94286A98E0001CEFBB /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		142C2B96286A9AAD001CEFBB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		142C2B9B286ABA94001CEFBB /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -188,6 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				142BD7842871BB180052275C /* CountryPickerView in Frameworks */,
 				53716B0B88646274148A6920 /* Pods_M_Commerce_Shop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +237,7 @@
 				142C2B9B286ABA94001CEFBB /* SettingsCell.swift */,
 				142BB72F286E9B0D008A7D00 /* CodableModels.swift */,
 				142BB737286ECFD1008A7D00 /* AddressesCellDelegate.swift */,
+				142BD7852871D1EA0052275C /* AddAddressModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1047,6 +1068,9 @@
 			dependencies = (
 			);
 			name = "M-Commerce Shop";
+			packageProductDependencies = (
+				142BD7832871BB180052275C /* CountryPickerView */,
+			);
 			productName = "M-Commerce Shop";
 			productReference = FA2B6E5828650E2C00603B78 /* M-Commerce Shop.app */;
 			productType = "com.apple.product-type.application";
@@ -1121,6 +1145,9 @@
 				Base,
 			);
 			mainGroup = FA2B6E4F28650E2C00603B78;
+			packageReferences = (
+				142BD7822871BB180052275C /* XCRemoteSwiftPackageReference "CountryPickerView" */,
+			);
 			productRefGroup = FA2B6E5928650E2C00603B78 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1326,7 +1353,12 @@
 				142BB732286E9FE4008A7D00 /* AddressesViewModel.swift in Sources */,
 				91135CF82867964E0079F360 /* SignUpVC.swift in Sources */,
 				142C2B9F286ABB30001CEFBB /* SettingsViewModel.swift in Sources */,
-				142BB734286EAD14008A7D00 /* AddAddressViewModel.swift in Sources */,
+				142BD7862871D1EA0052275C /* AddAddressModel.swift in Sources */,
+				142BD787287241080052275C /* AddAddressViewModel.swift in Sources */,
+				142BD78128718CB30052275C /* CouponsViewController.swift in Sources */,
+				142BD77F28718B3D0052275C /* PaymentViewModel.swift in Sources */,
+				142BD77D28718AF50052275C /* PaymentViewController.swift in Sources */,
+				142BD789287241DC0052275C /* GraphQLHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1659,6 +1691,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		142BD7822871BB180052275C /* XCRemoteSwiftPackageReference "CountryPickerView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kizitonwose/CountryPickerView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		142BD7832871BB180052275C /* CountryPickerView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 142BD7822871BB180052275C /* XCRemoteSwiftPackageReference "CountryPickerView" */;
+			productName = CountryPickerView;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		FA2B6E6428650E2C00603B78 /* M_Commerce_Shop */ = {

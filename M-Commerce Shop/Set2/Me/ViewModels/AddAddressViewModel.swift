@@ -10,52 +10,63 @@ import GraphQLite
 
 class AddAddresseViewModel {
     
-    var addresses: [Address]?
+    var addresses = [Address]()
+ 
+    func getAddresses() {
+        
+        // TODO: Replace id with logged-in user id
+        let query = Query(body: """
+    query getCustomerAddresses($id: ID!) {
+    customer(id: $id) {
+    addresses {
+        country
+        city
+        address1
+        address2
+    }
+    }
+    }
+    """
+    , variables: ["id": "gid://shopify/Customer/6059105484971"])
+        
+        GraphQLManager.fetchCodableFromQuery(genericType: DataClass.self, query: query, callBack: {[weak self] (response) in
+            self?.addresses = (response?.customer?.addresses)!
+        })
+    }
     
-    // TODO: Replace id with logged-in user id
-    func constructMutationQuery(address: Address) -> Query {
-//        addresses?.append(address)
-//        let encodedAddresses = addresses?.compactMap{$0.dict} as Any
+    func addAddress(address: Address){
         
+        // Get current API addresses, assign to addresses
+        getAddresses()
+        
+        // Append newly created address
+        addresses.append(address)
+
+        // Query Setup
         let body = """
-            mutation customerUpdate($input: CustomerInput!) {
-            customerUpdate(input: $input) {
-            userErrors {
-                  field
-                  message
-                }
-            }
-            }
-        """
+                    mutation customerUpdate($input: CustomerInput!) {
+                    customerUpdate(input: $input) {
+                    userErrors {
+                          field
+                          message
+                        }
+                    }
+                    }
+                """
         
-        let variables = ["input": [
-            "id": "gid://shopify/Customer/6059105484971",
-            "addresses":[
-                [
-                    "address1": address.address1,
-                    "address2": address.address2,
-                    "city": address.city,
-                    "country": address.country
-                ]
-            ]
-          ]]
+        let variablesEmptyAddresses = AddAddressModel(input: AddAddressInput(id: "gid://shopify/Customer/6059105484971", addresses: [Address]())).dict!
+        
+        let variables = AddAddressModel(input: AddAddressInput(id: "gid://shopify/Customer/6059105484971", addresses: addresses)).dict!
+        
         let query = Query(body: body
                           , variables: variables)
         
-        return query
-    }
-    
-    
-    
-//    func getAddresses() {
-//        GraphQLManager.fetchCodableFromQuery(genericType: DataClass.self, query: query, callBack: {[weak self] (response) in
-//            self?.addresses = response?.customer?.addresses
-//        })
-//    }
-    
-    func addAddress(address: Address){
-
-        GraphQLManager.mutateWithQuery(query: constructMutationQuery(address: address))
+        // Empty addresses
+        GraphQLManager.mutateWithQuery(query: Query(body: body, variables: variablesEmptyAddresses))
+        // Wait until its empty
+        Thread.sleep(forTimeInterval: 1)
+        // Fill addresses
+        GraphQLManager.mutateWithQuery(query: query)
     }
     
 }
