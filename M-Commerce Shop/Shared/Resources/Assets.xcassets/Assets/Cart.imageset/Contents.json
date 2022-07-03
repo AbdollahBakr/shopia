@@ -1,7 +1,11 @@
 {
   "images" : [
     {
+<<<<<<< HEAD
       "filename" : "Cart.png",
+=======
+      "filename" : "Cart-2.png",
+>>>>>>> de547e8dd6035f7dc71b03648cd88d065e62fc62
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -11,7 +15,11 @@
       "scale" : "2x"
     },
     {
+<<<<<<< HEAD
       "filename" : "Cart-2.png",
+=======
+      "filename" : "Cart.png",
+>>>>>>> de547e8dd6035f7dc71b03648cd88d065e62fc62
       "idiom" : "universal",
       "scale" : "3x"
     }

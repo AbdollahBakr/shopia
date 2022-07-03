@@ -6,8 +6,31 @@
 	<dict>
 		<key>M-Commerce Shop.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>12</integer>
+<<<<<<< HEAD
+=======
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>FA2B6E5728650E2C00603B78</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA2B6E7028650E2E00603B78</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA2B6E7B28650E2E00603B78</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+>>>>>>> de547e8dd6035f7dc71b03648cd88d065e62fc62
 		</dict>
 	</dict>
 </dict>

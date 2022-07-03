@@ -12,16 +12,26 @@
 			<integer>0</integer>
 		</dict>
 		<key>GraphQLite.xcscheme</key>
+<<<<<<< HEAD
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+		<key>IQKeyboardManagerSwift.xcscheme</key>
+=======
+>>>>>>> de547e8dd6035f7dc71b03648cd88d065e62fc62
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>IQKeyboardManagerSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>

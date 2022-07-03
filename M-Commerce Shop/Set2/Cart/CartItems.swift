@@ -4,18 +4,16 @@
 //
 //  Created by Abdollah Bakr on 01/07/2022.
 //
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
 
 import Foundation
 
 // MARK: - DraftOrder
 struct DraftOrder: Codable {
     let lineItems: LineItems?
-    let currencyCode, totalPrice, totalTax, totalShippingPrice: String?
+    let currencyCode, totalPrice, subtotalPrice, totalTax, totalShippingPrice: String?
+    let appliedDiscount: AppliedDiscount?
 }
+
 
 // MARK: - LineItems
 struct LineItems: Codable {
@@ -31,7 +29,7 @@ struct Edge: Codable, Equatable {
         return (leftId == rightId && leftId != nil && rightId != nil)
     }
     
-    let node: Node?
+    var node: Node?
 }
 
 // MARK: - Variant
@@ -43,7 +41,7 @@ struct Variant: Codable {
 struct Node: Codable {
     let name, originalUnitPrice, discountedUnitPrice: String?
     let variant: Variant?
-    let quantity: Int?
+    var quantity: Int?
     let appliedDiscount: JSONNull?
     let image: Image?
 }

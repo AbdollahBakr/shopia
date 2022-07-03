@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* 
 Copyright (c) 2022 Swift Models Generated from JSON powered by http://www.json4swift.com
 
@@ -10,6 +11,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar
 
 */
+=======
+>>>>>>> de547e8dd6035f7dc71b03648cd88d065e62fc62
 
 import Foundation
 struct ImageData : Codable {
@@ -19,4 +22,8 @@ struct ImageData : Codable {
 	let height : Int?
 	let src : String?
 
+<<<<<<< HEAD
+=======
+	
+>>>>>>> de547e8dd6035f7dc71b03648cd88d065e62fc62
 }

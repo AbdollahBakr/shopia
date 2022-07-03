@@ -19,14 +19,23 @@ class CartViewModel {
         }
     }
     
+    var lineItems = [LineItem]()
+    
+    
     // TODO: Replace id with logged-in user id
     let query = Query(body: """
 query getLineItemsInDraftOrder($id: ID!){
   draftOrder(id: $id) {
     currencyCode
     totalPrice
+    subtotalPrice
     totalTax
     totalShippingPrice
+    appliedDiscount {
+              title
+              value
+              valueType
+          }
     lineItems(first: 20){
       edges {
         node {
@@ -59,9 +68,17 @@ query getLineItemsInDraftOrder($id: ID!){
         })
     }
     
-    func updateCartItems() {
-        let cartItem = CartItem(variantId: "gid://shopify/ProductVariant/41891869130923", quantity: 4)
+    
+    // Update Cart Items in API before proceeding to checkout
+    func updateCartItems(cartItems: [Edge]) {
+
+        var lineItems = [LineItem]()
+        // Last updated cart items
+        for item in cartItems {
+            lineItems.append(LineItem(quantity: item.node?.quantity, variantId: item.node?.variant?.id))
+        }
         
+        // Setup Query body and variables
         let body = """
             mutation draftOrderUpdate($id: ID!, $input: DraftOrderInput!) {
                 draftOrderUpdate(id: $id, input: $input) {
@@ -75,11 +92,12 @@ query getLineItemsInDraftOrder($id: ID!){
                 }
             }
         """
-        let variables = ["id": "gid://shopify/Customer/6059105484971",
-                         "input": (cartItem.dict!)] as [String : Any]
+        let variables = AddLineItem(
+            id: "gid://shopify/DraftOrder/888534040747",
+            input: Input(
+                lineItems: lineItems)).dict!
         
         let query = Query(body: body, variables: variables)
-        print(variables)
         GraphQLManager.mutateWithQuery(query: query)
     }
     
@@ -113,8 +131,30 @@ query getLineItemsInDraftOrder($id: ID!){
     }
     
     func formatPrice(value: String?) -> String {
-        return [value, SettingsViewModel.settingsCells[1].settingValue]
+        
+        
+        let selectedCurrency = SettingsViewModel.settingsCells[1].settingValue
+        var formattedPrice: String
+        var calculatedValue = String()
+        
+        guard let value = value else {
+            return ""
+        }
+
+        switch selectedCurrency {
+        case "USD":
+            if let floatValue = Float(value) {
+                calculatedValue = (round(100*(floatValue / 18.81))/100).description
+            }
+            
+        default:
+            calculatedValue = value
+        }
+        
+        formattedPrice = [calculatedValue, selectedCurrency]
             .compactMap { $0 }
             .joined(separator: " ")
+        
+        return formattedPrice
     }
 }

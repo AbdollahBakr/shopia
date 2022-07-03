@@ -115,6 +115,14 @@ class RoundedShadowView : UIView {
     }
 }
 
+class RoundedView : UIView {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let radius: CGFloat = 10
+        self.layer.cornerRadius = radius
+    }
+}
+
 class RoundedSheetShape : UIView {
     
     override func layoutSubviews() {

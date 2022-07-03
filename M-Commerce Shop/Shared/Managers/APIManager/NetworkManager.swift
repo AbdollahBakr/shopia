@@ -39,7 +39,13 @@ class NetworkManager {
         // Paths Cases
         case authSignup
         
+<<<<<<< HEAD
         case getCategories
+=======
+        case getBrands
+        
+        
+>>>>>>> de547e8dd6035f7dc71b03648cd88d065e62fc62
         /******* Change These Pathes With Our Needs ******/
         //ex:Auth,order....etc
         var stringValue: String {
@@ -49,10 +55,15 @@ class NetworkManager {
             case .authSignup:
                 return EndPoints.base + "/customers.json"
                 
+<<<<<<< HEAD
             case .getCategories:
                 return EndPoints.base + "/smart_collections.json"
                 
                 
+=======
+            case .getBrands:
+                return EndPoints.base + "/smart_collections.json"
+>>>>>>> de547e8dd6035f7dc71b03648cd88d065e62fc62
             }
         }
         
@@ -211,7 +222,75 @@ class NetworkManager {
                     }
     }
     
+<<<<<<< HEAD
     func getCategories(completion: @escaping ([SmartCollections]?,Error?) -> ()) {
+=======
+    /***********  Home   ********/
+    func getBrands(completion: @escaping ([SmartCollections]?, Error?) -> Void){
+        let url = EndPoints.getBrands.url
+        
+        taskForGETRequest(url: url, responseType: BrandsBase.self) { (response, error) in
+            if let response = response  {
+                //result -> is the [meals]
+                completion(response.smart_collections, nil)
+            } else {
+                completion(nil,error)
+            }
+        }
+    }
+    
+    //    func fetchData<T:Codable, E: Codable>(url:String,parameters:Parameters?,headers:HTTPHeaders?,method:HTTPMethod?,completion: @escaping (T?,E? ,Error?)-> Void) {
+    //
+    //            Alamofire.request(url, method: method ?? .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+    //                .validate(statusCode: 200..<300)
+    //                .responseJSON { (response) in
+    //                switch response.result {
+    //
+    //                case .success(_):
+    //
+    //                    do {
+    //                        guard let data = response.data else {return}
+    //                        let responseData = try JSONDecoder().decode(T?.self, from: data)
+    //                        completion(responseData, nil,nil)
+    //                    } catch let jsonError {
+    //                        print(jsonError)
+    //                    }
+    //                case .failure(let error):
+    //                    let statusCode = response.response?.statusCode ?? 0
+    //                    if statusCode > 300 {
+    //
+    //                    do {
+    //                        guard let data = response.data else {return}
+    //                        let responseError = try JSONDecoder().decode(E?.self, from: data)
+    //                        completion(nil, responseError,nil)
+    //                    } catch let jsonError {
+    //                        print(jsonError)
+    //                    }
+    //                } else {
+    //                    completion(nil,nil,error)
+    //                }
+    //            }
+    //        }
+    //
+    //    }
+    
+    //Example USING GET Request....
+    //    func getAllSports(completion: @escaping ([Leagues]?, Error?) -> Void) {
+    //
+    //        let endPoints = EndPoints.authLogin.url
+    //
+    //        //responseType -> the main model
+    //        taskForGETRequest(url:endPoints , responseType: CoreDataModel.self) { (response, error) in
+    //            if let response = response  {
+    //                //result -> is the [meals]
+    //                completion(response.strLeague,nil)
+    //            } else {
+    //                completion([],error)
+    //            }
+    //        }
+    //    }
+   
+>>>>>>> de547e8dd6035f7dc71b03648cd88d065e62fc62
         
         let url = EndPoints.getCategories.url
         

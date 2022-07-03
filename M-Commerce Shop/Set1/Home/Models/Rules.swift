@@ -12,10 +12,19 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
+<<<<<<< HEAD
 struct Rules      : Codable {
     
 	let column    : String?
 	let relation  : String?
 	let condition : String?
     
+=======
+struct Rules : Codable {
+	let column : String?
+	let relation : String?
+	let condition : String?
+
+
+>>>>>>> de547e8dd6035f7dc71b03648cd88d065e62fc62
 }

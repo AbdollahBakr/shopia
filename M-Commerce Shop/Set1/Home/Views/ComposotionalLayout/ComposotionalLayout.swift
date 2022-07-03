@@ -51,7 +51,11 @@ class ComposotionalLayout {
         item.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: inset, trailing: inset)
         
         // Group
+<<<<<<< HEAD
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .fractionalHeight(0.15))
+=======
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .fractionalHeight(0.25))
+>>>>>>> de547e8dd6035f7dc71b03648cd88d065e62fc62
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
         
         // Section

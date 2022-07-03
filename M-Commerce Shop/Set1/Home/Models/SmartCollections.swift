@@ -13,7 +13,10 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 
 import Foundation
 struct SmartCollections : Codable {
+<<<<<<< HEAD
     
+=======
+>>>>>>> de547e8dd6035f7dc71b03648cd88d065e62fc62
 	let id : Int?
 	let handle : String?
 	let title : String?
