@@ -6,10 +6,38 @@
 //
 
 import UIKit
+import Kingfisher
 
 class WishlistViewController: UIViewController {
 
     @IBOutlet weak var wishlistCollectionView: UICollectionView!
+    @IBOutlet weak var noFavoriteView: UIView!
+    var wishlistViewModel: WishlistViewModel?
+    var localDataSource: CoreDataManager?
+    var favProducts: [ProductSavedModel]?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        localDataSource = CoreDataManager.shared
+        guard let localDataSource = localDataSource else {
+            return
+        }
+        wishlistViewModel = WishlistViewModel(localDataSource: localDataSource)
+        favProducts = wishlistViewModel?.getfavProducts()
+        
+        if  self.favProducts?.isEmpty ?? true{
+            noFavoriteView.isHidden = false
+            wishlistCollectionView.isHidden = true
+            
+        }else {
+            
+            noFavoriteView.isHidden = true
+            wishlistCollectionView.isHidden = false
+            self.wishlistCollectionView.reloadData()
+        }
+        
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,18 +69,77 @@ class WishlistViewController: UIViewController {
 extension WishlistViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return favProducts?.count ?? 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WishlistCollectionViewCell.identifier, for: indexPath) as? WishlistCollectionViewCell else { return WishlistCollectionViewCell()}
+        
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WishlistCollectionViewCell", for: indexPath) as? WishlistCollectionViewCell else { return UICollectionViewCell()}
+        cell.nameProduct.text = favProducts?[indexPath.row].title
+        cell.priceProduct.text = favProducts?[indexPath.row].price
+       
+        let url = URL(string: "\(favProducts?[indexPath.row].image ?? "")")
+        let processor = DownsamplingImageProcessor(size: (self.wishlistCollectionView.frame.size))
+        |> RoundCornerImageProcessor(cornerRadius: 10)
+        cell.imageProduct.kf.indicatorType = .activity
+        cell.imageProduct.kf.setImage(
+            with: url,
+            placeholder: UIImage(named: "football"),
+            options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ])
+        
+        
+        guard let wishlistViewModel = wishlistViewModel else {return UICollectionViewCell()}
+        cell.setData(wishlistViewModel: wishlistViewModel, productID: favProducts?[indexPath.row].id ?? "", wishlistVC: self, indexPath: indexPath.row)
+
+//        cell.imageProduct.image = favProducts?[indexPath.row].image
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 160, height: 300)
+//        let height = (collectionView.frame.size.height\4)
+//        let width = (collectionView.frame.size.width\2)
+        
+        let leftAndRightPaddings: CGFloat = 45.0
+                let numberOfItemsPerRow: CGFloat = 2.0
+            
+                let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
+        let height = (collectionView.frame.height-leftAndRightPaddings)/numberOfItemsPerRow - 50
+                return CGSize(width: width, height: height) // You can change width and height here as pr your requirement
+//        return CGSize(width: width, height: height)
+    }
+    
+    
+    func updateWishlistViewCells(indexpath: Int){
+        favProducts?.remove(at: indexpath)
+        wishlistCollectionView.reloadData()
+        if favProducts?.count == 0 {
+            wishlistCollectionView.isHidden = true
+            noFavoriteView.isHidden = false
+        }
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "ProductDetails", bundle: nil)
+        let productDeatailsVC =
+        storyboard.instantiateViewController(withIdentifier: "ProductDetailsViewController") as? ProductDetailsViewController
+        guard let productDeatailsVC = productDeatailsVC else {return}
+        productDeatailsVC.modalPresentationStyle = .fullScreen
+        productDeatailsVC.modalTransitionStyle = .flipHorizontal
+        productDeatailsVC.productID = Int(self.favProducts?[indexPath.row].id ?? "7358110105771")
+        present(productDeatailsVC, animated: true) {
+
+        }
+        
     }
 }
 

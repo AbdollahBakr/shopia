@@ -39,6 +39,7 @@
 		913519342870C02F00FDE737 /* M_Commerce_Shop in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E6428650E2C00603B78 /* M_Commerce_Shop */; };
 		913519352870C02F00FDE737 /* M_Commerce_Shop in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E6428650E2C00603B78 /* M_Commerce_Shop */; };
 		913519372870C31F00FDE737 /* M_Commerce_Shop.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 913519362870C31F00FDE737 /* M_Commerce_Shop.xcdatamodel */; };
+		9135193A2870D53A00FDE737 /* WishlistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913519392870D53A00FDE737 /* WishlistViewModel.swift */; };
 		917B410A2869B0DB00CF3F99 /* SignupError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917B41092869B0DA00CF3F99 /* SignupError.swift */; };
 		9192FAF72868EC3E0082FBB8 /* CurrentAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9192FAF62868EC3E0082FBB8 /* CurrentAccount.swift */; };
 		91A9199F286EE6FA00652F56 /* ProductDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A9199E286EE6FA00652F56 /* ProductDetails.storyboard */; };
@@ -127,6 +128,7 @@
 		911F22BD286F947A00E19FB9 /* Variants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Variants.swift; sourceTree = "<group>"; };
 		911F22C3286FBA9900E19FB9 /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
 		913519362870C31F00FDE737 /* M_Commerce_Shop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; name = M_Commerce_Shop.xcdatamodel; path = "M-Commerce Shop/Shared/Managers/CoreData/M_Commerce_Shop/M_Commerce_Shop.xcdatamodel"; sourceTree = "<group>"; };
+		913519392870D53A00FDE737 /* WishlistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewModel.swift; sourceTree = "<group>"; };
 		917B41092869B0DA00CF3F99 /* SignupError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupError.swift; sourceTree = "<group>"; };
 		9192FAF62868EC3E0082FBB8 /* CurrentAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAccount.swift; sourceTree = "<group>"; };
 		91A9199E286EE6FA00652F56 /* ProductDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductDetails.storyboard; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 		91FE6693286CF8FF009D4028 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				913519392870D53A00FDE737 /* WishlistViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1238,6 +1241,7 @@
 				FAAB805628651AB400A3A86A /* NetworkManager.swift in Sources */,
 				FA890EA82865E57200063FD2 /* Leagues.swift in Sources */,
 				1437833B286B752E000D3BFF /* EditAddressViewController.swift in Sources */,
+				9135193A2870D53A00FDE737 /* WishlistViewModel.swift in Sources */,
 				142C2B97286A9AAD001CEFBB /* SettingsViewController.swift in Sources */,
 				FAAB80BB28652AD400A3A86A /* NoConnectionVC.swift in Sources */,
 				FAAB804E2865145A00A3A86A /* AnimationLottie.swift in Sources */,

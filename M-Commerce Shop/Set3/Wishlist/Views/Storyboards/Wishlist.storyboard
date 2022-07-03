@@ -22,24 +22,34 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ooc-or-21Q" userLabel="HeaderView">
                                 <rect key="frame" x="20" y="44" width="280" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cj2-5x-862" userLabel="BackBtnWishlist" customClass="CircleButtonShadowView" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cj2-5x-862" userLabel="BackBtnWishlist" customClass="CircleButtonShadowView" customModule="M_Commerce_Shop" customModuleProvider="target">
                                         <rect key="frame" x="20" y="20" width="40" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" name="GreyColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="mA4-sH-o7x"/>
+                                        </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="arrow.left" catalog="system"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wishlist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="go3-3r-HEY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wishlist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="go3-3r-HEY">
                                         <rect key="frame" x="157" y="20" width="102" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="cj2-5x-862" firstAttribute="centerY" secondItem="Ooc-or-21Q" secondAttribute="centerY" id="EyJ-Oo-Vrq"/>
+                                    <constraint firstItem="cj2-5x-862" firstAttribute="top" secondItem="go3-3r-HEY" secondAttribute="top" id="Uvz-h0-nd8"/>
+                                    <constraint firstItem="cj2-5x-862" firstAttribute="top" secondItem="Ooc-or-21Q" secondAttribute="top" constant="20" id="YHZ-wE-FLq"/>
+                                    <constraint firstItem="cj2-5x-862" firstAttribute="leading" secondItem="Ooc-or-21Q" secondAttribute="leading" constant="20" id="eEm-BP-KNa"/>
+                                    <constraint firstItem="go3-3r-HEY" firstAttribute="leading" secondItem="cj2-5x-862" secondAttribute="trailing" constant="97" id="hg0-iW-nio"/>
+                                    <constraint firstAttribute="trailing" secondItem="go3-3r-HEY" secondAttribute="trailing" constant="21" id="u8T-g5-i4L"/>
+                                    <constraint firstAttribute="bottom" secondItem="go3-3r-HEY" secondAttribute="bottom" constant="25" id="x7c-Vr-b3V"/>
+                                </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ATD-wx-FXS">
-                                <rect key="frame" x="20" y="132" width="374" height="641"/>
+                                <rect key="frame" x="20" y="132" width="374" height="730"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="nGP-6u-4mW">
                                     <size key="itemSize" width="71" height="66"/>
@@ -63,21 +73,47 @@
                                     <outlet property="delegate" destination="vsn-Mn-bXf" id="XqK-ln-Vn9"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DDe-Y1-xV3">
+                                <rect key="frame" x="24" y="265" width="366" height="395"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noWishlist" translatesAutoresizingMaskIntoConstraints="NO" id="lQA-Jq-JvQ">
+                                        <rect key="frame" x="20" y="20" width="326" height="326"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Wishllist yet !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGX-5W-bph">
+                                        <rect key="frame" x="116" y="354" width="127" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="lQA-Jq-JvQ" firstAttribute="centerX" secondItem="DDe-Y1-xV3" secondAttribute="centerX" id="6wX-5I-eOJ"/>
+                                    <constraint firstItem="uGX-5W-bph" firstAttribute="top" secondItem="lQA-Jq-JvQ" secondAttribute="bottom" constant="8" symbolic="YES" id="HnI-uW-wI0"/>
+                                    <constraint firstItem="lQA-Jq-JvQ" firstAttribute="centerY" secondItem="DDe-Y1-xV3" secondAttribute="centerY" constant="-14.5" id="SYG-JA-nBH"/>
+                                    <constraint firstItem="uGX-5W-bph" firstAttribute="leading" secondItem="DDe-Y1-xV3" secondAttribute="leading" constant="116" id="h0A-c3-CFU"/>
+                                    <constraint firstItem="lQA-Jq-JvQ" firstAttribute="top" secondItem="DDe-Y1-xV3" secondAttribute="top" constant="20" id="q2m-6h-a9a"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qNh-if-mxP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ooc-or-21Q" firstAttribute="leading" secondItem="ATD-wx-FXS" secondAttribute="leading" id="9GN-UH-dWT"/>
-                            <constraint firstItem="qNh-if-mxP" firstAttribute="bottom" secondItem="ATD-wx-FXS" secondAttribute="bottom" constant="89" id="Gj7-Ff-fsK"/>
-                            <constraint firstItem="Ooc-or-21Q" firstAttribute="leading" secondItem="4Ks-Mv-11c" secondAttribute="leadingMargin" id="I6d-Kb-mnR"/>
-                            <constraint firstAttribute="bottom" secondItem="Ooc-or-21Q" secondAttribute="bottom" constant="772" id="OKg-pr-cFW"/>
-                            <constraint firstItem="ATD-wx-FXS" firstAttribute="trailing" secondItem="4Ks-Mv-11c" secondAttribute="trailingMargin" id="UIt-V3-fYO"/>
-                            <constraint firstItem="ATD-wx-FXS" firstAttribute="top" secondItem="Ooc-or-21Q" secondAttribute="bottom" constant="8" symbolic="YES" id="Xgk-sJ-IeT"/>
-                            <constraint firstItem="Ooc-or-21Q" firstAttribute="top" secondItem="qNh-if-mxP" secondAttribute="top" id="Xh0-nn-vHf"/>
-                            <constraint firstItem="qNh-if-mxP" firstAttribute="trailing" secondItem="Ooc-or-21Q" secondAttribute="trailing" constant="114" id="ecB-eT-JZ2"/>
+                            <constraint firstItem="ATD-wx-FXS" firstAttribute="trailing" secondItem="4Ks-Mv-11c" secondAttribute="trailingMargin" id="79X-RO-48s"/>
+                            <constraint firstItem="DDe-Y1-xV3" firstAttribute="leading" secondItem="qNh-if-mxP" secondAttribute="leading" constant="24" id="A1N-py-seY"/>
+                            <constraint firstItem="Ooc-or-21Q" firstAttribute="leading" secondItem="ATD-wx-FXS" secondAttribute="leading" id="ENO-kr-q6u"/>
+                            <constraint firstItem="Ooc-or-21Q" firstAttribute="leading" secondItem="4Ks-Mv-11c" secondAttribute="leadingMargin" id="Fc4-h9-LIX"/>
+                            <constraint firstItem="Ooc-or-21Q" firstAttribute="top" secondItem="qNh-if-mxP" secondAttribute="top" id="Q80-65-C29"/>
+                            <constraint firstItem="DDe-Y1-xV3" firstAttribute="centerX" secondItem="ATD-wx-FXS" secondAttribute="centerX" id="Qu5-FB-t9B"/>
+                            <constraint firstItem="qNh-if-mxP" firstAttribute="trailing" secondItem="Ooc-or-21Q" secondAttribute="trailing" constant="114" id="XgS-aQ-ZLT"/>
+                            <constraint firstItem="ATD-wx-FXS" firstAttribute="top" secondItem="Ooc-or-21Q" secondAttribute="bottom" constant="8" symbolic="YES" id="iL7-Fi-TUC"/>
+                            <constraint firstItem="qNh-if-mxP" firstAttribute="bottom" secondItem="DDe-Y1-xV3" secondAttribute="bottom" constant="202" id="prB-u2-GgU"/>
+                            <constraint firstAttribute="bottom" secondItem="Ooc-or-21Q" secondAttribute="bottom" constant="772" id="sBe-9e-KHa"/>
+                            <constraint firstItem="ATD-wx-FXS" firstAttribute="bottom" secondItem="qNh-if-mxP" secondAttribute="bottom" id="uBo-2F-7Ko"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="noFavoriteView" destination="DDe-Y1-xV3" id="e4Z-ci-xv8"/>
                         <outlet property="wishlistCollectionView" destination="ATD-wx-FXS" id="0Is-SA-gMg"/>
                     </connections>
                 </viewController>

@@ -31,6 +31,27 @@ class ProductDetailsViewController: UIViewController {
     var selectedItem: Int?
     var isFavoriteSelected: Bool = false
     
+    var productsId: [Int] = [7358110105771, 7358110204075, 7358110433451, 7358110335147, 7358110630059]
+    
+    var productID: Int?
+    
+    
+    let image = UIImage(systemName: "heart")
+    let imageFilled =  UIImage(systemName: "heart.fill")
+    var appDelegate : AppDelegate?
+    var viewContext : NSManagedObjectContext?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        guard let productID = productID else {return}
+        isFavoriteSelected =  ((productDetailsViewModel?.isFavoritProduct(productID: productID)) != nil)
+        if isFavoriteSelected {
+            favBtn.imageView?.image = imageFilled
+            favBtn.setImage(imageFilled, for: .normal)
+            isFavoriteSelected = true
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,7 +63,7 @@ class ProductDetailsViewController: UIViewController {
             return
         }
         productDetailsViewModel = ProductDetailsViewModel(networkservice: network)
-        productDetailsViewModel?.getProduct(productID: 7358110630059, completion: { productDetail in
+        productDetailsViewModel?.getProduct(productID: productID ?? 7358110105771, completion: { productDetail in
             self.productDetail = productDetail
 //            print(self.productDetail)
             self.pageControl.numberOfPages = productDetail.product?.images?.count ?? 1
@@ -55,21 +76,19 @@ class ProductDetailsViewController: UIViewController {
            
         })
         
-        
+         appDelegate = UIApplication.shared.delegate as! AppDelegate
+        viewContext = appDelegate?.persistentContainer.viewContext
     }
     
     @IBAction func backBtn(_ sender: CircleButtonShadowView) {
+        dismiss(animated: true)
     }
     
     @IBAction func cartBtn(_ sender: CircleButtonShadowView) {
     }
     
     @IBAction func favActionBtn(_ sender: CircleButtonShadowView) {
-        
-        let image = UIImage(systemName: "heart")
-        let imageFilled =  UIImage(systemName: "heart.fill")
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let viewContext = appDelegate.persistentContainer.viewContext
+
         
         guard let currentProduct = productDetail else {return}
 
@@ -86,7 +105,9 @@ class ProductDetailsViewController: UIViewController {
             favBtn.setImage(imageFilled, for: .normal)
             isFavoriteSelected = true
             
-            
+            guard let viewContext = viewContext else {
+                return
+            }
             productDetailsViewModel?.saveProduct(viewContext:viewContext,favProduct: currentProduct)
         }
     }

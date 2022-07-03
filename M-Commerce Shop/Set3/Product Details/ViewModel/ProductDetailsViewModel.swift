@@ -46,6 +46,10 @@ class ProductDetailsViewModel{
         localDataSource.delete(productID: String(productID))
     }
     
+    func isFavoritProduct(productID : Int )-> Bool{
+        localDataSource.isFavoriteProduct(productID: String(productID))
+    }
+    
 }
 
 struct ProductSavedModel{

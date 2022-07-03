@@ -14,7 +14,7 @@
         <!--Product Details View Controller-->
         <scene sceneID="XYj-27-fa6">
             <objects>
-                <viewController id="0HA-4q-MI1" customClass="ProductDetailsViewController" customModule="M_Commerce_Shop" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductDetailsViewController" id="0HA-4q-MI1" customClass="ProductDetailsViewController" customModule="M_Commerce_Shop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zvg-0h-g8a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,6 +105,19 @@
                                 <state key="normal" image="cart" catalog="system"/>
                                 <connections>
                                     <action selector="cartBtn:" destination="0HA-4q-MI1" eventType="touchUpInside" id="aOO-re-5E8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDZ-bI-0v6" userLabel="FavBtnProDetail" customClass="CircleButtonShadowView" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                <rect key="frame" x="354" y="92" width="40" height="40"/>
+                                <color key="backgroundColor" name="GreyColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="S9K-v8-rDe"/>
+                                    <constraint firstAttribute="height" constant="40" id="ny8-rv-udR"/>
+                                </constraints>
+                                <color key="tintColor" name="RedColor"/>
+                                <state key="normal" image="heart" catalog="system"/>
+                                <connections>
+                                    <action selector="favActionBtn:" destination="0HA-4q-MI1" eventType="touchUpInside" id="g13-7X-wa6"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6FS-NN-5Xe">
@@ -403,7 +416,7 @@ Innovatively crafted straps avoid causing any strain  on your shoulders
                                 <viewLayoutGuide key="contentLayoutGuide" id="vFY-fP-Ui2"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Ohk-JG-HFs"/>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zm-6h-Yac">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zm-6h-Yac">
                                 <rect key="frame" x="52" y="823" width="100" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="O8b-ik-5Bt"/>
@@ -412,19 +425,6 @@ Innovatively crafted straps avoid causing any strain  on your shoulders
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDZ-bI-0v6" userLabel="FavBtnProDetail" customClass="CircleButtonShadowView" customModule="M_Commerce_Shop" customModuleProvider="target">
-                                <rect key="frame" x="160" y="822" width="40" height="40"/>
-                                <color key="backgroundColor" name="GreyColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="3n5-cZ-zPp"/>
-                                    <constraint firstAttribute="height" constant="40" id="Iic-Wz-LvM"/>
-                                </constraints>
-                                <color key="tintColor" name="RedColor"/>
-                                <state key="normal" image="heart" catalog="system"/>
-                                <connections>
-                                    <action selector="favActionBtn:" destination="0HA-4q-MI1" eventType="touchUpInside" id="g13-7X-wa6"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pOg-ee-gfm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -435,16 +435,14 @@ Innovatively crafted straps avoid causing any strain  on your shoulders
                             <constraint firstItem="6FS-NN-5Xe" firstAttribute="leading" secondItem="pOg-ee-gfm" secondAttribute="leading" id="F0k-ec-U9i"/>
                             <constraint firstItem="GqH-hk-09u" firstAttribute="top" secondItem="pOg-ee-gfm" secondAttribute="top" id="FfV-m8-yc6"/>
                             <constraint firstItem="nwf-av-OgZ" firstAttribute="leading" secondItem="zvg-0h-g8a" secondAttribute="leading" id="Gai-B1-ieY"/>
-                            <constraint firstItem="jDZ-bI-0v6" firstAttribute="top" secondItem="6FS-NN-5Xe" secondAttribute="bottom" constant="7" id="HMD-aj-jDj"/>
                             <constraint firstItem="xa3-mo-Ied" firstAttribute="centerX" secondItem="nwf-av-OgZ" secondAttribute="centerX" id="JzQ-Ln-15m"/>
                             <constraint firstItem="xa3-mo-Ied" firstAttribute="bottom" secondItem="nwf-av-OgZ" secondAttribute="bottom" id="LN8-cf-3hH"/>
-                            <constraint firstItem="kei-uV-5Tb" firstAttribute="leading" secondItem="jDZ-bI-0v6" secondAttribute="trailing" constant="27" id="MNh-PH-jtO"/>
                             <constraint firstItem="pOg-ee-gfm" firstAttribute="trailing" secondItem="GqH-hk-09u" secondAttribute="trailing" constant="20" id="TO9-Zq-wAN"/>
+                            <constraint firstItem="jDZ-bI-0v6" firstAttribute="top" secondItem="GqH-hk-09u" secondAttribute="bottom" constant="8" id="Tuc-cl-9bO"/>
                             <constraint firstItem="6FS-NN-5Xe" firstAttribute="top" secondItem="nwf-av-OgZ" secondAttribute="bottom" constant="2" id="W88-Qa-FgE"/>
-                            <constraint firstItem="jDZ-bI-0v6" firstAttribute="leading" secondItem="1Zm-6h-Yac" secondAttribute="trailing" constant="8" id="XSZ-Oh-1V4"/>
                             <constraint firstItem="1Zm-6h-Yac" firstAttribute="leading" secondItem="pOg-ee-gfm" secondAttribute="leading" constant="52" id="aUy-Pd-Lyu"/>
+                            <constraint firstItem="pOg-ee-gfm" firstAttribute="trailing" secondItem="jDZ-bI-0v6" secondAttribute="trailing" constant="20" id="aZ9-bb-3SN"/>
                             <constraint firstAttribute="trailing" secondItem="nwf-av-OgZ" secondAttribute="trailing" id="bc0-Zg-J7B"/>
-                            <constraint firstItem="jDZ-bI-0v6" firstAttribute="bottom" secondItem="pOg-ee-gfm" secondAttribute="bottom" id="cRf-S4-uBT"/>
                             <constraint firstItem="1Zm-6h-Yac" firstAttribute="bottom" secondItem="pOg-ee-gfm" secondAttribute="bottom" id="cVl-70-Mk6"/>
                             <constraint firstItem="nwf-av-OgZ" firstAttribute="top" secondItem="zvg-0h-g8a" secondAttribute="top" id="gvP-cH-gUh"/>
                             <constraint firstItem="kei-uV-5Tb" firstAttribute="bottom" secondItem="pOg-ee-gfm" secondAttribute="bottom" id="iCx-iD-0My"/>
