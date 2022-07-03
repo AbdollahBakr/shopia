@@ -10,11 +10,7 @@ import Foundation
 // MARK: - DataClass
 struct DataClass: Codable {
     let customer: Customer?
-}
-
-// MARK: - Customer
-struct Customer: Codable {
-    let addresses: [Address]?
+    let draftOrder: DraftOrder?
 }
 
 // MARK: - Address

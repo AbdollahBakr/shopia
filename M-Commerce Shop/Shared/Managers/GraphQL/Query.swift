@@ -10,5 +10,5 @@ import Foundation
 struct Query {
     
     var body: String
-    var variables: [String: Any]?
+    var variables: [String: Any]
 }

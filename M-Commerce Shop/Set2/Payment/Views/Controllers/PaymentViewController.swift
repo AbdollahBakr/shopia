@@ -1,25 +1,18 @@
 //
-//  MeViewController.swift
+//  PaymentViewController.swift
 //  M-Commerce Shop
 //
-//  Created by Abdollah Bakr on 27/06/2022.
+//  Created by Abdollah Bakr on 03/07/2022.
 //
 
 import UIKit
 
-class MeViewController: UIViewController {
+class PaymentViewController: UIViewController {
 
-    @IBOutlet weak var settingsButton: CircleButtonShadowView!
-    
-    @IBOutlet weak var cartButton: CircleButtonShadowView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        settingsButton.setTitle("", for: .normal)
-        cartButton.setTitle("", for: .normal)
     }
     
 

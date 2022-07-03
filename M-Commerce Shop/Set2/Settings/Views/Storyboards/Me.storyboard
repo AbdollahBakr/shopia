@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h67-3n-QKv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21q-LM-sqw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21q-LM-sqw">
                                 <rect key="frame" x="20" y="144" width="374" height="32"/>
                                 <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="26"/>
                                 <nil key="textColor"/>
@@ -59,7 +59,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nPG-wt-QlV">
                                                 <rect key="frame" x="20" y="0.0" width="354" height="97"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eja-zl-egF">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eja-zl-egF">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="48.5"/>
                                                         <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
                                                         <nil key="textColor"/>
@@ -88,7 +88,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WgA-Xj-azT">
                                                 <rect key="frame" x="20" y="0.0" width="354" height="97"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="k6j-9d-iQp">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="k6j-9d-iQp">
                                                         <rect key="frame" x="0.0" y="0.0" width="354" height="48.5"/>
                                                         <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
                                                         <nil key="textColor"/>
@@ -114,6 +114,56 @@
                                 </subviews>
                                 <directionalEdgeInsets key="directionalLayoutMargins" top="10" leading="10" bottom="10" trailing="10"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7DA-Q7-euu" customClass="RoundedButton" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                <rect key="frame" x="127" y="236" width="160" height="40"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="YZG-f9-YVd"/>
+                                    <constraint firstAttribute="width" constant="160" id="shR-WJ-kjV"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Sign In">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MaC-b2-8Ip" customClass="RoundedButton" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                <rect key="frame" x="127" y="288" width="160" height="40"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="FhB-sU-osx"/>
+                                    <constraint firstAttribute="height" constant="40" id="xLn-JB-xvO"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Sign Up">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wishlist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFB-od-7Hk">
                                 <rect key="frame" x="20" y="567.5" width="414" height="25"/>
                                 <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="20"/>
@@ -204,6 +254,8 @@
                             <constraint firstItem="gFB-od-7Hk" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="20" id="JKR-F6-Pay"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6Up-4O-oPz" secondAttribute="trailing" constant="20" id="M9s-js-om4"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oKQ-Fe-bBn" secondAttribute="trailing" id="RIq-49-f0y"/>
+                            <constraint firstItem="MaC-b2-8Ip" firstAttribute="top" secondItem="7DA-Q7-euu" secondAttribute="bottom" constant="12" id="WCI-AJ-GGk"/>
+                            <constraint firstItem="7DA-Q7-euu" firstAttribute="top" secondItem="21q-LM-sqw" secondAttribute="bottom" constant="60" id="Xuh-6V-1bP"/>
                             <constraint firstItem="oKQ-Fe-bBn" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="1:4" id="ZJ1-dV-UIX"/>
                             <constraint firstItem="ivX-Js-J1r" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="1:6" id="avh-Og-uyq"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="21q-LM-sqw" secondAttribute="trailing" constant="20" id="elV-em-OtE"/>
@@ -211,6 +263,8 @@
                             <constraint firstItem="21q-LM-sqw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="gQz-4A-B8q"/>
                             <constraint firstItem="gFB-od-7Hk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="hpy-0Y-TQ1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cF5-yD-oq6" secondAttribute="trailing" constant="28" id="kb3-um-GjF"/>
+                            <constraint firstItem="MaC-b2-8Ip" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="lao-6T-NkD"/>
+                            <constraint firstItem="7DA-Q7-euu" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="nrQ-Ui-0eT"/>
                             <constraint firstItem="oKQ-Fe-bBn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="rYR-Cj-oHo"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ivX-Js-J1r" secondAttribute="bottom" constant="120" id="sjZ-4c-it0"/>
                             <constraint firstItem="huU-gi-VZE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="wql-ni-rzT"/>
@@ -221,7 +275,17 @@
                     </view>
                     <connections>
                         <outlet property="cartButton" destination="gRr-HS-bhq" id="WD6-og-KFZ"/>
+                        <outlet property="firstOrderStackView" destination="nPG-wt-QlV" id="Lpc-k4-Of8"/>
+                        <outlet property="ordersLabel" destination="huU-gi-VZE" id="65b-iZ-UVU"/>
+                        <outlet property="secondOrderStackView" destination="WgA-Xj-azT" id="gcn-Co-yNc"/>
                         <outlet property="settingsButton" destination="cF5-yD-oq6" id="cN1-Zg-jX6"/>
+                        <outlet property="signInButton" destination="7DA-Q7-euu" id="UlA-1R-JQn"/>
+                        <outlet property="signUpButton" destination="MaC-b2-8Ip" id="tam-m6-RgY"/>
+                        <outlet property="viewFavButton" destination="6Up-4O-oPz" id="9Mg-Bg-Zig"/>
+                        <outlet property="viewOrdersButton" destination="Ftc-gc-4HO" id="n7z-Fu-pze"/>
+                        <outlet property="welcomeLabel" destination="21q-LM-sqw" id="pZq-J0-1MM"/>
+                        <outlet property="wishlistLabel" destination="gFB-od-7Hk" id="Rat-rv-Gbc"/>
+                        <outlet property="wishlistStackView" destination="ivX-Js-J1r" id="e0Z-Dv-8ce"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

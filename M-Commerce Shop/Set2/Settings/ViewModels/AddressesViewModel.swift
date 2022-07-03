@@ -13,7 +13,7 @@ class AddressesViewModel {
     
     var addresses: [Address]? {
         didSet {
-            // Bind data everytime sports reloads/changes
+            // Bind data everytime addresses reloads/changes
             bindAddressestoVC()
         }
     }

@@ -26,6 +26,7 @@ class AddressesViewController: UIViewController {
         let addressNipCell = UINib(nibName: "AddressCollectionViewCell", bundle: nil)
         addressesCollectionView.register(addressNipCell, forCellWithReuseIdentifier: AddressCollectionViewCell.identifier)
         
+        // Remove title from back button
         backButton.setTitle("", for: .normal)
         
 
