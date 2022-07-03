@@ -24,8 +24,8 @@ class NetworkManager {
     
     struct Auth {
         
-        static var accessToken       = ""
-        static var refreshToken      = ""
+        static var accessToken       = Int()
+        static var refreshToken      = Int()
         
     }
     
@@ -33,14 +33,12 @@ class NetworkManager {
         
         
         //Base URL
-        static let base = "https://fde429753a207f610321a557c2e0ceb0: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@menofia-2022-q3.myshopify.com/admin/api/2022-04"
+        static let base = "https://menofia-2022-q3.myshopify.com/admin/api/2022-04/"
     
     
         // Paths Cases
         case authSignup
-        
-        case getBrands
-        
+        case productDetails
         
         /******* Change These Pathes With Our Needs ******/
         //ex:Auth,order....etc
@@ -51,8 +49,9 @@ class NetworkManager {
             case .authSignup:
                 return EndPoints.base + "/customers.json"
                 
-            case .getBrands:
-                return EndPoints.base + "/smart_collections.json"
+            case .productDetails:
+                return EndPoints.base + "products/"
+                
             }
         }
         
@@ -67,28 +66,85 @@ class NetworkManager {
     let baseURL = NSURL(string: "https://menofia-2022-q3.myshopify.com/admin/api/2022-04")
     
     //Generic Get Request We Usually don't pass parameters like post we put it in the url
-    func taskForGETRequest<ResponseType:Decodable>(url:URL, responseType: ResponseType.Type,completion: @escaping (ResponseType?, Error?) -> Void ){
+    func taskForGETRequest<ResponseType:Decodable>(url:URL, param: [String : Any]? = nil ,responseType: ResponseType.Type,completion: @escaping (ResponseType?, Error?) -> Void ){
         
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        
+//        var request = URLRequest(url: url)
+//        request.setValue(<#T##value: String?##String?#>, forHTTPHeaderField: <#T##String#>)
+//      //  request.httpMethod = "GET"
+//        URLSession.shared.dataTask(with: request) { data, response, error in
+//            guard error == nil else {
+//                print("Error: error calling GET")
+//                print(error!)
+//                return
+//            }
+//            guard let data = data else {
+//                print("Error: Did not receive data")
+//                return
+//            }
+//            guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
+//                print("Error: HTTP request failed")
+//                return
+//            }
+//            do {
+//                guard let jsonObject = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+//                    print("Error: Cannot convert data to JSON object")
+//                    return
+//                }
+//                guard let prettyJsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted) else {
+//                    print("Error: Cannot convert JSON object to Pretty JSON data")
+//                    return
+//                }
+//                guard let prettyPrintedJson = String(data: prettyJsonData, encoding: .utf8) else {
+//                    print("Error: Could print JSON in String")
+//                    return
+//                }
+//
+//                print(prettyPrintedJson)
+//            } catch {
+//                print("Error: Trying to convert JSON data to string")
+//                return
+//            }
+//        }.resume()
+
+        
+        var urlRequest : URLRequest?
+        do {
+            urlRequest = try URLRequest(url: url)
+            urlRequest?.httpMethod = "GET"
             
+        } catch {
+            DispatchQueue.main.async {
+                completion(nil, error)
+            }
+            }
+        guard var urlRequest = urlRequest else {
+            return
+        }
+        urlRequest.addValue("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", forHTTPHeaderField: "X-Shopify-Access-Token")
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+
             if let _ = error {
                 completion(nil,error)
                 return
             }
-            
+
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                 completion(nil,error)
                 return
             }
-            
-            
+
+
             guard let data = data else {
                 DispatchQueue.main.async {
                     completion(nil, error)
                 }
                 return
             }
-            
+
             let decoder = JSONDecoder()
             do {
                 let responseObject = try decoder.decode(ResponseType.self, from: data)
@@ -100,6 +156,8 @@ class NetworkManager {
                     completion(nil, error)
                 }
             }
+
+            
         }
         task.resume()
     }
@@ -198,7 +256,7 @@ class NetworkManager {
        
     }
     
-    func getUser(completion: @escaping ([Customer]?, Error?) -> Void){
+    func getUser(completion: @escaping ([CustomerItem]?, Error?) -> Void){
         let url = EndPoints.authSignup.url
         
         taskForGETRequest(url: url, responseType: Customers.self) { (response, error) in
@@ -211,16 +269,16 @@ class NetworkManager {
                     }
     }
     
-    /***********  Home   ********/
-    func getBrands(completion: @escaping ([SmartCollections]?, Error?) -> Void){
-        let url = EndPoints.getBrands.url
+    func getProductDetails (productID: Int , completionHandler: @escaping (ProductDetail?, Error?) -> Void){
+        let endPoints = EndPoints.productDetails.stringValue + "\(productID).json"
         
-        taskForGETRequest(url: url, responseType: BrandsBase.self) { (response, error) in
+        
+        taskForGETRequest(url: URL(string: endPoints)!, responseType: ProductDetail.self) { (response , error) in
             if let response = response  {
                 //result -> is the [meals]
-                completion(response.smart_collections, nil)
+                completionHandler(response ,nil)
             } else {
-                completion(nil,error)
+                completionHandler(nil ,error)
             }
         }
     }
@@ -276,8 +334,8 @@ class NetworkManager {
     //        }
     //    }
    
-        
-
+    
+  
 
     /***** Example USING POST Request.... ***/
     //Note: It's Just An Example Don't Use This Post Request In Any View

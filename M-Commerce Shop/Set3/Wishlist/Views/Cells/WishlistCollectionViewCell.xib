@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WishlistCollectionViewCell" id="gTV-IL-0wX" customClass="WishlistCollectionViewCell" customModule="M_Commerce_Shop" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="221" height="339"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="221" height="339"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tray.full.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ly4-Qk-tQ7" userLabel="productImageView" customClass="RoundedImageView" customModule="M_Commerce_Shop" customModuleProvider="target">
+                        <rect key="frame" x="5" y="6.5" width="211" height="256.5"/>
+                        <color key="backgroundColor" name="GreyColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="260" id="e1S-JU-cDh"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4hQ-x8-0RS" userLabel="productNameLabel">
+                        <rect key="frame" x="20" y="273" width="181" height="21"/>
+                        <color key="backgroundColor" name="GreyColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="181" id="Ln7-Dc-N1u"/>
+                            <constraint firstAttribute="height" constant="21" id="zMJ-Gi-HsZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fh-gW-SSX" userLabel="priceLabel">
+                        <rect key="frame" x="20" y="298" width="181" height="21"/>
+                        <color key="backgroundColor" name="GreyColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Wqu-TE-ZH5"/>
+                            <constraint firstAttribute="width" constant="181" id="XmZ-PV-YgQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hP4-WX-4fD" userLabel="favBtn" customClass="CircleButtonShadowView" customModule="M_Commerce_Shop" customModuleProvider="target">
+                        <rect key="frame" x="187" y="5" width="29" height="28"/>
+                        <color key="backgroundColor" name="GreyColor"/>
+                        <color key="tintColor" systemColor="systemRedColor"/>
+                        <state key="normal" image="heart.fill" catalog="system">
+                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                        </state>
+                        <connections>
+                            <action selector="favBtnAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="rcb-7I-PqD"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="3fh-gW-SSX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="5h1-gk-54w"/>
+                <constraint firstItem="4hQ-x8-0RS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="BZB-Ms-nVf"/>
+                <constraint firstItem="Ly4-Qk-tQ7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="C2J-uh-jnc"/>
+                <constraint firstAttribute="bottom" secondItem="3fh-gW-SSX" secondAttribute="bottom" constant="20" id="D9R-4V-D0k"/>
+                <constraint firstItem="4hQ-x8-0RS" firstAttribute="top" secondItem="Ly4-Qk-tQ7" secondAttribute="bottom" constant="8" id="DpE-7G-e8f"/>
+                <constraint firstAttribute="trailing" secondItem="3fh-gW-SSX" secondAttribute="trailing" constant="20" id="LMZ-3T-1EH"/>
+                <constraint firstItem="3fh-gW-SSX" firstAttribute="top" secondItem="4hQ-x8-0RS" secondAttribute="bottom" constant="4" id="Z68-O0-N5n"/>
+                <constraint firstAttribute="trailing" secondItem="4hQ-x8-0RS" secondAttribute="trailing" constant="20" id="Zra-hW-SjU"/>
+                <constraint firstAttribute="trailing" secondItem="Ly4-Qk-tQ7" secondAttribute="trailing" constant="5" id="biS-zD-4oY"/>
+                <constraint firstItem="Ly4-Qk-tQ7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="dJ5-a1-axu"/>
+                <constraint firstItem="hP4-WX-4fD" firstAttribute="width" secondItem="Ly4-Qk-tQ7" secondAttribute="width" multiplier="0.137441" id="gtc-9h-DaL"/>
+                <constraint firstItem="hP4-WX-4fD" firstAttribute="height" secondItem="Ly4-Qk-tQ7" secondAttribute="height" multiplier="0.107692" id="hub-nb-ujY"/>
+                <constraint firstItem="hP4-WX-4fD" firstAttribute="trailing" secondItem="Ly4-Qk-tQ7" secondAttribute="trailing" id="jw5-GV-L1M"/>
+                <constraint firstItem="hP4-WX-4fD" firstAttribute="top" secondItem="Ly4-Qk-tQ7" secondAttribute="top" id="v0h-Zj-KQw"/>
+            </constraints>
+            <size key="customSize" width="221" height="339"/>
+            <connections>
+                <outlet property="imageProduct" destination="Ly4-Qk-tQ7" id="JiS-s0-QTk"/>
+                <outlet property="nameProduct" destination="4hQ-x8-0RS" id="7QD-xK-USr"/>
+                <outlet property="priceProduct" destination="3fh-gW-SSX" id="lfB-zS-2mJ"/>
+            </connections>
+            <point key="canvasLocation" x="258.69565217391306" y="165.06696428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
+        <image name="tray.full.fill" catalog="system" width="128" height="88"/>
+        <namedColor name="GreyColor">
+            <color red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

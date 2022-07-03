@@ -24,12 +24,12 @@ class AuthViewModel {
     }
     
     
-    func loginUser(currentCustomer: Customer, completionHandler: @escaping (Customer?) -> Void){
+    func loginUser(currentCustomer: CustomerItem, completionHandler: @escaping (CustomerItem?) -> Void){
         networkservice.getUser { customers, error in
             guard let customers = customers else {
                 return
             }
-            var customerExisted : Customer?
+            var customerExisted : CustomerItem?
             customers.forEach({ customer in
                 if currentCustomer.email == customer.email && currentCustomer.multipass_identifier == customer.multipass_identifier{
                     customerExisted = customer
@@ -38,7 +38,7 @@ class AuthViewModel {
             })
             guard let customerExisted = customerExisted else {
                 completionHandler(nil)
-                return
+                return 
             }
             completionHandler(customerExisted)
         }

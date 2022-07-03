@@ -11,8 +11,10 @@ class LoginVC: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    var currentCustomer: Customer?
+    var currentCustomer: CustomerItem?
     var authViewModel: AuthViewModel?
+    let network = NetworkManager.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         currentCustomer = Customer(addresses: nil)
@@ -28,9 +30,22 @@ class LoginVC: UIViewController {
         }
         authViewModel?.loginUser(currentCustomer: currentCustomer, completionHandler: { customer in
             if customer != nil {
+                
+                let storyboard = UIStoryboard(name: "Wishlist", bundle: nil)
+                let wishlistVC =
+                storyboard.instantiateViewController(withIdentifier: "WishlistViewController") as? WishlistViewController
+                guard let wishlistVC = wishlistVC else {return}
+                wishlistVC.modalPresentationStyle = .fullScreen
+                self.present(wishlistVC.self, animated: true)
+                
                 Helper.displayMessage(message: "Login Success", messageError: false)
-            }else{
-                Helper.displayMessage(message: "Wrong Username or Password", messageError: true)
+                
+                guard let customer = customer else {
+                    return
+                }
+                Helper.currentUserID =  (customer.id)!
+            }else if customer?.email == nil && customer?.multipass_identifier == nil{
+                Helper.displayMessage(message: "Wrong E-mail or Password", messageError: true)
             }
         })
         
@@ -41,9 +56,10 @@ class LoginVC: UIViewController {
         
         let newVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(identifier: "SignUpVC")
         newVC.modalPresentationStyle = .fullScreen
-        dismiss(animated: true) { [weak self] in
-            self?.present(newVC, animated: true)
-        }
+//        dismiss(animated: true) { [weak self] in
+//            self?.present(newVC, animated: true)
+//        }
+        present(newVC, animated: true)
     }
     
     @IBAction func backBtnToSignup(_ sender: UIButton) {
