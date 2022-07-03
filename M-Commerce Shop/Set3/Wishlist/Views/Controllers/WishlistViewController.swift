@@ -12,37 +12,48 @@ class WishlistViewController: UIViewController {
 
     @IBOutlet weak var wishlistCollectionView: UICollectionView!
     @IBOutlet weak var noFavoriteView: UIView!
+    @IBOutlet weak var logInView: UIView!
     var wishlistViewModel: WishlistViewModel?
     var localDataSource: CoreDataManager?
     var favProducts: [ProductSavedModel]?
     
     override func viewWillAppear(_ animated: Bool) {
-        localDataSource = CoreDataManager.shared
-        guard let localDataSource = localDataSource else {
-            return
-        }
-        wishlistViewModel = WishlistViewModel(localDataSource: localDataSource)
-        favProducts = wishlistViewModel?.getfavProducts()
         
-        if  self.favProducts?.isEmpty ?? true{
-            noFavoriteView.isHidden = false
-            wishlistCollectionView.isHidden = true
+        
+        if Helper.isUserLoggedIn() {
             
-        }else {
+            localDataSource = CoreDataManager.shared
+            guard let localDataSource = localDataSource else {
+                return
+            }
+            wishlistViewModel = WishlistViewModel(localDataSource: localDataSource)
+            favProducts = wishlistViewModel?.getfavProducts()
             
-            noFavoriteView.isHidden = true
-            wishlistCollectionView.isHidden = false
-            self.wishlistCollectionView.reloadData()
+            if  self.favProducts?.isEmpty ?? true{
+                noFavoriteView.isHidden = false
+                logInView.isHidden = true
+                wishlistCollectionView.isHidden = true
+                
+            }else {
+                noFavoriteView.isHidden = true
+                logInView.isHidden = true
+                wishlistCollectionView.isHidden = false
+                self.wishlistCollectionView.reloadData()
+            }
+        }else{
+            favProducts = []
+            if  self.favProducts?.isEmpty ?? true{
+                noFavoriteView.isHidden = true
+                wishlistCollectionView.isHidden = true
+                logInView.isHidden = false
+                }
+            }
         }
         
         
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         wishlistCollectionView.delegate = self
         wishlistCollectionView.dataSource = self
         wishlistCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
@@ -51,7 +62,21 @@ class WishlistViewController: UIViewController {
         wishlistCollectionView.register(cartItemsNipCell, forCellWithReuseIdentifier: WishlistCollectionViewCell.identifier)
     }
     
-
+    
+    @IBAction func logInBtn(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Auth", bundle: nil)
+        let loginVC =
+        storyboard.instantiateViewController(withIdentifier: "LoginVC") as? LoginVC
+        guard let loginVC = loginVC else {return}
+        loginVC.modalPresentationStyle = .fullScreen
+        present(loginVC, animated: true)
+    }
+    
+    @IBAction func backBtn(_ sender: CircleButtonShadowView) {
+        dismiss(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

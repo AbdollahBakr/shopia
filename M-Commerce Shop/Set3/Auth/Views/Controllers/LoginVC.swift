@@ -29,13 +29,22 @@ class LoginVC: UIViewController {
         }
         authViewModel?.loginUser(currentCustomer: currentCustomer, completionHandler: { customer in
             if customer != nil {
+                
+                let storyboard = UIStoryboard(name: "Wishlist", bundle: nil)
+                let wishlistVC =
+                storyboard.instantiateViewController(withIdentifier: "WishlistViewController") as? WishlistViewController
+                guard let wishlistVC = wishlistVC else {return}
+                wishlistVC.modalPresentationStyle = .fullScreen
+                self.present(wishlistVC.self, animated: true)
+                
                 Helper.displayMessage(message: "Login Success", messageError: false)
+                
                 guard let customer = customer else {
                     return
                 }
-                NetworkManager.Auth.accessToken =  (customer.id)!
-            }else{
-                Helper.displayMessage(message: "Wrong Username or Password", messageError: true)
+                Helper.currentUserID =  (customer.id)!
+            }else if customer?.email == nil && customer?.multipass_identifier == nil{
+                Helper.displayMessage(message: "Wrong E-mail or Password", messageError: true)
             }
         })
         
@@ -46,9 +55,10 @@ class LoginVC: UIViewController {
         
         let newVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(identifier: "SignUpVC")
         newVC.modalPresentationStyle = .fullScreen
-        dismiss(animated: true) { [weak self] in
-            self?.present(newVC, animated: true)
-        }
+//        dismiss(animated: true) { [weak self] in
+//            self?.present(newVC, animated: true)
+//        }
+        present(newVC, animated: true)
     }
     
     @IBAction func backBtnToSignup(_ sender: UIButton) {
