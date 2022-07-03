@@ -21,4 +21,5 @@ struct CustomerItem : Codable{
 //    var orders_count            : Int?
 //    var total_spent             : String?
     var multipass_identifier    : String?
+    var addresses               : [Address]?
 }
