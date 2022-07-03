@@ -23,14 +23,6 @@ class RoundedShodowButton : UIButton {
     }
 }
 
-class RoundedView:UIView {
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        let radius: CGFloat = 10
-        self.layer.cornerRadius = radius
-    }
-}
-
 class RoundedButton : UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()

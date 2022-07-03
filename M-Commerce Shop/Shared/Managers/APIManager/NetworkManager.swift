@@ -39,13 +39,13 @@ class NetworkManager {
         // Paths Cases
         case authSignup
         
-<<<<<<< HEAD
+
         case getCategories
-=======
+
         case getBrands
         
         
->>>>>>> de547e8dd6035f7dc71b03648cd88d065e62fc62
+
         /******* Change These Pathes With Our Needs ******/
         //ex:Auth,order....etc
         var stringValue: String {
@@ -55,15 +55,15 @@ class NetworkManager {
             case .authSignup:
                 return EndPoints.base + "/customers.json"
                 
-<<<<<<< HEAD
+
             case .getCategories:
                 return EndPoints.base + "/smart_collections.json"
                 
                 
-=======
+
             case .getBrands:
                 return EndPoints.base + "/smart_collections.json"
->>>>>>> de547e8dd6035f7dc71b03648cd88d065e62fc62
+
             }
         }
         
@@ -222,9 +222,9 @@ class NetworkManager {
                     }
     }
     
-<<<<<<< HEAD
-    func getCategories(completion: @escaping ([SmartCollections]?,Error?) -> ()) {
-=======
+
+    
+
     /***********  Home   ********/
     func getBrands(completion: @escaping ([SmartCollections]?, Error?) -> Void){
         let url = EndPoints.getBrands.url
@@ -290,20 +290,6 @@ class NetworkManager {
     //        }
     //    }
    
->>>>>>> de547e8dd6035f7dc71b03648cd88d065e62fc62
-        
-        let url = EndPoints.getCategories.url
-        
-        taskForGETRequest(url: url, responseType: SmartCollectionsData.self) { (response, error) in
-                        if let response = response  {
-                            //result -> is the [meals]
-                            completion(response.smart_collections, nil)
-                        } else {
-                            completion(nil,error)
-                        }
-                    }
-    }
-    
   
 }
     
