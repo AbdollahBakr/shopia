@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CountryPickerView
 
 class AddNewAddressViewController: UIViewController {
     
@@ -25,6 +26,22 @@ class AddNewAddressViewController: UIViewController {
         // Do any additional setup after loading the view.
         viewModel = AddAddresseViewModel()
         backButton.setTitle("", for: .normal)
+        
+        // Setup country picker
+        let countryPicker = CountryPickerView(frame: CGRect(x: 0, y: 0, width: 120, height: 20))
+        countryPicker.delegate = self
+        countryPicker.showPhoneCodeInView = false
+        countryPicker.showCountryCodeInView = false
+//        countryPicker.selectedCountry.flag
+//        countryPicker.selectedCountry = Country(name: "Egypt", code: "", phoneCode: "")
+        countryField.rightView = countryPicker
+        countryField.rightViewMode = .always
+        // Hide cursor
+        countryField.tintColor = UIColor.clear
+        // Hide keyboard
+        countryField.resignFirstResponder()
+        countryField.placeholder = "Please, select a country"
+//        countryField.ed
     }
     
 
@@ -40,4 +57,14 @@ class AddNewAddressViewController: UIViewController {
         Helper.displayMessage(message: "Suuccessfully Saved the New Address", messageError: false)
         self.dismiss(animated: true)
     }
+}
+
+
+extension AddNewAddressViewController: CountryPickerViewDelegate {
+    func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
+        
+        countryField.text = country.name
+    }
+    
+    
 }
