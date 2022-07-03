@@ -12,6 +12,8 @@ import ProgressHUD
 
 class Helper {
     
+    static var currentUserID : Int?
+    
     static func displayMessage(message: String, messageError: Bool) {
         DispatchQueue.main.async {
             
@@ -58,6 +60,11 @@ class Helper {
     static func dismissAnimation() {
         AnimationLottie.splashScreen.stop()
         AnimationLottie.splashScreen.alpha = 0
+    }
+    
+    static func isUserLoggedIn() -> Bool{
+        guard let currentUserID = currentUserID else{return false}
+        return true
     }
     
 }

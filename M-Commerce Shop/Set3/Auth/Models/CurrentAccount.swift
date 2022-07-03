@@ -9,18 +9,16 @@ import Foundation
 
 struct Customers : Codable{
     
-    var customers : [Customer]
+    var customers : [CustomerItem]
 
 }
 
-struct Customer : Codable{
-    var id                      : String?
+struct CustomerItem : Codable{
+    var id                      : Int?
     var email                   : String?
-    var firstName              : String?
-    var lastName               : String?
+    var first_name              : String?
+    var last_name               : String?
 //    var orders_count            : Int?
 //    var total_spent             : String?
     var multipass_identifier    : String?
-    var numberOfOrders          : String?
-    let addresses               : [Address]?
 }
