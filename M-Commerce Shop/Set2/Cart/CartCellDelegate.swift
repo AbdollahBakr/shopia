@@ -9,4 +9,5 @@ import Foundation
 
 protocol CartCellDelegate {
     func didTapDeleteButton(item: Edge)
+    func didChangeItemQuantity(item: Edge, newValue: Int)
 }

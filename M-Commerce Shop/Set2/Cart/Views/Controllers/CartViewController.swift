@@ -56,8 +56,19 @@ class CartViewController: UIViewController {
         shippingLabel.text = viewModel.formatPrice(value: draftOrder?.totalShippingPrice)
         taxLabel.text = viewModel.formatPrice(value: draftOrder?.totalTax)
     }
+    
+    func updateTotalPrice(){
+        var totalPrice: Double = 0
+        
+        for item in cartItems! {
+            totalPrice += Double(item.node?.quantity ?? 0) * Double((item.node?.originalUnitPrice)!)!
+        }
+        
+        totalLabel.text = viewModel.formatPrice(value: totalPrice.description)
+    }
+    
     @IBAction func checkout(_ sender: Any) {
-        viewModel.updateCartItems()
+        viewModel.updateCartItems(cartItems: cartItems ?? [Edge]())
     }
 }
 
@@ -73,13 +84,22 @@ extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSour
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CartCollectionViewCell.identifier, for: indexPath) as? CartCollectionViewCell else { return CartCollectionViewCell()}
         
         // Configure Cell with line item
+        // Set delete button delegate
         cell.delegate = self
+        
+        // Set info labels
         cell.cartItem = cartItems?[indexPath.item]
         cell.itemNameLabel.text = cell.cartItem?.node?.name
         cell.itemPriceLabel.text = viewModel.formatPrice(value: cell.cartItem?.node?.originalUnitPrice)
         cell.itemCountLabel.text = cell.cartItem?.node?.quantity?.description
+        
+        // Set image
         let url = URL(string: cell.cartItem?.node?.image?.url ?? "")
         cell.cartItemImageView.kf.setImage(with: url)
+        
+        // Set stepper value to match the API value
+        let stepperValue = Double(cell.cartItem?.node?.quantity ?? 0)
+        cell.itemCountStepper.value = stepperValue
 
         return cell
     }
@@ -95,6 +115,16 @@ extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 
 extension CartViewController: CartCellDelegate {
+    
+    // Update total price based on quantity change
+    func didChangeItemQuantity(item: Edge, newValue: Int) {
+        if let index = cartItems?.firstIndex(where: {$0 == item}) {
+            print("Quantity changed: \(item) ad index \(index)")
+            cartItems?[index].node?.quantity = newValue
+            updateTotalPrice()
+        }
+    }
+    
     func didTapDeleteButton(item: Edge) {
         
         if let index = cartItems?.firstIndex(where: {$0 == item}) {
