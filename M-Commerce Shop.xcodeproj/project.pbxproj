@@ -23,6 +23,7 @@
 		142BD77F28718B3D0052275C /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BD77E28718B3D0052275C /* PaymentViewModel.swift */; };
 		142BD78128718CB30052275C /* CouponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BD78028718CB30052275C /* CouponsViewController.swift */; };
 		142BD7842871BB180052275C /* CountryPickerView in Frameworks */ = {isa = PBXBuildFile; productRef = 142BD7832871BB180052275C /* CountryPickerView */; };
+		142BD7862871D1EA0052275C /* AddAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BD7852871D1EA0052275C /* AddAddressModel.swift */; };
 		142C2B95286A98E0001CEFBB /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142C2B94286A98E0001CEFBB /* Settings.storyboard */; };
 		142C2B97286A9AAD001CEFBB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2B96286A9AAD001CEFBB /* SettingsViewController.swift */; };
 		142C2B9C286ABA94001CEFBB /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2B9B286ABA94001CEFBB /* SettingsCell.swift */; };
@@ -109,6 +110,7 @@
 		142BD77C28718AF50052275C /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PaymentViewController.swift; path = "M-Commerce Shop/Set2/Payment/Views/Controllers/PaymentViewController.swift"; sourceTree = SOURCE_ROOT; };
 		142BD77E28718B3D0052275C /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 		142BD78028718CB30052275C /* CouponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsViewController.swift; sourceTree = "<group>"; };
+		142BD7852871D1EA0052275C /* AddAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressModel.swift; sourceTree = "<group>"; };
 		142C2B94286A98E0001CEFBB /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		142C2B96286A9AAD001CEFBB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		142C2B9B286ABA94001CEFBB /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				142C2B9B286ABA94001CEFBB /* SettingsCell.swift */,
 				142BB72F286E9B0D008A7D00 /* CodableModels.swift */,
 				142BB737286ECFD1008A7D00 /* AddressesCellDelegate.swift */,
+				142BD7852871D1EA0052275C /* AddAddressModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1241,6 +1244,7 @@
 				142BB732286E9FE4008A7D00 /* AddressesViewModel.swift in Sources */,
 				91135CF82867964E0079F360 /* SignUpVC.swift in Sources */,
 				142C2B9F286ABB30001CEFBB /* SettingsViewModel.swift in Sources */,
+				142BD7862871D1EA0052275C /* AddAddressModel.swift in Sources */,
 				142BD78128718CB30052275C /* CouponsViewController.swift in Sources */,
 				142BB734286EAD14008A7D00 /* AddAddressViewModel.swift in Sources */,
 				142BD77F28718B3D0052275C /* PaymentViewModel.swift in Sources */,

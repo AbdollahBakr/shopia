@@ -269,7 +269,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kvl-9S-6P2" customClass="TextFieldPadding" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kvl-9S-6P2">
                                         <rect key="frame" x="20" y="60" width="374" height="51.5"/>
                                         <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -346,6 +346,7 @@
                         <outlet property="backButton" destination="gEy-UT-ay5" id="snM-Pa-i1q"/>
                         <outlet property="cityField" destination="LuJ-fQ-xeh" id="UsG-FY-FcE"/>
                         <outlet property="countryField" destination="Kvl-9S-6P2" id="jbs-Eb-nAu"/>
+                        <outlet property="saveAddressButton" destination="C3a-nJ-hDi" id="L1F-Fs-RQJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hf4-MT-lrf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
