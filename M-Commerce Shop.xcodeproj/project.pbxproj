@@ -17,6 +17,11 @@
 		142BB734286EAD14008A7D00 /* AddAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BB733286EAD14008A7D00 /* AddAddressViewModel.swift */; };
 		142BB736286EBA21008A7D00 /* GraphQLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BB735286EBA21008A7D00 /* GraphQLHelper.swift */; };
 		142BB738286ECFD1008A7D00 /* AddressesCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BB737286ECFD1008A7D00 /* AddressesCellDelegate.swift */; };
+		142BD77928718A7A0052275C /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BD77828718A7A0052275C /* Payment.swift */; };
+		142BD77B28718AB40052275C /* Payment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142BD77A28718AB40052275C /* Payment.storyboard */; };
+		142BD77D28718AF50052275C /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BD77C28718AF50052275C /* PaymentViewController.swift */; };
+		142BD77F28718B3D0052275C /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BD77E28718B3D0052275C /* PaymentViewModel.swift */; };
+		142BD78128718CB30052275C /* CouponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BD78028718CB30052275C /* CouponsViewController.swift */; };
 		142C2B95286A98E0001CEFBB /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142C2B94286A98E0001CEFBB /* Settings.storyboard */; };
 		142C2B97286A9AAD001CEFBB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2B96286A9AAD001CEFBB /* SettingsViewController.swift */; };
 		142C2B9C286ABA94001CEFBB /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2B9B286ABA94001CEFBB /* SettingsCell.swift */; };
@@ -98,6 +103,11 @@
 		142BB733286EAD14008A7D00 /* AddAddressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressViewModel.swift; sourceTree = "<group>"; };
 		142BB735286EBA21008A7D00 /* GraphQLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLHelper.swift; sourceTree = "<group>"; };
 		142BB737286ECFD1008A7D00 /* AddressesCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesCellDelegate.swift; sourceTree = "<group>"; };
+		142BD77828718A7A0052275C /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		142BD77A28718AB40052275C /* Payment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Payment.storyboard; sourceTree = "<group>"; };
+		142BD77C28718AF50052275C /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PaymentViewController.swift; path = "M-Commerce Shop/Set2/Payment/Views/Controllers/PaymentViewController.swift"; sourceTree = SOURCE_ROOT; };
+		142BD77E28718B3D0052275C /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
+		142BD78028718CB30052275C /* CouponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsViewController.swift; sourceTree = "<group>"; };
 		142C2B94286A98E0001CEFBB /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		142C2B96286A9AAD001CEFBB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		142C2B9B286ABA94001CEFBB /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -580,6 +590,7 @@
 		FAAB800C2865101600A3A86A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				142BD77828718A7A0052275C /* Payment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -587,6 +598,7 @@
 		FAAB800D2865101600A3A86A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				142BD77E28718B3D0052275C /* PaymentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -691,6 +703,7 @@
 			isa = PBXGroup;
 			children = (
 				1421F16F2866BE0000E0E1B0 /* CartViewController.swift */,
+				142BD78028718CB30052275C /* CouponsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -721,6 +734,7 @@
 		FAAB8023286511E700A3A86A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				142BD77C28718AF50052275C /* PaymentViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -780,6 +794,7 @@
 		FAAB8037286512E900A3A86A /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				142BD77A28718AB40052275C /* Payment.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1038,6 +1053,7 @@
 				FAAB80292865122B00A3A86A /* Auth.storyboard in Resources */,
 				FA890EA32865E09B00063FD2 /* Home.storyboard in Resources */,
 				FAAB80BF28652AE700A3A86A /* NoConnectionVC.xib in Resources */,
+				142BD77B28718AB40052275C /* Payment.storyboard in Resources */,
 				142C2BA9286AE549001CEFBB /* AddressCollectionViewCell.xib in Resources */,
 				142C2B95286A98E0001CEFBB /* Settings.storyboard in Resources */,
 				14181684286F19FF00B85CCC /* CartCollectionViewCell.xib in Resources */,
@@ -1207,6 +1223,7 @@
 				1421F1702866BE0000E0E1B0 /* CartViewController.swift in Sources */,
 				FAAB807928651E4600A3A86A /* CustomColors.swift in Sources */,
 				FA2B6E5C28650E2C00603B78 /* AppDelegate.swift in Sources */,
+				142BD77928718A7A0052275C /* Payment.swift in Sources */,
 				14446BC7286D486C0080848A /* Query.swift in Sources */,
 				14446BC5286D48380080848A /* GraphQLManager.swift in Sources */,
 				FAAB808528651E5100A3A86A /* Helper.swift in Sources */,
@@ -1216,7 +1233,10 @@
 				142BB732286E9FE4008A7D00 /* AddressesViewModel.swift in Sources */,
 				91135CF82867964E0079F360 /* SignUpVC.swift in Sources */,
 				142C2B9F286ABB30001CEFBB /* SettingsViewModel.swift in Sources */,
+				142BD78128718CB30052275C /* CouponsViewController.swift in Sources */,
 				142BB734286EAD14008A7D00 /* AddAddressViewModel.swift in Sources */,
+				142BD77F28718B3D0052275C /* PaymentViewModel.swift in Sources */,
+				142BD77D28718AF50052275C /* PaymentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,8 +28,14 @@ query getLineItemsInDraftOrder($id: ID!){
   draftOrder(id: $id) {
     currencyCode
     totalPrice
+    subtotalPrice
     totalTax
     totalShippingPrice
+    appliedDiscount {
+              title
+              value
+              valueType
+          }
     lineItems(first: 20){
       edges {
         node {
