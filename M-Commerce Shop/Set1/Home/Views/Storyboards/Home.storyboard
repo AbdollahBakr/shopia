@@ -18,7 +18,22 @@
                         <viewLayoutGuide key="safeArea" id="jxF-CY-24D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Hello" id="8Ps-ZA-ZwS"/>
+                    <navigationItem key="navigationItem" title="Hello" id="8Ps-ZA-ZwS">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="p1c-cP-StE"/>
+                        <rightBarButtonItems>
+                            <barButtonItem image="cart" catalog="system" id="Fbp-1j-su8">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </barButtonItem>
+                            <barButtonItem image="heart" catalog="system" id="AMR-yG-BQH">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outletCollection property="navBarItems" destination="Fbp-1j-su8" collectionClass="NSMutableArray" id="ME0-nE-1Jk"/>
+                        <outletCollection property="navBarItems" destination="AMR-yG-BQH" collectionClass="NSMutableArray" id="otq-rm-U2A"/>
+                        <outletCollection property="navBarItems" destination="p1c-cP-StE" collectionClass="NSMutableArray" id="hzk-ZY-gnz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="URN-j5-yRz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,6 +62,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="menu" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

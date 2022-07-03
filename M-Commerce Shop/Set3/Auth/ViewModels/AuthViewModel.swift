@@ -38,7 +38,7 @@ class AuthViewModel {
             })
             guard let customerExisted = customerExisted else {
                 completionHandler(nil)
-                return
+                return 
             }
             completionHandler(customerExisted)
         }
