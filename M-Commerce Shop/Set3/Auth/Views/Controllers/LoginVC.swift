@@ -15,7 +15,7 @@ class LoginVC: UIViewController {
     var authViewModel: AuthViewModel?
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentCustomer = Customer()
+        currentCustomer = Customer(addresses: nil)
         let network = NetworkManager.shared
         authViewModel = AuthViewModel(networkservice: network)
     }

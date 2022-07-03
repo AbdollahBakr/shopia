@@ -43,6 +43,9 @@
 		265A94B5585EFCF2A5FB8ADF /* Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529726848BA781C7530847CF /* Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework */; };
 		53716B0B88646274148A6920 /* Pods_M_Commerce_Shop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C029B2DF6C368B53AC8834 /* Pods_M_Commerce_Shop.framework */; };
 		917B410A2869B0DB00CF3F99 /* SignupError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917B41092869B0DA00CF3F99 /* SignupError.swift */; };
+		91A142FD28724B03003E54EA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E5F28650E2C00603B78 /* LoginVC.swift */; };
+		91A142FE28724B07003E54EA /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91135CF72867964E0079F360 /* SignUpVC.swift */; };
+		91A142FF28724B19003E54EA /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4329828686E02007E0353 /* AuthViewModel.swift */; };
 		91E4329728686275007E0353 /* SignupUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E4329628686275007E0353 /* SignupUserData.swift */; };
 		E69D21BD4E6C4A2556FAD8D0 /* Pods_M_Commerce_ShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC2F3FD955D80DEEE12124F /* Pods_M_Commerce_ShopTests.framework */; };
 		FA2B6E5C28650E2C00603B78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2B6E5B28650E2C00603B78 /* AppDelegate.swift */; };
@@ -1254,6 +1257,7 @@
 				142C2B9C286ABA94001CEFBB /* SettingsCell.swift in Sources */,
 				FAAB805B28651C3700A3A86A /* CoreDataManager.swift in Sources */,
 				FA39F7952867D96400782598 /* HomeVC.swift in Sources */,
+				91A142FE28724B07003E54EA /* SignUpVC.swift in Sources */,
 				140A445928703E9B00FAD8CE /* Ad.swift in Sources */,
 				146FAA05286F9F8C00B897EC /* CartCellDelegate.swift in Sources */,
 				1432C2B8286F14F5004923DB /* CartViewModel.swift in Sources */,
@@ -1301,6 +1305,8 @@
 				142BD7862871D1EA0052275C /* AddAddressModel.swift in Sources */,
 				142BD787287241080052275C /* AddAddressViewModel.swift in Sources */,
 				142BD78128718CB30052275C /* CouponsViewController.swift in Sources */,
+				91A142FD28724B03003E54EA /* LoginVC.swift in Sources */,
+				91A142FF28724B19003E54EA /* AuthViewModel.swift in Sources */,
 				142BD77F28718B3D0052275C /* PaymentViewModel.swift in Sources */,
 				142BD77D28718AF50052275C /* PaymentViewController.swift in Sources */,
 				142BD789287241DC0052275C /* GraphQLHelper.swift in Sources */,
