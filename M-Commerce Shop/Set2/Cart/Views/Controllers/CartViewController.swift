@@ -69,10 +69,15 @@ class CartViewController: UIViewController {
     
     @IBAction func checkout(_ sender: Any) {
         viewModel.updateCartItems(cartItems: cartItems ?? [Edge]())
+        
+        guard let couponsVC = storyboard?.instantiateViewController(withIdentifier: "CouponsViewController") else { return }
+//        presentVC(vc: couponsVC, animated: true)
+        present(couponsVC, animated: true)
     }
 }
 
 
+// Cart items collection view
 extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -113,7 +118,7 @@ extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
 }
 
-
+// Delegated functions
 extension CartViewController: CartCellDelegate {
     
     // Update total price based on quantity change
