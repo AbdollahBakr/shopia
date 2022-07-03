@@ -23,6 +23,9 @@
 		142BD787287241080052275C /* AddAddressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BB733286EAD14008A7D00 /* AddAddressViewModel.swift */; };
 		142BD788287241810052275C /* CodableModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BB72F286E9B0D008A7D00 /* CodableModels.swift */; };
 		142BD789287241DC0052275C /* GraphQLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BB735286EBA21008A7D00 /* GraphQLHelper.swift */; };
+		142BD78A287254550052275C /* AddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2BA3286AD212001CEFBB /* AddressesViewController.swift */; };
+		142BD78B287254690052275C /* AddressesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BB731286E9FE4008A7D00 /* AddressesViewModel.swift */; };
+		142BD78C287254AF0052275C /* AddressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2BA6286AE549001CEFBB /* AddressCollectionViewCell.swift */; };
 		142C2B95286A98E0001CEFBB /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142C2B94286A98E0001CEFBB /* Settings.storyboard */; };
 		142C2B97286A9AAD001CEFBB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2B96286A9AAD001CEFBB /* SettingsViewController.swift */; };
 		142C2B9C286ABA94001CEFBB /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2B9B286ABA94001CEFBB /* SettingsCell.swift */; };
@@ -1264,6 +1267,7 @@
 				142BB738286ECFD1008A7D00 /* AddressesCellDelegate.swift in Sources */,
 				FA890EB02865E8D200063FD2 /* HomeViewModel.swift in Sources */,
 				FA4B08D32871282800CA0EA1 /* Rules.swift in Sources */,
+				142BD78B287254690052275C /* AddressesViewModel.swift in Sources */,
 				FABA466628711EFA0099BE1B /* ComposotionalLayout.swift in Sources */,
 				FA4B091328712E5200CA0EA1 /* CurrentAccount.swift in Sources */,
 				FAAB806828651CD300A3A86A /* CoreDataModel.swift in Sources */,
@@ -1289,11 +1293,13 @@
 				917B410A2869B0DB00CF3F99 /* SignupError.swift in Sources */,
 				1421F1702866BE0000E0E1B0 /* CartViewController.swift in Sources */,
 				FAAB807928651E4600A3A86A /* CustomColors.swift in Sources */,
+				142BD78C287254AF0052275C /* AddressCollectionViewCell.swift in Sources */,
 				FA2B6E5C28650E2C00603B78 /* AppDelegate.swift in Sources */,
 				142BD77928718A7A0052275C /* Payment.swift in Sources */,
 				14446BC7286D486C0080848A /* Query.swift in Sources */,
 				14446BC5286D48380080848A /* GraphQLManager.swift in Sources */,
 				FAAB808528651E5100A3A86A /* Helper.swift in Sources */,
+				142BD78A287254550052275C /* AddressesViewController.swift in Sources */,
 				FA4B08D02871282800CA0EA1 /* BrandsBase.swift in Sources */,
 				FA4B08C12871260B00CA0EA1 /* BrandsCell.swift in Sources */,
 				14707615286A6F1C00969B81 /* GuestMeViewController.swift in Sources */,
