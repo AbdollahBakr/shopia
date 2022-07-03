@@ -176,6 +176,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="checkout:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="9cW-Uc-bCp"/>
+                                    <action selector="verifyCoupon:" destination="F6F-1D-oCz" eventType="touchUpInside" id="sj9-5R-y4W"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n7Q-5j-prY" customClass="TextFieldPadding" customModule="M_Commerce_Shop" customModuleProvider="target">
@@ -208,6 +209,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="checkout:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dkS-tD-kEW"/>
+                                    <action selector="continueToPayment:" destination="F6F-1D-oCz" eventType="touchUpInside" id="OHa-4Z-BH6"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1i-s6-t9b">
@@ -243,6 +245,10 @@
                             <constraint firstItem="5Q6-2F-HYR" firstAttribute="centerY" secondItem="w1i-s6-t9b" secondAttribute="centerY" id="zDm-S0-0PW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="couponCodeField" destination="n7Q-5j-prY" id="PEx-2n-xP9"/>
+                        <outlet property="totalPriceLabel" destination="5Q6-2F-HYR" id="gAS-Dz-wmd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xXc-L6-8OK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

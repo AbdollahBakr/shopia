@@ -69,8 +69,9 @@ class CartViewController: UIViewController {
     
     @IBAction func checkout(_ sender: Any) {
         viewModel.updateCartItems(cartItems: cartItems ?? [Edge]())
-        
-        guard let couponsVC = storyboard?.instantiateViewController(withIdentifier: "CouponsViewController") else { return }
+
+        guard let couponsVC = storyboard?.instantiateViewController(withIdentifier: "CouponsViewController") as? CouponsViewController else { return }
+        couponsVC.draftOrder = draftOrder
 //        presentVC(vc: couponsVC, animated: true)
         present(couponsVC, animated: true)
     }

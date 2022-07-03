@@ -4,10 +4,6 @@
 //
 //  Created by Abdollah Bakr on 01/07/2022.
 //
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
 
 import Foundation
 
@@ -44,7 +40,7 @@ struct LineItem: Codable {
 // MARK: - AppliedDiscount
 struct AppliedDiscount: Codable {
     let appliedDiscountDescription: String?
-    let value: Int?
+    let value: Float?
     let amount: Double?
     let valueType, title: String?
 
