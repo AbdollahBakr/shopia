@@ -49,18 +49,18 @@
                         <viewLayoutGuide key="safeArea" id="jxF-CY-24D"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Xn5-gN-aMh" firstAttribute="leading" secondItem="jxF-CY-24D" secondAttribute="leading" constant="20" id="0WY-cM-ARe"/>
                             <constraint firstItem="43l-yn-hgV" firstAttribute="width" secondItem="cM6-sX-P8g" secondAttribute="width" multiplier="0.09" id="0vq-Zf-qCJ"/>
                             <constraint firstAttribute="bottom" secondItem="Xn5-gN-aMh" secondAttribute="bottom" id="49K-G0-j6g"/>
+                            <constraint firstItem="Xn5-gN-aMh" firstAttribute="leading" secondItem="p8B-Gi-c28" secondAttribute="leading" id="5Vr-pG-45b"/>
                             <constraint firstItem="jxF-CY-24D" firstAttribute="trailing" secondItem="p8B-Gi-c28" secondAttribute="trailing" constant="20" id="8in-10-v2T"/>
                             <constraint firstItem="43l-yn-hgV" firstAttribute="top" secondItem="QwZ-yE-h2k" secondAttribute="top" constant="8" id="IQr-ca-Elu"/>
                             <constraint firstItem="QwZ-yE-h2k" firstAttribute="leading" secondItem="p8B-Gi-c28" secondAttribute="leading" id="Mnz-GH-9i6"/>
                             <constraint firstItem="p8B-Gi-c28" firstAttribute="leading" secondItem="jxF-CY-24D" secondAttribute="leading" constant="20" id="NUN-b3-HqN"/>
                             <constraint firstItem="p8B-Gi-c28" firstAttribute="top" secondItem="jxF-CY-24D" secondAttribute="top" id="RgY-N2-FxU"/>
-                            <constraint firstItem="jxF-CY-24D" firstAttribute="trailing" secondItem="Xn5-gN-aMh" secondAttribute="trailing" constant="20" id="WW7-Yj-lH7"/>
                             <constraint firstItem="Xn5-gN-aMh" firstAttribute="top" secondItem="QwZ-yE-h2k" secondAttribute="bottom" constant="16" id="bCI-04-Jxx"/>
                             <constraint firstItem="43l-yn-hgV" firstAttribute="leading" secondItem="QwZ-yE-h2k" secondAttribute="trailing" constant="10" id="lk3-he-b87"/>
                             <constraint firstItem="43l-yn-hgV" firstAttribute="bottom" secondItem="QwZ-yE-h2k" secondAttribute="bottom" constant="-8" id="qBW-RP-YxI"/>
+                            <constraint firstItem="Xn5-gN-aMh" firstAttribute="trailing" secondItem="p8B-Gi-c28" secondAttribute="trailing" id="vPr-qy-ydg"/>
                             <constraint firstItem="43l-yn-hgV" firstAttribute="trailing" secondItem="p8B-Gi-c28" secondAttribute="trailing" id="wBu-gC-lXq"/>
                             <constraint firstItem="QwZ-yE-h2k" firstAttribute="top" secondItem="p8B-Gi-c28" secondAttribute="bottom" constant="10" id="z7O-zS-M0S"/>
                         </constraints>

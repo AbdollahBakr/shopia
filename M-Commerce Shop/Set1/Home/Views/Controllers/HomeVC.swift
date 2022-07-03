@@ -74,6 +74,7 @@ class HomeVC: UIViewController, UISearchBarDelegate {
         menuButton.frame = CGRect(x: 0.0, y: 0.0, width: 35.0, height: 35.0)
         menuButton.backgroundColor = UIColor(named: "GreyColor")
         menuButton.layer.cornerRadius = menuButton.frame.width / 2
+        menuButton.tintColor = .black
         menuButton.layer.shadowOpacity = 0.3
         menuButton.layer.shadowOffset = CGSize.zero
         menuButton.layer.shadowRadius = 2
@@ -83,7 +84,8 @@ class HomeVC: UIViewController, UISearchBarDelegate {
         
         // Right Buttons
         let button2 = UIButton(type: .custom)
-        button2.setImage(UIImage (named: "Cart"), for: .normal)
+        button2.setImage(UIImage(systemName: "cart"), for: .normal)
+        button2.tintColor = .black
         button2.frame = CGRect(x: 0.0, y: 0.0, width: 35.0, height: 35.0)
         button2.layer.cornerRadius = button2.frame.width / 2
         button2.backgroundColor = UIColor(named: "GreyColor")
@@ -93,9 +95,9 @@ class HomeVC: UIViewController, UISearchBarDelegate {
         let barButtonItem2 = UIBarButtonItem(customView: button2)
         
         
-        
         let button3 = UIButton(type: .custom)
         button3.setImage(UIImage (named: "Heart"), for: .normal)
+        button3.tintColor = .black
         button3.frame = CGRect(x: 0.0, y: 0.0, width: 35.0, height: 35.0)
         button3.layer.cornerRadius = button3.frame.width / 2
         button3.backgroundColor = UIColor(named: "GreyColor")
