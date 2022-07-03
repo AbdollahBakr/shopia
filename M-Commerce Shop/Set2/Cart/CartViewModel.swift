@@ -60,7 +60,8 @@ query getLineItemsInDraftOrder($id: ID!){
     }
     
     func updateCartItems() {
-        let cartItem = CartItem(variantId: "gid://shopify/ProductVariant/41891869130923", quantity: 4)
+        
+        
         
         let body = """
             mutation draftOrderUpdate($id: ID!, $input: DraftOrderInput!) {
@@ -75,11 +76,15 @@ query getLineItemsInDraftOrder($id: ID!){
                 }
             }
         """
-        let variables = ["id": "gid://shopify/Customer/6059105484971",
-                         "input": (cartItem.dict!)] as [String : Any]
+        let variables = AddLineItem(
+            id: "gid://shopify/DraftOrder/888534040747",
+            input: Input(
+                lineItems: [
+                    LineItem(
+                        quantity: 4,
+                        variantId: "gid://shopify/ProductVariant/41891869130923")])).dict!
         
         let query = Query(body: body, variables: variables)
-        print(variables)
         GraphQLManager.mutateWithQuery(query: query)
     }
     

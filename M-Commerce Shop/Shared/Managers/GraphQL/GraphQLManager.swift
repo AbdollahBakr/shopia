@@ -48,8 +48,10 @@ class GraphQLManager {
     static func mutateWithQuery(query: Query) {
         let server = GQLServer(HTTP: shopifyLink, headers: headers)
         server.mutation(query.body, query.variables ) { result, error in
-          if (error == nil) {
-            print("API Mutated Successfully")
+          if error != nil {
+              print(error?.localizedDescription)
+          } else {
+              print("Mutated successfully")
           }
         }
     }
