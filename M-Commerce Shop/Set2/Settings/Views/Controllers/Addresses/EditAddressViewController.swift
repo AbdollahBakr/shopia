@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CountryPickerView
 
 class EditAddressViewController: UIViewController {
     
@@ -30,18 +31,10 @@ class EditAddressViewController: UIViewController {
         address2TextField.text = selectedAddress?.address2
         
         viewModel = AddAddresseViewModel()
+        
+        setupCountryPicker()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @IBAction func backToAddresses(_ sender: UIButton) {
         self.dismiss(animated: true)
@@ -54,4 +47,31 @@ class EditAddressViewController: UIViewController {
         Helper.displayMessage(message: "Suuccessfully Edited the New Address", messageError: false)
         self.dismiss(animated: true)
     }
+}
+
+
+// Country picker
+extension EditAddressViewController: CountryPickerViewDelegate {
+    func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
+        
+        countryTextField.text = country.name
+    }
+    
+    func setupCountryPicker(){
+        // Setup country picker
+        let countryPicker = CountryPickerView(frame: CGRect(x: 0, y: 0, width: 120, height: 20))
+        countryPicker.delegate = self
+        countryPicker.showPhoneCodeInView = false
+        countryPicker.showCountryCodeInView = false
+
+        countryTextField.rightView = countryPicker
+        countryTextField.rightViewMode = .always
+        // Hide cursor
+        countryTextField.tintColor = UIColor.clear
+        // Hide keyboard
+        countryTextField.resignFirstResponder()
+        // Placeholder based on the current user location country
+        countryTextField.placeholder = countryPicker.selectedCountry.name
+    }
+    
 }
