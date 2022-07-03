@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,8 @@
 		142BD77D28718AF50052275C /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BD77C28718AF50052275C /* PaymentViewController.swift */; };
 		142BD77F28718B3D0052275C /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BD77E28718B3D0052275C /* PaymentViewModel.swift */; };
 		142BD78128718CB30052275C /* CouponsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BD78028718CB30052275C /* CouponsViewController.swift */; };
+		142BD7842871BB180052275C /* CountryPickerView in Frameworks */ = {isa = PBXBuildFile; productRef = 142BD7832871BB180052275C /* CountryPickerView */; };
+		142BD7862871D1EA0052275C /* AddAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142BD7852871D1EA0052275C /* AddAddressModel.swift */; };
 		142C2B95286A98E0001CEFBB /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142C2B94286A98E0001CEFBB /* Settings.storyboard */; };
 		142C2B97286A9AAD001CEFBB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2B96286A9AAD001CEFBB /* SettingsViewController.swift */; };
 		142C2B9C286ABA94001CEFBB /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C2B9B286ABA94001CEFBB /* SettingsCell.swift */; };
@@ -112,6 +114,7 @@
 		142BD77C28718AF50052275C /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PaymentViewController.swift; path = "M-Commerce Shop/Set2/Payment/Views/Controllers/PaymentViewController.swift"; sourceTree = SOURCE_ROOT; };
 		142BD77E28718B3D0052275C /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 		142BD78028718CB30052275C /* CouponsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponsViewController.swift; sourceTree = "<group>"; };
+		142BD7852871D1EA0052275C /* AddAddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddressModel.swift; sourceTree = "<group>"; };
 		142C2B94286A98E0001CEFBB /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		142C2B96286A9AAD001CEFBB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		142C2B9B286ABA94001CEFBB /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
@@ -192,6 +195,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				142BD7842871BB180052275C /* CountryPickerView in Frameworks */,
 				53716B0B88646274148A6920 /* Pods_M_Commerce_Shop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +225,7 @@
 				142C2B9B286ABA94001CEFBB /* SettingsCell.swift */,
 				142BB72F286E9B0D008A7D00 /* CodableModels.swift */,
 				142BB737286ECFD1008A7D00 /* AddressesCellDelegate.swift */,
+				142BD7852871D1EA0052275C /* AddAddressModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1008,6 +1013,9 @@
 			dependencies = (
 			);
 			name = "M-Commerce Shop";
+			packageProductDependencies = (
+				142BD7832871BB180052275C /* CountryPickerView */,
+			);
 			productName = "M-Commerce Shop";
 			productReference = FA2B6E5828650E2C00603B78 /* M-Commerce Shop.app */;
 			productType = "com.apple.product-type.application";
@@ -1082,6 +1090,9 @@
 				Base,
 			);
 			mainGroup = FA2B6E4F28650E2C00603B78;
+			packageReferences = (
+				142BD7822871BB180052275C /* XCRemoteSwiftPackageReference "CountryPickerView" */,
+			);
 			productRefGroup = FA2B6E5928650E2C00603B78 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1299,8 +1310,7 @@
 				FA4B08C12871260B00CA0EA1 /* BrandsCell.swift in Sources */,
 				14707615286A6F1C00969B81 /* GuestMeViewController.swift in Sources */,
 				142C2B9F286ABB30001CEFBB /* SettingsViewModel.swift in Sources */,
-
-
+				142BD7862871D1EA0052275C /* AddAddressModel.swift in Sources */,
 				142BD78128718CB30052275C /* CouponsViewController.swift in Sources */,
 				142BB734286EAD14008A7D00 /* AddAddressViewModel.swift in Sources */,
 				142BD77F28718B3D0052275C /* PaymentViewModel.swift in Sources */,
@@ -1635,6 +1645,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		142BD7822871BB180052275C /* XCRemoteSwiftPackageReference "CountryPickerView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kizitonwose/CountryPickerView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		142BD7832871BB180052275C /* CountryPickerView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 142BD7822871BB180052275C /* XCRemoteSwiftPackageReference "CountryPickerView" */;
+			productName = CountryPickerView;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		FA2B6E6428650E2C00603B78 /* M_Commerce_Shop.xcdatamodeld */ = {
