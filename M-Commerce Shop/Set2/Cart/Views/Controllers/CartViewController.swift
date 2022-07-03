@@ -68,7 +68,7 @@ class CartViewController: UIViewController {
     }
     
     @IBAction func checkout(_ sender: Any) {
-        viewModel.updateCartItems()
+        viewModel.updateCartItems(cartItems: cartItems ?? [Edge]())
     }
 }
 
