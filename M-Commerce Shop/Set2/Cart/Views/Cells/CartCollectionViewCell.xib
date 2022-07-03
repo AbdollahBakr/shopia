@@ -62,7 +62,7 @@
                             <constraint firstItem="oXE-9W-7Rz" firstAttribute="top" secondItem="zc1-Ex-Y5a" secondAttribute="top" constant="20" id="ldt-pv-x5V"/>
                         </constraints>
                     </view>
-                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="n19-SF-7V7">
+                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="n19-SF-7V7">
                         <rect key="frame" x="225.5" y="182" width="94" height="32"/>
                         <connections>
                             <action selector="stepItemCounter:" destination="gTV-IL-0wX" eventType="valueChanged" id="CuR-iY-pDD"/>

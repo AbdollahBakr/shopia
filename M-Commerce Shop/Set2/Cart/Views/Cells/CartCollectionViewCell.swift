@@ -28,6 +28,7 @@ class CartCollectionViewCell: UICollectionViewCell {
     @IBAction func stepItemCounter(_ sender: UIStepper) {
         print(sender.value.description)
         itemCountLabel.text = Int(sender.value).description
+        delegate.didChangeItemQuantity(item: cartItem!, newValue: Int(sender.value))
     }
     @IBAction func deleteCartItem(_ sender: Any) {
         delegate.didTapDeleteButton(item: cartItem!)

@@ -31,7 +31,7 @@ struct Edge: Codable, Equatable {
         return (leftId == rightId && leftId != nil && rightId != nil)
     }
     
-    let node: Node?
+    var node: Node?
 }
 
 // MARK: - Variant
@@ -43,7 +43,7 @@ struct Variant: Codable {
 struct Node: Codable {
     let name, originalUnitPrice, discountedUnitPrice: String?
     let variant: Variant?
-    let quantity: Int?
+    var quantity: Int?
     let appliedDiscount: JSONNull?
     let image: Image?
 }

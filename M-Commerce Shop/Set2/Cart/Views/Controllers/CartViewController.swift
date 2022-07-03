@@ -56,6 +56,17 @@ class CartViewController: UIViewController {
         shippingLabel.text = viewModel.formatPrice(value: draftOrder?.totalShippingPrice)
         taxLabel.text = viewModel.formatPrice(value: draftOrder?.totalTax)
     }
+    
+    func updateTotalPrice(){
+        var totalPrice: Double = 0
+        
+        for item in cartItems! {
+            totalPrice += Double(item.node?.quantity ?? 0) * Double((item.node?.originalUnitPrice)!)!
+        }
+        
+        totalLabel.text = viewModel.formatPrice(value: totalPrice.description)
+    }
+    
     @IBAction func checkout(_ sender: Any) {
         viewModel.updateCartItems()
     }
@@ -104,6 +115,16 @@ extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 
 extension CartViewController: CartCellDelegate {
+    
+    // Update total price based on quantity change
+    func didChangeItemQuantity(item: Edge, newValue: Int) {
+        if let index = cartItems?.firstIndex(where: {$0 == item}) {
+            print("Quantity changed: \(item) ad index \(index)")
+            cartItems?[index].node?.quantity = newValue
+            updateTotalPrice()
+        }
+    }
+    
     func didTapDeleteButton(item: Edge) {
         
         if let index = cartItems?.firstIndex(where: {$0 == item}) {
