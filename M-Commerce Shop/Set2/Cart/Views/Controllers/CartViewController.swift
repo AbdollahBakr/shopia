@@ -73,13 +73,22 @@ extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSour
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CartCollectionViewCell.identifier, for: indexPath) as? CartCollectionViewCell else { return CartCollectionViewCell()}
         
         // Configure Cell with line item
+        // Set delete button delegate
         cell.delegate = self
+        
+        // Set info labels
         cell.cartItem = cartItems?[indexPath.item]
         cell.itemNameLabel.text = cell.cartItem?.node?.name
         cell.itemPriceLabel.text = viewModel.formatPrice(value: cell.cartItem?.node?.originalUnitPrice)
         cell.itemCountLabel.text = cell.cartItem?.node?.quantity?.description
+        
+        // Set image
         let url = URL(string: cell.cartItem?.node?.image?.url ?? "")
         cell.cartItemImageView.kf.setImage(with: url)
+        
+        // Set stepper value to match the API value
+        let stepperValue = Double(cell.cartItem?.node?.quantity ?? 0)
+        cell.itemCountStepper.value = stepperValue
 
         return cell
     }
