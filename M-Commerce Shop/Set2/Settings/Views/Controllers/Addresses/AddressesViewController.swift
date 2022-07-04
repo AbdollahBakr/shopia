@@ -55,15 +55,7 @@ class AddressesViewController: UIViewController {
         self.dismiss(animated: true)
     }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 
 }
@@ -112,18 +104,28 @@ extension AddressesViewController: UICollectionViewDelegate, UICollectionViewDat
 extension AddressesViewController: AddressesCellDelegate {
     func didTapDeleteButton(address: Address) {
         
-        Helper.hudProgress()
-        // Delete associated address
-        if let index = addresses?.firstIndex(where: {$0 == address}) {
-            addresses?.remove(at: index)
-        }
-        Helper.dismissHud()
-        addressesCollectionView.reloadData()
+        // Alert
+        let alert = UIAlertController(title: "Remove Address", message: "Are you sure?", preferredStyle: .alert)
         
+        // Cancel
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
-        // Backend
-        viewModel.deleteAddress(addresses: addresses!)
-
+        // Confirm
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {_ in
+            Helper.hudProgress()
+            // Delete associated address
+            if let index = self.addresses?.firstIndex(where: {$0 == address}) {
+                self.addresses?.remove(at: index)
+            }
+            Helper.dismissHud()
+            self.addressesCollectionView.reloadData()
+            
+            // Backend
+            self.viewModel.deleteAddress(addresses: self.addresses!)
+        }))
+        
+        // present alert
+        self.present(alert, animated: true)
         
     }
 }

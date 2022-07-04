@@ -133,11 +133,24 @@ extension CartViewController: CartCellDelegate {
     
     func didTapDeleteButton(item: Edge) {
         
-        if let index = cartItems?.firstIndex(where: {$0 == item}) {
-            print("Item Deleted: \(item) ad index \(index)")
-            cartItems?.remove(at: index)
-        }
-        cartItemsCollectionView.reloadData()
+        // Alert
+        let alert = UIAlertController(title: "Remove Address", message: "Are you sure?", preferredStyle: .alert)
+        
+        // Cancel
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        // Confirm
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {_ in
+            
+            if let index = self.cartItems?.firstIndex(where: {$0 == item}) {
+                print("Item Deleted: \(item) ad index \(index)")
+                self.cartItems?.remove(at: index)
+            }
+            self.cartItemsCollectionView.reloadData()
+        }))
+        
+        // present alert
+        self.present(alert, animated: true)
         
     }
 }
