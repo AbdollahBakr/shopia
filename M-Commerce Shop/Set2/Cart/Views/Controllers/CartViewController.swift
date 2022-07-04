@@ -58,3 +58,44 @@ extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return CGSize(width: width, height: height)
     }
 }
+<<<<<<< HEAD
+=======
+
+// Delegated functions
+extension CartViewController: CartCellDelegate {
+    
+    // Update total price based on quantity change
+    func didChangeItemQuantity(item: Edge, newValue: Int) {
+        if let index = cartItems?.firstIndex(where: {$0 == item}) {
+            print("Quantity changed: \(item) ad index \(index)")
+            cartItems?[index].node?.quantity = newValue
+            updateTotalPrice()
+        }
+    }
+    
+    func didTapDeleteButton(item: Edge) {
+        
+        // Alert
+        let alert = UIAlertController(title: "Remove Address", message: "Are you sure?", preferredStyle: .alert)
+        
+        // Cancel
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        // Confirm
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: {_ in
+            
+            if let index = self.cartItems?.firstIndex(where: {$0 == item}) {
+                print("Item Deleted: \(item) ad index \(index)")
+                self.cartItems?.remove(at: index)
+            }
+            self.cartItemsCollectionView.reloadData()
+            self.viewModel.updateCartItems(cartItems: self.cartItems ?? [Edge]())
+            self.updateTotalPrice()
+        }))
+        
+        // present alert
+        self.present(alert, animated: true)
+        
+    }
+}
+>>>>>>> SMCT1-ResolveForcedConflicts

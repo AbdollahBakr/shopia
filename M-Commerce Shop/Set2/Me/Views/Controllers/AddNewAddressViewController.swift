@@ -81,16 +81,26 @@ class AddNewAddressViewController: UIViewController {
 }
 
 // Country picker
-extension AddNewAddressViewController: CountryPickerViewDelegate {
+extension AddNewAddressViewController: CountryPickerViewDelegate, CountryPickerViewDataSource {
+    
     func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
         
         countryField.text = country.name
+    }
+    
+    func preferredCountries(in countryPickerView: CountryPickerView) -> [Country] {
+        return ["EG", "SA", "US"].compactMap { countryPickerView.getCountryByCode($0) }
+    }
+    
+    func sectionTitleForPreferredCountries(in countryPickerView: CountryPickerView) -> String? {
+        return "Favorites"
     }
     
     func setupCountryPicker(){
         // Setup country picker
         let countryPicker = CountryPickerView(frame: CGRect(x: 0, y: 0, width: 120, height: 20))
         countryPicker.delegate = self
+        countryPicker.dataSource = self
         countryPicker.showPhoneCodeInView = false
         countryPicker.showCountryCodeInView = false
 
