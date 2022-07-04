@@ -13,12 +13,14 @@ class PaymentViewController: UIViewController {
     @IBOutlet weak var offlineSwitch: UISwitch!
     @IBOutlet weak var totalAmountLabel: UILabel!
     
+    var viewModel: PaymentViewModel!
     var amountToPay: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        viewModel = PaymentViewModel()
     }
     
 
@@ -47,6 +49,12 @@ class PaymentViewController: UIViewController {
         }
     }
     @IBAction func placeOrder(_ sender: Any) {
+        if offlineSwitch.isOn {
+            viewModel.payCashOnDelivery()
+            Helper.displayMessage(message: "Checkouts are not available for this store", messageError: true)
+        } else {
+            Helper.displayMessage(message: "Checkouts are not available for this store", messageError: true)
+        }
     }
     
 }

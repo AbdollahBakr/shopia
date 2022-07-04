@@ -15,7 +15,15 @@ class Cart {
     static let sharedCart = Cart()
     
     // draft order id for GraphQL
-    var draftOrderId: String?
+    var draftOrderId: String? {
+        didSet {
+            // For testing
+            Cart.draftOrderTempId = draftOrderId ?? ""
+        }
+    }
+    
+    // Placeholder draftOrder id for testing
+    static var draftOrderTempId = "gid://shopify/DraftOrder/888534040747"
     
     // Holds cart items
     var cartItems = [LineItem]()
@@ -28,6 +36,7 @@ class Cart {
     }
     
  
+    
     
     // Adds an item with the unique variantId to cartItems
     func addToCart(variantId: String) {

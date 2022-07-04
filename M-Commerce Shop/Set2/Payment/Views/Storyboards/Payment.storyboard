@@ -25,7 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3h-gy-PIe" customClass="RoundedButton" customModule="M_Commerce_Shop" customModuleProvider="target">
-                                <rect key="frame" x="40" y="754" width="334" height="48"/>
+                                <rect key="frame" x="40" y="714" width="334" height="48"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="b7F-R2-DOT"/>
@@ -52,13 +52,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjm-xf-MRb">
-                                <rect key="frame" x="40" y="699.5" width="48" height="22.5"/>
+                                <rect key="frame" x="40" y="659.5" width="48" height="22.5"/>
                                 <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gs9-Z9-1dj">
-                                <rect key="frame" x="368" y="699.5" width="6" height="22.5"/>
+                                <rect key="frame" x="368" y="659.5" width="6" height="22.5"/>
                                 <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -124,7 +124,7 @@
                             <constraint firstItem="Gs9-Z9-1dj" firstAttribute="centerY" secondItem="wjm-xf-MRb" secondAttribute="centerY" id="f0f-dI-b08"/>
                             <constraint firstItem="e3h-gy-PIe" firstAttribute="top" secondItem="wjm-xf-MRb" secondAttribute="bottom" constant="32" id="g9e-5j-m0d"/>
                             <constraint firstItem="sB9-tL-oUf" firstAttribute="top" secondItem="5Oa-mM-jFE" secondAttribute="bottom" constant="60" id="gY0-eY-UAE"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="e3h-gy-PIe" secondAttribute="bottom" constant="60" id="gtO-E3-k6O"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="e3h-gy-PIe" secondAttribute="bottom" constant="100" id="gtO-E3-k6O"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5Oa-mM-jFE" secondAttribute="trailing" constant="20" id="ue9-3O-5qi"/>
                         </constraints>
                     </view>
