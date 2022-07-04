@@ -12,6 +12,8 @@ import ProgressHUD
 
 class Helper {
     
+    static var userDefault = UserDefaults()
+    
     static func displayMessage(message: String, messageError: Bool) {
         DispatchQueue.main.async {
             
@@ -60,6 +62,23 @@ class Helper {
         AnimationLottie.splashScreen.alpha = 0
     }
     
+    static func saveUserLogin (userId: Int){
+        UserDefaults.standard.set(userId, forKey: "userId")
+    }
+    
+    static func isUserLoggedIn() -> Bool{
+        
+        if (userDefault.integer(forKey: "userId") != 0) {
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    static func logoutUser (){
+        userDefault.removeObject(forKey: "userId")
+    }
+    
 }
 
 
@@ -82,4 +101,3 @@ extension UIViewController {
         
     }
 }
-
