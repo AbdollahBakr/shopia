@@ -23,8 +23,28 @@ class PaymentViewController: UIViewController {
     
 
     @IBAction func selectPayment(_ sender: Any) {
+        let segmentIndex = paymentSegmentedControl.selectedSegmentIndex
+       
+        switch segmentIndex {
+        case 0:
+            print("Apple Pay")
+        case 1:
+            print("Visa")
+        case 2:
+            print("PayPal")
+        default:
+            print("Not segment selected")
+        }
     }
     @IBAction func selectPayOffline(_ sender: Any) {
+        if offlineSwitch.isOn {
+            print("Cash On Delivery")
+            paymentSegmentedControl.isEnabled = false
+        } else
+        {
+            print("Pay online")
+            paymentSegmentedControl.isEnabled = true
+        }
     }
     @IBAction func placeOrder(_ sender: Any) {
     }
