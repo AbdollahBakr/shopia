@@ -39,9 +39,13 @@ class NetworkManager {
         // Paths Cases
         case authSignup
         
+        /******************** Home  **************** **/
+        // Brands
+        case getCategories
         case getBrands
+        case getBrandProducts
         
-        
+
         /******* Change These Pathes With Our Needs ******/
         //ex:Auth,order....etc
         var stringValue: String {
@@ -51,8 +55,16 @@ class NetworkManager {
             case .authSignup:
                 return EndPoints.base + "/customers.json"
                 
+
+            case .getCategories:
+                return EndPoints.base + "/smart_collections.json"
+                
+
             case .getBrands:
                 return EndPoints.base + "/smart_collections.json"
+
+            case .getBrandProducts:
+                return EndPoints.base + "/products.json?"
             }
         }
         
@@ -211,14 +223,33 @@ class NetworkManager {
                     }
     }
     
+
+    
+
     /***********  Home   ********/
     func getBrands(completion: @escaping ([SmartCollections]?, Error?) -> Void){
         let url = EndPoints.getBrands.url
-        
         taskForGETRequest(url: url, responseType: BrandsBase.self) { (response, error) in
             if let response = response  {
                 //result -> is the [meals]
                 completion(response.smart_collections, nil)
+            } else {
+                completion(nil,error)
+            }
+        }
+    }
+    
+    func getBrandProducts(brandId:Int,completion:@escaping([ProductsResult]?,Error?)->Void) {
+        let endPoints = EndPoints.getBrandProducts.stringValue + "collection_id=\(brandId)"
+     
+        guard let url = URL(string: endPoints) else {
+            return
+        }
+        
+        taskForGETRequest(url: url, responseType: ProductsBase.self) { (response, error) in
+            if let response = response  {
+                //result -> is the [meals]
+                completion(response.products, nil)
             } else {
                 completion(nil,error)
             }
@@ -276,30 +307,8 @@ class NetworkManager {
     //        }
     //    }
    
-        
-
-
-    /***** Example USING POST Request.... ***/
-    //Note: It's Just An Example Don't Use This Post Request In Any View
-//    func fbLogin(completion: @escaping(Bool, Error?)  -> Void) {
-//
-//        let body = CoreDataModel(strLeague: "s", strBadge: "ss", strYoutube: "ss", idLeague: "ss")
-//
-//        taskForPOSTRequest(url: EndPoints.authSignup.url, responseType: Leagues.self, body: body) { (response, error) in
-//
-//            if let response = response {
-//
-//                Auth.accessToken = response.id
-//                Auth.refreshToken = response.id
-//
-//                completion(true, nil)
-//                print(response)
-//            } else {
-//                completion(false, error)
-//            }
-//        }
-//    }
-    
+  
 }
     
+
 
