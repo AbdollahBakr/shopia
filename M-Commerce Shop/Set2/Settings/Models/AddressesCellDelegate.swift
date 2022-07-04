@@ -8,5 +8,5 @@
 import Foundation
 
 protocol AddressesCellDelegate {
-    func didTapDeleteButton()
+    func didTapDeleteButton(address: Address)
 }

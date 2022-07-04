@@ -110,13 +110,20 @@ extension AddressesViewController: UICollectionViewDelegate, UICollectionViewDat
 
 
 extension AddressesViewController: AddressesCellDelegate {
-    func didTapDeleteButton() {
+    func didTapDeleteButton(address: Address) {
         
+        Helper.hudProgress()
         // Delete associated address
-        viewModel.deleteAddress()
-        
-        // Get Addresses and refresh view
-        addresses = [Address]()
+        if let index = addresses?.firstIndex(where: {$0 == address}) {
+            addresses?.remove(at: index)
+        }
+        Helper.dismissHud()
         addressesCollectionView.reloadData()
+        
+        
+        // Backend
+        viewModel.deleteAddress(addresses: addresses!)
+
+        
     }
 }
