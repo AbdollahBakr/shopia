@@ -27,6 +27,6 @@ class AddressCollectionViewCell: UICollectionViewCell {
     }
 
     @IBAction func deleteAddress(_ sender: Any) {
-        delegate.didTapDeleteButton()
+        delegate.didTapDeleteButton(address: address!)
     }
 }

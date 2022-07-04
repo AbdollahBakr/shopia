@@ -39,6 +39,7 @@ class AddAddresseViewModel {
         // Get current API addresses, assign to addresses
         getAddresses()
         
+        Thread.sleep(forTimeInterval: 1)
         // Append newly created address
         addresses.append(address)
 
@@ -54,7 +55,7 @@ class AddAddresseViewModel {
                     }
                 """
         
-        let variablesEmptyAddresses = AddAddressModel(input: AddAddressInput(id: "gid://shopify/Customer/6059105484971", addresses: [Address]())).dict!
+        let variablesEmptyAddresses = AddAddressModel(input: AddAddressInput(id: "gid://shopify/Customer/6059105484971", addresses: [Address(country: "Egypt", city: "Cairo", address1: "address 1", address2: "address 1")])).dict!
         
         let variables = AddAddressModel(input: AddAddressInput(id: "gid://shopify/Customer/6059105484971", addresses: addresses)).dict!
         
@@ -64,7 +65,9 @@ class AddAddresseViewModel {
         // Empty addresses
         GraphQLManager.mutateWithQuery(query: Query(body: body, variables: variablesEmptyAddresses))
         // Wait until its empty
+        print("sleep")
         Thread.sleep(forTimeInterval: 1)
+        print("wakeup")
         // Fill addresses
         GraphQLManager.mutateWithQuery(query: query)
     }

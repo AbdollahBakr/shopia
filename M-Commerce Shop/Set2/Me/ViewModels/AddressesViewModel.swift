@@ -40,32 +40,37 @@ addresses {
         })
     }
     
-    func deleteAddress() {
+    func deleteAddress(addresses: [Address]) {
+
+        // Query Setup
         let body = """
-            mutation customerUpdate($input: CustomerInput!) {
-            customerUpdate(input: $input) {
-            userErrors {
-                  field
-                  message
-                }
-            }
-            }
-        """
+                    mutation customerUpdate($input: CustomerInput!) {
+                    customerUpdate(input: $input) {
+                    userErrors {
+                          field
+                          message
+                        }
+                    }
+                    }
+                """
         
-        let variables = ["input": [
-            "id": "gid://shopify/Customer/6059105484971",
-            "addresses":[
-                [
-                    "address1": "",
-                    "address2": "",
-                    "city": "",
-                    "country": ""
-                ]
-            ]
-          ]]
+        let variablesEmptyAddresses = AddAddressModel(input: AddAddressInput(id: "gid://shopify/Customer/6059105484971", addresses: [Address]())).dict!
+        
+        let variables = AddAddressModel(input: AddAddressInput(id: "gid://shopify/Customer/6059105484971", addresses: addresses)).dict!
+        
         let query = Query(body: body
                           , variables: variables)
+  
+        DispatchQueue.global().async {
+            // Empty addresses
+            GraphQLManager.mutateWithQuery(query: Query(body: body, variables: variablesEmptyAddresses))
+        }
         
+//        // Wait until its empty
+//        print("sleep")
+        Thread.sleep(forTimeInterval: 2)
+//        print("wakeup")
+        // Fill addresses
         GraphQLManager.mutateWithQuery(query: query)
     }
     
