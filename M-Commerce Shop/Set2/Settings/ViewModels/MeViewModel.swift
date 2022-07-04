@@ -10,7 +10,7 @@ import SwiftUI
 
 class MeViewModel {
     
-    static let currentCustomerId = "gid://shopify/Customer/60591054849710"
+    static let currentCustomerId = "gid://shopify/Customer/6059105484971"
     var bindCustomertoVC: (() -> ()) = {}
     var currentCustomer: Customer? {
         didSet {

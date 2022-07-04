@@ -33,6 +33,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="cart.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="goToCart:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fEg-ZR-wVJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cF5-yD-oq6" customClass="CircleButtonShadowView" customModule="M_Commerce_Shop" customModuleProvider="target">
                                 <rect key="frame" x="338" y="84" width="48" height="48"/>
@@ -43,6 +46,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="gearshape.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="goToSettings:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hwo-l7-jkQ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Orders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huU-gi-VZE">
                                 <rect key="frame" x="20" y="188" width="374" height="25"/>

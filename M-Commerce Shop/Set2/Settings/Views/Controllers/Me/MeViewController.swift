@@ -82,5 +82,15 @@ class MeViewController: UIViewController {
             // Populate orders data
         }
     }
-
+    @IBAction func goToCart(_ sender: CircleButtonShadowView) {
+        
+        guard let cartVC = UIStoryboard(name: "Cart", bundle: nil).instantiateViewController(identifier: "CartViewController") as? CartViewController else {return}
+        present(cartVC, animated: true)
+    }
+    
+    @IBAction func goToSettings(_ sender: CircleButtonShadowView) {
+        guard let settingsVC = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(identifier: "SettingsViewController") as? SettingsViewController else {return}
+        presentVC(vc: settingsVC, animated: true)
+    }
+    
 }
