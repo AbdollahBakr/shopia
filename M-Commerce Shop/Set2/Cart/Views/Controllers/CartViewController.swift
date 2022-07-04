@@ -147,6 +147,8 @@ extension CartViewController: CartCellDelegate {
                 self.cartItems?.remove(at: index)
             }
             self.cartItemsCollectionView.reloadData()
+            self.viewModel.updateCartItems(cartItems: self.cartItems ?? [Edge]())
+            self.updateTotalPrice()
         }))
         
         // present alert
