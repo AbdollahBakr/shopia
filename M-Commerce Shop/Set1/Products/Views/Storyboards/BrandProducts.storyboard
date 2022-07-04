@@ -18,21 +18,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltW-q0-kJZ" customClass="RoundedView" customModule="M_Commerce_Shop" customModuleProvider="target">
-                                <rect key="frame" x="20" y="118" width="374" height="32"/>
+                                <rect key="frame" x="20" y="118" width="374" height="62.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="140" translatesAutoresizingMaskIntoConstraints="NO" id="4da-RK-JVo">
-                                        <rect key="frame" x="22" y="5" width="330" height="22"/>
+                                        <rect key="frame" x="22" y="6.5" width="330" height="50"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="rA0-Ge-5py">
-                                                <rect key="frame" x="0.0" y="0.0" width="95" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="95" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYY-1w-qsv">
-                                                        <rect key="frame" x="0.0" y="0.0" width="30.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="27" height="50"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="slider.vertical.3" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="filterButtonTapped:" destination="B0v-7z-XDY" eventType="touchUpInside" id="mjY-O7-l1y"/>
+                                                        </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf0-LS-Ip5">
-                                                        <rect key="frame" x="48.5" y="0.0" width="46.5" height="22"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf0-LS-Ip5">
+                                                        <rect key="frame" x="45" y="0.0" width="50" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -41,15 +44,15 @@
                                                 <color key="backgroundColor" name="GreyColor"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="wNK-AY-g2L">
-                                                <rect key="frame" x="235" y="0.0" width="95" height="22"/>
+                                                <rect key="frame" x="235" y="0.0" width="95" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ud-fr-K4e">
-                                                        <rect key="frame" x="0.0" y="0.0" width="38.5" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="38.5" height="50"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="arrow.up.arrow.down" catalog="system"/>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mM-P3-Oo8">
-                                                        <rect key="frame" x="56.5" y="0.0" width="38.5" height="22"/>
+                                                        <rect key="frame" x="56.5" y="0.0" width="38.5" height="50"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -68,13 +71,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brand Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtG-n9-cpP">
-                                <rect key="frame" x="20" y="173" width="374" height="21.5"/>
+                                <rect key="frame" x="20" y="234.5" width="374" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="K1q-V7-CNU">
-                                <rect key="frame" x="20" y="210.5" width="374" height="602.5"/>
+                                <rect key="frame" x="20" y="272" width="374" height="541"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FI0-vW-2IT">
                                     <size key="itemSize" width="128" height="128"/>
@@ -84,21 +87,30 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1000" minimumValueImage="aqi.low" catalog="system" maximumValueImage="light.max" translatesAutoresizingMaskIntoConstraints="NO" id="47c-gU-TCT">
+                                <rect key="frame" x="18" y="188.5" width="378" height="31"/>
+                                <connections>
+                                    <action selector="sliderDidChanged:" destination="B0v-7z-XDY" eventType="valueChanged" id="Svp-xY-AUN"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AEw-e8-AtC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="K1q-V7-CNU" firstAttribute="trailing" secondItem="ltW-q0-kJZ" secondAttribute="trailing" id="2bX-rt-beP"/>
-                            <constraint firstItem="ltW-q0-kJZ" firstAttribute="height" secondItem="yjN-UA-gjO" secondAttribute="height" multiplier="0.0357143" id="5uG-jD-e15"/>
+                            <constraint firstItem="ltW-q0-kJZ" firstAttribute="height" secondItem="yjN-UA-gjO" secondAttribute="height" multiplier="0.07" id="5uG-jD-e15"/>
                             <constraint firstItem="AtG-n9-cpP" firstAttribute="trailing" secondItem="ltW-q0-kJZ" secondAttribute="trailing" id="5vg-xz-iqS"/>
                             <constraint firstItem="K1q-V7-CNU" firstAttribute="leading" secondItem="ltW-q0-kJZ" secondAttribute="leading" id="JIg-XZ-GIZ"/>
+                            <constraint firstItem="47c-gU-TCT" firstAttribute="top" secondItem="ltW-q0-kJZ" secondAttribute="bottom" constant="8" symbolic="YES" id="Jpd-7y-9Oe"/>
                             <constraint firstItem="AtG-n9-cpP" firstAttribute="leading" secondItem="ltW-q0-kJZ" secondAttribute="leading" id="QYv-xW-3B8"/>
                             <constraint firstItem="K1q-V7-CNU" firstAttribute="top" secondItem="AtG-n9-cpP" secondAttribute="bottom" constant="16" id="WFO-gr-EWY"/>
                             <constraint firstItem="ltW-q0-kJZ" firstAttribute="leading" secondItem="AEw-e8-AtC" secondAttribute="leading" constant="20" id="iMy-KJ-oRx"/>
-                            <constraint firstItem="AtG-n9-cpP" firstAttribute="top" secondItem="ltW-q0-kJZ" secondAttribute="bottom" constant="23" id="pwb-1H-MxC"/>
+                            <constraint firstItem="47c-gU-TCT" firstAttribute="leading" secondItem="ltW-q0-kJZ" secondAttribute="leading" id="s6G-Vb-Bms"/>
                             <constraint firstItem="ltW-q0-kJZ" firstAttribute="top" secondItem="AEw-e8-AtC" secondAttribute="top" constant="30" id="smP-8i-Pk2"/>
                             <constraint firstItem="K1q-V7-CNU" firstAttribute="bottom" secondItem="AEw-e8-AtC" secondAttribute="bottom" id="tPh-yd-If7"/>
+                            <constraint firstItem="47c-gU-TCT" firstAttribute="trailing" secondItem="ltW-q0-kJZ" secondAttribute="trailing" id="ttq-gY-qZJ"/>
                             <constraint firstItem="AEw-e8-AtC" firstAttribute="trailing" secondItem="ltW-q0-kJZ" secondAttribute="trailing" constant="20" id="uJR-Kx-WI9"/>
+                            <constraint firstItem="AtG-n9-cpP" firstAttribute="top" secondItem="47c-gU-TCT" secondAttribute="bottom" constant="16" id="wSX-bb-iiN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="7eq-ws-zo7">
@@ -108,6 +120,8 @@
                     <connections>
                         <outlet property="brandNameLabel" destination="AtG-n9-cpP" id="Oat-4Q-Tjm"/>
                         <outlet property="collectionView" destination="K1q-V7-CNU" id="U0m-Ij-GfD"/>
+                        <outlet property="priceLabel" destination="jf0-LS-Ip5" id="UWH-xP-m6k"/>
+                        <outlet property="priceSlider" destination="47c-gU-TCT" id="jJl-jY-JvO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHS-vr-QnB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -135,7 +149,9 @@
     </scenes>
     <resources>
         <image name="Heart" width="21" height="20"/>
+        <image name="aqi.low" catalog="system" width="128" height="119"/>
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>
+        <image name="light.max" catalog="system" width="128" height="72"/>
         <image name="slider.vertical.3" catalog="system" width="128" height="111"/>
         <namedColor name="GreyColor">
             <color red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

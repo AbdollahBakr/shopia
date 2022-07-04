@@ -12,8 +12,9 @@ class BrandProductsVC: UIViewController {
     @IBOutlet weak var brandNameLabel: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var priceSlider: UISlider!
     
-    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var priceLabel: UILabel!
     /********************Variables***************/
     var viewModelInstance     : BrandProductsViewModel?
     var brandName             : String?
@@ -22,6 +23,7 @@ class BrandProductsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        priceSlider.isHidden = true
         guard let title = brandName else {return}
         brandNameLabel.text = title
         collectionView.delegate   = self
@@ -51,10 +53,30 @@ class BrandProductsVC: UIViewController {
         }
     }
     
-    @IBAction func backButtonTapped(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+    @IBAction func filterButtonTapped(_ sender: Any) {
+        UIView.animate(withDuration: 0.2) {
+            self.priceSlider.isHidden = false
+        }
+       
     }
     
+    @IBAction func sliderDidChanged(_ sender: Any) {
+        //brandProductsArray.filter({$0.variants?.contains(where: $0.)})
+        let value = priceSlider.value
+        priceLabel.text = "\(value)"
+       // brandProductsArray = brandProductsArray.filter({$0.variants?.filter({$0.price == [Int(sender.value)] })})
+        
+//        brandProductsArray.filter({$0.variants?.filter({(Float($0.price ?? "")) == value})})
+//        for price in brandProductsArray {
+//            for specificPrice in price.variants ?? [] {
+//                let price = "\(specificPrice.price)"
+//                specificPrice.price.sta
+            
+//             price.variants?.filter({(Float($0.price ?? "")) == value})
+//            }
+//        }
+        
+    }
 }
 extension BrandProductsVC :UICollectionViewDelegate,UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
     
@@ -74,6 +96,10 @@ extension BrandProductsVC :UICollectionViewDelegate,UICollectionViewDataSource ,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (collectionView.frame.width / 2) - 10, height: 300.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
     
     
