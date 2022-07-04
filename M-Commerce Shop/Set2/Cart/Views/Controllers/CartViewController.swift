@@ -72,8 +72,8 @@ class CartViewController: UIViewController {
 
         guard let couponsVC = storyboard?.instantiateViewController(withIdentifier: "CouponsViewController") as? CouponsViewController else { return }
         couponsVC.draftOrder = draftOrder
-//        presentVC(vc: couponsVC, animated: true)
-        present(couponsVC, animated: true)
+        present(couponsVC, animated: true) 
+        
     }
 }
 

@@ -21,6 +21,8 @@ class PaymentViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         viewModel = PaymentViewModel()
+        
+        totalAmountLabel.text = amountToPay
     }
     
 

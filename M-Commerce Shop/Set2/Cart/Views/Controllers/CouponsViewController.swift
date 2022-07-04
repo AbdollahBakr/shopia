@@ -20,7 +20,7 @@ class CouponsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         couponVerified = false
-        totalPriceLabel.text = draftOrder?.totalPrice
+        totalPriceLabel.text = (draftOrder?.totalPrice ?? "") + " " + (SettingsViewModel.settingsCells[1].settingValue ?? "EGP")
     }
     
     @IBAction func verifyCoupon(_ sender: Any) {
@@ -47,6 +47,11 @@ class CouponsViewController: UIViewController {
         }
     }
     @IBAction func continueToPayment(_ sender: Any) {
+        
+        guard let paymentVC = UIStoryboard(name: "Payment", bundle: nil).instantiateViewController(identifier: "PaymentViewController") as? PaymentViewController else {return}
+        
+        paymentVC.amountToPay = totalPriceLabel.text
+        present(paymentVC, animated: true)
     }
     
 }
