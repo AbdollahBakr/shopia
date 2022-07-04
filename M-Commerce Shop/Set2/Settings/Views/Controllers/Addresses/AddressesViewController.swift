@@ -54,10 +54,6 @@ class AddressesViewController: UIViewController {
     @IBAction func backToSettings(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
-
-
-
-
 }
 
 

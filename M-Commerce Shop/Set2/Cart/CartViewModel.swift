@@ -59,7 +59,7 @@ query getLineItemsInDraftOrder($id: ID!){
   }
 }
 """
-, variables: ["id": "gid://shopify/DraftOrder/888534040747"])
+                      , variables: ["id": Cart.draftOrderTempId])
     
     
     func getCartItems() {
@@ -93,7 +93,7 @@ query getLineItemsInDraftOrder($id: ID!){
             }
         """
         let variables = AddLineItem(
-            id: "gid://shopify/DraftOrder/888534040747",
+            id: Cart.draftOrderTempId,
             input: Input(
                 lineItems: lineItems)).dict!
         
