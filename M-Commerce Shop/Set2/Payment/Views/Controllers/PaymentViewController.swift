@@ -8,7 +8,13 @@
 import UIKit
 
 class PaymentViewController: UIViewController {
-
+    
+    @IBOutlet weak var paymentSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var offlineSwitch: UISwitch!
+    @IBOutlet weak var totalAmountLabel: UILabel!
+    
+    var amountToPay: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,14 +22,11 @@ class PaymentViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func selectPayment(_ sender: Any) {
     }
-    */
-
+    @IBAction func selectPayOffline(_ sender: Any) {
+    }
+    @IBAction func placeOrder(_ sender: Any) {
+    }
+    
 }
