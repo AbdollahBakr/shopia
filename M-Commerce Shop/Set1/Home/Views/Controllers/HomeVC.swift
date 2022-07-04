@@ -260,6 +260,19 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.section {
+        
+        case 0:
+            
+            let storyboard = UIStoryboard(name: "BrandProducts", bundle: nil)
+            guard let vc   = storyboard.instantiateViewController(withIdentifier:"BrandProductsVC") as? BrandProductsVC else {return}
+            
+            vc.brandId   = self.brandsArray[indexPath.row].id
+            vc.brandName = self.brandsArray[indexPath.row].title
+            navigationController?.show(vc, sender: self)
+            
+                
+            
+            
 //        case 2:
 
 //            let storyboard = UIStoryboard(name: "LeagueDetails", bundle: nil)

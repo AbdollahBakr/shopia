@@ -23,15 +23,15 @@
             </objects>
             <point key="canvasLocation" x="-472" y="-216"/>
         </scene>
-        <!--Auth-->
+        <!--Home-->
         <scene sceneID="b7K-gT-xSN">
             <objects>
-                <viewControllerPlaceholder storyboardName="Auth" id="Muz-8g-VZk" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Home" id="Muz-8g-VZk" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="ajd-sB-Beb"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MxJ-wE-cHo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-472" y="213"/>
+            <point key="canvasLocation" x="-725" y="194"/>
         </scene>
     </scenes>
 </document>

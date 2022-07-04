@@ -26,14 +26,11 @@ class BrandsCell: UICollectionViewCell {
     func configureCell(brands: SmartCollections?) {
         
         self.brandLabel.text = brands?.title
-    
-        DispatchQueue.main.async {
-            if let url = URL(string: brands?.image?.src ?? "") {
-                //let placeholder = UIImage(named: "placeholder")
-                let options : KingfisherOptionsInfo = [KingfisherOptionsInfoItem.transition(.fade(0.1))]
-                self.brandImageView.kf.indicatorType = .activity
-                self.brandImageView.kf.setImage(with: url,placeholder: nil,options: options)
-            }
+        if let url = URL(string: brands?.image?.src ?? "") {
+            let placeholder = UIImage(named: "placeholder")
+            let options : KingfisherOptionsInfo = [KingfisherOptionsInfoItem.transition(.fade(0.1))]
+            self.brandImageView.kf.indicatorType = .activity
+            self.brandImageView.kf.setImage(with: url,placeholder: placeholder,options: options)
         }
     }
 }

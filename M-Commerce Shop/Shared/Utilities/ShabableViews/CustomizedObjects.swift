@@ -125,6 +125,21 @@ class RoundedSheetShape : UIView {
     
 }
 
+
+class RoundedBottomView : UIView {
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateMaskLayer()
+    }
+
+    func updateMaskLayer(){
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.bottomLeft, .bottomRight,.topLeft,.topRight], cornerRadii: CGSize(width: 10, height: 10)).cgPath
+        self.layer.mask = shapeLayer
+    }
+}
+
 extension UIView {
     // Called computed (Property / Var)
     @IBInspectable var borderWidth :CGFloat {
