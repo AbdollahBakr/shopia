@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Payment View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PaymentViewController" id="Y6W-OH-hqX" customClass="PaymentViewController" customModule="M_Commerce_Shop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3h-gy-PIe" customClass="RoundedButton" customModule="M_Commerce_Shop" customModuleProvider="target">
-                                <rect key="frame" x="40" y="754" width="334" height="48"/>
+                                <rect key="frame" x="40" y="714" width="334" height="48"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="b7F-R2-DOT"/>
@@ -47,16 +47,59 @@
                                         <real key="value" value="24"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="placeOrder:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="L04-Nb-kY8"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gs9-Z9-1dj">
-                                <rect key="frame" x="368" y="699" width="6" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjm-xf-MRb">
+                                <rect key="frame" x="40" y="659.5" width="48" height="22.5"/>
                                 <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjm-xf-MRb">
-                                <rect key="frame" x="40" y="699" width="48" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gs9-Z9-1dj">
+                                <rect key="frame" x="368" y="659.5" width="6" height="22.5"/>
                                 <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="nlO-gM-ENq">
+                                <rect key="frame" x="20" y="159" width="374" height="107"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple-pay" translatesAutoresizingMaskIntoConstraints="NO" id="4m8-Q7-FwY">
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="107"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visa" translatesAutoresizingMaskIntoConstraints="NO" id="pc1-eq-Fsd">
+                                        <rect key="frame" x="129" y="0.0" width="116" height="107"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paypal" translatesAutoresizingMaskIntoConstraints="NO" id="Zbi-dN-Wv6">
+                                        <rect key="frame" x="258" y="0.0" width="116" height="107"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nlO-gM-ENq" secondAttribute="height" multiplier="3.5" id="Sso-dD-gsU"/>
+                                </constraints>
+                            </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5Oa-mM-jFE">
+                                <rect key="frame" x="20" y="286" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Apple Pay"/>
+                                    <segment title="Visa"/>
+                                    <segment title="PayPal"/>
+                                </segments>
+                                <connections>
+                                    <action selector="selectPayment:" destination="Y6W-OH-hqX" eventType="valueChanged" id="9zv-O2-HfE"/>
+                                </connections>
+                            </segmentedControl>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kww-K0-uw5">
+                                <rect key="frame" x="345" y="375" width="51" height="31"/>
+                                <connections>
+                                    <action selector="selectPayOffline:" destination="Y6W-OH-hqX" eventType="valueChanged" id="w4e-Q2-3eb"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash on delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sB9-tL-oUf">
+                                <rect key="frame" x="20" y="377" width="178" height="27"/>
+                                <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -64,17 +107,32 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nlO-gM-ENq" secondAttribute="trailing" constant="20" id="3dr-QX-aF8"/>
                             <constraint firstItem="wjm-xf-MRb" firstAttribute="leading" secondItem="e3h-gy-PIe" secondAttribute="leading" id="4fs-gD-E1m"/>
+                            <constraint firstItem="5Oa-mM-jFE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="4xo-Pc-EQo"/>
                             <constraint firstItem="AKb-12-ffe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="67U-eN-4OY"/>
                             <constraint firstItem="e3h-gy-PIe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="40" id="DiR-Gt-eZw"/>
+                            <constraint firstItem="5Oa-mM-jFE" firstAttribute="top" secondItem="nlO-gM-ENq" secondAttribute="bottom" constant="20" id="DjP-me-aeU"/>
                             <constraint firstItem="Gs9-Z9-1dj" firstAttribute="trailing" secondItem="e3h-gy-PIe" secondAttribute="trailing" id="EqJ-Ct-oBy"/>
                             <constraint firstItem="AKb-12-ffe" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="48" id="OCF-id-XKk"/>
+                            <constraint firstItem="nlO-gM-ENq" firstAttribute="top" secondItem="AKb-12-ffe" secondAttribute="bottom" constant="40" id="Xob-KN-aOd"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="e3h-gy-PIe" secondAttribute="trailing" constant="40" id="XpJ-5q-6pN"/>
+                            <constraint firstItem="kww-K0-uw5" firstAttribute="centerY" secondItem="sB9-tL-oUf" secondAttribute="centerY" id="YqK-R9-bAK"/>
+                            <constraint firstItem="nlO-gM-ENq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="bfL-lA-NkO"/>
+                            <constraint firstItem="sB9-tL-oUf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="blM-mR-kcL"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kww-K0-uw5" secondAttribute="trailing" constant="20" id="e4V-yd-MUO"/>
                             <constraint firstItem="Gs9-Z9-1dj" firstAttribute="centerY" secondItem="wjm-xf-MRb" secondAttribute="centerY" id="f0f-dI-b08"/>
                             <constraint firstItem="e3h-gy-PIe" firstAttribute="top" secondItem="wjm-xf-MRb" secondAttribute="bottom" constant="32" id="g9e-5j-m0d"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="e3h-gy-PIe" secondAttribute="bottom" constant="60" id="gtO-E3-k6O"/>
+                            <constraint firstItem="sB9-tL-oUf" firstAttribute="top" secondItem="5Oa-mM-jFE" secondAttribute="bottom" constant="60" id="gY0-eY-UAE"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="e3h-gy-PIe" secondAttribute="bottom" constant="100" id="gtO-E3-k6O"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5Oa-mM-jFE" secondAttribute="trailing" constant="20" id="ue9-3O-5qi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="offlineSwitch" destination="kww-K0-uw5" id="SDz-kN-6gp"/>
+                        <outlet property="paymentSegmentedControl" destination="5Oa-mM-jFE" id="R5g-1P-JoY"/>
+                        <outlet property="totalAmountLabel" destination="Gs9-Z9-1dj" id="2bK-gK-JMU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,6 +140,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="apple-pay" width="256" height="256"/>
+        <image name="paypal" width="256" height="256"/>
+        <image name="visa" width="256" height="256"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

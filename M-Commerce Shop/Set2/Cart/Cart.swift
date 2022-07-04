@@ -8,6 +8,102 @@
 import Foundation
 
 
+// MARK: - Cart Model
+class Cart {
+    
+    // Singleton Design Pattern
+    static let sharedCart = Cart()
+    
+    // draft order id for GraphQL
+    var draftOrderId: String? {
+        didSet {
+            // For testing
+            Cart.draftOrderTempId = draftOrderId ?? ""
+        }
+    }
+    
+    // Placeholder draftOrder id for testing
+    static var draftOrderTempId = "gid://shopify/DraftOrder/888534040747"
+    
+    // Holds cart items
+    var cartItems = [LineItem]()
+    
+    // GraphQL Query
+    var customerId: String?
+    
+    private init() {
+//        draftOrderId = initDraftOrder(customerId: customerId, variantId: variantId)
+    }
+    
+ 
+    
+    
+    // Adds an item with the unique variantId to cartItems
+    func addToCart(variantId: String) {
+        // Create a draft order if not exist
+        if draftOrderId == nil {
+            draftOrderId = initDraftOrder(customerId: customerId ?? "", variantId: variantId)
+        }
+        
+        // Add variant item to cart
+        let lineItem = LineItem(quantity: 1, variantId: variantId)
+        cartItems.append(lineItem)
+        
+        // Setup Query body and variables
+        let body = """
+            mutation draftOrderUpdate($id: ID!, $input: DraftOrderInput!) {
+                draftOrderUpdate(id: $id, input: $input) {
+                    draftOrder {
+                        id
+                    }
+                    userErrors {
+                        field
+                        message
+                    }
+                }
+            }
+        """
+        let variables = AddLineItem(
+            id: draftOrderId ?? "",
+            input: Input(
+                lineItems: cartItems)).dict!
+        
+        let query = Query(body: body, variables: variables)
+        GraphQLManager.mutateWithQuery(query: query)
+    }
+    
+    // Initialize draft Order if not exist
+    func initDraftOrder(customerId: String, variantId: String) -> String {
+        // Setup Query
+        let body = """
+            mutation draftOrderCreate($input: DraftOrderInput!) {
+                draftOrderCreate(input: $input) {
+                    draftOrder {
+                        id
+                    }
+                    userErrors {
+                        message
+                        field
+                    }
+                }
+            }
+        """
+        
+        let variables = CreateInput(customerId: customerId, lineItems: cartItems).dict!
+        
+        let query = Query(body: body, variables: variables)
+        
+        
+        // Create draft order
+        GraphQLManager.mutateWithQuery(query: query)
+
+        // Plug-in created draftOrderId from response
+        return ""
+    }
+}
+
+// MARK: CODABLE ENTITIES FOR GRAPHQL QUERIES
+
 // MARK: - Add Line Item GraphQL input
 struct AddLineItem: Codable {
     let id: String
@@ -18,24 +114,16 @@ struct Input: Codable {
     let lineItems: [LineItem]
 }
 
+// Use aliasing if necessary (CreateInput to Input)
+struct CreateInput: Codable {
+    let customerId: String
+    let lineItems: [LineItem]
+}
 // MARK: - LineItem
 struct LineItem: Codable {
     let quantity: Int?
     let variantId: String?
 }
-// MARK: - Input
-//struct Input: Codable {
-//    let draftOrderId, customerID, note, email: String?
-//    let shippingLine: ShippingLine?
-//    let appliedDiscount: AppliedDiscount?
-//    let lineItems: [LineItem]?
-//
-//    enum CodingKeys: String, CodingKey {
-//        case customerID = "customerId"
-//        case draftOrderId = "id"
-//        case note, email, shippingLine, appliedDiscount, lineItems
-//    }
-//}
 
 // MARK: - AppliedDiscount
 struct AppliedDiscount: Codable {
@@ -49,21 +137,6 @@ struct AppliedDiscount: Codable {
         case value, amount, valueType, title
     }
 }
-
-//// MARK: - LineItem
-//struct LineItem: Codable {
-//    let title: String?
-//    let originalUnitPrice: Double?
-//    let quantity: Int?
-//    let appliedDiscount: AppliedDiscount?
-//    let weight: Weight?
-//    let variantID: String?
-//
-//    enum CodingKeys: String, CodingKey {
-//        case title, originalUnitPrice, quantity, appliedDiscount, weight
-//        case variantID = "variantId"
-//    }
-//}
 
 // MARK: - Weight
 struct Weight: Codable {
@@ -82,4 +155,15 @@ struct ShippingLine: Codable {
 struct CartItem: Codable {
     let variantId: String
     let quantity: Int
+}
+
+
+// MARK: - Draft Order Create Response
+struct DraftCreateResponse: Codable {
+    let draftOrderCreate: DraftOrderCreate
+}
+
+// MARK: - DraftOrderCreate
+struct DraftOrderCreate: Codable {
+    let draftOrder: DraftOrder
 }
