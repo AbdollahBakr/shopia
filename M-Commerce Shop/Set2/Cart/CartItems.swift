@@ -48,9 +48,9 @@ struct Node: Codable {
 }
 
 // MARK: - Image
-struct Image: Codable {
-    let url: String?
-}
+//struct Image: Codable {
+//    let url: String?
+//}
 
 // MARK: - Encode/decode helpers
 

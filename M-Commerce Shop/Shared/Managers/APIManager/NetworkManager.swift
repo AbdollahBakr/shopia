@@ -44,6 +44,7 @@ class NetworkManager {
         case getCategories
         case getBrands
         case getBrandProducts
+        case productDetails
         
 
         /******* Change These Pathes With Our Needs ******/
@@ -65,6 +66,9 @@ class NetworkManager {
 
             case .getBrandProducts:
                 return EndPoints.base + "/products.json?"
+                
+            case .productDetails:
+                return EndPoints.base + "products/"
             }
         }
         
@@ -210,7 +214,7 @@ class NetworkManager {
        
     }
     
-    func getUser(completion: @escaping ([Customer]?, Error?) -> Void){
+    func getUser(completion: @escaping ([CustomerItem]?, Error?) -> Void){
         let url = EndPoints.authSignup.url
         
         taskForGETRequest(url: url, responseType: Customers.self) { (response, error) in
@@ -284,59 +288,23 @@ class NetworkManager {
                }
            }
        }
+    
+    func getProductDetails (productID: Int , completionHandler: @escaping (ProductDetail?, Error?) -> Void){
+        let endPoints = EndPoints.productDetails.stringValue + "\(productID).json"
+        
+        
+        taskForGETRequest(url: URL(string: endPoints)!, responseType: ProductDetail.self) { (response , error) in
+            if let response = response  {
+                //result -> is the [meals]
+                completionHandler(response ,nil)
+            } else {
+                completionHandler(nil ,error)
+            }
+        }
+    }
 
     
-    //    func fetchData<T:Codable, E: Codable>(url:String,parameters:Parameters?,headers:HTTPHeaders?,method:HTTPMethod?,completion: @escaping (T?,E? ,Error?)-> Void) {
-    //
-    //            Alamofire.request(url, method: method ?? .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
-    //                .validate(statusCode: 200..<300)
-    //                .responseJSON { (response) in
-    //                switch response.result {
-    //
-    //                case .success(_):
-    //
-    //                    do {
-    //                        guard let data = response.data else {return}
-    //                        let responseData = try JSONDecoder().decode(T?.self, from: data)
-    //                        completion(responseData, nil,nil)
-    //                    } catch let jsonError {
-    //                        print(jsonError)
-    //                    }
-    //                case .failure(let error):
-    //                    let statusCode = response.response?.statusCode ?? 0
-    //                    if statusCode > 300 {
-    //
-    //                    do {
-    //                        guard let data = response.data else {return}
-    //                        let responseError = try JSONDecoder().decode(E?.self, from: data)
-    //                        completion(nil, responseError,nil)
-    //                    } catch let jsonError {
-    //                        print(jsonError)
-    //                    }
-    //                } else {
-    //                    completion(nil,nil,error)
-    //                }
-    //            }
-    //        }
-    //
-    //    }
     
-    //Example USING GET Request....
-    //    func getAllSports(completion: @escaping ([Leagues]?, Error?) -> Void) {
-    //
-    //        let endPoints = EndPoints.authLogin.url
-    //
-    //        //responseType -> the main model
-    //        taskForGETRequest(url:endPoints , responseType: CoreDataModel.self) { (response, error) in
-    //            if let response = response  {
-    //                //result -> is the [meals]
-    //                completion(response.strLeague,nil)
-    //            } else {
-    //                completion([],error)
-    //            }
-    //        }
-    //    }
-   
   
 }
     
