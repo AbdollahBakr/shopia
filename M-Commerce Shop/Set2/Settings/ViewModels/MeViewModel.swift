@@ -8,9 +8,15 @@
 import Foundation
 import SwiftUI
 
+
 class MeViewModel {
     
-    static let currentCustomerId = "gid://shopify/Customer/6059105484971"
+//    var userDefaults = UserDefaults()
+    
+//    let userIdInt = UserDefaults().integer(forKey: "userId")
+    
+//    let currentCustomerId = "gid://shopify/Customer/\(userIdInt)"
+// "gid://shopify/Customer/6059105484971"
     var bindCustomertoVC: (() -> ()) = {}
     var currentCustomer: Customer? {
         didSet {
@@ -34,7 +40,7 @@ class MeViewModel {
         }
       }
     }
-""", variables: ["id": currentCustomerId])
+""", variables: ["id": "gid://shopify/Customer/\(UserDefaults().integer(forKey: "userId"))"])
     
     
     func getCurrentCustomer() {

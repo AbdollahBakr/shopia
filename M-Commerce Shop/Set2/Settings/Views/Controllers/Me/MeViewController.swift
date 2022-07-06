@@ -64,6 +64,8 @@ class MeViewController: UIViewController {
             signUpButton.isHidden = false
             
             // Hide registered-relevant data
+            settingsButton.isHidden = true
+            cartButton.isHidden = true
             ordersLabel.isHidden = true
             firstOrderStackView.superview?.isHidden = true
             secondOrderStackView.superview?.isHidden = true
@@ -71,17 +73,19 @@ class MeViewController: UIViewController {
             wishlistLabel.isHidden = true
             wishlistStackView.isHidden = true
             viewFavButton.isHidden = true
+        } else {
+            // If signed in
+            if customer?.numberOfOrders == "0" {
+                // Hide Orders elements
+                firstOrderStackView.superview?.isHidden = true
+                secondOrderStackView.superview?.isHidden = true
+                viewOrdersButton.isHidden = true
+            } else {
+                // Populate orders data
+            }
         }
         
-        // If signed in
-        if customer?.numberOfOrders == "0" {
-            // Hide Orders elements
-            firstOrderStackView.superview?.isHidden = true
-            secondOrderStackView.superview?.isHidden = true
-            viewOrdersButton.isHidden = true
-        } else {
-            // Populate orders data
-        }
+        
     }
     @IBAction func goToCart(_ sender: CircleButtonShadowView) {
         
@@ -98,6 +102,9 @@ class MeViewController: UIViewController {
         guard let signInVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as? LoginVC else {return}
         presentVC(vc: signInVC, animated: true)
     }
+    
     @IBAction func goToSignUp(_ sender: Any) {
+        guard let signUpVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "SignUpVC") as? SignUpVC else {return}
+        presentVC(vc: signUpVC, animated: true)
     }
 }

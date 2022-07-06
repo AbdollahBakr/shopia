@@ -31,13 +31,12 @@ class LoginVC: UIViewController {
         authViewModel?.loginUser(currentCustomer: currentCustomer, completionHandler: { customer in
             if customer != nil {
                 
-                let storyboard = UIStoryboard(name: "Wishlist", bundle: nil)
-                let wishlistVC =
-                storyboard.instantiateViewController(withIdentifier: "WishlistViewController") as? WishlistViewController
-                guard let wishlistVC = wishlistVC else {return}
-                wishlistVC.modalPresentationStyle = .fullScreen
-                self.present(wishlistVC.self, animated: true)
-                
+//                let storyboard = UIStoryboard(name: "Wishlist", bundle: nil)
+//                let wishlistVC =
+//                storyboard.instantiateViewController(withIdentifier: "WishlistViewController") as? WishlistViewController
+//                guard let wishlistVC = wishlistVC else {return}
+//                wishlistVC.modalPresentationStyle = .fullScreen
+//                self.present(wishlistVC.self, animated: true)
                 Helper.displayMessage(message: "Login Success", messageError: false)
                 
                 guard let customer = customer else {
@@ -45,6 +44,12 @@ class LoginVC: UIViewController {
                 }
                 
                 Helper.saveUserLogin(userId: (customer.id)!)
+                
+                
+                guard let meVC = UIStoryboard(name: "Me", bundle: nil).instantiateViewController(withIdentifier: "MeViewController") as? MeViewController else {return}
+                self.presentVC(vc: meVC, animated: true)
+                
+               
                
             }else if customer?.email == nil && customer?.multipass_identifier == nil{
                 Helper.displayMessage(message: "Wrong E-mail or Password", messageError: true)
