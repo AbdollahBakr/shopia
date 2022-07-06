@@ -79,6 +79,10 @@
 		14707610286A50EB00969B81 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1470760F286A50EB00969B81 /* Me.storyboard */; };
 		14707613286A5A7900969B81 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14707612286A5A7900969B81 /* MeViewController.swift */; };
 		14707615286A6F1C00969B81 /* GuestMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14707614286A6F1C00969B81 /* GuestMeViewController.swift */; };
+		14E077FA2875D2640078004B /* CustomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E077F72875D2640078004B /* CustomImage.swift */; };
+		14E077FB2875D2640078004B /* Custom_collections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E077F82875D2640078004B /* Custom_collections.swift */; };
+		14E077FC2875D2640078004B /* CategoriesBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E077F92875D2640078004B /* CategoriesBase.swift */; };
+		14E077FE2875D2E80078004B /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E077FD2875D2E80078004B /* CategoriesViewModel.swift */; };
 		265A94B5585EFCF2A5FB8ADF /* Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529726848BA781C7530847CF /* Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework */; };
 		53716B0B88646274148A6920 /* Pods_M_Commerce_Shop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C029B2DF6C368B53AC8834 /* Pods_M_Commerce_Shop.framework */; };
 		917B410A2869B0DB00CF3F99 /* SignupError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917B41092869B0DA00CF3F99 /* SignupError.swift */; };
@@ -196,6 +200,10 @@
 		1470760F286A50EB00969B81 /* Me.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
 		14707612286A5A7900969B81 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		14707614286A6F1C00969B81 /* GuestMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestMeViewController.swift; sourceTree = "<group>"; };
+		14E077F72875D2640078004B /* CustomImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImage.swift; sourceTree = "<group>"; };
+		14E077F82875D2640078004B /* Custom_collections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Custom_collections.swift; sourceTree = "<group>"; };
+		14E077F92875D2640078004B /* CategoriesBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesBase.swift; sourceTree = "<group>"; };
+		14E077FD2875D2E80078004B /* CategoriesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoriesViewModel.swift; path = "../../../../../Manual Integration Files/Set1/Categories/ViewModels/CategoriesViewModel.swift"; sourceTree = "<group>"; };
 		1712698BB7CA36C117FB73C6 /* Pods-M-Commerce Shop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M-Commerce Shop.release.xcconfig"; path = "Target Support Files/Pods-M-Commerce Shop/Pods-M-Commerce Shop.release.xcconfig"; sourceTree = "<group>"; };
 		529726848BA781C7530847CF /* Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_M_Commerce_Shop_M_Commerce_ShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7630968E69C162B1FE325221 /* Pods-M-Commerce Shop-M-Commerce ShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-M-Commerce Shop-M-Commerce ShopUITests.debug.xcconfig"; path = "Target Support Files/Pods-M-Commerce Shop-M-Commerce ShopUITests/Pods-M-Commerce Shop-M-Commerce ShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -276,8 +284,7 @@
 				142BD7A82872C1180052275C /* Products */,
 				142BD7BD2872C1180052275C /* Categories */,
 			);
-			name = Set1;
-			path = "../../Final Integration/Set1";
+			path = Set1;
 			sourceTree = "<group>";
 		};
 		142BD7902872C1180052275C /* Home */ = {
@@ -469,6 +476,7 @@
 		142BD7BE2872C1180052275C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				14E077FD2875D2E80078004B /* CategoriesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -476,6 +484,9 @@
 		142BD7BF2872C1180052275C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				14E077F92875D2640078004B /* CategoriesBase.swift */,
+				14E077F82875D2640078004B /* Custom_collections.swift */,
+				14E077F72875D2640078004B /* CustomImage.swift */,
 				142BD7C02872C1180052275C /* CategoriesModel.swift */,
 			);
 			path = Models;
@@ -1220,7 +1231,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					FA2B6E5728650E2C00603B78 = {
 						CreatedOnToolsVersion = 12.4;
@@ -1417,7 +1428,6 @@
 				142BD7D72872C1180052275C /* BrandsCell.swift in Sources */,
 				146FAA05286F9F8C00B897EC /* CartCellDelegate.swift in Sources */,
 				1432C2B8286F14F5004923DB /* CartViewModel.swift in Sources */,
-				FAAB805B28651C3700A3A86A /* CoreDataManager.swift in Sources */,
 				FAAB808128651E4D00A3A86A /* Constants.swift in Sources */,
 				142BD7DF2872C1180052275C /* ImageResult.swift in Sources */,
 				14181683286F19FF00B85CCC /* CartCollectionViewCell.swift in Sources */,
@@ -1431,10 +1441,12 @@
 				142BD7D32872C1180052275C /* ImageData.swift in Sources */,
 				142C2BAB286AFA04001CEFBB /* AddNewAddressViewController.swift in Sources */,
 				14181686286F27DA00B85CCC /* CartItems.swift in Sources */,
+				14E077FE2875D2E80078004B /* CategoriesViewModel.swift in Sources */,
 				142BD7E22872C1180052275C /* Variants.swift in Sources */,
 				142BD7EE2872C1180052275C /* SaleVC.swift in Sources */,
 				142BD788287241810052275C /* CodableModels.swift in Sources */,
 				142BD7ED2872C1180052275C /* MenVC.swift in Sources */,
+				14E077FA2875D2640078004B /* CustomImage.swift in Sources */,
 				FAAB808928651E5600A3A86A /* CustomizedObjects.swift in Sources */,
 				142BD7E42872C1180052275C /* ProductsBase.swift in Sources */,
 				FAAB807D28651E4A00A3A86A /* ConnectionManager.swift in Sources */,
@@ -1460,8 +1472,10 @@
 				FAAB804E2865145A00A3A86A /* AnimationLottie.swift in Sources */,
 				91E4329728686275007E0353 /* SignupUserData.swift in Sources */,
 				142BD7DC2872C1180052275C /* BrandProductsViewModel.swift in Sources */,
+				14E077FB2875D2640078004B /* Custom_collections.swift in Sources */,
 				917B410A2869B0DB00CF3F99 /* SignupError.swift in Sources */,
 				1421F1702866BE0000E0E1B0 /* CartViewController.swift in Sources */,
+				14E077FC2875D2640078004B /* CategoriesBase.swift in Sources */,
 				FAAB807928651E4600A3A86A /* CustomColors.swift in Sources */,
 				142BD78C287254AF0052275C /* AddressCollectionViewCell.swift in Sources */,
 				142BD7DA2872C1180052275C /* HeaderView.swift in Sources */,

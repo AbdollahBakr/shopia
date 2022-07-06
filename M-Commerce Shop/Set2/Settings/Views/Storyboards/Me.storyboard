@@ -171,13 +171,13 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wishlist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFB-od-7Hk">
-                                <rect key="frame" x="20" y="567.5" width="414" height="25"/>
+                                <rect key="frame" x="20" y="518.5" width="414" height="25"/>
                                 <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ivX-Js-J1r">
-                                <rect key="frame" x="0.0" y="592.5" width="414" height="149.5"/>
+                                <rect key="frame" x="0.0" y="543.5" width="414" height="149.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.text.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hFU-HV-IKQ">
                                         <rect key="frame" x="10" y="11" width="98.5" height="127"/>
@@ -195,7 +195,7 @@
                                 <directionalEdgeInsets key="directionalLayoutMargins" top="10" leading="10" bottom="10" trailing="10"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Up-4O-oPz" customClass="RoundedButton" customModule="M_Commerce_Shop" customModuleProvider="target">
-                                <rect key="frame" x="274" y="742" width="120" height="32"/>
+                                <rect key="frame" x="274" y="693" width="120" height="32"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="aFq-vG-M1W"/>
@@ -279,6 +279,8 @@
                             <constraint firstItem="oKQ-Fe-bBn" firstAttribute="top" secondItem="huU-gi-VZE" secondAttribute="bottom" id="xZU-NK-5dP"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="person.fill" catalog="system" id="Tlq-hF-p2A"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cartButton" destination="gRr-HS-bhq" id="WD6-og-KFZ"/>
                         <outlet property="firstOrderStackView" destination="nPG-wt-QlV" id="Lpc-k4-Of8"/>
@@ -400,6 +402,7 @@
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="heart.text.square.fill" catalog="system" width="128" height="114"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

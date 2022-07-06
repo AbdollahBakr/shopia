@@ -256,6 +256,36 @@ class NetworkManager {
         }
     }
     
+    /***********  Home   ********/
+       func getCategories(completion: @escaping ([Custom_collections]?, Error?) -> Void){
+           let url = EndPoints.getCategories.url
+           taskForGETRequest(url: url, responseType: CategoriesBase.self) { (response, error) in
+               if let response = response  {
+                   completion(response.custom_collections, nil)
+               } else {
+                   completion(nil,error)
+               }
+           }
+       }
+      
+       
+       func getSubCategories(collection_id:Int,product_type:String,completion:@escaping([ProductsResult]?,Error?)->Void) {
+           
+           let endPoints = EndPoints.getCategories.stringValue + "collection_id=\(collection_id)" + "product_type=\(product_type)"
+        
+           guard let url = URL(string: endPoints) else {
+               return
+           }
+           taskForGETRequest(url: url, responseType: ProductsBase.self) { (response, error) in
+               if let response = response  {
+                   completion(response.products, nil)
+               } else {
+                   completion(nil,error)
+               }
+           }
+       }
+
+    
     //    func fetchData<T:Codable, E: Codable>(url:String,parameters:Parameters?,headers:HTTPHeaders?,method:HTTPMethod?,completion: @escaping (T?,E? ,Error?)-> Void) {
     //
     //            Alamofire.request(url, method: method ?? .get, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
