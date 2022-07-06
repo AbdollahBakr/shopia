@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class MeViewController: UIViewController {
 
@@ -56,7 +57,7 @@ class MeViewController: UIViewController {
             .joined(separator: " ")
         
         // If not signed in
-        if customer == nil {
+        if !Helper.isUserLoggedIn() {
             // Display not-registered relevant data
             welcomeLabel.text = "You're not logged in"
             signInButton.isHidden = false
@@ -93,4 +94,10 @@ class MeViewController: UIViewController {
         presentVC(vc: settingsVC, animated: true)
     }
     
+    @IBAction func goToSignIn(_ sender: Any) {
+        guard let signInVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as? LoginVC else {return}
+        presentVC(vc: signInVC, animated: true)
+    }
+    @IBAction func goToSignUp(_ sender: Any) {
+    }
 }

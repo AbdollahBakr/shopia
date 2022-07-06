@@ -13,6 +13,20 @@ struct DataClass: Codable {
     let draftOrder: DraftOrder?
 }
 
+
+// MARK: - Customer
+struct Customer: Codable {
+    var id                      : String?
+    var email                   : String?
+    var firstName              : String?
+    var lastName               : String?
+//    var orders_count            : Int?
+//    var total_spent             : String?
+    var multipass_identifier    : String?
+    var addresses               : [Address]?
+    var numberOfOrders: String?
+}
+
 // MARK: - Address
 struct Address: Codable, Equatable {
     let country, city, address1, address2: String?
