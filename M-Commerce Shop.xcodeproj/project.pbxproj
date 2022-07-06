@@ -90,6 +90,7 @@
 		1460C2D12875DEFA00D338AC /* ImageSliderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460C2C92875DEF900D338AC /* ImageSliderCollectionViewCell.swift */; };
 		1460C2DB2875DF0B00D338AC /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1460C2D82875DF0B00D338AC /* Search.storyboard */; };
 		1460C2DC2875DF0B00D338AC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1460C2DA2875DF0B00D338AC /* SearchViewController.swift */; };
+		1460C2DD2875F15300D338AC /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91135CF72867964E0079F360 /* SignUpVC.swift */; };
 		146FAA05286F9F8C00B897EC /* CartCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FAA04286F9F8C00B897EC /* CartCellDelegate.swift */; };
 		146FAA0B28701AB700B897EC /* MeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FAA0A28701AB700B897EC /* MeViewModel.swift */; };
 		14707610286A50EB00969B81 /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1470760F286A50EB00969B81 /* Me.storyboard */; };
@@ -1636,6 +1637,7 @@
 				142BD7EC2872C1180052275C /* CategoriesCell.swift in Sources */,
 				142BD7DD2872C1180052275C /* Options.swift in Sources */,
 				146FAA0B28701AB700B897EC /* MeViewModel.swift in Sources */,
+				1460C2DD2875F15300D338AC /* SignUpVC.swift in Sources */,
 				142BD7F12872C1180052275C /* WomenVC.swift in Sources */,
 				142BD7D22872C1180052275C /* Rules.swift in Sources */,
 				1432C2B6286F111F004923DB /* Cart.swift in Sources */,

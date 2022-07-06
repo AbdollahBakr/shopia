@@ -26,6 +26,7 @@ class MeViewController: UIViewController {
     
     var viewModel: MeViewModel!
     var customer: Customer?
+    var coreDataManager: CoreDataManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,9 @@ class MeViewController: UIViewController {
         }
         
         viewModel.getCurrentCustomer()
+        
+        // Initialize CoreDataManager for wishlist
+        coreDataManager = CoreDataManager.shared
     }
     
     func loadViewData(){
@@ -64,6 +68,8 @@ class MeViewController: UIViewController {
             signUpButton.isHidden = false
             
             // Hide registered-relevant data
+            settingsButton.isHidden = true
+            cartButton.isHidden = true
             ordersLabel.isHidden = true
             firstOrderStackView.superview?.isHidden = true
             secondOrderStackView.superview?.isHidden = true
@@ -71,17 +77,30 @@ class MeViewController: UIViewController {
             wishlistLabel.isHidden = true
             wishlistStackView.isHidden = true
             viewFavButton.isHidden = true
+        } else {
+            // If signed in
+            
+            // Wishlist
+            let wishlist = coreDataManager.getWishlistProducts()
+            if wishlist.count == 0 {
+                print("no wishlist items yet")
+            } else {
+                // Populate wishlist
+                print(wishlist)
+            }
+            
+            if customer?.numberOfOrders == "0" {
+                // Hide Orders elements
+                firstOrderStackView.superview?.isHidden = true
+                secondOrderStackView.superview?.isHidden = true
+                viewOrdersButton.isHidden = true
+               
+            } else {
+                // Populate orders data
+            }
         }
         
-        // If signed in
-        if customer?.numberOfOrders == "0" {
-            // Hide Orders elements
-            firstOrderStackView.superview?.isHidden = true
-            secondOrderStackView.superview?.isHidden = true
-            viewOrdersButton.isHidden = true
-        } else {
-            // Populate orders data
-        }
+        
     }
     @IBAction func goToCart(_ sender: CircleButtonShadowView) {
         
@@ -98,6 +117,13 @@ class MeViewController: UIViewController {
         guard let signInVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as? LoginVC else {return}
         presentVC(vc: signInVC, animated: true)
     }
+    
     @IBAction func goToSignUp(_ sender: Any) {
+        guard let signUpVC = UIStoryboard(name: "Auth", bundle: nil).instantiateViewController(withIdentifier: "SignUpVC") as? SignUpVC else {return}
+        presentVC(vc: signUpVC, animated: true)
+    }
+    @IBAction func viewMoreWishlist(_ sender: Any) {
+        guard let wishlistVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(withIdentifier: "WishlistViewController") as? WishlistViewController else {return}
+        presentVC(vc: wishlistVC, animated: true)
     }
 }

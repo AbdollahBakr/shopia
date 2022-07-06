@@ -104,6 +104,14 @@ extension BrandProductsVC :UICollectionViewDelegate,UICollectionViewDataSource ,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let product = brandProductsArray[indexPath.item]
+        
+        guard let productDetailsVC = UIStoryboard(name: "ProductDetails", bundle: nil).instantiateViewController(withIdentifier: "ProductDetailsViewController") as? ProductDetailsViewController else {return}
+        
+        productDetailsVC.productID = product.id
+        
+        presentVC(vc: productDetailsVC, animated: true)
+        
     }
     
     

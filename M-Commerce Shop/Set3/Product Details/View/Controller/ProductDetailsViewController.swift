@@ -27,7 +27,7 @@ class ProductDetailsViewController: UIViewController {
     var productDetailsViewModel : ProductDetailsViewModel?
     var network : NetworkManager?
     var productDetail : ProductDetail?
-    
+
     var selectedItem: Int?
     var isFavoriteSelected: Bool = false
     
@@ -55,7 +55,7 @@ class ProductDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-            
+        
         startTimer()
 
         network = NetworkManager.shared
@@ -63,7 +63,7 @@ class ProductDetailsViewController: UIViewController {
             return
         }
         productDetailsViewModel = ProductDetailsViewModel(networkservice: network)
-        productDetailsViewModel?.getProduct(productID: productID ?? 7358110105771, completion: { productDetail in
+        productDetailsViewModel?.getProduct(productID: productsId.randomElement() ?? 0, completion: { productDetail in
             self.productDetail = productDetail
 //            print(self.productDetail)
             self.pageControl.numberOfPages = productDetail.product?.images?.count ?? 1
@@ -85,7 +85,9 @@ class ProductDetailsViewController: UIViewController {
     }
     
     @IBAction func cartBtn(_ sender: CircleButtonShadowView) {
-//        productDetail?.product?.variants?[selectedItem ?? 1].product_id
+        let variantId = productDetail?.product?.variants?[selectedItem ?? 1].id
+        let cart = Cart.sharedCart
+        cart.addToCart(variantId: "gid://shopify/ProductVariant/\(variantId)")
     }
     
     @IBAction func favActionBtn(_ sender: CircleButtonShadowView) {

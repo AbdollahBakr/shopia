@@ -49,6 +49,9 @@
                                         <real key="value" value="24"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logOut:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="PS4-0d-uWD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoz-rd-hbq" customClass="CircleButtonShadowView" customModule="M_Commerce_Shop" customModuleProvider="target">
                                 <rect key="frame" x="20" y="84" width="48" height="48"/>

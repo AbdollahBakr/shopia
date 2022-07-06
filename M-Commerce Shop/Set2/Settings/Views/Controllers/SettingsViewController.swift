@@ -29,7 +29,13 @@ class SettingsViewController: UIViewController {
     @IBAction func backToMe(_ sender: UIButton) {
         self.dismiss(animated: true)
     }
-
+    
+    @IBAction func logOut(_ sender: Any) {
+        Helper.logoutUser()
+        guard let meVC = UIStoryboard(name: "Me", bundle: nil).instantiateViewController(withIdentifier: "MeViewController") as? MeViewController else {return}
+        presentVC(vc: meVC, animated: true)
+    }
+    
 }
 
 // TableView Delegate & DataSource

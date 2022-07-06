@@ -224,6 +224,9 @@
                                         <real key="value" value="16"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="viewMoreWishlist:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Y1T-SE-znH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ftc-gc-4HO" customClass="RoundedButton" customModule="M_Commerce_Shop" customModuleProvider="target">
                                 <rect key="frame" x="274" y="449" width="120" height="32"/>
