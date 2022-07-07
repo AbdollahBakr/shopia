@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QPw-kq-7mo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QPw-kq-7mo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -24,11 +25,11 @@
                                 </items>
                             </navigationBar>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search..." translatesAutoresizingMaskIntoConstraints="NO" id="N8h-GS-Mck">
-                                <rect key="frame" x="20" y="156" width="374" height="56"/>
+                                <rect key="frame" x="20" y="156" width="374" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xFA-Nd-blv">
-                                <rect key="frame" x="20" y="220" width="374" height="593"/>
+                                <rect key="frame" x="20" y="215" width="374" height="598"/>
                                 <color key="backgroundColor" name="MainColor"/>
                                 <color key="tintColor" name="MainColor"/>
                             </tableView>
@@ -84,7 +85,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YFj-sW-k1g">
-                                <rect key="frame" x="0.0" y="156" width="414" height="740"/>
+                                <rect key="frame" x="0.0" y="151" width="414" height="745"/>
                                 <color key="backgroundColor" name="MainColor"/>
                                 <color key="sectionIndexBackgroundColor" name="MainColor"/>
                             </tableView>
@@ -111,7 +112,7 @@
                                 </connections>
                             </button>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="search For Products..." translatesAutoresizingMaskIntoConstraints="NO" id="JBG-VF-FTx">
-                                <rect key="frame" x="0.0" y="84" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="84" width="414" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
@@ -136,6 +137,7 @@
                     </view>
                     <connections>
                         <outlet property="filterButton" destination="ySQ-KE-Wqo" id="pJy-Cy-CA3"/>
+                        <outlet property="searchBar" destination="JBG-VF-FTx" id="LDg-to-odK"/>
                         <outlet property="tableView" destination="YFj-sW-k1g" id="0Nk-4Y-jqR"/>
                     </connections>
                 </viewController>
