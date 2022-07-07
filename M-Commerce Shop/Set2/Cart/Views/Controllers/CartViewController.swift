@@ -37,6 +37,7 @@ class CartViewController: UIViewController {
         viewModel.bindCartItemstoVC = { [weak self] in
             DispatchQueue.main.async {
                 self?.cartItems = self?.viewModel.draftOrder?.lineItems?.edges
+//                self?.cartItems = Cart.sharedCart.cartItems
                 self?.draftOrder = self?.viewModel.draftOrder
                 self?.populateTotalSection()
                 self?.cartItemsCollectionView.reloadData()
@@ -74,7 +75,7 @@ class CartViewController: UIViewController {
     // This functions Handles the friendly message if there are no items added to cart yet
     func notifyIfNoCartItemsAdded(){
         // Notify user if the cart is empty
-        if Cart.sharedCart.cartItems.count == 0 {
+        if cartItems?.count == 0 {
             // Add message label if there are no cart items to show
             let noCartItemsLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: cartItemsCollectionView.bounds.size.width, height: cartItemsCollectionView.bounds.size.height))
             
@@ -108,7 +109,7 @@ class CartViewController: UIViewController {
 extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  Cart.sharedCart.cartItems.count
+        return  cartItems?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

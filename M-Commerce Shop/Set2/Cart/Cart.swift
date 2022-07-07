@@ -25,6 +25,7 @@ class Cart {
     
     // Placeholder draftOrder id for testing
     static var draftOrderTempId = "gid://shopify/DraftOrder/888534040747"
+//    static var draftOrderTempId = "gid://shopify/DraftOrder/888541642923"
     
     // Holds cart items
     var cartItems = [LineItem]()

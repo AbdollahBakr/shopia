@@ -20,7 +20,7 @@ class CouponsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         couponVerified = false
-        totalPriceLabel.text = (draftOrder?.totalPrice ?? "") //+ " " + (SettingsViewModel.settingsCells[1].settingValue ?? "EGP")
+        totalPriceLabel.text = (draftOrder?.totalPrice ?? "") + " " + (SettingsViewModel.settingsCells[1].settingValue ?? "EGP")
     }
     
     @IBAction func verifyCoupon(_ sender: Any) {
@@ -28,7 +28,7 @@ class CouponsViewController: UIViewController {
         if (couponCodeField.text == draftOrder?.appliedDiscount?.title) && !couponVerified! {
             
             // calculate new total after discount
-            let discountedValue  = (1 - (draftOrder?.appliedDiscount?.value ?? 0)/100) * (Float(totalPriceLabel.text ?? "") ?? 0)
+            let discountedValue  = (1 - (draftOrder?.appliedDiscount?.value ?? 0)/100) * (Float(draftOrder?.totalPrice ?? "") ?? 0)
             
             // Update total price
             totalPriceLabel.text = [discountedValue.description,  SettingsViewModel.settingsCells[1].settingValue].compactMap{$0}.joined(separator: " ")

@@ -98,7 +98,7 @@ class ProductDetailsViewController: UIViewController {
         let variantId = productDetail?.product?.variants?.first?.id
         print("Add to cart")
         let cart = Cart.sharedCart
-        cart.addToCart(variantId: "gid://shopify/ProductVariant/\(variantId)")
+        cart.addToCart(variantId: "gid://shopify/ProductVariant/\(variantId!)")
         
     }
     
