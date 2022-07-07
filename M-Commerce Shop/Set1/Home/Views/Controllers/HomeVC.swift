@@ -281,6 +281,10 @@ class HomeVC: UIViewController {
                self.present(controller, animated: true, completion: nil)
            }
     
+    @IBAction func goToAds(_ sender: Any) {
+        guard let adsVC = UIStoryboard(name: "Ads", bundle: nil).instantiateViewController(identifier: "AdsViewController") as? AdsViewController else {return}
+        present(adsVC, animated: true)
+    }
     
 }
 extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource {
@@ -410,7 +414,8 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource {
             vc.brandName = self.filteredData?[indexPath.row].title
             navigationController?.show(vc, sender: self)
             
-                
+//        case 1:
+            
             
             
 //        case 2:
