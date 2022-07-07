@@ -53,6 +53,8 @@ class NetworkManager {
         
         // Brands
         case getCustomerOrders
+       
+       
         
 
         /******* Change These Pathes With Our Needs ******/
@@ -85,6 +87,7 @@ class NetworkManager {
                 
             case .getCustomerOrders:
                 return EndPoints.base + "customers/"
+
   
             }
         }
@@ -353,6 +356,19 @@ class NetworkManager {
             }
         }
   
+    func getCustomerOrders(variant_id:String,completion:@escaping([OrdersLineItem]?,Error?)->Void) {
+        let endPoints = EndPoints.getCustomerOrders.stringValue + "/\(variant_id)/orders.json"
+        guard let url = URL(string: endPoints) else {
+            return
+        }
+        taskForGETRequest(url: url, responseType: CustomerBaseOrders.self) { (response, error) in
+            if let response = response  {
+                completion(response.order?.line_items, nil)
+            } else {
+                completion(nil,error)
+            }
+        }
+    }
 }
     
 

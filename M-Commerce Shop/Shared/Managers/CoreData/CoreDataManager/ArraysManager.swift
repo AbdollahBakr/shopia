@@ -10,5 +10,5 @@ import Foundation
 class ArraysManager {
     
     static var coreDataArray = [CoreDataModel]()
-    
+    static var orders        = [OrdersLineItem]()
 }
