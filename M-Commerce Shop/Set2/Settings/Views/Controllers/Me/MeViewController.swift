@@ -78,14 +78,23 @@ class MeViewController: UIViewController {
             wishlistStackView.isHidden = true
             viewFavButton.isHidden = true
         } else {
-            // If signed in
+            // Orders
+            
             
             // Wishlist
             let wishlist = coreDataManager.getWishlistProducts()
             if wishlist.count == 0 {
-                print("no wishlist items yet")
+                wishlistLabel.text = "No favorites were added"
+                wishlistStackView.isHidden = true
+                viewFavButton.isHidden = true
             } else {
                 // Populate wishlist
+                for (index, favorite) in wishlist.enumerated() {
+                    (wishlistStackView.arrangedSubviews[index] as? UIImageView)?.kf.setImage(with: URL(string: favorite.image ?? ""))
+                    if index == 3 {
+                        break
+                    }
+                }
                 print(wishlist)
             }
             

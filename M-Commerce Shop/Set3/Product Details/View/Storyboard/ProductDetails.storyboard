@@ -33,6 +33,9 @@
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addToCart:" destination="0HA-4q-MI1" eventType="touchUpInside" id="4WQ-9E-sod"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nwf-av-OgZ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="285"/>

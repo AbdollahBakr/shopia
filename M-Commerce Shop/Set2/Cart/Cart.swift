@@ -18,6 +18,7 @@ class Cart {
     var draftOrderId: String? {
         didSet {
             // For testing
+            print("draftOrderId didSet: \(draftOrderId)")
             Cart.draftOrderTempId = draftOrderId ?? ""
         }
     }
@@ -40,40 +41,62 @@ class Cart {
     
     // Adds an item with the unique variantId to cartItems
     func addToCart(variantId: String) {
-        // Create a draft order if not exist
-        if draftOrderId == nil {
-            draftOrderId = initDraftOrder(customerId: customerId ?? "", variantId: variantId)
-        }
         
-        // Add variant item to cart
-        let lineItem = LineItem(quantity: 1, variantId: variantId)
-        cartItems.append(lineItem)
-        
-        // Setup Query body and variables
-        let body = """
-            mutation draftOrderUpdate($id: ID!, $input: DraftOrderInput!) {
-                draftOrderUpdate(id: $id, input: $input) {
-                    draftOrder {
-                        id
-                    }
-                    userErrors {
-                        field
-                        message
-                    }
+        // If a user is logged-in
+        if Helper.isUserLoggedIn() {
+            
+            // Create a draft order if not exist
+            if draftOrderId == nil {
+//                initDraftOrder(customerId: customerId ?? "", variantId: variantId)
+                draftOrderId = Cart.draftOrderTempId
+                print("draftOrderId: \(draftOrderId)")
+            }
+            
+            // Check if item already added
+            for item in cartItems {
+                if item.variantId == variantId {
+                    Helper.displayMessage(message: "Item already added", messageError: true)
+                    return
                 }
             }
-        """
-        let variables = AddLineItem(
-            id: draftOrderId ?? "",
-            input: Input(
-                lineItems: cartItems)).dict!
+            
+            // Add variant item to cart
+            let lineItem = LineItem(quantity: 1, variantId: variantId)
+            cartItems.append(lineItem)
+            
+            // Setup Query body and variables
+            let body = """
+                mutation draftOrderUpdate($id: ID!, $input: DraftOrderInput!) {
+                    draftOrderUpdate(id: $id, input: $input) {
+                        draftOrder {
+                            id
+                        }
+                        userErrors {
+                            field
+                            message
+                        }
+                    }
+                }
+            """
+            let variables = AddLineItem(
+                id: draftOrderId ?? "",
+                input: Input(
+                    lineItems: cartItems)).dict!
+            
+            let query = Query(body: body, variables: variables)
+            GraphQLManager.mutateWithQuery(query: query)
+            
+            // Notify added to cart
+            Helper.displayMessage(message: "Added to cart", messageError: false)
+            
+        } else {
+            Helper.displayMessage(message: "Sign in to add to cart", messageError: true)
+        }
         
-        let query = Query(body: body, variables: variables)
-        GraphQLManager.mutateWithQuery(query: query)
     }
     
     // Initialize draft Order if not exist
-    func initDraftOrder(customerId: String, variantId: String) -> String {
+    func initDraftOrder(customerId: String, variantId: String) {
         // Setup Query
         let body = """
             mutation draftOrderCreate($input: DraftOrderInput!) {
@@ -95,10 +118,13 @@ class Cart {
         
         
         // Create draft order
-        GraphQLManager.mutateWithQuery(query: query)
+        GraphQLManager.fetchCodableFromQuery(genericType: DraftCreateResponse.self, query: query, callBack: {[weak self] (response) in
+            self?.draftOrderId = response?.draftOrderCreate.draftOrder.id
+        })
+//        GraphQLManager.mutateWithQuery(query: query)
 
         // Plug-in created draftOrderId from response
-        return ""
+//        return draftOrderId
     }
 }
 
