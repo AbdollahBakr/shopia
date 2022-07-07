@@ -79,7 +79,7 @@ class MeViewController: UIViewController {
             viewFavButton.isHidden = true
         } else {
             // Orders
-            
+            ordersLabel.text = "No orders placed yet"
             
             // Wishlist
             let wishlist = coreDataManager.getWishlistProducts()

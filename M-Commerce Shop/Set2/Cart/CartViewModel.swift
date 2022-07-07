@@ -72,11 +72,12 @@ query getLineItemsInDraftOrder($id: ID!){
     // Update Cart Items in API before proceeding to checkout
     func updateCartItems(cartItems: [Edge]) {
 
-        var lineItems = [LineItem]()
+//        var lineItems = [LineItem]()
+        let lineItems = Cart.sharedCart.cartItems
         // Last updated cart items
-        for item in cartItems {
-            lineItems.append(LineItem(quantity: item.node?.quantity, variantId: item.node?.variant?.id))
-        }
+//        for item in cartItems {
+//            lineItems.append(LineItem(quantity: item.node?.quantity, variantId: item.node?.variant?.id))
+//        }
         
         // Setup Query body and variables
         let body = """
