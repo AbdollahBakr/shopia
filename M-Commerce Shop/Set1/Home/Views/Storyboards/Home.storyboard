@@ -93,7 +93,7 @@
                             <constraint firstItem="QwZ-yE-h2k" firstAttribute="top" secondItem="p8B-Gi-c28" secondAttribute="bottom" constant="10" id="z7O-zS-M0S"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="home" id="Cpv-3L-HmB"/>
+                    <tabBarItem key="tabBarItem" title="" id="4qd-1x-Enc"/>
                     <navigationItem key="navigationItem" title="Welcome" id="8Ps-ZA-ZwS"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -131,7 +131,6 @@
     </scenes>
     <resources>
         <image name="ads" width="722" height="344"/>
-        <image name="home" width="30" height="29.5"/>
         <image name="mic.fill" catalog="system" width="108" height="128"/>
         <namedColor name="BlueColor">
             <color red="0.23921568627450981" green="0.57647058823529407" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

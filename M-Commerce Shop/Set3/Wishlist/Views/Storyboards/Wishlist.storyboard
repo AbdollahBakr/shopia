@@ -27,6 +27,7 @@
                                         <color key="backgroundColor" name="GreyColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="mA4-sH-o7x"/>
+                                            <constraint firstAttribute="width" secondItem="cj2-5x-862" secondAttribute="height" multiplier="1:1" id="t30-c1-8Tl"/>
                                         </constraints>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="arrow.left" catalog="system"/>
@@ -42,7 +43,6 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="cj2-5x-862" firstAttribute="centerY" secondItem="Ooc-or-21Q" secondAttribute="centerY" id="EyJ-Oo-Vrq"/>
                                     <constraint firstItem="cj2-5x-862" firstAttribute="top" secondItem="go3-3r-HEY" secondAttribute="top" id="Uvz-h0-nd8"/>
                                     <constraint firstItem="cj2-5x-862" firstAttribute="top" secondItem="Ooc-or-21Q" secondAttribute="top" constant="20" id="YHZ-wE-FLq"/>
                                     <constraint firstItem="cj2-5x-862" firstAttribute="leading" secondItem="Ooc-or-21Q" secondAttribute="leading" constant="20" id="eEm-BP-KNa"/>
@@ -101,17 +101,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6UI-QC-Sju">
                                 <rect key="frame" x="85" y="394" width="244" height="108"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You need to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Y7-WE-8rh">
-                                        <rect key="frame" x="20" y="25" width="117" height="28"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You need to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Y7-WE-8rh">
+                                        <rect key="frame" x="20" y="26" width="117" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1I-Am-cG5">
-                                        <rect key="frame" x="139" y="20" width="84" height="39"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="84" id="jBJ-OS-Sie"/>
-                                        </constraints>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s1I-Am-cG5">
+                                        <rect key="frame" x="139" y="20" width="85" height="39"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain">
                                             <attributedString key="attributedTitle">
@@ -126,26 +125,15 @@
                                             <action selector="logInBtn:" destination="vsn-Mn-bXf" eventType="touchUpInside" id="5qR-RX-5zR"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="    to use the Wishlist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAE-oB-onU">
-                                        <rect key="frame" x="34" y="67" width="158" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="    to use the Wishlist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAE-oB-onU">
+                                        <rect key="frame" x="34" y="67" width="159" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="7Y7-WE-8rh" firstAttribute="centerY" secondItem="s1I-Am-cG5" secondAttribute="centerY" id="2oM-yT-Wqt"/>
-                                    <constraint firstAttribute="bottom" secondItem="qAE-oB-onU" secondAttribute="bottom" constant="20" id="Od0-qa-2cr"/>
-                                    <constraint firstItem="7Y7-WE-8rh" firstAttribute="leading" secondItem="6UI-QC-Sju" secondAttribute="leading" constant="20" id="XFB-1i-XFa"/>
-                                    <constraint firstItem="qAE-oB-onU" firstAttribute="leading" secondItem="6UI-QC-Sju" secondAttribute="leading" constant="34" id="fDi-XJ-CGx"/>
-                                    <constraint firstAttribute="trailing" secondItem="qAE-oB-onU" secondAttribute="trailing" constant="51" id="fIy-w4-uvI"/>
-                                    <constraint firstItem="s1I-Am-cG5" firstAttribute="leading" secondItem="7Y7-WE-8rh" secondAttribute="trailing" constant="2" id="jMy-eS-Sn0"/>
-                                    <constraint firstItem="qAE-oB-onU" firstAttribute="top" secondItem="7Y7-WE-8rh" secondAttribute="bottom" constant="14" id="nHR-Bg-2D0"/>
-                                    <constraint firstItem="qAE-oB-onU" firstAttribute="top" secondItem="s1I-Am-cG5" secondAttribute="bottom" constant="8" symbolic="YES" id="nvZ-gl-TGh"/>
-                                    <constraint firstItem="s1I-Am-cG5" firstAttribute="top" secondItem="6UI-QC-Sju" secondAttribute="top" constant="20" id="v7V-SP-HYg"/>
-                                    <constraint firstAttribute="trailing" secondItem="s1I-Am-cG5" secondAttribute="trailing" constant="20" id="waR-61-qH8"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qNh-if-mxP"/>

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Reveal View Controller-->
         <scene sceneID="q7m-iz-RRA">
             <objects>
                 <viewController storyboardIdentifier="SWRevealViewController" id="ZVv-Fm-ija" customClass="SWRevealViewController" sceneMemberID="viewController">
@@ -20,7 +20,7 @@
                         <viewLayoutGuide key="safeArea" id="YjO-uE-QGN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="bil-Rj-lsQ"/>
+                    <tabBarItem key="tabBarItem" title="" image="homekit" catalog="system" id="bil-Rj-lsQ"/>
                     <navigationItem key="navigationItem" id="CXb-4j-wry"/>
                     <connections>
                         <segue destination="wAY-JP-gR9" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="WqW-da-Dlf"/>
@@ -363,6 +363,7 @@
         <image name="chart.bar.doc.horizontal.fill" catalog="system" width="115" height="128"/>
         <image name="doc.append.fill.rtl" catalog="system" width="115" height="128"/>
         <image name="doc.text.fill" catalog="system" width="115" height="128"/>
+        <image name="homekit" catalog="system" width="128" height="106"/>
         <namedColor name="MainColor">
             <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
