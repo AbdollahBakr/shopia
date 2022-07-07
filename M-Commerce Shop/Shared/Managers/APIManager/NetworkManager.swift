@@ -35,6 +35,8 @@ class NetworkManager {
         //Base URL
         static let base = "https://fde429753a207f610321a557c2e0ceb0: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@menofia-2022-q3.myshopify.com/admin/api/2022-04"
     
+        static let baseWithoutHeader = "https://menofia-2022-q3.myshopify.com/admin/api/2022-04/"
+
     
         // Paths Cases
         case authSignup
@@ -68,7 +70,7 @@ class NetworkManager {
                 return EndPoints.base + "/products.json?"
                 
             case .productDetails:
-                return EndPoints.base + "products/"
+                return EndPoints.baseWithoutHeader + "products/"
             }
         }
         

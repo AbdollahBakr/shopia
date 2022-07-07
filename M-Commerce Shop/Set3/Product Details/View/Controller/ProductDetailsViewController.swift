@@ -42,12 +42,15 @@ class ProductDetailsViewController: UIViewController {
     var viewContext : NSManagedObjectContext?
     
     override func viewWillAppear(_ animated: Bool) {
-        guard let productID = productID else {return}
-        isFavoriteSelected =  ((productDetailsViewModel?.isFavoritProduct(productID: productID)) != nil)
+        guard let productID = productID,
+              let isfavoriteproduct = productDetailsViewModel?.isFavoritProduct(productID: productID) else {return}
+        isFavoriteSelected =  isfavoriteproduct
         if isFavoriteSelected {
             favBtn.imageView?.image = imageFilled
             favBtn.setImage(imageFilled, for: .normal)
-            isFavoriteSelected = true
+        }else{
+            favBtn.imageView?.image = image
+            favBtn.setImage(image, for: .normal)
         }
         
     }
@@ -63,7 +66,7 @@ class ProductDetailsViewController: UIViewController {
             return
         }
         productDetailsViewModel = ProductDetailsViewModel(networkservice: network)
-        productDetailsViewModel?.getProduct(productID: productsId.randomElement() ?? 0, completion: { productDetail in
+        productDetailsViewModel?.getProduct(productID: productID ?? 0, completion: { productDetail in
             self.productDetail = productDetail
 //            print(self.productDetail)
             self.pageControl.numberOfPages = productDetail.product?.images?.count ?? 1
@@ -85,12 +88,15 @@ class ProductDetailsViewController: UIViewController {
     }
     
     @IBAction func cartBtn(_ sender: CircleButtonShadowView) {
-//
+        guard let cartVC = UIStoryboard(name: "Cart", bundle: nil).instantiateViewController(identifier: "CartViewController") as? CartViewController else {return}
+        present(cartVC, animated: true)
     }
+    
     @IBAction func addToCart(_ sender: Any) {
-        //        let variantId = productDetail?.product?.variants?[selectedItem ?? 1].id
+        print("**********")
+        print(productDetail?.product?.variants?.first?.id)
+        let variantId = productDetail?.product?.variants?.first?.id
         print("Add to cart")
-        let variantId = 41891869819051
         let cart = Cart.sharedCart
         cart.addToCart(variantId: "gid://shopify/ProductVariant/\(variantId)")
         
@@ -186,10 +192,15 @@ extension ProductDetailsViewController: UICollectionViewDelegate, UICollectionVi
         pageControl.currentPage = currentIndex
         
     }
-    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedItem = indexPath.row
-        
-        return true
+        print(selectedItem)
     }
+//    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+//        selectedItem = indexPath.row
+//
+//        return true
+//    }
 
 }

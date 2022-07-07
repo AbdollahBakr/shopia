@@ -101,7 +101,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Home" width="20" height="19.5"/>
+        <image name="Home" width="128" height="128"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="mic.fill" catalog="system" width="108" height="128"/>
         <namedColor name="BlueColor">

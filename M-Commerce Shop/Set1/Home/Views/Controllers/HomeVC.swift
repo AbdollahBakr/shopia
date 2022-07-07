@@ -92,6 +92,7 @@ class HomeVC: UIViewController {
         button2.layer.shadowOpacity = 0.3
         button2.layer.shadowOffset = CGSize.zero
         button2.layer.shadowRadius = 2
+        button2.addTarget(self, action: #selector(goToCart), for: .touchUpInside)
         let barButtonItem2 = UIBarButtonItem(customView: button2)
         
         
@@ -104,14 +105,24 @@ class HomeVC: UIViewController {
         button3.layer.shadowOpacity = 0.3
         button3.layer.shadowOffset = CGSize.zero
         button3.layer.shadowRadius = 2
-        //button.addTarget(target, action: nil, for: .touchUpInside)
+        button3.addTarget(self, action: #selector(goToWishlist), for: .touchUpInside)
 
+        
         
         let barButtonItem3 = UIBarButtonItem(customView: button3)
         
         self.navigationItem.rightBarButtonItems = [barButtonItem2,barButtonItem3]
-        
-        
+    
+    }
+    
+    @objc func goToCart(){
+        guard let cartVC = UIStoryboard(name: "Cart", bundle: nil).instantiateViewController(identifier: "CartViewController") as? CartViewController else {return}
+        present(cartVC, animated: true)
+    }
+    
+    @objc func goToWishlist(){
+        guard let wishlistVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(identifier: "WishlistViewController") as? WishlistViewController else {return}
+        present(wishlistVC, animated: true)
     }
     
     func DismissSearchBar() {
