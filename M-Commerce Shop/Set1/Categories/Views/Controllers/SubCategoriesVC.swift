@@ -13,11 +13,13 @@ class SubCategoriesVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var filterButton: UIButton!
     
+    @IBOutlet weak var searchBar: UISearchBar!
     // Variables
     var collection_id      : Int?
     var product_type       : String?
     var viewModelInstance  : CategoryViewModel?
     var arraySubCategory   = [ProductsResult]()
+    var filteredData      : [ProductsResult]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,7 @@ class SubCategoriesVC: UIViewController {
         tableView.delegate   = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        filteredData = arraySubCategory
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,6 +71,7 @@ class SubCategoriesVC: UIViewController {
             DispatchQueue.main.async {
                 Helper.dismissHud()
                 self?.arraySubCategory = self?.viewModelInstance?.categoriesArray3 ?? []
+                self?.filteredData  = self?.arraySubCategory
                 self?.tableView.reloadData()
             }
         }
@@ -86,12 +90,12 @@ extension SubCategoriesVC:UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arraySubCategory.count
+        return filteredData?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryProductsCell", for: indexPath) as? CategoryProductsCell else {return UITableViewCell()}
-        cell.configureCell(product:self.arraySubCategory[indexPath.row])
+        cell.configureCell(product:(self.filteredData?[indexPath.row])!)
         
         return cell
         
@@ -112,4 +116,25 @@ extension SubCategoriesVC:UITableViewDataSource,UITableViewDelegate {
         return tableView.frame.height / 4
     }
     
+}
+
+extension SubCategoriesVC : UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        filteredData = []
+        
+        if searchText == ""{
+            filteredData = arraySubCategory
+        }else{
+            for product in arraySubCategory{
+                guard let title = product.title else{return}
+                
+                if title.uppercased().contains(searchText.uppercased()) {
+                    filteredData?.append(product)
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        self.tableView.reloadData()
+    }
 }
