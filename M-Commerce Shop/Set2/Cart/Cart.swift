@@ -48,8 +48,16 @@ class Cart {
             // Create a draft order if not exist
             if draftOrderId == nil {
 //                initDraftOrder(customerId: customerId ?? "", variantId: variantId)
-                draftOrderId = "gid://shopify/DraftOrder/889176195243"
+                draftOrderId = Cart.draftOrderTempId
                 print("draftOrderId: \(draftOrderId)")
+            }
+            
+            // Check if item already added
+            for item in cartItems {
+                if item.variantId == variantId {
+                    Helper.displayMessage(message: "Item already added", messageError: true)
+                    return
+                }
             }
             
             // Add variant item to cart

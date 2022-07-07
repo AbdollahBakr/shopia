@@ -45,6 +45,8 @@ class CartViewController: UIViewController {
         }
         
         viewModel.getCartItems()
+        
+        notifyIfNoCartItemsAdded()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -52,9 +54,11 @@ class CartViewController: UIViewController {
     }
     
     func populateTotalSection(){
-        totalLabel.text = viewModel.formatPrice(value: draftOrder?.totalPrice)
-        shippingLabel.text = viewModel.formatPrice(value: draftOrder?.totalShippingPrice)
-        taxLabel.text = viewModel.formatPrice(value: draftOrder?.totalTax)
+        if Cart.sharedCart.cartItems.count != 0 {
+            totalLabel.text = viewModel.formatPrice(value: draftOrder?.totalPrice)
+            shippingLabel.text = viewModel.formatPrice(value: draftOrder?.totalShippingPrice)
+            taxLabel.text = viewModel.formatPrice(value: draftOrder?.totalTax)
+        }
     }
     
     func updateTotalPrice(){
@@ -65,6 +69,28 @@ class CartViewController: UIViewController {
         }
         
         totalLabel.text = viewModel.formatPrice(value: totalPrice.description)
+    }
+    
+    // This functions Handles the friendly message if there are no items added to cart yet
+    func notifyIfNoCartItemsAdded(){
+        // Notify user if the cart is empty
+        if Cart.sharedCart.cartItems.count == 0 {
+            // Add message label if there are no cart items to show
+            let noCartItemsLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: cartItemsCollectionView.bounds.size.width, height: cartItemsCollectionView.bounds.size.height))
+            
+            // Configure the content and look of the message
+            noCartItemsLabel.text          = "There are no cart items added yet"
+            noCartItemsLabel.textColor     = UIColor.darkGray
+            noCartItemsLabel.font = UIFont.boldSystemFont(ofSize: 16.0)
+            noCartItemsLabel.numberOfLines = 0
+            noCartItemsLabel.textAlignment = .center
+            cartItemsCollectionView.backgroundView  = noCartItemsLabel
+            
+        } else {
+            
+            // Remove message label otherwise
+            cartItemsCollectionView.backgroundView = nil
+        }
     }
     
     @IBAction func checkout(_ sender: Any) {
@@ -82,7 +108,7 @@ class CartViewController: UIViewController {
 extension CartViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cartItems?.count ?? 0
+        return  Cart.sharedCart.cartItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
