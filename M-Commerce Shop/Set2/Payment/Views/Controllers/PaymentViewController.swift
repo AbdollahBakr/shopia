@@ -53,7 +53,8 @@ class PaymentViewController: UIViewController {
     @IBAction func placeOrder(_ sender: Any) {
         if offlineSwitch.isOn {
             viewModel.payCashOnDelivery()
-            Helper.displayMessage(message: "Checkouts are not available for this store", messageError: true)
+            viewModel.sendInvoice()
+            Helper.displayMessage(message: "Invoice can't be sent. Checkout is not available for your store. Review your shop settings and try again.", messageError: true)
         } else {
             Helper.displayMessage(message: "Checkouts are not available for this store", messageError: true)
         }
