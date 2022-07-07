@@ -19,7 +19,9 @@ class BrandProductsCell: UICollectionViewCell {
         
         for price in brandProduct.variants ?? [] {
             productPrice.text = price.price
+            print(price.id)
         }
+        print(brandProduct.variants?.first?.id)
         
         if let url = URL(string: brandProduct.image?.src ?? "") {
             let placeholder = UIImage(named: "placeholder")
