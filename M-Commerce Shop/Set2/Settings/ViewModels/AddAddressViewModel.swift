@@ -27,7 +27,7 @@ class AddAddresseViewModel {
     }
     }
     """
-    , variables: ["id": "gid://shopify/Customer/6059105484971"])
+    , variables: ["id": "gid://shopify/Customer/\(UserDefaults().integer(forKey: "userId"))"])
         
         GraphQLManager.fetchCodableFromQuery(genericType: DataClass.self, query: query, callBack: {[weak self] (response) in
             self?.addresses = (response?.customer?.addresses)!
@@ -55,9 +55,9 @@ class AddAddresseViewModel {
                     }
                 """
         
-        let variablesEmptyAddresses = AddAddressModel(input: AddAddressInput(id: "gid://shopify/Customer/6059105484971", addresses: [Address(country: "Egypt", city: "Cairo", address1: "address 1", address2: "address 1")])).dict!
+        let variablesEmptyAddresses = AddAddressModel(input: AddAddressInput(id: "gid://shopify/Customer/\(UserDefaults().integer(forKey: "userId"))", addresses: [Address(country: "Egypt", city: "Cairo", address1: "address 1", address2: "address 1")])).dict!
         
-        let variables = AddAddressModel(input: AddAddressInput(id: "gid://shopify/Customer/6059105484971", addresses: addresses)).dict!
+        let variables = AddAddressModel(input: AddAddressInput(id: "gid://shopify/Customer/\(UserDefaults().integer(forKey: "userId"))", addresses: addresses)).dict!
         
         let query = Query(body: body
                           , variables: variables)
