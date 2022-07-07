@@ -136,7 +136,7 @@ extension WishlistViewController: UICollectionViewDelegate, UICollectionViewData
                 let numberOfItemsPerRow: CGFloat = 2.0
             
                 let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
-        let height = (collectionView.frame.height-leftAndRightPaddings)/numberOfItemsPerRow - 35
+        let height = (collectionView.frame.height-leftAndRightPaddings)/numberOfItemsPerRow - 30
                 return CGSize(width: width, height: height) // You can change width and height here as pr your requirement
 //        return CGSize(width: width, height: height)
     }

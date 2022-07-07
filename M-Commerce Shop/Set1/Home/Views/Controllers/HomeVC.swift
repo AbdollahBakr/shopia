@@ -8,7 +8,7 @@
 import UIKit
 
 
-class HomeVC: UIViewController, UISearchBarDelegate {
+class HomeVC: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -20,14 +20,15 @@ class HomeVC: UIViewController, UISearchBarDelegate {
     var compostionalLayoutInstance = ComposotionalLayout()
     let menuButton        = UIButton()
     var brandsArray       = [SmartCollections]()
-   
+    var filteredData      : [SmartCollections]?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         listBrands()
         setupCollectionView()
         searchBar.delegate = self
         DismissSearchBar()
-        
+        filteredData = brandsArray
     }
 
     override func viewWillLayoutSubviews() {
@@ -91,6 +92,7 @@ class HomeVC: UIViewController, UISearchBarDelegate {
         button2.layer.shadowOpacity = 0.3
         button2.layer.shadowOffset = CGSize.zero
         button2.layer.shadowRadius = 2
+        button2.addTarget(self, action: #selector(goToCart), for: .touchUpInside)
         let barButtonItem2 = UIBarButtonItem(customView: button2)
         
         
@@ -103,14 +105,24 @@ class HomeVC: UIViewController, UISearchBarDelegate {
         button3.layer.shadowOpacity = 0.3
         button3.layer.shadowOffset = CGSize.zero
         button3.layer.shadowRadius = 2
-        //button.addTarget(target, action: nil, for: .touchUpInside)
+        button3.addTarget(self, action: #selector(goToWishlist), for: .touchUpInside)
 
+        
         
         let barButtonItem3 = UIBarButtonItem(customView: button3)
         
         self.navigationItem.rightBarButtonItems = [barButtonItem2,barButtonItem3]
-        
-        
+    
+    }
+    
+    @objc func goToCart(){
+        guard let cartVC = UIStoryboard(name: "Cart", bundle: nil).instantiateViewController(identifier: "CartViewController") as? CartViewController else {return}
+        present(cartVC, animated: true)
+    }
+    
+    @objc func goToWishlist(){
+        guard let wishlistVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(identifier: "WishlistViewController") as? WishlistViewController else {return}
+        present(wishlistVC, animated: true)
     }
     
     func DismissSearchBar() {
@@ -130,6 +142,7 @@ class HomeVC: UIViewController, UISearchBarDelegate {
                 Helper.dismissAnimation()
                 self?.brandsArray = self?.viewModelInstance?.brandsArray ?? []
                 //self?.filteredSportsArr = (self?.sportsArray)!
+                self?.filteredData  = self?.brandsArray
                 self?.collectionView.reloadData()
             }
         }
@@ -154,7 +167,7 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource {
         switch section {
         
         case 0:
-            return brandsArray.count
+            return filteredData?.count ?? 0
 
             
 //        case 1:
@@ -228,7 +241,7 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
 
-            firstCell.configureCell(brands: self.brandsArray[indexPath.row])
+            firstCell.configureCell(brands: self.filteredData?[indexPath.row])
             return firstCell
             
 
@@ -265,8 +278,8 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource {
             let storyboard = UIStoryboard(name: "BrandProducts", bundle: nil)
             guard let vc   = storyboard.instantiateViewController(withIdentifier:"BrandProductsVC") as? BrandProductsVC else {return}
             
-            vc.brandId   = self.brandsArray[indexPath.row].id
-            vc.brandName = self.brandsArray[indexPath.row].title
+            vc.brandId   = self.filteredData?[indexPath.row].id
+            vc.brandName = self.filteredData?[indexPath.row].title
             navigationController?.show(vc, sender: self)
             
                 
@@ -297,6 +310,27 @@ extension HomeVC:UICollectionViewDelegate,UICollectionViewDataSource {
         default:
             print("error")
         }
+    }
+}
+
+extension HomeVC : UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        filteredData = []
+        
+        if searchText == ""{
+            filteredData = brandsArray
+        }else{
+            for product in brandsArray{
+                guard let title = product.title else{return}
+                
+                if title.uppercased().contains(searchText.uppercased()) {
+                    filteredData?.append(product)
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+        self.collectionView.reloadData()
     }
 }
 
