@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gzz-Fz-6pC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltW-q0-kJZ" customClass="RoundedView" customModule="M_Commerce_Shop" customModuleProvider="target">
-                                <rect key="frame" x="20" y="118" width="374" height="62.5"/>
+                                <rect key="frame" x="20" y="140" width="374" height="62.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="140" translatesAutoresizingMaskIntoConstraints="NO" id="4da-RK-JVo">
                                         <rect key="frame" x="22" y="6.5" width="330" height="50"/>
@@ -29,7 +30,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYY-1w-qsv">
                                                         <rect key="frame" x="0.0" y="0.0" width="27" height="50"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="slider.vertical.3" catalog="system"/>
+                                                        <state key="normal" image="slider.vertical.3" catalog="system">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="filterButtonTapped:" destination="B0v-7z-XDY" eventType="touchUpInside" id="mjY-O7-l1y"/>
                                                         </connections>
@@ -49,10 +52,13 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ud-fr-K4e">
                                                         <rect key="frame" x="0.0" y="0.0" width="38.5" height="50"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" image="arrow.up.arrow.down" catalog="system"/>
+                                                        <state key="normal" image="arrow.up.arrow.down" catalog="system">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mM-P3-Oo8">
                                                         <rect key="frame" x="56.5" y="0.0" width="38.5" height="50"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -71,14 +77,14 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brand Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtG-n9-cpP">
-                                <rect key="frame" x="20" y="234.5" width="374" height="21.5"/>
+                                <rect key="frame" x="20" y="256.5" width="374" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="TextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="K1q-V7-CNU">
-                                <rect key="frame" x="20" y="272" width="374" height="541"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="20" y="294" width="374" height="519"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FI0-vW-2IT">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -87,12 +93,33 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1000" minimumValueImage="aqi.low" catalog="system" maximumValueImage="light.max" translatesAutoresizingMaskIntoConstraints="NO" id="47c-gU-TCT">
-                                <rect key="frame" x="18" y="188.5" width="378" height="31"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1000" maximumValueImage="light.max" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="47c-gU-TCT">
+                                <rect key="frame" x="18" y="210.5" width="378" height="31"/>
+                                <color key="tintColor" name="TextColor"/>
+                                <imageReference key="minimumValueImage" image="line.horizontal.3.decrease" catalog="system" symbolScale="small"/>
+                                <color key="minimumTrackTintColor" name="DarkGreyTabBar"/>
+                                <color key="maximumTrackTintColor" name="GreyColor"/>
+                                <color key="thumbTintColor" name="BlueColor"/>
                                 <connections>
                                     <action selector="sliderDidChanged:" destination="B0v-7z-XDY" eventType="valueChanged" id="Svp-xY-AUN"/>
                                 </connections>
                             </slider>
+                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OST-xS-5eI">
+                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" name="TextColor"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Products" id="kgu-AT-teh">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="a0P-Lf-Hti">
+                                            <color key="tintColor" name="TextColor"/>
+                                            <connections>
+                                                <action selector="dismissButtonTapped:" destination="B0v-7z-XDY" id="uH3-uG-Vdr"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AEw-e8-AtC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -100,22 +127,22 @@
                             <constraint firstItem="K1q-V7-CNU" firstAttribute="trailing" secondItem="ltW-q0-kJZ" secondAttribute="trailing" id="2bX-rt-beP"/>
                             <constraint firstItem="ltW-q0-kJZ" firstAttribute="height" secondItem="yjN-UA-gjO" secondAttribute="height" multiplier="0.07" id="5uG-jD-e15"/>
                             <constraint firstItem="AtG-n9-cpP" firstAttribute="trailing" secondItem="ltW-q0-kJZ" secondAttribute="trailing" id="5vg-xz-iqS"/>
+                            <constraint firstItem="ltW-q0-kJZ" firstAttribute="top" secondItem="OST-xS-5eI" secondAttribute="bottom" id="C8c-ca-NV3"/>
                             <constraint firstItem="K1q-V7-CNU" firstAttribute="leading" secondItem="ltW-q0-kJZ" secondAttribute="leading" id="JIg-XZ-GIZ"/>
+                            <constraint firstItem="OST-xS-5eI" firstAttribute="trailing" secondItem="AEw-e8-AtC" secondAttribute="trailing" id="Jme-VX-9Hb"/>
                             <constraint firstItem="47c-gU-TCT" firstAttribute="top" secondItem="ltW-q0-kJZ" secondAttribute="bottom" constant="8" symbolic="YES" id="Jpd-7y-9Oe"/>
+                            <constraint firstItem="OST-xS-5eI" firstAttribute="top" secondItem="AEw-e8-AtC" secondAttribute="top" id="MIx-Xq-9tW"/>
                             <constraint firstItem="AtG-n9-cpP" firstAttribute="leading" secondItem="ltW-q0-kJZ" secondAttribute="leading" id="QYv-xW-3B8"/>
                             <constraint firstItem="K1q-V7-CNU" firstAttribute="top" secondItem="AtG-n9-cpP" secondAttribute="bottom" constant="16" id="WFO-gr-EWY"/>
                             <constraint firstItem="ltW-q0-kJZ" firstAttribute="leading" secondItem="AEw-e8-AtC" secondAttribute="leading" constant="20" id="iMy-KJ-oRx"/>
+                            <constraint firstItem="OST-xS-5eI" firstAttribute="leading" secondItem="AEw-e8-AtC" secondAttribute="leading" id="nDv-p7-k2s"/>
                             <constraint firstItem="47c-gU-TCT" firstAttribute="leading" secondItem="ltW-q0-kJZ" secondAttribute="leading" id="s6G-Vb-Bms"/>
-                            <constraint firstItem="ltW-q0-kJZ" firstAttribute="top" secondItem="AEw-e8-AtC" secondAttribute="top" constant="30" id="smP-8i-Pk2"/>
                             <constraint firstItem="K1q-V7-CNU" firstAttribute="bottom" secondItem="AEw-e8-AtC" secondAttribute="bottom" id="tPh-yd-If7"/>
                             <constraint firstItem="47c-gU-TCT" firstAttribute="trailing" secondItem="ltW-q0-kJZ" secondAttribute="trailing" id="ttq-gY-qZJ"/>
                             <constraint firstItem="AEw-e8-AtC" firstAttribute="trailing" secondItem="ltW-q0-kJZ" secondAttribute="trailing" constant="20" id="uJR-Kx-WI9"/>
                             <constraint firstItem="AtG-n9-cpP" firstAttribute="top" secondItem="47c-gU-TCT" secondAttribute="bottom" constant="16" id="wSX-bb-iiN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="7eq-ws-zo7">
-                        <barButtonItem key="rightBarButtonItem" image="Heart" id="yJq-oA-rja"/>
-                    </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="brandNameLabel" destination="AtG-n9-cpP" id="Oat-4Q-Tjm"/>
@@ -128,33 +155,23 @@
             </objects>
             <point key="canvasLocation" x="2018.840579710145" y="-85.044642857142847"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ZBR-Ka-EFv">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gzz-Fz-6pC" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kDo-FD-Rm7">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="B0v-7z-XDY" kind="relationship" relationship="rootViewController" id="GE3-6x-oOX"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RNj-Ov-J3P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1108.6956521739132" y="-85.044642857142847"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="Heart" width="21" height="20"/>
-        <image name="aqi.low" catalog="system" width="128" height="119"/>
         <image name="arrow.up.arrow.down" catalog="system" width="128" height="98"/>
         <image name="light.max" catalog="system" width="128" height="72"/>
+        <image name="line.horizontal.3.decrease" catalog="system" width="128" height="73"/>
         <image name="slider.vertical.3" catalog="system" width="128" height="111"/>
+        <namedColor name="BlueColor">
+            <color red="0.23921568627450981" green="0.57647058823529407" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="DarkGreyTabBar">
+            <color red="0.54509803921568623" green="0.59607843137254901" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="GreyColor">
             <color red="0.96078431372549022" green="0.96470588235294119" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

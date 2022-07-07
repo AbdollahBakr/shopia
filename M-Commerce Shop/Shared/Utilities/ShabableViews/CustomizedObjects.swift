@@ -233,9 +233,34 @@ class RoundedCornersRightImage:UIImageView {
         shapeLayer.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.bottomRight,.topRight], cornerRadii: CGSize(width: 10, height: 10)).cgPath
         self.layer.mask = shapeLayer
     }
+}
     
+    class RoundedCornersLeftImage:UIImageView {
+        override func layoutSubviews() {
+            super.layoutSubviews()
+            updateMaskLayer()
+        }
+        
+        func updateMaskLayer(){
+            let shapeLayer = CAShapeLayer()
+            shapeLayer.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.bottomLeft,.topLeft], cornerRadii: CGSize(width: 10, height: 10)).cgPath
+            self.layer.mask = shapeLayer
+        }
+    }
+    
+
+class RoundedCornersRightStack:UIStackView {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateMaskLayer()
+    }
+    
+    func updateMaskLayer(){
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: [.topLeft,.topRight,.bottomLeft,.bottomRight], cornerRadii: CGSize(width: 10, height: 10)).cgPath
+        self.layer.mask = shapeLayer
+    }
 }
 
     
-
 

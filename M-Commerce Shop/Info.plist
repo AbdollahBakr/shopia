@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>App Need Your Permission For Using Mic In Order To Allow Voice Searching</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>App Need Your Permission For Using Mic In Order To Allow Voice Searching</string>
 </dict>
 </plist>

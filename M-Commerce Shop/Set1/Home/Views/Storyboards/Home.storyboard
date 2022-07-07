@@ -27,6 +27,9 @@
                                 <color key="backgroundColor" name="BlueColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="mic.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="startAndFinishRecording:" destination="kV6-4V-ukm" eventType="touchUpInside" id="6d6-gC-ATT"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To M-Commerce Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8B-Gi-c28">
                                 <rect key="frame" x="20" y="140" width="374" height="19.5"/>
@@ -66,10 +69,11 @@
                             <constraint firstItem="QwZ-yE-h2k" firstAttribute="top" secondItem="p8B-Gi-c28" secondAttribute="bottom" constant="10" id="z7O-zS-M0S"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Home" selectedImage="homekit" catalog="system" id="Cpv-3L-HmB"/>
+                    <tabBarItem key="tabBarItem" title="" image="Home" id="Cpv-3L-HmB"/>
                     <navigationItem key="navigationItem" title="Welcome" id="8Ps-ZA-ZwS"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="btn_start" destination="43l-yn-hgV" id="6Pd-Z4-sxt"/>
                         <outlet property="collectionView" destination="Xn5-gN-aMh" id="tRm-Dq-5GR"/>
                         <outlet property="searchBar" destination="QwZ-yE-h2k" id="0rb-oa-N6r"/>
                     </connections>
@@ -101,8 +105,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Home" width="128" height="128"/>
-        <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="Home" width="20" height="19.5"/>
         <image name="mic.fill" catalog="system" width="108" height="128"/>
         <namedColor name="BlueColor">
             <color red="0.23921568627450981" green="0.57647058823529407" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -47,6 +47,12 @@ class NetworkManager {
         case getBrands
         case getBrandProducts
         case productDetails
+
+        case getSubCategories
+        case getProductsOfSubCategories
+        
+        // Brands
+        case getCustomerOrders
         
 
         /******* Change These Pathes With Our Needs ******/
@@ -57,11 +63,6 @@ class NetworkManager {
                 
             case .authSignup:
                 return EndPoints.base + "/customers.json"
-                
-
-            case .getCategories:
-                return EndPoints.base + "/smart_collections.json"
-                
 
             case .getBrands:
                 return EndPoints.base + "/smart_collections.json"
@@ -71,6 +72,20 @@ class NetworkManager {
                 
             case .productDetails:
                 return EndPoints.baseWithoutHeader + "products/"
+            
+                
+            case .getCategories:
+                return EndPoints.base + "/custom_collections.json"
+                
+            case .getSubCategories:
+                return EndPoints.base + "/products.json?"
+                
+            case .getProductsOfSubCategories:
+                return EndPoints.base + "/products.json?"
+                
+            case .getCustomerOrders:
+                return EndPoints.base + "customers/"
+  
             }
         }
         
@@ -306,7 +321,37 @@ class NetworkManager {
     }
 
     
-    
+    func getSubCategories(collection_id:Int,completion:@escaping([ProductsResult]?,Error?)->Void) {
+            
+            let endPoints = EndPoints.getSubCategories.stringValue + "collection_id=\(collection_id)"
+         
+            guard let url = URL(string: endPoints) else {
+                return
+            }
+            taskForGETRequest(url: url, responseType: ProductsBase.self) { (response, error) in
+                if let response = response  {
+                    completion(response.products, nil)
+                } else {
+                    completion(nil,error)
+                }
+            }
+        }
+        
+        func getProductsOfSubCategories(collection_id:Int,product_type:String,completion:@escaping([ProductsResult]?,Error?)->Void) {
+            
+            let endPoints = EndPoints.getProductsOfSubCategories.stringValue + "product_type=\(product_type)&collection_id=\(collection_id)"
+         
+            guard let url = URL(string: endPoints) else {
+                return
+            }
+            taskForGETRequest(url: url, responseType: ProductsBase.self) { (response, error) in
+                if let response = response  {
+                    completion(response.products, nil)
+                } else {
+                    completion(nil,error)
+                }
+            }
+        }
   
 }
     

@@ -19,32 +19,29 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKk-Rx-q7s" customClass="RoundedShadowView" customModule="M_Commerce_Shop" customModuleProvider="target">
-                        <rect key="frame" x="2" y="16" width="425" height="133"/>
+                        <rect key="frame" x="8" y="16" width="413" height="133"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GcW-O7-n5L">
-                                <rect key="frame" x="0.0" y="0.0" width="425" height="133"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GcW-O7-n5L" customClass="RoundedCornersRightStack" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="413" height="133"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   CatgeoryLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzD-wU-v60">
-                                        <rect key="frame" x="0.0" y="0.0" width="212.5" height="133"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Limited Categories" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzD-wU-v60">
+                                        <rect key="frame" x="0.0" y="0.0" width="206.5" height="133"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nGi-xe-Jdl" customClass="RoundedCornersRightImage" customModule="M_Commerce_Shop" customModuleProvider="target">
-                                        <rect key="frame" x="212.5" y="0.0" width="212.5" height="133"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="nGi-xe-Jdl" customClass="RoundedCornersRightImage" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                        <rect key="frame" x="206.5" y="0.0" width="206.5" height="133"/>
                                     </imageView>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="MainColor"/>
                         <constraints>
-                            <constraint firstItem="GcW-O7-n5L" firstAttribute="leading" secondItem="rKk-Rx-q7s" secondAttribute="leading" id="1eM-EX-lH1"/>
-                            <constraint firstAttribute="trailing" secondItem="GcW-O7-n5L" secondAttribute="trailing" id="2t8-FO-eyT"/>
                             <constraint firstItem="GcW-O7-n5L" firstAttribute="leading" secondItem="rKk-Rx-q7s" secondAttribute="leading" id="CzK-QA-Bye"/>
                             <constraint firstItem="GcW-O7-n5L" firstAttribute="top" secondItem="rKk-Rx-q7s" secondAttribute="top" id="FZg-Ze-a0c"/>
-                            <constraint firstAttribute="bottom" secondItem="GcW-O7-n5L" secondAttribute="bottom" id="IGz-h0-eLA"/>
                             <constraint firstAttribute="bottom" secondItem="GcW-O7-n5L" secondAttribute="bottom" id="Vmz-Rw-aJ6"/>
-                            <constraint firstItem="GcW-O7-n5L" firstAttribute="top" secondItem="rKk-Rx-q7s" secondAttribute="top" id="ZzG-yz-7CY"/>
                             <constraint firstAttribute="trailing" secondItem="GcW-O7-n5L" secondAttribute="trailing" id="mK7-5I-VS6"/>
                         </constraints>
                     </view>
@@ -53,8 +50,8 @@
                 <constraints>
                     <constraint firstItem="rKk-Rx-q7s" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Edy-PX-Ln9"/>
                     <constraint firstAttribute="bottom" secondItem="rKk-Rx-q7s" secondAttribute="bottom" constant="16" id="cgY-mG-ccH"/>
-                    <constraint firstItem="rKk-Rx-q7s" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="2" id="l1x-8o-k8j"/>
-                    <constraint firstAttribute="trailing" secondItem="rKk-Rx-q7s" secondAttribute="trailing" constant="2" id="mLd-LD-Mkf"/>
+                    <constraint firstItem="rKk-Rx-q7s" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="l1x-8o-k8j"/>
+                    <constraint firstAttribute="trailing" secondItem="rKk-Rx-q7s" secondAttribute="trailing" constant="8" id="mLd-LD-Mkf"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -67,6 +64,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="placeholder" width="240" height="240"/>
         <namedColor name="MainColor">
             <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
