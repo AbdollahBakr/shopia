@@ -20,7 +20,7 @@ class CouponsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         couponVerified = false
-        totalPriceLabel.text = (draftOrder?.totalPrice ?? "") + " " + (SettingsViewModel.settingsCells[1].settingValue ?? "EGP")
+        totalPriceLabel.text = (draftOrder?.totalPrice ?? "") //+ " " + (SettingsViewModel.settingsCells[1].settingValue ?? "EGP")
     }
     
     @IBAction func verifyCoupon(_ sender: Any) {

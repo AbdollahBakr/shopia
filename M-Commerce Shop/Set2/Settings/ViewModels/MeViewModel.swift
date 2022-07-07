@@ -11,12 +11,6 @@ import SwiftUI
 
 class MeViewModel {
     
-//    var userDefaults = UserDefaults()
-    
-//    let userIdInt = UserDefaults().integer(forKey: "userId")
-    
-//    let currentCustomerId = "gid://shopify/Customer/\(userIdInt)"
-// "gid://shopify/Customer/6059105484971"
     var bindCustomertoVC: (() -> ()) = {}
     var currentCustomer: Customer? {
         didSet {

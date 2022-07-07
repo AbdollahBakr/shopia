@@ -93,6 +93,7 @@ class ProductDetailsViewController: UIViewController {
         let variantId = 41891869819051
         let cart = Cart.sharedCart
         cart.addToCart(variantId: "gid://shopify/ProductVariant/\(variantId)")
+        
     }
     
     @IBAction func favActionBtn(_ sender: CircleButtonShadowView) {

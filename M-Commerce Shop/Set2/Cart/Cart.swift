@@ -86,6 +86,9 @@ class Cart {
             let query = Query(body: body, variables: variables)
             GraphQLManager.mutateWithQuery(query: query)
             
+            // Notify added to cart
+            Helper.displayMessage(message: "Added to cart", messageError: false)
+            
         } else {
             Helper.displayMessage(message: "Sign in to add to cart", messageError: true)
         }
