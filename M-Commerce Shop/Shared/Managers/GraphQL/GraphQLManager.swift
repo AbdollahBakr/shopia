@@ -40,7 +40,7 @@ class GraphQLManager {
                     callBack(nil)
                 }
             } else {
-                print(error!)
+                print(error?.localizedDescription)
             }
         }
     }

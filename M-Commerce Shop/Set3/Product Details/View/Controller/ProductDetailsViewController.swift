@@ -85,7 +85,12 @@ class ProductDetailsViewController: UIViewController {
     }
     
     @IBAction func cartBtn(_ sender: CircleButtonShadowView) {
-        let variantId = productDetail?.product?.variants?[selectedItem ?? 1].id
+//
+    }
+    @IBAction func addToCart(_ sender: Any) {
+        //        let variantId = productDetail?.product?.variants?[selectedItem ?? 1].id
+        print("Add to cart")
+        let variantId = 41891869819051
         let cart = Cart.sharedCart
         cart.addToCart(variantId: "gid://shopify/ProductVariant/\(variantId)")
     }

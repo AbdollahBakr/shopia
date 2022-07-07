@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - DraftOrder
 struct DraftOrder: Codable {
-//    let id: String?
+    let id: String?
     let lineItems: LineItems?
     let currencyCode, totalPrice, subtotalPrice, totalTax, totalShippingPrice: String?
     let appliedDiscount: AppliedDiscount?
