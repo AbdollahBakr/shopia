@@ -33,6 +33,25 @@ class PaymentViewModel {
         GraphQLManager.mutateWithQuery(query: query)
     }
     
+    func sendInvoice() {
+        // Setup Query body and variables
+        let body = """
+            mutation draftOrderInvoiceSend($id: ID!, $email: EmailInput) {
+              draftOrderInvoiceSend(id: $id, email: $email) {
+                draftOrder {
+                  id
+                }
+              }
+            }
+        """
+        let variables = ["id": draftOrderId,
+                         "template_name": "DRAFT_ORDER_INVOICE"
+        ]
+        
+        let query = Query(body: body, variables: variables)
+        GraphQLManager.mutateWithQuery(query: query)
+    }
+    
     func payOnline() {
         // Online payment logic
     }
