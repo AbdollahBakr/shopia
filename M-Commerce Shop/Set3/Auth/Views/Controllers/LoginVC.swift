@@ -44,13 +44,16 @@ class LoginVC: UIViewController {
                 }
                 
                 Helper.saveUserLogin(userId: (customer.id)!)
+
+                
+                let initialViewController = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBarVC")
+
+                let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+                
+                appDelegate.window?.rootViewController = initialViewController
+                appDelegate.window?.makeKeyAndVisible()
                 
                 
-                guard let meVC = UIStoryboard(name: "Me", bundle: nil).instantiateViewController(withIdentifier: "MeViewController") as? MeViewController else {return}
-                self.presentVC(vc: meVC, animated: true)
-                
-               
-               
             }else if customer?.email == nil && customer?.multipass_identifier == nil{
                 Helper.displayMessage(message: "Wrong E-mail or Password", messageError: true)
             }

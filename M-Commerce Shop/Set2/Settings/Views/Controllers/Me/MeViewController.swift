@@ -23,6 +23,7 @@ class MeViewController: UIViewController {
     @IBOutlet weak var wishlistStackView: UIStackView!
     @IBOutlet weak var signInButton: RoundedButton!
     @IBOutlet weak var signUpButton: RoundedButton!
+    @IBOutlet weak var backButton: CircleButtonShadowView!
     
     var viewModel: MeViewModel!
     var customer: Customer?
@@ -34,6 +35,7 @@ class MeViewController: UIViewController {
         // Remove titles from settings and cart buttons
         settingsButton.setTitle("", for: .normal)
         cartButton.setTitle("", for: .normal)
+        backButton.setTitle("", for: .normal)
         
         // Hide Sign in & Sign up buttons
         signInButton.isHidden = true
@@ -134,5 +136,13 @@ class MeViewController: UIViewController {
     @IBAction func viewMoreWishlist(_ sender: Any) {
         guard let wishlistVC = UIStoryboard(name: "Wishlist", bundle: nil).instantiateViewController(withIdentifier: "WishlistViewController") as? WishlistViewController else {return}
         presentVC(vc: wishlistVC, animated: true)
+    }
+    @IBAction func backToHome(_ sender: Any) {
+        let initialViewController = UIStoryboard(name: "TabBar", bundle: nil).instantiateViewController(withIdentifier: "TabBarVC")
+
+        let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+        
+        appDelegate.window?.rootViewController = initialViewController
+        appDelegate.window?.makeKeyAndVisible()
     }
 }

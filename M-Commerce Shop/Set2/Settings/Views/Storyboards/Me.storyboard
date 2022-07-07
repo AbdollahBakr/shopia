@@ -253,6 +253,20 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQF-9a-arY" customClass="CircleButtonShadowView" customModule="M_Commerce_Shop" customModuleProvider="target">
+                                <rect key="frame" x="20" y="84" width="48" height="48"/>
+                                <color key="backgroundColor" name="MainColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="gKT-Xf-Ncq"/>
+                                    <constraint firstAttribute="width" secondItem="GQF-9a-arY" secondAttribute="height" id="oPD-aN-elC"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.left" catalog="system"/>
+                                <connections>
+                                    <action selector="backToHome:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mhn-JC-gii"/>
+                                    <action selector="goToCart:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="FAD-SF-9As"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -260,6 +274,7 @@
                             <constraint firstItem="huU-gi-VZE" firstAttribute="top" secondItem="21q-LM-sqw" secondAttribute="bottom" constant="12" id="0Yu-hW-lBE"/>
                             <constraint firstItem="cF5-yD-oq6" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="0b6-Vc-Qal"/>
                             <constraint firstItem="cF5-yD-oq6" firstAttribute="leading" secondItem="gRr-HS-bhq" secondAttribute="trailing" constant="12" id="1Kn-KN-lhf"/>
+                            <constraint firstItem="GQF-9a-arY" firstAttribute="width" secondItem="GQF-9a-arY" secondAttribute="height" id="1b3-x2-vlG"/>
                             <constraint firstItem="6Up-4O-oPz" firstAttribute="top" secondItem="ivX-Js-J1r" secondAttribute="bottom" id="2Yi-DV-1bA"/>
                             <constraint firstItem="21q-LM-sqw" firstAttribute="top" secondItem="gRr-HS-bhq" secondAttribute="bottom" constant="12" id="8pN-pv-2wW"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ivX-Js-J1r" secondAttribute="trailing" id="8sU-RU-mGX"/>
@@ -269,6 +284,7 @@
                             <constraint firstItem="gFB-od-7Hk" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="20" id="JKR-F6-Pay"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6Up-4O-oPz" secondAttribute="trailing" constant="20" id="M9s-js-om4"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oKQ-Fe-bBn" secondAttribute="trailing" id="RIq-49-f0y"/>
+                            <constraint firstItem="21q-LM-sqw" firstAttribute="top" secondItem="GQF-9a-arY" secondAttribute="bottom" constant="12" id="SZB-4L-XzW"/>
                             <constraint firstItem="MaC-b2-8Ip" firstAttribute="top" secondItem="7DA-Q7-euu" secondAttribute="bottom" constant="12" id="WCI-AJ-GGk"/>
                             <constraint firstItem="7DA-Q7-euu" firstAttribute="top" secondItem="21q-LM-sqw" secondAttribute="bottom" constant="60" id="Xuh-6V-1bP"/>
                             <constraint firstItem="oKQ-Fe-bBn" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="1:4" id="ZJ1-dV-UIX"/>
@@ -280,6 +296,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cF5-yD-oq6" secondAttribute="trailing" constant="28" id="kb3-um-GjF"/>
                             <constraint firstItem="MaC-b2-8Ip" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="lao-6T-NkD"/>
                             <constraint firstItem="7DA-Q7-euu" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="nrQ-Ui-0eT"/>
+                            <constraint firstItem="GQF-9a-arY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="oUv-Kj-WXK"/>
                             <constraint firstItem="oKQ-Fe-bBn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="rYR-Cj-oHo"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ivX-Js-J1r" secondAttribute="bottom" constant="120" id="sjZ-4c-it0"/>
                             <constraint firstItem="huU-gi-VZE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="wql-ni-rzT"/>
@@ -291,6 +308,7 @@
                     <tabBarItem key="tabBarItem" title="" image="person.fill" catalog="system" id="Tlq-hF-p2A"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="backButton" destination="GQF-9a-arY" id="FM9-RV-ge2"/>
                         <outlet property="cartButton" destination="gRr-HS-bhq" id="WD6-og-KFZ"/>
                         <outlet property="firstOrderStackView" destination="nPG-wt-QlV" id="Lpc-k4-Of8"/>
                         <outlet property="ordersLabel" destination="huU-gi-VZE" id="65b-iZ-UVU"/>
@@ -408,6 +426,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>

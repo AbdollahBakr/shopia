@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Reveal View Controller-->
+        <!--Item-->
         <scene sceneID="q7m-iz-RRA">
             <objects>
                 <viewController storyboardIdentifier="SWRevealViewController" id="ZVv-Fm-ija" customClass="SWRevealViewController" sceneMemberID="viewController">
@@ -20,7 +20,8 @@
                         <viewLayoutGuide key="safeArea" id="YjO-uE-QGN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Home" id="Yh3-Hz-ePW"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="bil-Rj-lsQ"/>
+                    <navigationItem key="navigationItem" id="CXb-4j-wry"/>
                     <connections>
                         <segue destination="wAY-JP-gR9" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="WqW-da-Dlf"/>
                         <segue destination="Muz-8g-VZk" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="cy3-ZB-AsP"/>
@@ -28,7 +29,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M1d-mf-Wqk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2358" y="-216"/>
+            <point key="canvasLocation" x="-1449.2753623188407" y="-216.29464285714286"/>
         </scene>
         <!--Tab BarVC-->
         <scene sceneID="bLa-0y-G6x">
@@ -40,14 +41,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="ZVv-Fm-ija" kind="relationship" relationship="viewControllers" id="WLy-hK-Gvi"/>
-                        <segue destination="Ktp-s5-NtV" kind="relationship" relationship="viewControllers" id="lxn-sK-EKH"/>
-                        <segue destination="dtS-yS-w3s" kind="relationship" relationship="viewControllers" id="DKp-pw-XAR"/>
+                        <segue destination="ZVv-Fm-ija" kind="relationship" relationship="viewControllers" id="Bfn-go-XtF"/>
+                        <segue destination="Ktp-s5-NtV" kind="relationship" relationship="viewControllers" id="BNC-Jw-UOR"/>
+                        <segue destination="dtS-yS-w3s" kind="relationship" relationship="viewControllers" id="trh-Nn-wAI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yqa-5R-B4X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-578" y="-216"/>
+            <point key="canvasLocation" x="452.17391304347831" y="-216.29464285714286"/>
         </scene>
         <!--Orders-->
         <scene sceneID="4iU-zW-8Uk">
@@ -330,11 +331,31 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3sc-OC-LGc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1461" y="-216"/>
+            <point key="canvasLocation" x="-552.17391304347825" y="-216.29464285714286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XmB-8A-x7E">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6lZ-ab-QbU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="Home" id="Yh3-Hz-ePW"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tBf-Pk-Td1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZVv-Fm-ija" kind="relationship" relationship="rootViewController" id="IEa-2l-rcY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X6n-Jy-vKI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2359.4202898550725" y="-216.29464285714286"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sE5-9v-Nj8"/>
+        <segue reference="cy3-ZB-AsP"/>
+        <segue reference="Bfn-go-XtF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Home" width="20" height="19.5"/>

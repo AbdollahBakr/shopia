@@ -64,6 +64,10 @@ class SignUpVC: UIViewController {
                     if customerDictionary != nil || signupError != nil{
                         if customerDictionary != nil{
                             Helper.displayMessage(message: "Signup Successfully", messageError: false)
+                            
+                            
+                            
+                            
                         }else{
                             Helper.displayMessage(message: "email \(signupError?.errors["email"]?.first ?? "")", messageError: true)
                         }
